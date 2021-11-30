@@ -1,9 +1,13 @@
 ---
 layout: layout.liquid
 pageTitle: User Agreement
+linkedCSS: ''
 
 ---
 # User Agreement
+
+Effective date: December 28, 2020  
+Last revised: November 30, 2021
 
 ## Introduction
 
@@ -14,7 +18,7 @@ Please read this User Agreement (including our [Privacy Policy](/privacy)) in fu
 Specifically, we want you to feel comfortable with the following terms before you decide to use our website, tools, or other services:
 
 1. You understand that Unlock NYC does not provide legal advice.
-2. You agree not to submit content that is abusive, defamatory, or otherwise unlawful.
+2. You agree not to submit content that is abusive, defamatory, otherwise unlawful, or in a manner inconsistent with what our tools are designed to do.
 3. You understand that we cannot guarantee the accuracy of information shared by users.
 4. You have read our [Privacy Policy](/privacy) in full.
 5. You understand that our links to third-party sites or services does not imply endorsement.
@@ -29,6 +33,8 @@ Unlock NYC is not a law firm, or a substitute for an attorney or law firm – if
 Unlock NYC’s website, tools, and social media contain opportunities for users to contribute content. These include but are not limited to online communities (such as our Facebook page) and reporting chatbot.
 
 You agree that when using one of these communication services, you will not: defame, abuse, harass, stalk, threaten or otherwise violate the legal rights (such as privacy and publicity) of others; publish, post, upload, distribute, or disseminate any inappropriate, profane, defamatory, infringing, obscene, or unlawful content; upload files that contain viruses, corrupted files, or any other similar software or programs that may damage the operation of another’s computer, or violate any applicable laws or regulations.
+
+Unlock NYC reserves the right to block or otherwise remove user permissions to users who violate these terms or use Unlock NYC tools in a manner inconsistent with their purpose of supporting renters with vouchers to learn about their rights, record phone calls to landlords and brokers, and report unfair or discriminatory treatment.
 
 ## Accuracy of user-contributed content
 
