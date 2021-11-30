@@ -47,6 +47,16 @@ sections:
 - type: document
   path: useragreement.md
   label: User Agreement
+- type: heading
+  label: Other Pages
+- type: directory
+  path: pages
+  label: Pages
+  create: all
+  match: "**/*"
+  exclude: pages.json
+  templates:
+  - about-page
 upload_dir: uploads
 public_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
 front_matter_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
