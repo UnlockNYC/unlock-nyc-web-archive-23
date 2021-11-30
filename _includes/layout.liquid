@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Unlock NYC - {{ pageTitle }}</title>
+    <link rel="stylesheet" href="{{ linkedCSS }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/910fe5b89c.js" crossorigin="anonymous"></script>
+    <script async src="https://unlocknyc-analytics.netlify.app/tracker.js" data-ackee-server="https://unlocknyc-analytics.netlify.app" data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c" data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
+<style>
+      #banner {
+        position: absolute;
+        top: -20px;
+        right: 0;
+        width: 100%;
+        background: url('https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Fabout-windows3.png?v=1605127894964');
+        background-size: contain;
+        background-position: 100% 0%;
+        background-repeat: no-repeat;
+        height: 45vh;
+        max-height: 500px;
+        z-index: -1;
+      }
+      #banner-figures {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100%;
+        background: url(https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Fabout-figures3.svg?v=1605127888304);
+        background-size: contain;
+        background-position: 100% 0%;
+        background-repeat: no-repeat;
+        height: 45vh;
+        max-height: 500px;
+      }
+      h1.home-title {
+        cursor: pointer;
+      }
+      h1.home-title:hover {
+        color: #f124c2;
+      }
+      #titles-wrap {
+        padding-top: 3%;
+        padding-left: 3%;
+        max-width: 30%;
+      }
+      #menu {
+        display: none;
+      }
+      #page {
+        padding: 4%;
+        max-width: 80%;
+        margin: auto;
+        margin-top: 100px;
+      }
+      #page h1 {
+        font-size: 35px;
+        font-weight: 300;
+      }
+      #page h2 {
+        font-size: 26px;
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-top: 50px;
+      }
+      #page h3 {
+        font-family: "Roboto Mono", sans-serif;
+        font-size: 20px;
+        font-weight: 600;
+      }
+      #page a {
+        font-weight: 900;
+        text-decoration: none;
+        color: #23286a;
+        border-bottom: 1px dotted #23286a;
+      }
+      #footer {
+        border-top: 1px solid Lightgray;  
+      }
+      
+      @media only screen and (max-width: 1415px) {
+        #banner {
+          width: 50%;
+        }
+      }
+      @media only screen and (max-width: 1050px) {
+        #banner {
+          width: 100%;
+          top: 227px;
+          background-size: cover;
+        }
+        #banner-figures {
+          background-size: cover;
+        }
+        #page {
+          margin-top: 50vh;
+        }
+      }
+      @media only screen and (max-width: 700px) {
+        #banner {
+          background-size: contain;
+          top: 180px;
+        }
+        #banner-figures {
+          background-size: contain;
+        }
+        #page {
+          margin-top: 31vh;
+        }
+        div.bio-wrapper {
+          cursor: initial;
+        }
+        div.bio-content {
+          display: block;
+        }
+        #headline-wrap h2 {
+          font-size: 4.5vw !important;
+          padding-top: 10px;
+          padding-bottom: 10px;
+          margin-top: 10px;
+          margin-bottom: 10px;
+        }
+        #page {
+          max-width: 95%;
+        }
+        #titles-wrap {
+          max-width: 60%;
+        }
+        #menu {
+          position: fixed;
+          bottom: 60px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+  {% include menu.liquid %}
+  
+  <div id="banner">
+      <div id="banner-figures">
+      </div>
+  </div>
+  
+  <div id="titles-wrap">
+      <h1 class="home-title">
+        Unlock NYC
+      </h1>
+      <h2 class="home-subtitle">
+        {{ pageTitle }}
+      </h2>
+  </div>
+  
+  <div id="page">
+    {{ content | safe }}
+    
+  </div> <!-- end of #page -->
+  
+   {% include footer.liquid %}
+    
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+  <script>
+    $(document).ready(function() {
+      $("h1.home-title").click(function() {
+        window.location.href= "/";
+      });
+      
+      $("a[href^=http]").each(function() {
+        let address = $(this).attr("href");
+        if (address.indexOf("unlock") > -1) {
+        } else {
+          $(this).attr("target", "_blank");
+          $(this).attr("rel", "noreferrer");
+        }
+      });
+      
+      $("h1, h2, h3").each(function() {
+        let anchor = $(this).text();
+        anchor = anchor.replace(/\?/g, '');
+        anchor = anchor.replace(/\./g, '');
+        anchor = anchor.replace(/[0-9]/g, '');
+        anchor = anchor.trim();
+        anchor = anchor.replace(/\s+/g, '-').toLowerCase();
+        $(this).attr("id", anchor);
+      });
+      
+      let currentAddress = window.location.href;
+      if (currentAddress.indexOf("#") > -1) {
+        let anchor = window.location.hash;
+        anchor = anchor.replace("#", "");
+        console.log(anchor);
+        let dimension = $("#" + anchor).offset().top;
+        $("body, html").animate({
+          scrollTop: dimension - 100
+        });
+      }
+      
+      $("a[href^='#']").click(function(e) {
+        e.preventDefault();
+        let anchor = $(this).attr("href").replace("#", "");
+        let dimension = $("#" + anchor).offset().top;
+        $("body, html").animate({
+          scrollTop: dimension - 100
+        });
+      });
+            
+      if ($(window).width() > 700) {
+                // sticky menu
+        $(window).scroll(function() {
+          let windowHeight = $(window).height() - 72;
+          if ($(window).scrollTop() > windowHeight) {
+            $("#menu").fadeIn("fast");
+            $("#menu").addClass("sticky");
+          } else {
+            $("#menu").fadeOut("fast");
+          }
+        }) // end scroll function
+      }
+      
+      $("#mobile-menu").click(function() {
+        $("#menu").fadeToggle("fast");
+      });
+      
+      $(window).resize(function() {
+        if($(window).width() > 700) {
+        // sticky menu
+        $(window).scroll(function() {
+          windowHeight = $(window).height() - 83;
+          if ($(window).scrollTop() > windowHeight) {
+            $("#menu").addClass("sticky");
+          } else {
+            $("#menu").removeClass("sticky");
+          }
+        }); // end scroll function
+        } else {
+          $(window).scroll(function() {
+            $("#menu").hide();
+            $("#menu").removeClass("sticky");
+          });
+        }
+        
+      });
+    });
+  </script>
+  </body>
+  
+</html>

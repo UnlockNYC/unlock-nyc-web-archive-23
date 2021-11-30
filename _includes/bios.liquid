@@ -1,0 +1,16 @@
+<div id="bio-wrap-grid">
+<div id="bios-grid" class="bios-grid">
+{% for bio in collections.bios %}
+  <div class="bio-wrapper">
+    <img class="headshot" src="{{ bio.data.headshot }}">
+    <div class="bio-text">
+      <p class="name">{{ bio.data.name }}</p>
+      <p class="pronoun">{{ bio.data.pronoun }}</p>
+      <div class="bio-content">{{ bio.templateContent | safe }}</div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<div id="bio-hover">
+</div>
+</div>

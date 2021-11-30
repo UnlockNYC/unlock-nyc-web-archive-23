@@ -1,0 +1,26 @@
+---
+label: Bio
+hide_body: false
+display_field: name
+fields:
+- type: text
+  name: name
+  label: Name
+  description: Full name
+- type: text
+  name: pronoun
+  label: Pronouns
+  description: What does this person use for their pronouns?
+- type: file
+  name: headshot
+  label: Headshot Image
+pages:
+- bios/ashley.md
+- bios/jessica.md
+- bios/mab.md
+- bios/manon.md
+- leaders/Allauna_bio.md
+- leaders/Elizabeth_bio.md
+- leaders/LeslieM.md
+- leaders/Nedra.md
+- leaders/fannielou.md

@@ -1,0 +1,26 @@
+---
+label: Story Slide
+hide_body: false
+fields:
+- name: bg_img
+  type: file
+  config:
+    maxSize: 64
+  label: Background Image
+  description: The Icons8 character with the line - image only, no text!
+- name: alt_text
+  type: text
+  config:
+    required: false
+  label: Alt Text for Background Image
+  description: for accessibility! describe the story's background image
+pages:
+- home-slides/slide1.md
+- home-slides/slide2.md
+- home-slides/slide3.md
+- home-slides/slide4.md
+- home-slides/slide5.md
+- home-slides/slide6.md
+- home-slides/slide7.md
+- home-slides/slide8.md
+- home-slides/slide9.md

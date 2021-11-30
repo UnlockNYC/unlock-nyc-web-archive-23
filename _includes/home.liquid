@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Mobile digital tools for a fair housing search. Do landlords keep saying no to your voucher? Use our tools to record it and report it - right from your phone.">
+    <title>Unlock NYC - {{ pageTitle }}</title>
+    <link rel="stylesheet" href="{{ linkedCSS }}">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/910fe5b89c.js" crossorigin="anonymous"></script>
+    <script async src="https://unlocknyc-analytics.netlify.app/tracker.js" data-ackee-server="https://unlocknyc-analytics.netlify.app" data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c" data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
+    <style>
+      #mobile-menu {
+        display: none !important;
+      }
+      #menu {
+        display: block !important;
+      }
+      section#faq p {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+  
+  <div id="page">
+    <section id="top" class="full">
+      <div id="crowd-friends"></div>
+      <div id="key-friend" role="img" aria-label="A woman reaches for a key"></div>
+      <div id="top-bg" role="img" aria-label="Friendly colorful figures looking out from NYC windows, a woman waters her plants, a parent with her child">
+        <div id="top-figures"></div>
+      </div>
+      <div id="titles">
+        <h1 class="home-title">Unlock NYC</h1>
+        <h2 class="home-subtitle">Tools for a fair housing search</h2>
+        <br>
+        <h2 class="home-info"><span style="background-color: rgba(255,255,255,0.5); font-weight: 400;">Do landlords keep saying "no" to your voucher? Use our tools to record it and report it – right from your phone.</span></h2>
+      </div>
+    </section>
+    {% include menu.liquid %}
+    <section id="stories">
+      <div class="story-slider" id="slider">
+        <div class="control_next"><i class="fal fa-angle-right"></i></div>
+        <div class="control_prev"><i class="fal fa-angle-left"></i></div>
+        <ul>
+        {% for slide in collections.slides %}
+        <li>
+          <img class="storyline" src="{{ slide.data.bg_img }}" alt="{{ slide.data.alt_text}}">
+          <div class="slide-text">
+          {{ slide.data.content }}
+          </div>
+        </li>
+        {% endfor %}
+        </ul>
+      </div>
+    </section>
+    <section id="info" style="height: auto;">
+    {% include home-info.liquid %}
+    </section>
+    <section id="report-bot" class="half">
+      <div id="report-bot-bg"></div>
+      <div id="report-bot-text">
+        <h1>Keep Hearing "We Don't Take Vouchers?"<br>Report It!</h1>
+        <h2 class="banner-text">Any time you suspect a landlord or broker is treating you differently because you have a voucher, report it here!</h2>
+        <h2 class="banner-text">You can tell us as much or as little about what happened as you want – and you can stay anonymous, or leave your name so we can follow up. Your reports help Unlock NYC and our <a href="/about#our-supporters-collaborators">partners</a> hold brokers and landlords accountable for discrimination.</h2>
+        <h2 class="banner-text">And, if you collected evidence, like a phone recording or a text message, you can request a formal investigation right from our tool.</h2>
+        <br>
+        <a class="report" href="/report" target="_blank">Start My Report</a>
+      </div>
+    </section>
+    <section id="faq" class="half" style="padding: 10%;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    background-color: #efefef;">
+    {{ questions }}
+    </section>
+    <section id="join-us" class="half">
+      <h1>Sign up for Updates</h1>
+      <h2 class="banner-text">Want to be among the first to know when we release new tools – like our phone recording tool, coming in 2021? Share your email address here and we'll add you to our mailing list. You can also follow us on <a href="https://www.facebook.com/WeUnlockNYC/" rel="noreferrer" target="_blank">Facebook</a> and <a href="https://twitter.com/weunlocknyc" rel="noreferrer" target="_blank">Twitter</a> for updates and tips.</h2><br>
+      <form id="join-email" action='https://secure.weunlock.nyc/join-email' method='post'>
+        <input type="email" name="email" required placeholder="your@email.com">
+        <label for="email" style="display:none;">E-mail address</label>
+        <input type="submit" value="Join">
+      </form>
+      <div id="join-activist">
+      </div>
+    </section>
+    <section id="windows" style="height: 80vh;" role="img" aria-label="Friendly colorful figures looking out from NYC windows, a man with his cat, a woman writing">
+      <div id="windows-figures"></div>
+      <!--<div id="windows-animated"></div>-->
+    </section>
+  </div>
+  
+  {% include footer.liquid %}
+  
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
+  <script src="/scripts/slider.js"></script> 
+  <script>
+    $(document).ready(function() {
+        
+      slideTextCheck();
+      
+      if($(window).width() > 700) {
+        // sticky menu
+        $(window).scroll(function() {
+          let windowHeight = $(window).height() - 83;
+          if ($(window).scrollTop() > windowHeight) {
+            $("#menu").addClass("sticky");
+          } else {
+            $("#menu").removeClass("sticky");
+          }
+        }); // end scroll function
+      }
+      
+      $(window).resize(function() {
+        slideTextCheck();
+        if($(window).width() > 700) {
+        // sticky menu
+        $(window).scroll(function() {
+          windowHeight = $("section#top").height() - 83;
+          if ($(window).scrollTop() > windowHeight) {
+            $("#menu").addClass("sticky");
+          } else {
+            $("#menu").removeClass("sticky");
+          }
+        }); // end scroll function
+        } else {
+          $(window).scroll(function() {
+            $("#menu").removeClass("sticky");
+          });
+        }
+      });
+      
+      $("section#faq h2").each(function(){
+        $(this).append('&nbsp;<i class="fal fa-chevron-circle-down" style="color: #f123c3;"></i>');
+      });
+      
+      $("section#faq h2").click(function(){
+        $(this).nextUntil("h2").toggle();
+        let arrowCheck = $(this).children("i.fal").attr("class");
+        if (arrowCheck.indexOf("up") > -1) {
+          $(this).children("i.fal").removeClass("fa-chevron-circle-up");
+          $(this).children("i.fal").addClass("fa-chevron-circle-down");
+        } else {
+          $(this).children("i.fal").removeClass("fa-chevron-circle-down");
+          $(this).children("i.fal").addClass("fa-chevron-circle-up");
+        }
+      });
+      
+      $("#menu a").click(function(e) {
+        let link = $(this).attr("href");
+        if (link.indexOf("#") > -1) {
+          e.preventDefault();
+          let topoff;
+          let anchor = $(this).attr("href").replace("/#", "");
+          let dimension = $("#" + anchor).offset().top;
+          if ($(window).width() < 700) {
+            topoff = 0; 
+          } else {
+            topoff = 80;
+          }
+          $("body, html").animate({
+            scrollTop: dimension - topoff
+          });
+        }
+      });
+      
+
+      
+      let currentAddress = window.location.href;
+      if (currentAddress.indexOf("#") > -1) {
+        let anchor = window.location.hash;
+        anchor = anchor.replace("#", "");
+        console.log(anchor);
+        let dimension = $("#" + anchor).offset().top;
+        $("body, html").animate({
+          scrollTop: dimension - 100
+        });
+      }
+                  
+      function slideTextCheck() {
+        $("#slider div.slide-text").each(function() {
+            let slideTitle = $(this).children("h1").height();
+            if ($(window).width() > 900) {
+              let lineHeight = $(window).width() * .06;
+              if (slideTitle > 3*lineHeight) {
+                $(this).addClass("longtitle");
+              }
+            }
+            if ($(window).width() < 700) {
+              $(this).parent("li").children("img.storyline").css("top", 10);
+            } else if($(window).width() > 700 && $(window).width() < 1100) {
+              $(this).parent("li").children("img.storyline").css("top", 100);
+            } else {
+              $(this).parent("li").children("img.storyline").css("top", 130);
+            }
+        });
+      }
+      
+      // form action
+      $('#join-email').submit(function(e){
+        e.preventDefault();
+        $.ajax({
+          url: 'https://unlock-nyc-servers.glitch.me/join-email',
+          type: 'post',
+          data:$('#join-email').serialize(),
+          success:function(){
+            console.log('submitted form');
+            $("form#join-email input[type='submit']").attr("value", "Thank You");
+            $("form#join-email input[type='email']").css("border", 0);
+            $("form#join-email input[type='email']").val("We will be in touch!");
+            
+            
+            
+          }
+        });
+      });
+    });
+  </script>
+  </body>
+  
+</html>

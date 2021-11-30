@@ -1,0 +1,15 @@
+#page p {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 70%;
+}
+#page p img {
+  max-width: 90px;
+  margin-right: 40px;
+}
+
+@media only screen and (max-width: 700px) {
+  #page p {
+    max-width: 100%;
+  }
+}

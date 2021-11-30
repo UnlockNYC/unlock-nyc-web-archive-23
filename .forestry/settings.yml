@@ -1,0 +1,60 @@
+---
+new_page_extension: md
+auto_deploy: false
+admin_path: ''
+webhook_url: 
+sections:
+- type: heading
+  label: Homepage
+- type: directory
+  path: home-slides
+  label: Stories Slider
+  create: all
+  match: "**/*"
+  exclude: home-slides.json
+  templates:
+  - story-slide
+- type: document
+  path: index.md
+  label: Info + Questions
+- type: heading
+  label: About Us
+- type: document
+  path: about.md
+  label: About Page
+- type: directory
+  path: bios
+  label: Team Bios
+  create: all
+  match: "**/*"
+  exclude: bios.json
+- type: directory
+  path: leaders
+  label: Leadership Bios
+  create: all
+  match: "**/*"
+  exclude: leaders.json
+  templates:
+  - bio
+- type: document
+  path: press.md
+  label: Press
+- type: heading
+  label: Fine Print
+- type: document
+  path: privacy.md
+  label: Privacy Policy
+- type: document
+  path: useragreement.md
+  label: User Agreement
+upload_dir: uploads
+public_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
+front_matter_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
+use_front_matter_path: true
+file_template: ":filename:"
+build:
+  install_dependencies_command: npm install
+  preview_docker_image: forestryio/node:12
+  mount_path: "/srv"
+  working_dir: "/srv"
+  instant_preview_command: npm run develop

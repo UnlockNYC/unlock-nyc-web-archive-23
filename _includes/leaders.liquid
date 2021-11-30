@@ -1,0 +1,16 @@
+<div id="leaders-wrap-grid">
+<div id="leaders-grid" class="bios-grid">
+{% for leader in collections.leaders %}
+  <div class="bio-wrapper">
+    <img class="headshot" src="{{ leader.data.headshot }}">
+    <div class="bio-text">
+      <p class="name">{{ leader.data.name }}</p>
+      <p class="pronoun">{{ leader.data.pronoun }}</p>
+      <div class="bio-content">{{ leader.templateContent | safe }}</div>
+    </div>
+  </div>
+{% endfor %}
+</div>
+<div id="leaders-hover">
+</div>
+</div>

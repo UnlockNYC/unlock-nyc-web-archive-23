@@ -1,0 +1,13 @@
+---
+label: About Page
+hide_body: false
+fields:
+- type: text
+  name: pageTitle
+  label: Page Title
+  description: Shows up in top of browser/navigation only!
+pages:
+- about.md
+- press.md
+- privacy.md
+- useragreement.md
