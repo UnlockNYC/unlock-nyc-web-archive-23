@@ -7,6 +7,13 @@ fields:
   label: Page Title
   description: Shows up in top of browser/navigation, as well as right under the "Unlock
     NYC" banner @ the top left.
+- name: linkedCSS
+  type: text
+  config:
+    required: false
+  label: Unique CSS
+  description: Does this page need a particular CSS file? [back-end only - if you
+    don't know, leave this blank!]
 pages:
 - about.md
 - pages/testpage.md
