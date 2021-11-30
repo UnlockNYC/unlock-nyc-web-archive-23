@@ -30,7 +30,7 @@ the `scripts` folder holds any site-wide javascript
  
 ### installation & contributing
 
-- you can <a href="https://glitch.happyfox.com/kb/article/23-what%E2%80%99s-remix/" target="_blank">Remix</a> this project in Glitch, to create your own `dev` environment to play with. This will install everything from `package.json`, all dependencies and configurations, etc. When you make a change in Glitch, it automatically runs `eleventy` and generates the static site.
+- you can <a href="https://glitch.happyfox.com/kb/article/23-what%E2%80%99s-remix/" target="_blank">Remix</a> this [project in Glitch](https://glitch.com/edit/#!/unlock-nyc-web), to create your own `dev` environment to play with. This will install everything from `package.json`, all dependencies and configurations, etc. When you make a change in Glitch, it automatically runs `eleventy` and generates the static site.
 
 - branching should be done via Glitch - workflow in progress
 
