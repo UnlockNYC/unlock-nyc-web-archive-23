@@ -57,6 +57,11 @@ sections:
   exclude: pages.json
   templates:
   - about-page
+- type: directory
+  path: ''
+  label: Everything
+  create: all
+  match: "**/*"
 upload_dir: uploads
 public_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
 front_matter_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
