@@ -60,9 +60,11 @@ sections:
 - type: directory
   path: ''
   label: Everything
-  create: all
-  match: "**/*"
-  exclude: "*.json, *.md"
+  create: documents
+  match: "/*"
+  exclude: "**/*.{yaml,yml,json,toml}"
+  templates:
+  - about-page
 upload_dir: uploads
 public_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
 front_matter_path: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads
