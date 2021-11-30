@@ -16,7 +16,11 @@ fields:
     don't know, leave this blank!]
 pages:
 - about.md
+- about.md
 - pages/testpage.md
 - press.md
+- press.md
 - privacy.md
+- privacy.md
+- useragreement.md
 - useragreement.md

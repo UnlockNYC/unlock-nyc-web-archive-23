@@ -62,7 +62,7 @@ sections:
   label: Everything
   create: documents
   match: "/*"
-  exclude: "**/*.{yaml,yml,json,toml}"
+  exclude: "**/*.{yaml,yml,json,toml, README.md, record.md, report.md, about.md}"
   templates:
   - about-page
 upload_dir: uploads
