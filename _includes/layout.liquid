@@ -5,12 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Unlock NYC - {{ pageTitle }}</title>
-    <link rel="stylesheet" href="{{ linkedCSS }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@200;300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/910fe5b89c.js" crossorigin="anonymous"></script>
     <script async src="https://unlocknyc-analytics.netlify.app/tracker.js" data-ackee-server="https://unlocknyc-analytics.netlify.app" data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c" data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
 <style>
+
+{% if linkedCSS %}
+      {% include "{{linkedCSS}}" %}
+{% endif %}
+
       #banner {
         position: absolute;
         top: -20px;
@@ -69,7 +75,7 @@
       #page h3 {
         font-family: "Roboto Mono", sans-serif;
         font-size: 20px;
-        font-weight: 600;
+        font-weight: 400;
       }
       #page a {
         font-weight: 900;
@@ -78,9 +84,9 @@
         border-bottom: 1px dotted #23286a;
       }
       #footer {
-        border-top: 1px solid Lightgray;  
+        border-top: 1px solid Lightgray;
       }
-      
+
       @media only screen and (max-width: 1415px) {
         #banner {
           width: 50%;
@@ -137,13 +143,13 @@
     </style>
   </head>
   <body>
-  {% include menu.liquid %}
-  
+  {% include 'menu.liquid' %}
+
   <div id="banner">
       <div id="banner-figures">
       </div>
   </div>
-  
+
   <div id="titles-wrap">
       <h1 class="home-title">
         Unlock NYC
@@ -152,21 +158,21 @@
         {{ pageTitle }}
       </h2>
   </div>
-  
+
   <div id="page">
     {{ content | safe }}
-    
+
   </div> <!-- end of #page -->
-  
-   {% include footer.liquid %}
-    
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>  
+
+   {% include 'footer.liquid' %}
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script>
     $(document).ready(function() {
       $("h1.home-title").click(function() {
         window.location.href= "/";
       });
-      
+
       $("a[href^=http]").each(function() {
         let address = $(this).attr("href");
         if (address.indexOf("unlock") > -1) {
@@ -175,7 +181,7 @@
           $(this).attr("rel", "noreferrer");
         }
       });
-      
+
       $("h1, h2, h3").each(function() {
         let anchor = $(this).text();
         anchor = anchor.replace(/\?/g, '');
@@ -185,7 +191,7 @@
         anchor = anchor.replace(/\s+/g, '-').toLowerCase();
         $(this).attr("id", anchor);
       });
-      
+
       let currentAddress = window.location.href;
       if (currentAddress.indexOf("#") > -1) {
         let anchor = window.location.hash;
@@ -196,7 +202,7 @@
           scrollTop: dimension - 100
         });
       }
-      
+
       $("a[href^='#']").click(function(e) {
         e.preventDefault();
         let anchor = $(this).attr("href").replace("#", "");
@@ -205,7 +211,7 @@
           scrollTop: dimension - 100
         });
       });
-            
+
       if ($(window).width() > 700) {
                 // sticky menu
         $(window).scroll(function() {
@@ -218,11 +224,11 @@
           }
         }) // end scroll function
       }
-      
+
       $("#mobile-menu").click(function() {
         $("#menu").fadeToggle("fast");
       });
-      
+
       $(window).resize(function() {
         if($(window).width() > 700) {
         // sticky menu
@@ -240,10 +246,10 @@
             $("#menu").removeClass("sticky");
           });
         }
-        
+
       });
     });
   </script>
   </body>
-  
+
 </html>

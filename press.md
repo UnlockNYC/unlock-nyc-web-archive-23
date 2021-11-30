@@ -1,10 +1,9 @@
 ---
 layout: layout.liquid
-linkedCSS: "/styles/site.css"
+linkedCSS: "styles/press.css"
 pageTitle: Press
 
 ---
-<link rel="stylesheet" href="/styles/press.css">
 
 ## Our Press
 

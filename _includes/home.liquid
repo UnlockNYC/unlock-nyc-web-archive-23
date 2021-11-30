@@ -6,25 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Mobile digital tools for a fair housing search. Do landlords keep saying no to your voucher? Use our tools to record it and report it - right from your phone.">
     <title>Unlock NYC - {{ pageTitle }}</title>
-    <link rel="stylesheet" href="{{ linkedCSS }}">
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,200;0,300;0,400;1,300&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/styles/site.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&family=Roboto+Mono:wght@200;300;400;600&display=swap" rel="stylesheet">
     <script src="https://kit.fontawesome.com/910fe5b89c.js" crossorigin="anonymous"></script>
     <script async src="https://unlocknyc-analytics.netlify.app/tracker.js" data-ackee-server="https://unlocknyc-analytics.netlify.app" data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c" data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
     <style>
-      #mobile-menu {
-        display: none !important;
-      }
-      #menu {
-        display: block !important;
-      }
-      section#faq p {
-        display: none;
-      }
+    {% include "styles/home.css" %}
     </style>
   </head>
   <body>
-  
+
   <div id="page">
     <section id="top" class="full">
       <div id="crowd-friends"></div>
@@ -39,7 +32,7 @@
         <h2 class="home-info"><span style="background-color: rgba(255,255,255,0.5); font-weight: 400;">Do landlords keep saying "no" to your voucher? Use our tools to record it and report it – right from your phone.</span></h2>
       </div>
     </section>
-    {% include menu.liquid %}
+    {% include 'menu.liquid' %}
     <section id="stories">
       <div class="story-slider" id="slider">
         <div class="control_next"><i class="fal fa-angle-right"></i></div>
@@ -57,11 +50,11 @@
       </div>
     </section>
     <section id="info" style="height: auto;">
-    {% include home-info.liquid %}
+    {% include 'home-info.liquid' %}
     </section>
     <section id="report-bot" class="half">
       <div id="report-bot-bg"></div>
-      <div id="report-bot-text">
+      <div class="record-report-text">
         <h1>Keep Hearing "We Don't Take Vouchers?"<br>Report It!</h1>
         <h2 class="banner-text">Any time you suspect a landlord or broker is treating you differently because you have a voucher, report it here!</h2>
         <h2 class="banner-text">You can tell us as much or as little about what happened as you want – and you can stay anonymous, or leave your name so we can follow up. Your reports help Unlock NYC and our <a href="/about#our-supporters-collaborators">partners</a> hold brokers and landlords accountable for discrimination.</h2>
@@ -76,6 +69,15 @@
     background-color: #efefef;">
     {{ questions }}
     </section>
+    <!--<section id="record-bot" class="half">
+      <div id="record-bot-bg"></div>
+      <div class="record-report-text">
+        <h1>Ready to make a call?<br>We'll help you record it.</h1>
+        <h2 class="banner-text">If you are calling brokers or landlords on the phone during your housing search, you can <strong>easily, securely, and legally record your calls</strong> with Unlock NYC. If you hear anything discriminatory, or suspect that someone is treating you differently because of your voucher, you can report that immediately from your own phone.</h2>
+        <br>
+        <a class="report" href="/report" target="_blank">Make a Call</a>
+      </div>
+    </section>-->
     <section id="join-us" class="half">
       <h1>Sign up for Updates</h1>
       <h2 class="banner-text">Want to be among the first to know when we release new tools – like our phone recording tool, coming in 2021? Share your email address here and we'll add you to our mailing list. You can also follow us on <a href="https://www.facebook.com/WeUnlockNYC/" rel="noreferrer" target="_blank">Facebook</a> and <a href="https://twitter.com/weunlocknyc" rel="noreferrer" target="_blank">Twitter</a> for updates and tips.</h2><br>
@@ -92,17 +94,17 @@
       <!--<div id="windows-animated"></div>-->
     </section>
   </div>
-  
-  {% include footer.liquid %}
-  
-  
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-  <script src="/scripts/slider.js"></script> 
+
+  {% include 'footer.liquid' %}
+
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="/scripts/slider.js"></script>
   <script>
     $(document).ready(function() {
-        
+
       slideTextCheck();
-      
+
       if($(window).width() > 700) {
         // sticky menu
         $(window).scroll(function() {
@@ -114,7 +116,7 @@
           }
         }); // end scroll function
       }
-      
+
       $(window).resize(function() {
         slideTextCheck();
         if($(window).width() > 700) {
@@ -133,11 +135,11 @@
           });
         }
       });
-      
+
       $("section#faq h2").each(function(){
         $(this).append('&nbsp;<i class="fal fa-chevron-circle-down" style="color: #f123c3;"></i>');
       });
-      
+
       $("section#faq h2").click(function(){
         $(this).nextUntil("h2").toggle();
         let arrowCheck = $(this).children("i.fal").attr("class");
@@ -149,7 +151,7 @@
           $(this).children("i.fal").addClass("fa-chevron-circle-up");
         }
       });
-      
+
       $("#menu a").click(function(e) {
         let link = $(this).attr("href");
         if (link.indexOf("#") > -1) {
@@ -158,7 +160,7 @@
           let anchor = $(this).attr("href").replace("/#", "");
           let dimension = $("#" + anchor).offset().top;
           if ($(window).width() < 700) {
-            topoff = 0; 
+            topoff = 0;
           } else {
             topoff = 80;
           }
@@ -167,9 +169,9 @@
           });
         }
       });
-      
 
-      
+
+
       let currentAddress = window.location.href;
       if (currentAddress.indexOf("#") > -1) {
         let anchor = window.location.hash;
@@ -180,7 +182,7 @@
           scrollTop: dimension - 100
         });
       }
-                  
+
       function slideTextCheck() {
         $("#slider div.slide-text").each(function() {
             let slideTitle = $(this).children("h1").height();
@@ -199,7 +201,7 @@
             }
         });
       }
-      
+
       // form action
       $('#join-email').submit(function(e){
         e.preventDefault();
@@ -212,14 +214,14 @@
             $("form#join-email input[type='submit']").attr("value", "Thank You");
             $("form#join-email input[type='email']").css("border", 0);
             $("form#join-email input[type='email']").val("We will be in touch!");
-            
-            
-            
+
+
+
           }
         });
       });
     });
   </script>
   </body>
-  
+
 </html>

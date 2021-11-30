@@ -1,6 +1,5 @@
 ---
 layout: home.liquid
-linkedCSS: "/styles/site.css"
 pageTitle: Home
 questions: '<h1>Questions</h1><h2>Why should I report?</h2><p>When you use your voice
   to report where discrimination is happening, who’s doing it, and what it sounds

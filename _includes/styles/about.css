@@ -1,0 +1,175 @@
+#banner {
+  position: absolute;
+  top: -20px;
+  right: 0;
+  width: 100%;
+  background: url("https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Fabout-windows3.png?v=1605127894964");
+  background-size: contain;
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  height: 45vh;
+  max-height: 500px;
+  z-index: -1;
+}
+#banner-figures {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  background: url(https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Fabout-figures3.svg?v=1605127888304);
+  background-size: contain;
+  background-position: 100% 0%;
+  background-repeat: no-repeat;
+  height: 45vh;
+  max-height: 500px;
+}
+h1.home-title {
+  cursor: pointer;
+}
+h1.home-title:hover {
+  color: #f124c2;
+}
+#titles-wrap {
+  padding-top: 3%;
+  padding-left: 3%;
+  max-width: 30%;
+}
+#about-page {
+  padding: 4%;
+  max-width: 80%;
+  margin: auto;
+  margin-top: 100px;
+}
+#about-page h1 {
+  font-family: "Roboto Mono", monospace;
+  font-size: 30px;
+  font-weight: 300;
+}
+#about-page h2 {
+  font-size: 26px;
+  font-weight: 600;
+  text-transform: uppercase;
+  margin-top: 50px;
+}
+#about-page a {
+  font-weight: 900;
+  text-decoration: none;
+  color: #23286a;
+  border-bottom: 1px dotted #23286a;
+}
+a.img-link {
+  border: none !important;
+}
+#about-page p img {
+  max-width: 100%;
+}
+.bios-grid {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 25% 25% 25% 25%;
+}
+div.bio-wrapper {
+  text-align: center;
+  cursor: pointer;
+  border: 2px solid White;
+}
+.hover-bio {
+  border: 2px dotted #23286a !important;
+}
+#bio-hover,
+#leaders-hover {
+  opacity: 0;
+  transition: all 900ms;
+  background-color: #efefef;
+  padding: 20px;
+  margin-top: 20px;
+}
+div.bio-text p.name {
+  font-family: "Roboto Mono";
+  font-size: 14px;
+  font-weight: 900;
+  margin-bottom: 5px;
+}
+div.bio-text p.pronoun {
+  font-size: 14px;
+  margin-top: 0;
+}
+img.headshot {
+  max-width: 80%;
+}
+div.bio-content {
+  display: none;
+}
+div.bio-content p {
+  text-align: left;
+}
+div#actions {
+  margin-bottom: 30px;
+}
+img.logo {
+  width: 150px;
+  vertical-align: middle;
+}
+#menu {
+  display: none;
+}
+@media only screen and (max-width: 1415px) {
+  #banner {
+    width: 50%;
+  }
+}
+@media only screen and (max-width: 1050px) {
+  #banner {
+    width: 100%;
+    top: 227px;
+    background-size: cover;
+  }
+  #banner-figures {
+    background-size: cover;
+  }
+  #about-page {
+    margin-top: 50vh;
+  }
+}
+@media only screen and (max-width: 700px) {
+  #banner {
+    background-size: contain;
+    top: 180px;
+  }
+  #banner-figures {
+    background-size: contain;
+  }
+  #about-page {
+    margin-top: 31vh;
+  }
+  div.bio-wrapper {
+    cursor: initial;
+  }
+  div.bio-content {
+    display: block;
+  }
+  #headline-wrap h2 {
+    font-size: 4.5vw !important;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+  #about-page {
+    max-width: 95%;
+  }
+  #titles-wrap {
+    max-width: 60%;
+  }
+  .bios-grid {
+    grid-template-columns: 100%;
+  }
+  #menu {
+    position: fixed;
+    bottom: 60px;
+  }
+  #collab-logos {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
