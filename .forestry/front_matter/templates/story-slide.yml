@@ -16,11 +16,20 @@ fields:
   description: for accessibility! describe the story's background image
 pages:
 - home-slides/slide1.md
+- home-slides/slide1.md
+- home-slides/slide2.md
 - home-slides/slide2.md
 - home-slides/slide3.md
+- home-slides/slide3.md
+- home-slides/slide4.md
 - home-slides/slide4.md
 - home-slides/slide5.md
+- home-slides/slide5.md
+- home-slides/slide6.md
 - home-slides/slide6.md
 - home-slides/slide7.md
+- home-slides/slide7.md
 - home-slides/slide8.md
+- home-slides/slide8.md
+- home-slides/slide9.md
 - home-slides/slide9.md
