@@ -8,6 +8,7 @@ fields:
   description: Shows up in top of browser/navigation only!
 pages:
 - about.md
+- pages/testpage.md
 - press.md
 - privacy.md
 - useragreement.md
