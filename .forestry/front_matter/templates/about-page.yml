@@ -5,7 +5,8 @@ fields:
 - type: text
   name: pageTitle
   label: Page Title
-  description: Shows up in top of browser/navigation only!
+  description: Shows up in top of browser/navigation, as well as right under the "Unlock
+    NYC" banner @ the top left.
 pages:
 - about.md
 - pages/testpage.md
