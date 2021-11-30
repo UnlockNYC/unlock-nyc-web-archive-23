@@ -1,12 +1,13 @@
 ---
 layout: layout.liquid
 pageTitle: Privacy Policy
+linkedCSS: ''
 
 ---
 # Privacy Policy
 
 Effective date: December 28, 2020  
-Last revised: December 28, 2020
+Last revised: November 30, 2021
 
 ## Introduction
 
@@ -38,15 +39,15 @@ If you are under the age of 13, please do not attempt to provide any personal in
 
 If you share your contact information (for example, your phone number or email address) with us, we will store that information and may use it to contact you. We contact users whose reports require follow-up, and we also contact users on our mailing list with marketing information and updates. You may opt out of communications with us by sending us an email at hello@weunlock.nyc.
 
-### We aggregate data from anonymous reports and make it available to our partners, others working to end housing discrimination, and occassionally the public.
+### We aggregate data from reports and make it available to our partners, others working to end housing discrimination, and occassionally the public.
 
-On a regular basis, we “aggregate” (create a summary) of anonymous data from the reports we receive. We share these summaries with our partners and other groups that are working to end housing discrimination, such as advocacy organizations, nonprofits, legal services, and/or city agencies responsible for monitoring and investigating violations of housing discrimination. These reports are anonymous. For example, a summary might sound like: “This month, we received 80 anonymous tips about discriminatory incidents. Of these, 37% happened in Brooklyn. We identified that one real estate company, ABC Landlord Inc., has been discriminating repeatedly in zipcodes 11219 and 11221. In fact, one person reported that a broker told them, “This landlord has taken enough voucher holders and doesn’t want any more.” The most common discriminatory tactic reported this month is not returning calls.”
+On a regular basis, we “aggregate” (create a summary) of data from the reports we receive. We share these summaries with our partners and other groups that are working to end housing discrimination, such as advocacy organizations, nonprofits, legal services, and/or city agencies responsible for monitoring and investigating violations of housing discrimination. These summaries are anonymous. For example, a summary might sound like: “_This month, we received 80 reports about discriminatory incidents. Of these, 37% happened in Brooklyn. We identified that one real estate company, ABC Landlord Inc., has been discriminating repeatedly in zipcodes 11219 and 11221. In fact, one person reported that a broker told them, 'This landlord has taken enough voucher holders and doesn’t want any more.' The most common discriminatory tactic reported this month is not returning calls._”
 
-We may also share this aggregated anonymous data in part or in full on our website, social media, and other communication channels, to inform our community about what we learn. For example, we intend to create a map or other visualization of all the reports we receive.
+We may also share this aggregated, anonymous data in part or in full on our website, social media, and other communication channels, to inform our community about what we learn. For example, we intend to create a map or other visualization of all the reports we receive.
 
 ### If (and only if) you request a formal investigation, we may share your report alongside your contact information with our partners.
 
-In certain cases, when you submit a report on our website, you may request a formal investigation of the incident and evidence that you are reporting. If you request this, we may share the details you have chosen to share with us in your report to one or more of our partners (legal services, nonprofit and advocacy organizations), and/or a city or state agency in charge of investigating and enforcing antidiscrimination law. Depending on what information you have shared with us, this might include information such as:
+In certain cases, when you submit a report on our website, you may request a formal investigation of the incident and evidence that you are reporting. If you request this, we may share the details you have chosen to share with us in your report to one or more of our partners (legal services, nonprofit and advocacy organizations), and/or a city or state agency in charge of investigating and enforcing anti discrimination law. Depending on what information you have shared with us, this might include information such as:
 
 * Your first and last name
 * Your contact information, so we and/or the partner can follow-up with you
@@ -57,7 +58,7 @@ In certain cases, when you submit a report on our website, you may request a for
 * Your household size and needs: how many people live with you, and any special housing needs (for example, if you need to find an apartment on the ground floor, or an apartment that is pet-friendly)
 * A brief housing history
 
-Unlock NYC will not publish identifiable details about you or the incident you are reporting.
+Unlock NYC will not publish identifiable details about you or the incident you are reporting publicly.
 
 ## 3. Where and how do we store your information?
 
@@ -71,7 +72,7 @@ Landbot saves the content of your conversation with the chatbot, and it protects
 
 **Airtable**: When you choose to share personal information with us, we store it in a database software called [Airtable](https://airtable.com/security).
 
-During the connection, your data is anonymized, encrypted, and protected (256-bit TLS encryption). Once the data lives on Airtable’s servers, it is also encrypted and protected (AES-256 encryption). This kind of data includes your phone number if you share it, and your answers to the bot’s questions that you share with us. If you choose to sign-up to receive updates from us, we securely store your name and contact information in Airtable.
+During the connection, your data is anonymized, encrypted, and protected (256-bit TLS encryption). Once the data lives on Airtable’s servers, it is also encrypted and protected (AES-256 encryption). This kind of data includes your phone number if you share it, and your answers to the bot’s questions that you share with us. If you choose to sign up to receive updates from us, we securely store your name and contact information in Airtable.
 
 **Ackee**: We collect anonymous data about our website traffic using an analytics tool called [Ackee](https://ackee.electerious.com/)**.**
 
