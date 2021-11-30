@@ -60,9 +60,9 @@ sections:
 - type: directory
   path: ''
   label: Everything
-  create: documents
+  create: all
   match: "/*"
-  exclude: "**/*.{yaml,yml,json,toml, README.md, record.md, report.md, about.md}"
+  exclude: "**/*.{yaml,yml,json,toml,md}"
   templates:
   - about-page
 upload_dir: uploads
