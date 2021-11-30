@@ -12,7 +12,10 @@
     <script src="https://kit.fontawesome.com/910fe5b89c.js" crossorigin="anonymous"></script>
     <script async src="https://unlocknyc-analytics.netlify.app/tracker.js" data-ackee-server="https://unlocknyc-analytics.netlify.app" data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c" data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
   <style>
+  {% capture css %}
   {% include 'styles/about.css' %}
+  {% endcapture}
+  {{ css | cssmin | safe }}
   </style>
   </head>
   <body>
