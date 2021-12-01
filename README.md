@@ -36,7 +36,7 @@ the `scripts` folder holds any site-wide javascript
 
 - before working in Glitch, **make sure the project is up-to-date with the Github repo first!!** This is important - Forestry writes content and Markdown edits to the Github repo automatically, but this does not sync with the Glitch project. You need to find the **Tools** menu in the lower left, choose "Import and Export," and then "Import from Github."
 
-- when you are ready to push changes to the website, choose the **Tools** menu again, and this time "Export to Github." This will create a branch called `glitch`, and you can create a pull request to double-check your changes before merging with the `main` production branch.
+- when you are ready to push changes to the website, choose the **Tools** menu again, and this time "Export to Github." This will create a branch called `glitch` in the Github repo, and you can create a pull request to double-check your changes before merging with the `main` production branch. You should delete the `glitch` branch when you are finished.
 
 - once you merge to main, the changes are deployed automatically via Netlify. You can check the Netlify dashboard to follow the status of the deploy/build.
 
