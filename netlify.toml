@@ -3,6 +3,18 @@
   to = "https://weunlock.nyc/:splat"
   status = 301
   force = true
+  
+[[redirects]]
+  from = "/report"
+  to = "/start"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/record"
+  to = "/start"
+  status = 301
+  force = true
 
 [[headers]]
   for = "/*"
