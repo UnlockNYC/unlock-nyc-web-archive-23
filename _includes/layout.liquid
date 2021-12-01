@@ -13,7 +13,7 @@
     <script async src="https://unlocknyc-analytics.netlify.app/tracker.js" data-ackee-server="https://unlocknyc-analytics.netlify.app" data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c" data-ackee-opts='{ "ignoreLocalhost": true, "detailed": true }'></script>
 <style>
 {% capture css %}
-{% if linkedCSS %}
+{% if linkedCSS contains "css" %}
       {% include "{{linkedCSS}}" %}
 {% endif %}
 
