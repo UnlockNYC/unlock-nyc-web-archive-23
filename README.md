@@ -32,15 +32,15 @@
  
 ### installation & contributing
 
-- you can <a href="https://glitch.happyfox.com/kb/article/23-what%E2%80%99s-remix/" target="_blank">Remix</a> this [project in Glitch](https://glitch.com/edit/#!/unlock-nyc-web), to create your own `dev` environment to play with. This will install everything from `package.json`, all dependencies and configurations, etc. When you make a change in Glitch, it automatically runs `eleventy` and generates the static site.
+- you can <a href="https://glitch.happyfox.com/kb/article/23-what%E2%80%99s-remix/" target="_blank">Remix</a> this [project in Glitch](https://glitch.com/edit/#!/unlock-nyc-web), to create your own `dev` environment to play with. This will install everything from `package.json`, all dependencies and configurations, etc. When you make a change in Glitch, it automatically runs 11ty and generates the static site on the Glitch URL only.
 
-- alternatively, you can use https://unlock-nyc-web.glitch.me as a staging environment - as long as multiple people from Unlock aren't working on it at once!
+- alternatively, you can use https://unlock-nyc-web.glitch.me as a staging environment - as long as you use branches in case multiple Unlock people are working on it at once!
 
 - before working in Glitch, **make sure the project is up-to-date with the Github repo first!!** This is important - Forestry writes content and Markdown edits to the Github repo automatically, but this does not sync with the Glitch project. You need to find the **Tools** menu in the lower left, choose "Import and Export," and then "Import from Github."
 
 - when you are ready to push changes to the website, choose the **Tools** menu again, and this time "Export to Github." This will create a branch called `glitch` in the Github repo, and you can create a pull request to double-check your changes before merging with the `main` production branch. You should delete the `glitch` branch when you are finished.
 
-- once you merge to main, the changes are deployed automatically via Netlify. You can check the Netlify dashboard to follow the status of the deploy/build.
+- once you merge to `main`, the changes are deployed automatically via Netlify. You can check the Netlify dashboard to follow the status of the deploy/build.
 
 ### documentation you might want to read
 
