@@ -1,7 +1,6 @@
 ---
 layout: layout.liquid
 pageTitle: User Agreement
-linkedCSS: ''
 
 ---
 # User Agreement
