@@ -217,8 +217,8 @@ div#report-bot-bg {
   bottom: 0;
   width: 90%;
   min-height: 75%;
-  transform: rotate(8deg);
-  -webkit-transform: rotate(8deg);
+  transform: rotate(3deg);
+  -webkit-transform: rotate(3deg);
 }
 div.record-report-text {
   padding: 10%;
@@ -458,7 +458,7 @@ div.slide-text.longtitle p {
   }
 }
 
-@media only screen and (min-width: 700px) and (max-width: 1150px) {
+/*@media only screen and (min-width: 700px) and (max-width: 1150px) {
   h1.home-title {
     font-size: 75px;
   }
@@ -468,7 +468,7 @@ div.slide-text.longtitle p {
   h1.home-title {
     font-size: 75px;
   }
-}
+}*/
 
 /*tablet portraits*/
 
@@ -650,14 +650,14 @@ div.slide-text.longtitle p {
   }
   section#report-bot {
     max-height: 1080px !important;
-    height: 165vh !important;
+    height: 118vh !important;
   }
   div#report-bot-bg {
-    background-size: 55%;
-    background-position: 20% 100%;
+    background-size: 38%;
+    background-position: 15% 100%;
     width: 100%;
-    transform: rotate(-4deg);
-    -webkit-transform: rotate(-4deg);
+    transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
   }
   div#record-bot-bg {
     background-size: 55%;

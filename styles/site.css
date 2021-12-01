@@ -228,6 +228,7 @@ footer div#footer-right {
   }
 }
 
+
 /*tablet portraits*/
 
 @media only screen and (min-device-width: 1024px) and (max-device-width: 1024px) and (orientation: portrait) and (-webkit-min-device-pixel-ratio: 2) {
@@ -266,6 +267,10 @@ footer div#footer-right {
 
   h1 {
     font-size: 7vw;
+  }
+  
+  h1.home-title {
+    font-size: 12vw;
   }
 
   footer {

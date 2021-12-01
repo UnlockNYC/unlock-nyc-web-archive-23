@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400&amp;display=swap"
+      rel="stylesheet"
+    />
+    <title>Record and Report: Unlock NYC</title>
+    <style>
+      #logout {
+        position: absolute;
+        top: 30px;
+        right: 30px;
+        text-align: right;
+        font-size: 13px;
+        text-transform: uppercase;
+        font-weight: 900;
+        font-family: "Open Sans", sans-serif;
+        color: White;
+        z-index: 10000000000;
+        cursor: pointer;
+      }
+      #logout svg {
+        margin: auto;
+      }
+      @media only screen and (max-width: 800px) {
+        #logout {
+          font-size: 11px;
+          top: 25px;
+          right: 20px;
+          text-align: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <script
+      samesite="None; Secure"
+      src="https://static.landbot.io/landbot-3/landbot-3.0.0.js"
+    ></script>
+    <script>
+      var myLandbot = new Landbot.Fullpage({
+        configUrl:
+          "https://chats.landbot.io/v3/H-1058750-O0YWW3IHOBBKYUU4/index.json"
+      });
+    </script>
+    <script>
+      function logout() {
+        // triggered from custom button, in landbot
+        sessionStorage.removeItem("token");
+        location.reload();
+      }
+    </script>
+    <div id="logout" onclick="logout()">
+      <svg
+        style="max-width: 15px; display:block;"
+        aria-hidden="true"
+        focusable="false"
+        data-prefix="fas"
+        data-icon="arrow-right-from-bracket"
+        class="svg-inline--fa fa-arrow-right-from-bracket"
+        role="img"
+        xmlns="https://www.w3.org/2000/svg"
+        viewBox="0 0 512 512"
+      >
+        <path
+          fill="currentColor"
+          d="M160 416H96c-17.67 0-32-14.33-32-32V128c0-17.67 14.33-32 32-32h64c17.67 0 32-14.33 32-32S177.7 32 160 32H96C42.98 32 0 74.98 0 128v256c0 53.02 42.98 96 96 96h64c17.67 0 32-14.33 32-32S177.7 416 160 416zM502.6 233.4l-128-128c-12.51-12.51-32.76-12.49-45.25 0c-12.5 12.5-12.5 32.75 0 45.25L402.8 224H192C174.3 224 160 238.3 160 256s14.31 32 32 32h210.8l-73.38 73.38c-12.5 12.5-12.5 32.75 0 45.25s32.75 12.5 45.25 0l128-128C515.1 266.1 515.1 245.9 502.6 233.4z"
+        ></path>
+      </svg>
+      log out
+    </div>
+  </body>
+</html>
