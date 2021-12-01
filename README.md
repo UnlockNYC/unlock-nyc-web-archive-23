@@ -20,13 +20,15 @@
 
 ### project structure
 
-in the`_includes` folder, you'll all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `build.` You won't see the `build` folder in this repo! It's generated every time, and hidden via the `.gitignore` file.
+- in the`_includes` folder, you'll find all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `build.` You won't see the `build` folder in this repo! It's generated every time, and hidden via the `.gitignore` file.
 
-the rest of the `.md` files are the content, either pulled from various places (for example, the `bios` folder holds content that gets displayed on the About page, via the `about.liquid` template) or simply from the main folder. 11ty takes any Markdown file and turns it into a folder with a corresponding `index.html`. For example, `press.md` turns into a folder (`/press`) with an index (`/press/index.html`) inside it, so that the URL `https://weunlock.nyc/press` works.
+- the rest of the `.md` files are the content, either pulled from various places (for example, the `bios` folder holds content that gets displayed on the About page, via the `about.liquid` template) or simply from the root folder. 11ty takes any Markdown file and turns it into a folder with a corresponding `index.html`. For example, `press.md` turns into a folder (`/press`) with an index (`/press/index.html`) inside it, so that the URL `https://weunlock.nyc/press` works.
 
-the `styles` folder holds `site.css` - other css files are inside the `_includes` folder, so that they can be pulled onto specific pages. When they are pulled via the liquid template files, the css files are minified.  
+- the `styles` folder holds `site.css` - other css files are inside the `_includes` folder, so that they can be pulled onto specific pages via Liquid templates. When they are pulled via template files, the css files are minified.  
 
-the `scripts` folder holds any site-wide javascript
+- the `scripts` folder holds any site-wide javascript
+
+- `.eleventy.js` is the 11ty configuration file - it sets the output folder to `build`, and allows for the `styles` and `scripts` folders to be bundled into the output folder too so we can use them.
  
 ### installation & contributing
 
