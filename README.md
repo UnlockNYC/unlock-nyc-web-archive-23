@@ -20,7 +20,7 @@
 
 ### project structure
 
-- in the`_includes` folder, you'll find all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `build.` You won't see the `build` folder in this repo! It's generated every time, and hidden via the `.gitignore` file.
+- in the`_includes` folder, you'll find all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `build.` You won't see the `build` folder in this repo! It's generated every time 11ty runs, and hidden via the `.gitignore` file.
 
 - the rest of the `.md` files are the content, either pulled from various places (for example, the `bios` folder holds content that gets displayed on the About page, via the `about.liquid` template) or simply from the root folder. 11ty takes any Markdown file and turns it into a folder with a corresponding `index.html`. For example, `press.md` turns into a folder (`/press`) with an index (`/press/index.html`) inside it, so that the URL `https://weunlock.nyc/press` works.
 
