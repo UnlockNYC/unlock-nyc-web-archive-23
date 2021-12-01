@@ -1,6 +1,5 @@
 dependencies:
   '@11ty/eleventy': 0.12.1
-  clean-css: 5.2.2
 packages:
   /@11ty/dependency-tree/1.0.0:
     dev: false
@@ -440,14 +439,6 @@ packages:
       fsevents: 2.3.2
     resolution:
       integrity: sha512-ekGhOnNVPgT77r4K/U3GDhu+FQ2S8TnK/s2KbIGXi0SZWuwkZ2QNyfWdZW+TVfn84DpEP7rLeCt2UI6bJ8GwbQ==
-  /clean-css/5.2.2:
-    dependencies:
-      source-map: 0.6.1
-    dev: false
-    engines:
-      node: '>= 10.0'
-    resolution:
-      integrity: sha512-/eR8ru5zyxKzpBLv9YZvMXgTSSQn7AdkMItMYynsFgGwTveCRVam9IUPFloE85B4vAIj05IuKmmEoV7/AQjT0w==
   /cliui/6.0.0:
     dependencies:
       string-width: 4.2.3
@@ -955,7 +946,7 @@ packages:
       node: '>=0.4.7'
     hasBin: true
     optionalDependencies:
-      uglify-js: 3.14.3
+      uglify-js: 3.14.4
     resolution:
       integrity: sha512-aAcXm5OAfE/8IXkcZvCepKU3VzW1/39Fb5ZuqMtgI/hT8X2YgoMvBY5dLhq/cpOvw7Lk1nK/UF71aLG/ZnVYRA==
   /has-ansi/2.0.0:
@@ -2226,14 +2217,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-8Y75pvTYkLJW2hWQHXxoqRgV7qb9B+9vFEtidML+7koHUFapnVJAZ6cKs+Qjz5Aw3aZWHMC6u0wJE3At+nSGwA==
-  /uglify-js/3.14.3:
+  /uglify-js/3.14.4:
     dev: false
     engines:
       node: '>=0.8.0'
     hasBin: true
     optional: true
     resolution:
-      integrity: sha512-mic3aOdiq01DuSVx0TseaEzMIVqebMZ0Z3vaeDhFEh9bsc24hV1TFvN74reA2vs08D0ZWfNjAcJ3UbVLaBss+g==
+      integrity: sha512-AbiSR44J0GoCeV81+oxcy/jDOElO2Bx3d0MfQCUShq7JRXaM4KtQopZsq2vFv8bCq2yMaGrw1FgygUd03RyRDA==
   /unc-path-regex/0.1.2:
     dev: false
     engines:
@@ -2400,4 +2391,3 @@ shrinkwrapMinorVersion: 9
 shrinkwrapVersion: 3
 specifiers:
   '@11ty/eleventy': ^0.12.1
-  clean-css: ^5.2.2
