@@ -20,7 +20,7 @@
 
 ### project structure
 
-in the`_includes` folder, you'll all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `_site.` You won't see the `_site` folder in this repo! It's generated every time. 
+in the`_includes` folder, you'll all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `build.` You won't see the `build` folder in this repo! It's generated every time, and hidden via the `.gitignore` file.
 
 the rest of the `.md` files are the content, either pulled from various places (for example, the `bios` folder holds content that gets displayed on the About page, via the `about.liquid` template) or simply from the main folder. 11ty takes any Markdown file and turns it into a folder with a corresponding `index.html`. For example, `press.md` turns into a folder (`/press`) with an index (`/press/index.html`) inside it, so that the URL `https://weunlock.nyc/press` works.
 
@@ -32,9 +32,13 @@ the `scripts` folder holds any site-wide javascript
 
 - you can <a href="https://glitch.happyfox.com/kb/article/23-what%E2%80%99s-remix/" target="_blank">Remix</a> this [project in Glitch](https://glitch.com/edit/#!/unlock-nyc-web), to create your own `dev` environment to play with. This will install everything from `package.json`, all dependencies and configurations, etc. When you make a change in Glitch, it automatically runs `eleventy` and generates the static site.
 
-- branching should be done via Glitch - workflow in progress
+- alternatively, you can use https://unlock-nyc-web.glitch.me as a staging environment - as long as multiple people from Unlock aren't working on it at once!
 
-**please do not commit to `main` without going through a separate branch first!**
+- before working in Glitch, **make sure the project is up-to-date with the Github repo first!!** This is important - Forestry writes content and Markdown edits to the Github repo automatically, but this does not sync with the Glitch project. You need to find the **Tools** menu in the lower left, choose "Import and Export," and then "Import from Github."
+
+- when you are ready to push changes to the website, choose the **Tools** menu again, and this time "Export to Github." This will create a branch called `glitch`, and you can create a pull request to double-check your changes before merging with the `main` production branch.
+
+- once you merge to main, the changes are deployed automatically via Netlify. You can check the Netlify dashboard to follow the status of the deploy/build.
 
 ### documentation you might want to read
 
