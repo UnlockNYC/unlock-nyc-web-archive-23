@@ -23,7 +23,7 @@ Our Privacy Policy aims to answer the following questions:
 
 ### We collect personal information that you share with us directly.
 
-When you use our website or our tools, you may decide to share personal information with us, but sharing personal information is always voluntary. For example, you might share your email address to sign up for updates, or you might share information about yourself, your voucher, and your housing situation while you’re making a report. When you’re making a report, you always have the choice to remain anonymous – we don’t ask you for contact information until the end of the report, and sharing your contact information is voluntary. We only require contact information if you are requesting a formal investigation, because we or our partners will need to follow up with you.
+When you use our website or our tools, you may decide to share personal information with us, but sharing personal information is always voluntary. For example, you might share your email address to sign up for updates, or you might share information about yourself, your voucher, and your housing situation while you’re making a report. You may send us digital evidence, including images of your text messages and audio files of your phone calls. When you’re making a report, you always have the choice to remain anonymous – we don’t ask you for contact information until the end of the report, and sharing your contact information is voluntary. We only require contact information if you are requesting a formal investigation, because we or our partners will need to follow up with you.
 
 ### We collect anonymous information automatically.
 
@@ -73,6 +73,12 @@ Landbot saves the content of your conversation with the chatbot, and it protects
 **Airtable**: When you choose to share personal information with us, we store it in a database software called [Airtable](https://airtable.com/security).
 
 During the connection, your data is anonymized, encrypted, and protected (256-bit TLS encryption). Once the data lives on Airtable’s servers, it is also encrypted and protected (AES-256 encryption). This kind of data includes your phone number if you share it, and your answers to the bot’s questions that you share with us. If you choose to sign up to receive updates from us, we securely store your name and contact information in Airtable.
+
+**Fauna**: When you use your phone number to log in with our reporting and recording tool, we store that information in a database called [Fauna](https://trust.fauna.com/). We keep this information so that our tools can verify your phone number and "remember" you as you return to our tools. This information is kept separately from any reports that you make with Unlock NYC. All data stored with Fauna is encrypted, at rest and in transit.
+
+**Twilio**: When you make a phone call with our recording tool, software called [Twilio](https://www.twilio.com/security) makes the call forwarding happen and records your audio. Your phone calls are encrypted on Twilio's servers: no one at the Twilio company can listen to your phone calls.  Unlock NYC only listens to them when you give explicit permission via the recording and reporting tool. After 30 days, the encrypted files are deleted from Twilio's servers. 
+
+**Digital Ocean**: When you send us evidence, including text information, images, and audio recordings, we store your data in the cloud with a platform called [Digital Ocean](https://www.digitalocean.com/trust/). We create folders with your case information that _are not available online to the general public_ - they are available to you and to third parties where you have agreed to send them. Digital Ocean encrypts your information on physical disks with 256-bit AES-XTS full-disk encryption. Your phone calls remain even further encrypted on this platform. 
 
 **Ackee**: We collect anonymous data about our website traffic using an analytics tool called [Ackee](https://ackee.electerious.com/)**.**
 
