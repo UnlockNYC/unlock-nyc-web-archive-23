@@ -1,7 +1,5 @@
 // configuration file
 
-const CleanCSS = require("clean-css");
-
 // add styles/css, scripts, etc. folders!
 module.exports = function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("styles");
@@ -10,7 +8,9 @@ module.exports = function(eleventyConfig) {
     dynamicPartials: true,
     strictFilters: false // renamed from `strict_filters` in Eleventy 1.0
   });
-  eleventyConfig.addFilter("cssmin", function(code) {
-    return new CleanCSS({}).minify(code).styles;
-  });
+  return {
+    dir: {
+      output: "build"
+    }
+  }
 };
