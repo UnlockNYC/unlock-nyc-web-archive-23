@@ -1,7 +1,7 @@
 ---
 layout: home.liquid
 pageTitle: Home
-questions: '<h1>Questions</h1><h2>Why should I report?</h2><p>When you use your voice
+questions: "<h1>Questions</h1><h2>Why should I report?</h2><p>When you use your voice
   to report where discrimination is happening, who’s doing it, and what it sounds
   like, you’re helping paint a clearer picture of discrimination – so that together
   we can better push back against it! With your help, we can hold landlords and brokers
@@ -13,26 +13,7 @@ questions: '<h1>Questions</h1><h2>Why should I report?</h2><p>When you use your 
   secure?</h2><p>We are an independent group that is not affiliated with any real
   estate management company, landlord, brokering agency, housing authority, or homeless
   shelter services. You can choose to report anonymously, and we will never share
-  your personal information without your permission.</p><h2>Can a landlord retaliate
-  against me for making a report?</h2><p>No! Here''s what the New York City Commission
-  on Human Rights says about that: "It is against the Law for anyone [...] to retaliate
-  against you because you [...] made a charge or filed a complaint of discrimination
-  with the NYC Commission on Human Rights, your employer, or any other agency." You
-  can read more <a href="https://www1.nyc.gov/site/cchr/index.page" title="NYCCHR">on
-  the CCHR website</a>.</p><p>If you believe you''ve been discriminated against in
-  your housing search – even if you''re not 100% sure that what happened is illegal
-  –&nbsp;report it! Investigators who specialize in the NYC Human Rights Law can take
-  a look.</p><h2>How is using Unlock NYC different from calling 311?</h2><p>When you
-  report through Unlock NYC, your report can do more.</p><p>If you request a formal
-  investigation and attach evidence, we can send it to the city on your behalf – just
-  like if you called 311. We''ll help you build a full report, which may help investigators
-  negotiate on your behalf. And, you can save your information with us so you don''t
-  have to answer all the same questions every time you report.</p><p>In addition,
-  your report will also help change the <em>system</em> by making data about voucher
-  discrimination available to the community-based organizations and advocates who
-  are leading the movement to end it. Our partners use our reports to understand patterns
-  about voucher discrimination – who''s doing it, where it''s happening, what it sounds
-  like – so they can focus their attention and resources where they''re most needed.</p>'
+  your personal information without your permission.</p>"
 
 ---
 # It should be easier to find a home with your voucher.
