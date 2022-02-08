@@ -30,10 +30,10 @@ How Source of Income Discrimination and Voucher Policies Perpetuate Housing Ineq
 sensitive nature of the data, we do not plan on releasing the row-by-row data publicly. This is both to protect our users from possible retaliation,
 and to follow consentful tech practices. If you'd like to request an aggregated summary of the data, please contact <a href="mailto:hello@weunlock.nyc">hello@weunlock.nyc</a>.
 <br><br>
-<a href="https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/AnIllusionofChoice_FinalDigital-protected.pdf" style="border-bottom: 0;">
+<a href="https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/AnIllusionofChoice_FinalDigital_CORRECT-protected.pdf?v=1644339676601" style="border-bottom: 0;">
   <img class="report-sample" src="https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/AnIllusionofChoice_FinalDigital-protected.jpg?v=1643857741931">
 </a>
 <br>
 <p>
-  <a href="https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/AnIllusionofChoice_FinalDigital-protected.pdf" class="report">Download Report</a>
+  <a href="https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/AnIllusionofChoice_FinalDigital_CORRECT-protected.pdf?v=1644339676601" class="report">Download Report</a>
 </p>
