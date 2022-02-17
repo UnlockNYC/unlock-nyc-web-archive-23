@@ -1,11 +1,16 @@
 ---
 layout: layout.liquid
-linkedCSS: "styles/press.css"
+linkedCSS: styles/press.css
 pageTitle: Press
 
 ---
-
 ## Our Press
+
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/cbs2.jpg)
+
+_CBS New York_ - "[Housing Advocates’ Report Details Alleged Discrimination Against New Yorkers With Rental Assistance](https://newyork.cbslocal.com/2022/02/09/rental-assistance-discrimination-new-york/)" 02.09.2022
+
+<br>
 
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/fastcompany.png)
 
