@@ -109,6 +109,7 @@ div#actions {
 img.logo {
   width: 150px;
   vertical-align: middle;
+  margin-right: 15px;
 }
 #menu {
   display: none;
