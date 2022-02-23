@@ -1,7 +1,7 @@
 ---
 layout: home.liquid
 pageTitle: Home
-questions: <h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC works
+questions: '<h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC works
   with voucher holders and advocates to build tools that make it easier to identify,
   document, and report “source of income” discrimination on your housing search. If
   you live in New York City and you have a voucher (such as CityFHEPS, Section 8,
@@ -41,15 +41,32 @@ questions: <h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC work
   title="HRA DSS SOI Unit">HRA/DSS Source of Income Unit</a>, the <a href="https://www.fairhousingjustice.org/our-work/housing-discrimination-complaints/"
   title="FHJC">Fair Housing Justice Center</a>, the <a href="https://dhr.ny.gov/complaint#file"
   title="NYS DHR">New York State Division of Human Rights</a>, or the <a href="https://ag.ny.gov/source-income-discrimination"
-  title="NYS AG">New York State Attorney General's Office</a>.</p><h2>Do you have
-  a list of apartments I can apply for?</h2><p>We’re not brokers! We offer tools and
-  tips to support you throughout the apartment search process. Our goal here is to
-  ensure every New Yorker can search for and find a home without facing discrimination
-  due to their voucher.</p><h2>How do you keep my reports and information secure?</h2><p>We
+  title="NYS AG">New York State Attorney General''s Office</a>.</p><h2>Do you have
+  a list of apartments I can apply for?</h2><p>No, we’re not brokers! But, we do offer
+  tools, tips, and solidarity to support you throughout the apartment search process.
+  Many of our team members and volunteers have been through the housing search process
+  with a voucher in NYC, and can speak about what worked for them. Everyone’s situation
+  is different, and we speak from our own experiences in the spirit of community-building
+  and mutual aid.</p><h2>How do you keep my reports and information secure?</h2><p>We
   are an independent group that is not affiliated with any real estate management
-  company, landlord, brokering agency, housing authority, or homeless shelter services.
-  You can choose to report anonymously, and we will never share your personal information
-  without your permission.</p>
+  company, landlord, brokering agency, housing authority, or shelter services. You
+  can choose to report anonymously, and we will never share your personal information
+  without your permission. We encourage you to read our <a href="https://weunlock.nyc/privacy/">Privacy
+  Policy</a> and let us know if you have any questions.</p><h2>I need to talk to an
+  attorney. Can you help?</h2><p>Our team does not have any lawyers on staff and we
+  cannot provide legal advice or representation. However, if you ask us to, we can
+  connect you with an organization who can talk to you about your rights and options
+  under the law and may be able to connect you with legal services. The Met Council
+  on Housing also has a guide to finding a lawyer for housing-related issues <a href="https://www.metcouncilonhousing.org/help-answers/finding-a-lawyer/">here</a>,
+  which you may find helpful.</p><h2>What other resources exist for voucher holders
+  in NYC?</h2><p>Unlock NYC is working on just one specific piece of a big challenge:
+  ensuring that every New Yorker with a voucher has a fair, efficient, and respectful
+  housing search. There are organizations all over the city who have been doing amazing
+  work to support voucher holders for much longer than we have, and we want to make
+  sure you know about them! We are building an online learning center for voucher
+  holders that will launch in 2022, but in the meantime we made <a href="https://linktr.ee/weunlocknyc">this
+  list of resources</a> you might find helpful. You can also suggest a resource to
+  add to this list by <a href="https://airtable.com/shr12EfhxjEeeDl89">clicking here</a>.</p>'
 
 ---
 # It should be easier to find a home with your voucher.
