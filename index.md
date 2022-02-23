@@ -65,8 +65,7 @@ questions: '<h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC wor
   work to support voucher holders for much longer than we have, and we want to make
   sure you know about them! We are building an online learning center for voucher
   holders that will launch in 2022, but in the meantime we made <a href="https://linktr.ee/weunlocknyc">this
-  list of resources</a> you might find helpful. You can also suggest a resource to
-  add to this list by <a href="https://airtable.com/shr12EfhxjEeeDl89">clicking here</a>.</p>'
+  list of resources</a> you might find helpful.</p>'
 
 ---
 # It should be easier to find a home with your voucher.
