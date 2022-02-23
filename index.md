@@ -35,16 +35,17 @@ questions: <h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC work
   and may be able to connect you to legal services if needed. In 2021, we connected
   our users to the NYC Commission on Human Rights when they requested it. In 2022,
   we are working on adding more options to our tool.</p><p>You also don’t have to
-  use Unlock NYC to report – you can report directly to one of these organizations/agencies
-  if you prefer:</p><p><a href="https://www1.nyc.gov/site/cchr/law/source-of-income.page"
-  title="NYCCHR">NYC Commission on Human Rights</a></p><p><a href="https://www1.nyc.gov/site/hra/help/income-discrimination.page"
-  title="HRA DSS SOI Unit">HRA/DSS Source of Income Unit</a></p><p><a href="https://www.fairhousingjustice.org/our-work/housing-discrimination-complaints/"
-  title="FHJC">Fair Housing Justice Center</a></p><p>New York State Division of Human
-  Rights</p><p>New York State Attorney General's Office</p><h2>Do you have a list
-  of apartments I can apply for?</h2><p>We’re not brokers! We offer tools and tips
-  to support you throughout the apartment search process. Our goal here is to ensure
-  every New Yorker can search for and find a home without facing discrimination due
-  to their voucher.</p><h2>How do you keep my reports and information secure?</h2><p>We
+  use Unlock NYC to report! If you prefer, you can report directly to agencies and
+  organizations such as the <a href="https://www1.nyc.gov/site/cchr/law/source-of-income.page"
+  title="NYCCHR">NYC Commission on Human Rights</a>, the <a href="https://www1.nyc.gov/site/hra/help/income-discrimination.page"
+  title="HRA DSS SOI Unit">HRA/DSS Source of Income Unit</a>, the <a href="https://www.fairhousingjustice.org/our-work/housing-discrimination-complaints/"
+  title="FHJC">Fair Housing Justice Center</a>, the <a href="https://dhr.ny.gov/complaint#file"
+  title="NYS DHR">New York State Division of Human Rights</a>, or the <a href="https://ag.ny.gov/source-income-discrimination"
+  title="NYS AG">New York State Attorney General's Office</a>.</p><h2>Do you have
+  a list of apartments I can apply for?</h2><p>We’re not brokers! We offer tools and
+  tips to support you throughout the apartment search process. Our goal here is to
+  ensure every New Yorker can search for and find a home without facing discrimination
+  due to their voucher.</p><h2>How do you keep my reports and information secure?</h2><p>We
   are an independent group that is not affiliated with any real estate management
   company, landlord, brokering agency, housing authority, or homeless shelter services.
   You can choose to report anonymously, and we will never share your personal information
