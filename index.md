@@ -15,11 +15,11 @@ questions: '<h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC wor
   where you can build community and exchange experiences and tips with other voucher
   holders.</p><h2>Why should I report?</h2><p>There are many reasons you might want
   to report unfair treatment on your housing search, and justice looks different to
-  everyone. For example, some people are interested in learning about their rights
+  everyone. For example, some people are interested in learning about their options
   and whether they can file a formal complaint. Other people want a chance at applying
-  to an apartment they were turned down from. And others just want to share their
-  story so that the broker or landlord gets on the radar of organizations working
-  in housing justice.</p><p>When you use your voice to report where discrimination
+  to an apartment they were turned down from. And others share their story so that
+  the broker or landlord gets on the radar of organizations working in housing justice.</p><p>No
+  matter what <em>your</em> reasons are, when you use your voice to report where discrimination
   is happening, who’s doing it, and what it sounds like, you’re helping paint a clearer
   picture of discrimination – so that together we can better push back against it!
   With your help, we can hold landlords and brokers accountable and also advocate
