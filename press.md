@@ -6,6 +6,10 @@ pageTitle: Press
 ---
 ## Our Press
 
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/new-york-amsterdam-news.jpg)
+
+_New York Amsterdam News -_ "[Press conference demands the city take action on flawed housing voucher programs](https://amsterdamnews.com/news/2022/02/17/press-conference-demands-the-city-take-action-on-flawed-housing-voucher-programs/)" 02.17.2022
+
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/cbs2.jpg)
 
 _CBS New York_ - "[Housing Advocates’ Report Details Alleged Discrimination Against New Yorkers With Rental Assistance](https://newyork.cbslocal.com/2022/02/09/rental-assistance-discrimination-new-york/)" 02.09.2022
