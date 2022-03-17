@@ -18,6 +18,12 @@ _CBS New York_ - "[Housing Advocates’ Report Details Alleged Discrimination Ag
 
 <br>
 
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/nyc-edc.png)
+
+_NYCEDC_ - "[NYCEDC and Company Ventures Announce First Cohort of The City Fellowship](https://edc.nyc/press-release/nycedc-and-company-ventures-announce-first-cohort-city-fellowship)" 02.01.2022
+
+<br>
+
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/fastcompany.png)
 
 _Fast Company_, World Changing Ideas - "[This chatbot helps New Yorkers report housing discrimination](https://www.fastcompany.com/90590837/this-chatbot-helps-new-yorkers-report-housing-discrimination)" 01.05.2021
