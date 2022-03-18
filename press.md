@@ -6,6 +6,10 @@ pageTitle: Press
 ---
 ## Our Press
 
+![https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)_City Limits -_ "[NYC Was Set to Crack Down on Voucher Discrimination, But its Enforcement Teams Keep Shrinking](https://citylimits.org/2022/03/18/nyc-was-set-to-crack-down-on-voucher-discrimination-but-its-enforcement-teams-keep-shrinking/)" 03.18.2022
+
+<br>
+
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/new-york-amsterdam-news.jpg)
 
 _New York Amsterdam News -_ "[Press conference demands the city take action on flawed housing voucher programs](https://amsterdamnews.com/news/2022/02/17/press-conference-demands-the-city-take-action-on-flawed-housing-voucher-programs/)" 02.17.2022
@@ -30,7 +34,7 @@ _EDC-NYC - "_[NYCEDC and Company Ventures Announce First Cohort of The City Fell
 
 <br>
 
-![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
+[![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)]()
 
 _City Limits_ - "[Administrative Obstacles Jam Up Moving Process for NYC Shelter Residents](https://citylimits.org/2022/01/31/administrative-obstacles-jam-up-moving-process-for-nyc-shelter-residents/)" 01.31.2022
 
