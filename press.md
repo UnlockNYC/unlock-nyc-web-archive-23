@@ -6,11 +6,11 @@ pageTitle: Press
 ---
 ## Our press
 
+For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.nyc) and we will get back to you as soon as we can.
+
 ![nbc weather app - Online Discount Shop for Electronics, Apparel, Toys,  Books, Games, Computers, Shoes, Jewelry, Watches, Baby Products, Sports &  Outdoors, Office Products, Bed & Bath, Furniture, Tools, Hardware,  Automotive Parts,](https://play-lh.googleusercontent.com/xUMlhXqHlsN3aGVJxWzpNwGqwcikfmH_OoLnR6DueyXa0HhLEuKk912IvUy6qQeEQrg)
 
 _NBC New York -_ "[New NYC Program Aims to Elevate Economic Equity and Climate Action](https://www.nbcnewyork.com/news/local/new-nyc-program-aims-to-elevate-economic-equity-and-climate-action/3610941/)" 03.23.2022
-
-<br>
 
 <br>
 
