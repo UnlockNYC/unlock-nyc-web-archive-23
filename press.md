@@ -44,7 +44,7 @@ _EDC-NYC - "_[NYCEDC and Company Ventures Announce First Cohort of The City Fell
 
 <br>
 
-[![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)]()
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
 
 _City Limits_ - "[Administrative Obstacles Jam Up Moving Process for NYC Shelter Residents](https://citylimits.org/2022/01/31/administrative-obstacles-jam-up-moving-process-for-nyc-shelter-residents/)" 01.31.2022
 
