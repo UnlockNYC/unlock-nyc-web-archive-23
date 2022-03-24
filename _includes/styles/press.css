@@ -3,6 +3,11 @@
   vertical-align: middle;
   max-width: 70%;
 }
+
+#page h2 + p {
+  display: block;
+}
+
 #page p img {
   max-width: 90px;
   margin-right: 40px;
