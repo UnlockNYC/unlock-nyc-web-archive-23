@@ -10,6 +10,16 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 <br>
 
+_Gotham Gazette -_ "[To Truly Address Homelessness, New York City Must Take on Housing Voucher Discrimination](https://www.gothamgazette.com/130-opinion/130-opinion/11284-homelessness-new-york-city-housing-voucher-discrimination)" 05.11.2022
+
+<br>
+
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/screenshot-2022-05-11-at-17-08-12-economic-update-with-richard-d-wolff-on-apple-podcasts.png)
+
+_Economic Update with Richard D. Wolff -_ "[Economic Update: Housing - Human Right versus System Failure](https://www.youtube.com/watch?v=2HS0RNk4sjE)" 05.09.2022
+
+<br>
+
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
 
 _City Limits -_ "[NYC’s Long-Understaffed Voucher Discrimination Unit Now Has Zero Employees](https://citylimits.org/2022/04/13/nycs-long-understaffed-voucher-discrimination-unit-now-has-zero-employees/)" 04.13.2022
