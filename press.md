@@ -10,6 +10,8 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 <br>
 
+![](https://nycfuture.org/images/uploads/logo_gotham.png)
+
 _Gotham Gazette -_ "[To Truly Address Homelessness, New York City Must Take on Housing Voucher Discrimination](https://www.gothamgazette.com/130-opinion/130-opinion/11284-homelessness-new-york-city-housing-voucher-discrimination)" 05.11.2022
 
 <br>
