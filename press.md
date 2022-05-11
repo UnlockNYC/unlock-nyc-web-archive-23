@@ -10,6 +10,12 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 <br>
 
+![Hear Our Voices ](https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/15342523/15342523-1640635848174-5319e19f48a54.jpg)
+
+_Hear Our Voices Podcast -_ "[Elizabeth's Story]()" 05.11.2022
+
+<br>
+
 ![](https://nycfuture.org/images/uploads/logo_gotham.png)
 
 _Gotham Gazette -_ "[To Truly Address Homelessness, New York City Must Take on Housing Voucher Discrimination](https://www.gothamgazette.com/130-opinion/130-opinion/11284-homelessness-new-york-city-housing-voucher-discrimination)" 05.11.2022
