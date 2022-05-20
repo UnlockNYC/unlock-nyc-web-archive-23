@@ -1,6 +1,6 @@
 ---
 name: Ashley Eberhart
-pronoun: she/her
+pronoun: Head of Product
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/29-compressed.png
 
 ---
