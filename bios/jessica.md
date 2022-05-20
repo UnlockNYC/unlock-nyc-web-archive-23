@@ -1,6 +1,6 @@
 ---
 name: Jessica Valencia
-pronoun: she/her
+pronoun: Head of Communications
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/31-compressed.png
 
 ---
