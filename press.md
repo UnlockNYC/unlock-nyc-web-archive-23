@@ -10,6 +10,12 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 <br>
 
+![File:New York Times logo variation.jpg - Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/4/40/New_York_Times_logo_variation.jpg)
+
+_The New York Times -_ "[Discrimination Weakens Tool for Reducing N.Y. Homelessness, Lawsuit Says](https://www.nytimes.com/2022/05/25/nyregion/ny-vouchers-homeless-discrimination.html)" 05.25.2022
+
+<br>
+
 ![Hear Our Voices ](https://s3-us-west-2.amazonaws.com/anchor-generated-image-bank/production/podcast_uploaded_nologo400/15342523/15342523-1640635848174-5319e19f48a54.jpg)
 
 _Hear Our Voices Podcast -_ "[Elizabeth's Story](https://anchor.fm/nyc-hearourvoices)" 05.11.2022
