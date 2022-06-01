@@ -10,6 +10,10 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 <br>
 
+![amNewYork: New York City News: Latest Headlines, Videos & Pictures](https://www.amny.com/wp-content/uploads/2020/10/amNY-logo.png)AMNY – "[Housing Rights Initiative files historic lawsuit against real estate companies and brokers]()" 05.26.2022
+
+<br>
+
 ![File:New York Times logo variation.jpg - Wikimedia Commons](https://upload.wikimedia.org/wikipedia/commons/4/40/New_York_Times_logo_variation.jpg)
 
 _The New York Times -_ "[Discrimination Weakens Tool for Reducing N.Y. Homelessness, Lawsuit Says](https://www.nytimes.com/2022/05/25/nyregion/ny-vouchers-homeless-discrimination.html)" 05.25.2022
