@@ -8,9 +8,9 @@ pageTitle: Press
 
 For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.nyc) and we will get back to you as soon as we can.
 
-<br>
+<br>![New York City News & Sports | amNewYork](https://www.amny.com/wp-content/uploads/2020/02/amny-condensed-small-white.png)
 
-![amNewYork: New York City News: Latest Headlines, Videos & Pictures](https://www.amny.com/wp-content/uploads/2020/10/amNY-logo.png)AMNY – "[Housing Rights Initiative files historic lawsuit against real estate companies and brokers]()" 05.26.2022
+AMNY – "[Housing Rights Initiative files historic lawsuit against real estate companies and brokers]()" 05.26.2022
 
 <br>
 
