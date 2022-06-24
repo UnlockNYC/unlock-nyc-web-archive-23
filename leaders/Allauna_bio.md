@@ -1,6 +1,6 @@
 ---
 name: Allauna
-pronoun: she / her
+pronoun: Founding Leadership Collective Alumna
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/allauna-crop.png
 
 ---
