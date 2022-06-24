@@ -1,6 +1,6 @@
 ---
 name: 'Leslie '
-pronoun: Leadership Collective
+pronoun: Current Leadership Collective Member
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/leslie_cropped-copy.png
 
 ---
