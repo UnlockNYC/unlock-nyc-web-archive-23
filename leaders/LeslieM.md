@@ -1,6 +1,6 @@
 ---
 name: 'Leslie '
-pronoun: she / her
+pronoun: Leadership Collective
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/leslie_cropped-copy.png
 
 ---
