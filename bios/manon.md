@@ -1,5 +1,5 @@
 ---
-name: Manon Vergerio
+name: Manon
 pronoun: Head of Data & Advocacy
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/30-compressed.png
 
