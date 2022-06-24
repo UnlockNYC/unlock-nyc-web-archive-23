@@ -1,8 +1,8 @@
 ---
-name: Ashley Eberhart
-pronoun: Head of Product
-headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/29-compressed.png
+name: Leslie
+pronoun: Outreach Coordinator
+headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/leslie_cropped.png
 title: Leslie Meadows
 
 ---
-**Ashley Eberhart** is a product designer and researcher who uses participatory processes to ensure that community members are central decision-makers in what challenges we address with technology, and how. As the Head of Product, Ashley works with Unlock’s team and community to design digital tools that give tenants more voice, agency, and clarity when facing housing discrimination. She also brings a decade of experience in nonprofit strategy, project management, and impact evaluation to the team, through her work as social entrepreneur and as a former strategy consultant advising major foundations, nonprofits, and academic institutions.
+**Leslie** was born and raised in the Crown Heights section of Brooklyn and currently resides in Staten Island with her children. Leslie is a certified life coach and a self-published author, but she’s most passionate about New York and quality living. Leslie feels that housing is a natural right and should be equal and fulfilling, and wants to strive to make certain that the quality of life is a wonderful experience for all. To the Unlock NYC team, Leslie brings her vast knowledge of how vouchers work, her wide network of resources, and her compassion for those around her to both provide a listening ear and to connect Unlock NYC's community to resources that can help address the challenges they're facing.
