@@ -1,6 +1,6 @@
 ---
 name: Elizabeth
-pronoun: Founding Leadership Collective member
+pronoun: Founding Leadership Collective Member
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/elizabeth_crop2.png
 
 ---
