@@ -1,5 +1,5 @@
 ---
-name: Madeline Blount
+name: Madeline
 pronoun: Founding Engineer
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/28-compressed.png
 
