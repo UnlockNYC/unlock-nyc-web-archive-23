@@ -1,6 +1,6 @@
 ---
 name: " Fannie Lou Diane"
-pronoun: she/her
+pronoun: Founding Leadership Collective Member
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/velvet_crop.png
 
 ---
