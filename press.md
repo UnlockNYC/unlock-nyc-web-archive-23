@@ -8,6 +8,14 @@ pageTitle: Press
 
 For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.nyc) and we will get back to you as soon as we can.
 
+<br>
+
+![Home](https://trinitywallstreet.org/themes/gesso/logo.svg)
+
+Trinity Church Wall Street - ["Trinity Church Wall Street awards more 23 million grants](https://trinitywallstreet.org/stories-news/trinity-church-wall-street-awards-more-23-million-grants)" 06.28.2022
+
+<br>
+
 <br>![New York City News & Sports | amNewYork](https://www.amny.com/wp-content/uploads/2020/02/amny-condensed-small-white.png)
 
 AMNY – "[Housing Rights Initiative files historic lawsuit against real estate companies and brokers]()" 05.26.2022
