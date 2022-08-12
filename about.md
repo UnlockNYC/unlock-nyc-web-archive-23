@@ -20,7 +20,7 @@ At Unlock NYC, we work with New Yorkers impacted by housing discrimination to bu
 
 We couldn’t do this work without the many New Yorkers who’ve shared their stories and insights with us through interviews, surveys, participatory design sessions, and more. We’re committed to continue to co-design our tools with New Yorkers and grassroots advocates to ensure that everything we build is useful, relevant, and responds to the priorities of people most affected by housing injustice in our city.
 
-## Our Day-to-Day Team
+## Our Core Team
 
 We’re a small and dedicated team that deeply believes in every human’s right to housing and in recognizing the long histories of race, class, and gender-based oppression that have created the housing crisis we face today. We operate through consensus and have a deep commitment to horizontal, distributed decision-making. Collectively, we hold experiences in participatory design, software engineering, political and tenant organizing, and direct experiences of housing discrimination and navigating the housing voucher system.
 
