@@ -15,6 +15,7 @@ fields:
   name: headshot
   label: Headshot Image
 pages:
+- bios/Velvet Ross.md
 - bios/ashley.md
 - bios/jessica.md
 - bios/leslie-meadows.md
