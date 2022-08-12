@@ -1,6 +1,6 @@
 ---
 name: Leslie
-pronoun: Outreach Coordinator
+pronoun: Head of Outreach
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/leslie_cropped.png
 title: Leslie Meadows
 
