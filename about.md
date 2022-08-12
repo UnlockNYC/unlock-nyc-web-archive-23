@@ -6,7 +6,7 @@ linkedCSS: ''
 ---
 # We are here to make the apartment search process transparent, fair, and free from discrimination for all New Yorkers.
 
-Unlock NYC is a tech nonprofit majority-led by women who have experienced housing discrimination due to having rental assistance vouchers. Our [free mobile tools](weunlock.nyc/start) help New Yorkers record phone calls and create a paper trail when landlords illegally turn them away. We connect them to government agencies and other resources so they can exercise their rights and find housing. Our [data](https://weunlock.nyc/soi-report/) enables advocates, attorneys, and the city to understand trends, develop policies that protect tenants, and open doors for more New Yorkers.
+Unlock NYC is a tech nonprofit majority-led by women who have experienced housing discrimination due to having rental assistance vouchers. Our free mobile tools help New Yorkers record phone calls and create a paper trail when landlords illegally turn them away. We connect them to government agencies and other resources so they can exercise their rights and find housing. Our [data](https://weunlock.nyc/soi-report/) enables advocates, attorneys, and the city to understand trends, develop policies that protect tenants, and open doors for more New Yorkers.
 
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/unlock-team_cropped.jpg)
 
