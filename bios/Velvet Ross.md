@@ -1,5 +1,5 @@
 ---
-name: Velvet Johnson Ross (Fannie Lou Diane)
+name: Velvet
 pronoun: Founding Leadership Collective Member
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/velvet_crop.png
 
