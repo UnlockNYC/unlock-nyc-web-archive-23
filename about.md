@@ -16,8 +16,6 @@ These practices, officially called "source of income discrimination" and commonl
 
 At Unlock NYC, we work with New Yorkers impacted by housing discrimination to build technology that makes it easy to identify, record, and report unfair treatment. Our users can choose to send their report to a fair housing agency that will take legal action on their behalf, and/or to add their story to our growing body of data on housing discrimination in New York City. Armed with this knowledge, we collaborate with advocates, organizers, and public agencies to hold discriminators accountable and push for stronger fair housing policies. Our vision is a New York City where everyone can find a safe, healthy, and secure place to call home.
 
-![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/img_9885.jpg)
-
 We couldn’t do this work without the many New Yorkers who’ve shared their stories and insights with us through interviews, surveys, participatory design sessions, and more. We’re committed to continue to co-design our tools with New Yorkers and grassroots advocates to ensure that everything we build is useful, relevant, and responds to the priorities of people most affected by housing injustice in our city.
 
 ## Our Day-to-Day Team
