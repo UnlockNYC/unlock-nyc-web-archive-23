@@ -14,11 +14,13 @@ These practices, officially called "source of income discrimination" and commonl
 
 ## Our Approach
 
-At Unlock NYC, we work with New Yorkers impacted by housing discrimination to build technology that makes it easy to identify, record, and report unfair treatment. Our users can choose to send their report to a fair housing agency that will take legal action on their behalf, and/or to add their story to our growing body of data on housing discrimination in New York City. Armed with this knowledge, we collaborate with advocates, organizers, and public agencies to hold discriminators accountable and push for stronger fair housing policies. Our vision is a New York City where everyone can find a safe, healthy, and secure place to call home.
+Unlock NYC is a tech nonprofit majority-led by women who have experienced housing discrimination due to having rental assistance vouchers.
+
+Our free mobile tools help New Yorkers record phone calls and create a paper trail when landlords illegally turn them away. We connect them to government agencies and other resources so they can exercise their rights and find housing.
+
+Our data enables advocates, attorneys, and the City to understand trends, develop policies that protect tenants, and open doors for more New Yorkers.
 
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/unlock-team_cropped.jpg)
-
-We couldn’t do this work without the many New Yorkers who’ve shared their stories and insights with us through interviews, surveys, participatory design sessions, and more. We’re committed to continue to co-design our tools with New Yorkers and grassroots advocates to ensure that everything we build is useful, relevant, and responds to the priorities of people most affected by housing injustice in our city.
 
 ## Our Core Team
 
@@ -26,15 +28,11 @@ We’re a small and dedicated team that deeply believes in every human’s right
 
 {% include 'bios.liquid' %}
 
-## Our Leadership Collective
-
-At Unlock NYC, we value lived experience as expertise. Our tools are at their best when the people who use them are involved in big decisions from the start. As close collaborators and advisors to the Unlock NYC team, Leadership Collective members help shape the direction of our organization, and make sure that the knowledge, ideas, and vision of New Yorkers directly impacted by housing discrimination are at the heart of our work. Each Leadership Collective member brings a unique perspective and a set of skills to help inform strategic decisions.
-
-{% include 'leaders.liquid' %}
-
 ## Our Supporters + Collaborators
 
 At Unlock NYC, we know New York City’s housing crisis will not be solved through a single intervention; it will take a mass, people-powered movement to win transformative change. That’s why take our cues from New Yorkers directly impacted by homelessness and from member-led organizations that mobilize for power and transformative change towards the right to housing. We support the [**#HomelessCantStayHome**](https://www.homelesscantstayhome.org/) and [**VALUE in Housing**](https://www.stopsidnyc.com/) campaigns, and look forward to continuing to build with our partners, collaborators, and allies in the future.
+
+We also couldn’t do this work without the many New Yorkers who’ve shared their stories and insights with us through interviews, surveys, participatory design sessions, and more. We’re committed to continue to co-design our tools with New Yorkers and grassroots advocates to ensure that everything we build is useful, relevant, and responds to the priorities of people most affected by housing injustice in our city.
 
 ![Housing action, protest at Hudson Yards with banners, housing is a human right](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/housing_action.jpg "Housing action")
 
