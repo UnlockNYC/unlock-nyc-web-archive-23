@@ -1,5 +1,5 @@
 ---
-name: Kamilah Newton
+name: Kamilah
 pronoun: Design Research Intern
 headshot: https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/kn_bio.png
 
