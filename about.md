@@ -14,8 +14,6 @@ Unlock NYC is a tech nonprofit majority-led by women who have experienced housin
 
 Read our [2022 Annual Impact Report](https://issuu.com/weunlocknyc/docs/unlock_nyc_2022_impact_report) to learn about our programs!
 
-    <div style="position:relative;padding-top:max(60%,326px);height:0;width:100%"><iframe allow="clipboard-write" sandbox="allow-top-navigation allow-top-navigation-by-user-activation allow-downloads allow-scripts allow-same-origin allow-popups allow-modals allow-popups-to-escape-sandbox allow-forms" allowfullscreen="true" style="position:absolute;border:none;width:100%;height:100%;left:0;right:0;top:0;bottom:0;" src="https://e.issuu.com/embed.html?backgroundColor=%2323286a&backgroundColorFullscreen=%2323286a&d=unlock_nyc_2022_impact_report&hideIssuuLogo=true&u=weunlocknyc"></iframe></div>
-
 ## Our Core Team
 
 We’re a small and dedicated team that deeply believes in every human’s right to housing and in recognizing the long histories of race, class, and gender-based oppression that have created the housing crisis we face today. We operate through consensus and have a deep commitment to horizontal, distributed decision-making. Collectively, we hold experiences in participatory design, software engineering, political and tenant organizing, and direct experiences of housing discrimination and navigating the housing voucher system.
