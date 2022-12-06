@@ -7,7 +7,7 @@ linkedCSS: ''
 # Privacy Policy
 
 Effective date: December 28, 2020  
-Last revised: November 30, 2021
+Last revised: November 30, 2022
 
 ## Introduction
 
