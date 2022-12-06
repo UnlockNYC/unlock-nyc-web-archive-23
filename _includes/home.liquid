@@ -223,6 +223,9 @@
           }
         });
       });
+      
+      /*for advocate login confirmation only*/
+      netlifyIdentity.on('init', user => console.log('init', user));
     });
   </script>
   </body>
