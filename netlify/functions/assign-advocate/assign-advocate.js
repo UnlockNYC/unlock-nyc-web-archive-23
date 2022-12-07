@@ -34,7 +34,7 @@ exports.handler = function(event, context, callback) {
   }, function done(err) {
     if (err) {
       console.error(err);
-      callback(err)
+      return callback(null, err);
     }
     else {
       console.log("checking e-mails");
