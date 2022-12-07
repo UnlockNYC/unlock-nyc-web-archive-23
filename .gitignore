@@ -2,3 +2,5 @@ dist
 node_modules
 _site
 build
+# Local Netlify folder
+.netlify
