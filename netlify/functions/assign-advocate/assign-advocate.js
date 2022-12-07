@@ -8,12 +8,15 @@ exports.handler = function(event, context, callback) {
   // currently TEST: STAGING BASE 
 
   let emails = []
-  let loginResponse;
-
   const responseBody = {
     app_metadata: {
       roles: ["advocate"]
     }
+  };
+
+  let loginResponse = {
+    statusCode: 200,
+    body: JSON.stringify(responseBody)
   };
 
   console.log(user);
@@ -32,37 +35,9 @@ exports.handler = function(event, context, callback) {
     // If there are no more records, `done` will get called.
     fetchNextPage();
   }, function done(err) {
-    if (err) {
-      console.error(err);
-      callback(null, err);
-      return;
-    } else {
-      console.log("checking e-mails");
-      console.log(emails)
-      let approved = False;
-      for (i = 0; i < emails.length; i++) {
-        if (emails[i].indexOf(user.email) > -1) {
-          approved = True;
-          break;
-        }
-      }
-
-      if (approved == False) {
-        loginResponse = {
-          statusCode: 500,
-          body: null
-        };
-      } else {
-        loginResponse = {
-          statusCode: 200,
-          body: JSON.stringify(responseBody)
-        };
-      }
-      console.log(approved)
-      console.log(loginResponse);
-      callback(null, loginResponse);
-    }
-
+    if (err) { console.error(err); return; }
+    console.log(emails);
+    callback(null, loginResponse);
   });
 
 };
