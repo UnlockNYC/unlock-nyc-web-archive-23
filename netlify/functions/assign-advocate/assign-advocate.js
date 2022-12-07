@@ -34,35 +34,34 @@ exports.handler = function(event, context, callback) {
   }, function done(err) {
     if (err) {
       console.error(err);
-      return;
+      callback(err)
     }
-    checkEmails();
-  });
-
-  function checkEmails() {
-    console.log("checking e-mails");
-    console.log(emails)
-    let approved = False;
-    for (i = 0; i < emails.length; i++) {
-      if (emails[i].indexOf(user.email) > -1) {
-        approved = True;
-        break;
+    else {
+      console.log("checking e-mails");
+      console.log(emails)
+      let approved = False;
+      for (i = 0; i < emails.length; i++) {
+        if (emails[i].indexOf(user.email) > -1) {
+          approved = True;
+          break;
+        }
       }
+      if (approved == False) {
+        loginResponse = {
+          statusCode: 500,
+          body: null
+        };
+      } else {
+        loginResponse = {
+          statusCode: 200,
+          body: JSON.stringify(responseBody)
+        };
+      }
+      console.log(approved)
+      console.log(loginResponse);
+      callback(null, loginResponse);
     }
-    if (approved == False) {
-      loginResponse = {
-        statusCode: 500,
-        body: null
-      };
-    } else {
-      loginResponse = {
-        statusCode: 200,
-        body: JSON.stringify(responseBody)
-      };
-    }
-    console.log(approved)
-    console.log(loginResponse);
-    callback(null, loginResponse);
-  }
+
+  });
 
 };
