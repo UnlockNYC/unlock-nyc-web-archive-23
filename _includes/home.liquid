@@ -217,16 +217,10 @@
             $("form#join-email input[type='submit']").attr("value", "Thank You");
             $("form#join-email input[type='email']").css("border", 0);
             $("form#join-email input[type='email']").val("We will be in touch!");
-
-
-
           }
         });
       });
       
-      /*for advocate login confirmation only*/
-      netlifyIdentity.on('init', user => console.log('init', user));
-      netlifyIdentity.on('login', user => console.log('login', user));
     });
   </script>
   </body>

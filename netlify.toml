@@ -6,7 +6,7 @@
   
 [[redirects]]
 from = "/start/secure/advocate/report/*"
-to = "/advocate/"
+to = "/start/secure/advocate/"
 status = 302
 force = true
 

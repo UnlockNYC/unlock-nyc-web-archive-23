@@ -19,31 +19,26 @@ exports.handler = function(event, context, callback) {
     body: JSON.stringify(responseBody)
   };
 
-  console.log(user);
-  console.log(user.email);
-
+  // query airtable, 
+  // check for e-mail in approved partner list
   base('Partner organizations').select({
     fields: ["Report Form Logins"]
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
       emails.push(record.get('Report Form Logins'));
-      console.log(record.get('Report Form Logins'));
     });
 
-    // To fetch the next page of records, call `fetchNextPage`.
-    // If there are more records, `page` will get called again.
     // If there are no more records, `done` will get called.
     fetchNextPage();
   }, function done(err) {
     if (err) { console.error(err); return; }
-    console.log(emails);
     for (let i = 0; i < emails.length; i++) {
       if (emails[i].indexOf(user.email) > -1) {
-        console.log("MATCH");
+        console.log("MATCH, REQUEST APPROVED");
         callback(null, loginResponse);
       } else {
-        console.log("NO MATCH?")
+        console.log("NO MATCH, REQUEST DENIED");
         callback(null, err)
       }
     }
