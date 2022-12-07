@@ -4,7 +4,7 @@ exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
   const { user } = data;
 
-  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
+  var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
   // currently TEST: STAGING BASE 
 
   let emails = []
@@ -40,6 +40,8 @@ exports.handler = function(event, context, callback) {
   });
 
   function checkEmails() {
+    console.log("checking e-mails");
+    console.log(emails)
     let approved = False;
     for (i = 0; i < emails.length; i++) {
       if (emails[i].indexOf(user.email) > -1) {
