@@ -1,6 +1,6 @@
 const Airtable = require('airtable');
 
-exports.handler = async function(event, context, callback) {
+exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
   const { user } = data;
 
@@ -18,7 +18,7 @@ exports.handler = async function(event, context, callback) {
 
   console.log(user);
 
-  let recordSearch = await base('Partner organizations').select({
+  base('Partner organizations').select({
     fields: ["Report Form Logins"]
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
@@ -32,19 +32,18 @@ exports.handler = async function(event, context, callback) {
     // If there are no more records, `done` will get called.
     fetchNextPage();
   }, function done(err) {
-    if (err) { console.error(err); return; }
+    if (err) {
+      console.error(err);
+      return;
+    }
     checkEmails();
   });
 
   function checkEmails() {
-    approved = False;
+    let approved = False;
     for (i = 0; i < emails.length; i++) {
       if (emails[i].indexOf(user.email) > -1) {
         approved = True;
-        loginResponse = {
-          statusCode: 200,
-          body: JSON.stringify(responseBody)
-        }
         break;
       }
     }
@@ -52,9 +51,16 @@ exports.handler = async function(event, context, callback) {
       loginResponse = {
         statusCode: 500,
         body: null
-      }
+      };
+    } else {
+      loginResponse = {
+        statusCode: 200,
+        body: JSON.stringify(responseBody)
+      };
     }
-    return callback(null, loginResponse);
+    console.log(approved)
+    console.log(loginResponse);
+    callback(null, loginResponse);
   }
 
 };
