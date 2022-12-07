@@ -1,6 +1,6 @@
 const Airtable = require('airtable');
 
-exports.handler = function(event, context, callback) {
+exports.handler = async function(event, context, callback) {
   const data = JSON.parse(event.body);
   const { user } = data;
 
@@ -18,7 +18,7 @@ exports.handler = function(event, context, callback) {
 
   console.log(user);
 
-  base('Partner organizations').select({
+  let recordSearch = await base('Partner organizations').select({
     fields: ["Report Form Logins"]
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
@@ -54,7 +54,6 @@ exports.handler = function(event, context, callback) {
         body: null
       }
     }
+    callback(null, loginResponse);
   }
-
-  callback(null, loginResponse);
 };
