@@ -39,7 +39,7 @@ exports.handler = async function(event, context, callback) {
   function checkEmails() {
     approved = False;
     for (i = 0; i < emails.length; i++) {
-      if (emails[i].indexOf(user.user_metadata.email) > -1) {
+      if (emails[i].indexOf(user.email) > -1) {
         approved = True;
         loginResponse = {
           statusCode: 200,
@@ -54,6 +54,7 @@ exports.handler = async function(event, context, callback) {
         body: null
       }
     }
-    callback(null, loginResponse);
+    return callback(null, loginResponse);
   }
+
 };
