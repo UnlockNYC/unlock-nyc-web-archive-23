@@ -20,6 +20,7 @@ exports.handler = function(event, context, callback) {
   };
 
   console.log(user);
+  console.log(user.email);
 
   base('Partner organizations').select({
     fields: ["Report Form Logins"]
@@ -37,7 +38,15 @@ exports.handler = function(event, context, callback) {
   }, function done(err) {
     if (err) { console.error(err); return; }
     console.log(emails);
-    callback(null, loginResponse);
+    for (let i = 0; i < emails.length; i++) {
+      if (emails[i].indexOf(user.email) > -1) {
+        console.log("MATCH");
+        callback(null, loginResponse);
+      } else {
+        console.log("NO MATCH?")
+        callback(null, err)
+      }
+    }
   });
 
 };
