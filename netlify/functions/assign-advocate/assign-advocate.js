@@ -4,7 +4,7 @@ exports.handler = async function(event, context, callback) {
   const data = JSON.parse(event.body);
   const { user } = data;
 
-  var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
+  const base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
   // currently TEST: STAGING BASE 
 
   let emails = []

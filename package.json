@@ -1,21 +1,22 @@
 {
-  "name": "mab-unlock-nyc",
-  "version": "0.0.1",
-  "description": "an eleventy website for unlocknyc",
-  "scripts": {
-    "build": "eleventy",
-    "start": "eleventy --serve"
-  },
-  "dependencies": {
-    "@11ty/eleventy": "^0.12.1"
-  },
-  "license": "MIT",
-  "keywords": [
-    "node",
-    "glitch",
-    "eleventy"
-  ],
-  "glitch": {
-    "projectType": "generated_static"
-  }
+    "name": "mab-unlock-nyc",
+    "version": "0.0.1",
+    "description": "an eleventy website for unlocknyc",
+    "scripts": {
+        "build": "eleventy",
+        "start": "eleventy --serve"
+    },
+    "dependencies": {
+        "@11ty/eleventy": "^0.12.1",
+        "airtable": "0.11.6"
+    },
+    "license": "MIT",
+    "keywords": [
+        "node",
+        "glitch",
+        "eleventy"
+    ],
+    "glitch": {
+        "projectType": "generated_static"
+    }
 }
