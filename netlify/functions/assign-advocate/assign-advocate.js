@@ -39,7 +39,7 @@ exports.handler = function(event, context, callback) {
   function checkEmails() {
     approved = False;
     for (i = 0; i < emails.length; i++) {
-      if (emails[i] == user.user_metadata.email) {
+      if (emails[i].indexOf(user.user_metadata.email) > -1) {
         approved = True;
         loginResponse = {
           statusCode: 200,
