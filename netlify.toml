@@ -3,6 +3,12 @@
   force = true
   status = 200
   conditions = {Role = ["advocate"]}
+  
+[[redirects]]
+from = "/start/secure/advocate/report/*"
+to = "/advocate/"
+status = 302
+force = true
 
 [[redirects]]
   from = "https://unlocknyc.org/*"
