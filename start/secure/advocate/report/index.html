@@ -18,8 +18,8 @@
     </h1>
     <script>
         $(document).ready(function () {
-            let token = document.cookie;
-            console.log(token);
+            let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
+            console.log(userInfo);
         });
     </script>
 </body>
