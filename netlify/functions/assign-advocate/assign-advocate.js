@@ -29,9 +29,10 @@ exports.handler = function(event, context, callback) {
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
+      console.log(record.id);
       let email = record.get("Report Form Logins");
       if (email.indexOf(user.email) > -1) {
-        approval = True;
+        approval = true;
         console.log("MATCH, REQUEST APPROVED");
         responseBody.app_metadata.org = record.get("Name");
       }
