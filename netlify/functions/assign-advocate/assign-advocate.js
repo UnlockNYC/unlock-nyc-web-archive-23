@@ -28,28 +28,19 @@ exports.handler = function(event, context, callback) {
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
-      console.log("NEWEST VERSION!");
       let email = record.get("Report Form Logins");
       if (email.indexOf(user.email) > -1) {
         approval = true;
         console.log("MATCH, REQUEST APPROVED");
         responseBody.app_metadata.org = record.get("Name");
-        console.log(responseBody);
       }
     });
-
-
     // If there are no more records, `done` will get called.
     fetchNextPage();
   }, function done(err) {
     if (err) { console.error(err); return; }
-    console.log(approval);
-    console.log(loginResponse);
     if (approval) {
-      console.log(responseBody.app_metadata.org);
-      console.log(responseBody);
       loginResponse.body = JSON.stringify(responseBody);
-      console.log(loginResponse);
       callback(null, loginResponse);
     } else {
       console.log("NO MATCH, REQUEST DENIED");
