@@ -20,10 +20,11 @@ exports.handler = function(event, context, callback) {
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
       filterByFormula: `{Name}='${decoded.app_metadata.org}'`
-    }).eachPage(function page(err, records) {
+    }).eachPage(function page(records, fetchNextPage) {
       // This function (`page`) will get called for each page of records.
       records.forEach(function(record) {
         responseBody.clientList = record.get("Client List").join(",");
+        console.log(responseBody);
       });
 
       // If there are no more records, `done` will get called.
