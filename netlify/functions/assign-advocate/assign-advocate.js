@@ -8,9 +8,11 @@ exports.handler = function(event, context, callback) {
   // currently TEST: STAGING BASE 
 
   let emails = []
+
   const responseBody = {
     app_metadata: {
-      roles: ["advocate"]
+      roles: ["advocate"],
+      tableRecord: ""
     }
   };
 
@@ -26,7 +28,8 @@ exports.handler = function(event, context, callback) {
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
-      emails.push(record.get('Report Form Logins'));
+      let email = { email: record.get('Report Form Logins'), id: record.id };
+      emails.push(email);
     });
 
     // If there are no more records, `done` will get called.
@@ -34,8 +37,9 @@ exports.handler = function(event, context, callback) {
   }, function done(err) {
     if (err) { console.error(err); return; }
     for (let i = 0; i < emails.length; i++) {
-      if (emails[i].indexOf(user.email) > -1) {
+      if (emails[i].email.indexOf(user.email) > -1) {
         console.log("MATCH, REQUEST APPROVED");
+        responseBody.app_metadata.tableRecord = emails[i].record;
         callback(null, loginResponse);
       } else {
         console.log("NO MATCH, REQUEST DENIED");

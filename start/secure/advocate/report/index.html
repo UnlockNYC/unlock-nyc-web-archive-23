@@ -19,7 +19,9 @@
     <script>
         $(document).ready(function () {
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
-            console.log(userInfo);
+            let response = async fetch('NETLIFY_FUNCTION_URL', {method: 'POST'});
+            let data = await response.json();
+            console.log(data);
         });
     </script>
 </body>
