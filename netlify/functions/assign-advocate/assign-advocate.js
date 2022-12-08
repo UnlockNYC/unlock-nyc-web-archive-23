@@ -8,7 +8,7 @@ exports.handler = function(event, context, callback) {
   // currently TEST: STAGING BASE 
 
   let emails = []
-  let approval = False;
+  let approval = false;
 
   const responseBody = {
     app_metadata: {
