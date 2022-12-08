@@ -18,8 +18,8 @@
     </h1>
     <script>
         $(document).ready(function () {
-            let token = (document.cookie.split(";").split("="))[0];
-            console.log(token)
+            let token = document.cookie;
+            console.log(token);
         });
     </script>
 </body>
