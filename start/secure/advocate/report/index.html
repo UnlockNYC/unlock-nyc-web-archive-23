@@ -19,7 +19,8 @@
     <script>
         $(document).ready(function () {
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
-            let response = async fetch('NETLIFY_FUNCTION_URL', {method: 'POST'});
+            console.log(userInfo);
+            let response = async fetch('/.netlify/functions/read-advocate', {method: 'POST'});
             let data = await response.json();
             console.log(data);
         });

@@ -3,8 +3,11 @@ const Airtable = require('airtable');
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
   const token = data.access_token;
-
   let decoded = jwt_decode(token);
+
+  let responseBody = {
+    clientList: ""
+  }
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
     var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
@@ -13,27 +16,24 @@ exports.handler = function(event, context, callback) {
     // query airtable, 
     // check for e-mail in approved partner list
     base('Partner organizations').select({
+      maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
-      filterByFormala: `{Name}='${decoded.app_metadata.name}'`
+      filterByFormala: `{Name}='${decoded.app_metadata.org}'`
     }).eachPage(function page(records, fetchNextPage) {
       // This function (`page`) will get called for each page of records.
       records.forEach(function(record) {
-        emails.push(record.get('Report Form Logins'));
+        console.log(record)
+        responseBody.clientList = record.get("Client List");
       });
 
       // If there are no more records, `done` will get called.
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
-      for (let i = 0; i < emails.length; i++) {
-        if (emails[i].indexOf(user.email) > -1) {
-          console.log("MATCH, REQUEST APPROVED");
-          callback(null, loginResponse);
-        } else {
-          console.log("NO MATCH, REQUEST DENIED");
-          callback(null, err)
-        }
-      }
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(responseBody)
+      });
     });
 
   } else {
