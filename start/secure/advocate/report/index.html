@@ -17,10 +17,10 @@
         SUCCESS LOGIN
     </h1>
     <script>
-        $(document).ready(function () {
+        $(document).ready(async function () {
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             console.log(userInfo);
-            let response = async fetch('https://weunlock.nyc/.netlify/functions/read-advocate', {
+            let response = fetch('/.netlify/functions/read-advocate', {
                 method: 'POST',
                 body: JSON.stringify(userInfo)
             });
