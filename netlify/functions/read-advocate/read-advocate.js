@@ -1,4 +1,5 @@
 const Airtable = require('airtable');
+const jwt_decode = require('jwt-decode');
 
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
