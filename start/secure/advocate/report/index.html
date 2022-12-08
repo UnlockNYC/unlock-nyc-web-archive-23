@@ -20,7 +20,10 @@
         $(document).ready(function () {
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             console.log(userInfo);
-            let response = async fetch('/.netlify/functions/read-advocate', {method: 'POST'});
+            let response = async fetch('/.netlify/functions/read-advocate', {
+                method: 'POST',
+                body: userInfo
+            });
             let data = await response.json();
             console.log(data);
         });

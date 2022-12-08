@@ -5,6 +5,7 @@ exports.handler = function(event, context, callback) {
   const token = data.access_token;
   let decoded = jwt_decode(token);
 
+  console.log(decoded);
   let responseBody = {
     clientList: ""
   }
@@ -12,6 +13,8 @@ exports.handler = function(event, context, callback) {
   if (decoded.app_metadata.roles[0] == 'advocate') {
     var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
     // currently TEST: STAGING BASE 
+
+    console.log(decoded.app_metadata.org);
 
     // query airtable, 
     // check for e-mail in approved partner list
