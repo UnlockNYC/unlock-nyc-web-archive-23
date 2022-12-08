@@ -6,7 +6,6 @@ exports.handler = function(event, context, callback) {
   const token = data.access_token;
   let decoded = jwt_decode(token);
 
-  console.log(decoded);
   let responseBody = {
     clientList: ""
   }
@@ -15,19 +14,16 @@ exports.handler = function(event, context, callback) {
     var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
     // currently TEST: STAGING BASE 
 
-    console.log(decoded.app_metadata.org);
-
     // query airtable, 
     // check for e-mail in approved partner list
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
-      filterByFormala: `{Name}='${decoded.app_metadata.org}'`
-    }).eachPage(function page(records, fetchNextPage) {
+      filterByFormula: `{Name}='${decoded.app_metadata.org}'`
+    }).eachPage(function page(err, records) {
       // This function (`page`) will get called for each page of records.
       records.forEach(function(record) {
-        console.log(record)
-        responseBody.clientList = record.get("Client List");
+        responseBody.clientList = record.get("Client List").join(",");
       });
 
       // If there are no more records, `done` will get called.
@@ -43,7 +39,6 @@ exports.handler = function(event, context, callback) {
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
-
 
 
 };
