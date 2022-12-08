@@ -7,7 +7,6 @@ exports.handler = function(event, context, callback) {
   var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
   // currently TEST: STAGING BASE 
 
-  let emails = []
   let approval = false;
 
   const responseBody = {
@@ -17,6 +16,11 @@ exports.handler = function(event, context, callback) {
     }
   };
 
+  let loginResponse = {
+    statusCode: 200,
+    body: ""
+  };
+
   // query airtable, 
   // check for e-mail in approved partner list
   base('Partner organizations').select({
@@ -24,14 +28,16 @@ exports.handler = function(event, context, callback) {
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
-      console.log(record.id);
+      console.log("NEWEST VERSION!");
       let email = record.get("Report Form Logins");
       if (email.indexOf(user.email) > -1) {
         approval = true;
         console.log("MATCH, REQUEST APPROVED");
         responseBody.app_metadata.org = record.get("Name");
+        console.log(responseBody);
       }
     });
+
 
     // If there are no more records, `done` will get called.
     fetchNextPage();
@@ -39,18 +45,17 @@ exports.handler = function(event, context, callback) {
     if (err) { console.error(err); return; }
     console.log(approval);
     console.log(loginResponse);
-    for (let i = 0; i < emails.length; i++) {
-      if (approval) {
-        let loginResponse = {
-          statusCode: 200,
-          body: JSON.stringify(responseBody)
-        };
-        callback(null, loginResponse);
-      } else {
-        console.log("NO MATCH, REQUEST DENIED");
-        callback(null, err)
-      }
+    if (approval) {
+      console.log(responseBody.app_metadata.org);
+      console.log(responseBody);
+      loginResponse.body = JSON.stringify(responseBody);
+      console.log(loginResponse);
+      callback(null, loginResponse);
+    } else {
+      console.log("NO MATCH, REQUEST DENIED");
+      callback(null, err)
     }
+
   });
 
 };
