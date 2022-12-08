@@ -19,7 +19,7 @@
 
             netlifyIdentity.on('login', function (user) {
                 console.log('login', user);
-                window.location.href('/start/secure/advocate/report')
+                window.location.href = '/start/secure/advocate/report';
             });
         });
 
