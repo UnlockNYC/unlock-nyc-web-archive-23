@@ -18,7 +18,7 @@
     </h1>
     <script>
         $(document).ready(function () {
-            let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
+            let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             console.log(userInfo);
         });
     </script>
