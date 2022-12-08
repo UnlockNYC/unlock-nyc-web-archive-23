@@ -17,11 +17,6 @@ exports.handler = function(event, context, callback) {
     }
   };
 
-  let loginResponse = {
-    statusCode: 200,
-    body: JSON.stringify(responseBody)
-  };
-
   // query airtable, 
   // check for e-mail in approved partner list
   base('Partner organizations').select({
@@ -42,8 +37,14 @@ exports.handler = function(event, context, callback) {
     fetchNextPage();
   }, function done(err) {
     if (err) { console.error(err); return; }
+    console.log(approval);
+    console.log(loginResponse);
     for (let i = 0; i < emails.length; i++) {
       if (approval) {
+        let loginResponse = {
+          statusCode: 200,
+          body: JSON.stringify(responseBody)
+        };
         callback(null, loginResponse);
       } else {
         console.log("NO MATCH, REQUEST DENIED");
