@@ -99,7 +99,7 @@
 
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
-                    body: JSON.stringify(formBody)
+                    body: formBody
                 });
                 const data = await response.json();
                 console.log(data);
