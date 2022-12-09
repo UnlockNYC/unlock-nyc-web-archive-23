@@ -22,7 +22,7 @@ exports.handler = function(event, context, callback) {
       records.forEach(function(record) {
         let names = record.get("Client List for Online Form").split(",");
         console.log(names);
-        let ids = record.get("Record List for Online Form").split(", ");
+        let ids = record.get("Record List for Online Form").split(",");
         console.log(ids);
         for (i = 0; i < names.length; i++) {
           clientList.push({
