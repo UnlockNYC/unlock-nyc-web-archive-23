@@ -33,7 +33,7 @@ exports.handler = function(event, context, callback) {
       console.log(JSON.stringify(clientList.join(",")));
       return {
         statusCode: 200,
-        body: JSON.stringify({ clientList: clientList.join(",") })
+        body: clientList.join(",")
       }
     });
 
