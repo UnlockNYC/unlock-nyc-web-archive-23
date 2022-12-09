@@ -7,11 +7,14 @@ exports.handler = function(event, context, callback) {
   let decoded = jwt_decode(token);
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
+    // if they've been verified as advocate only
     var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
     // currently TEST: STAGING BASE 
 
     // query airtable, 
-    // check for e-mail in approved partner list
+    // check for org in approved partner list
+    let clientList = [];
+    let clientInfo = [];
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
@@ -20,37 +23,29 @@ exports.handler = function(event, context, callback) {
       // This function (`page`) will get called for each page of records.
       records.forEach(async function(record) {
         let clients = record.get("Client List");
-        let clientList = [];
-        for (i = 0; i < clients.length; i++) {
-          // get user info for every item in client list
-          let clientInfo = await getUserInfo(record);
-          clientList.push(clientInfo);
-        }
-        console.log(clientList)
+        clientList = clients;
       });
 
       // If there are no more records, `done` will get called.
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
+      for (i = 0; i < clientList.length; i++) {
+        base('User information').find(clientList[i], function(err, record) {
+          if (err) { console.error(err); return; }
+          clientInfo.push({
+            clientName: record.get("Name")
+          });
+        });
+      }
+      console.log(clientInfo);
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify(clientList)
+        body: JSON.stringify(clientInfo)
       });
     });
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
-
-  function getUserInfo(record) {
-    base('User information').find(record.id, function(err, record) {
-      if (err) { console.error(err); return; }
-      return ({
-        clientName: record.get("Name")
-      })
-    });
-  }
-
-
 };
