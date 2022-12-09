@@ -33,7 +33,7 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
-      console.log(clientList);
+      console.log(`${clientList.length} user records found.`);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
