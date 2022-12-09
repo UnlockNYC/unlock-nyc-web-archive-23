@@ -29,9 +29,10 @@ exports.handler = function(event, context, callback) {
     }, function done(err) {
       if (err) { console.error(err); return; }
       console.log(clientList);
-      return callback(null, {
+      console.log(clientList.join(","));
+      callback(null, {
         statusCode: 200,
-        body: clientList.join(",")
+        body: JSON.stringify(clientList.join(","))
       });
     });
 
