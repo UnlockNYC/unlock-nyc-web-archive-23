@@ -30,22 +30,27 @@ exports.handler = function(event, context, callback) {
     }, async function done(err) {
       if (err) { console.error(err); return; }
       console.log("moving onto last loop");
-      for (i = 0; i < clientList.length; i++) {
-        console.log(i)
-        let name = await getUser(clientList[i]);
-        console.log(name)
-        clientInfo.push(name)
+      let finishList = await listUsers(clientList);
+      if (finishList) {
+        callback(null, {
+          statusCode: 200,
+          body: JSON.stringify({ clientList: clientInfo.join(",") })
+        })
       }
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify({ clientList: clientInfo.join(",") })
-      })
-
     });
 
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
+  }
+
+  async function listUsers(list) {
+    for (i = 0; i < list.length; i++) {
+      console.log(i)
+      let name = await getUser(list[i]);
+      console.log(name)
+      clientInfo.push(name)
+    }
   }
 
   async function getUser(record) {
