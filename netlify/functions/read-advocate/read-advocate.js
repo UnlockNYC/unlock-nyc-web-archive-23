@@ -31,7 +31,7 @@ exports.handler = function(event, context, callback) {
       console.log(clientList);
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify(clientList)
+        body: clientList
       });
     });
 
