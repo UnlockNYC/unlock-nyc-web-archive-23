@@ -5,8 +5,6 @@ exports.handler = function(event, context, callback) {
   // TEST for now, staging base
 
   let reportData = JSON.parse(event.body);
-  console.log(reportData);
-  console.log(reportData.client);
   base('All reports').create({
     "Report Type": "CCHR reports",
     "@name": [`${reportData.client}`]
@@ -15,6 +13,7 @@ exports.handler = function(event, context, callback) {
       console.error(err);
       return;
     }
+    console.log("new report created by advocate form");
     console.log(record.getId());
     callback(null, {
       statusCode: 200,

@@ -62,8 +62,6 @@
             let newUserForm = "https://airtable.com/shrjDxUcmjIdrVtTq?prefill_Organization%20choice=";
             // TEST for now, staging base 
 
-            console.log(userInfo);
-
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
@@ -78,7 +76,6 @@
                 }
             });
             let data = await response.json();
-            console.log(data)
             let clientList = data.clientList;
             // populate client dropdown options
             for (i = 0; i < clientList.length; i++) {
@@ -89,7 +86,6 @@
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
                 let formBody = formToJSON($("form#advocate-report")[0]);
-
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
                     body: formBody
