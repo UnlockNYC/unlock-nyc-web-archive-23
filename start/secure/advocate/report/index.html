@@ -23,7 +23,8 @@
             let response = await fetch('/.netlify/functions/read-advocate', {
                 method: 'POST',
                 body: JSON.stringify(userInfo)
-            }).then(response => response.json());
+            });
+            let data = await response.json();
             console.log(response);
             console.log(response.body);
             console.log(JSON.stringify(response));
