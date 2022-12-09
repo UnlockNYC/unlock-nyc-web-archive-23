@@ -29,15 +29,18 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
+      console.log("moving onto last loop");
       for (i = 0; i < clientList.length; i++) {
         base('User information').find(clientList[i], function(err, record) {
           if (err) { console.error(err); return; }
+          console.log(i)
+          console.log(record.get("Name"));
           clientInfo.push(record.get("Name"));
           if (i == clientList.length - 1) {
             console.log(clientInfo);
             callback(null, {
               statusCode: 200,
-              body: JSON.stringify({ clientList: clientList.join(",") })
+              body: JSON.stringify({ clientInfo: clientInfo.join(",") })
             });
           }
         });
