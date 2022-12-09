@@ -14,32 +14,25 @@ exports.handler = function(event, context, callback) {
     // query airtable, 
     // check for org in approved partner list
 
-    base('User information').select({
-      view: 'All enrolled users'
-    }).firstPage(function(err, records) {
-      if (err) { console.error(err); return; }
-      records.forEach(function(record) {
-        console.log('Retrieved', record.get('Name'));
-      });
-    });
-
     let clientList;
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List for Online Form", "Name"],
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
-    }).firstPage(function page(err, records) {
+    }).firstPage(function page(err, records, done) {
       if (err) { console.error(err); return; }
       records.forEach(function(record) {
+        console.log(record.get("Client List"));
         clientList = record.get("Client List");
       });
+    }, done(function() {
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
           clientList: clientList
         })
       });
-    });
+    }));
 
 
   } else {
