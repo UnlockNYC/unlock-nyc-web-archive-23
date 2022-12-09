@@ -89,6 +89,16 @@
             // submit form data
             $("input#submit-report").submit(async function (e) {
                 e.preventDefault();
+                $.ajax({
+                    url: '/.netlify/functions/submit-advocate',
+                    type: 'post',
+                    data: $('form#advocate-report').serialize(),
+                    success: function () {
+                        console.log('submitted form');
+                        alert("?!");
+                    }
+                });
+                /*
                 const formData = new FormData($("form#advocate-report"));
                 formBody = {};
                 formData.forEach(function (value, key) {
@@ -103,9 +113,10 @@
                 });
                 const data = await response.json();
                 console.log(data);
-            });
+                });*/
 
-        });
+
+            });
     </script>
 </body>
 
