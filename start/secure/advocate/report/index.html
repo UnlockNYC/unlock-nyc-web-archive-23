@@ -67,7 +67,7 @@
             console.log(data)
             let clientList = data.clientList.split(",")
             for (i = 0; i < clientList.length; i++) {
-                $('select#clients').append($('<option>', {value: `${recordList[i].id}`, text: `${clientList[i].name}`}));
+                $('select#clients').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
 
         });
