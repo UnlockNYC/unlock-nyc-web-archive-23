@@ -4,7 +4,7 @@ exports.handler = function(event, context, callback) {
   var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
   // TEST for now, staging base
 
-  let reportData = event.body;
+  let reportData = JSON.parse(event.body);
   console.log(reportData);
   console.log(reportData.client);
   base('All reports').create({
