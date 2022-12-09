@@ -7,7 +7,8 @@ exports.handler = function(event, context, callback) {
   console.log(event.body);
 
   base('All reports').create({
-    "Report Type": "CCHR reports"
+    "Report Type": "CCHR reports",
+    "@name": event.body.client.split(",")
   }, function(err, record) {
     if (err) {
       console.error(err);
