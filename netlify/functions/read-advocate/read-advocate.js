@@ -31,8 +31,16 @@ exports.handler = function(event, context, callback) {
       if (err) { console.error(err); return; }
       for (i = 0; i < clientList.length; i++) {
         await getUserInfo(clientList[i]);
+        if (i == clientList.length - 1) {
+          console.log(clientInfo);
+          callback(null, {
+            statusCode: 200,
+            body: JSON.stringify(clientInfo)
+          });
+          break;
+        }
       }
-      await sendResponse();
+
     });
 
   } else {
@@ -45,14 +53,6 @@ exports.handler = function(event, context, callback) {
       clientInfo.push({
         clientName: record.get("Name")
       });
-    });
-  }
-
-  async function sendResponse() {
-    console.log(clientInfo);
-    callback(null, {
-      statusCode: 200,
-      body: JSON.stringify(clientInfo)
     });
   }
 };
