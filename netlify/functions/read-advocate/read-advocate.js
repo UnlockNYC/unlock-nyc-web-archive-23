@@ -26,7 +26,7 @@ exports.handler = function(event, context, callback) {
           clientList.push({
             name: names[i],
             id: ids[i]
-          })
+          });
         }
       });
       // If there are no more records, `done` will get called.
@@ -36,9 +36,9 @@ exports.handler = function(event, context, callback) {
       console.log(clientList);
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({
-          clientList: clientList.split(",")
-        })
+        body: {
+          clientList: clientList
+        }
       });
     });
 
