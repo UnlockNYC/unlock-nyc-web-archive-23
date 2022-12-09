@@ -13,23 +13,12 @@ exports.handler = function(event, context, callback) {
 
     // query airtable, 
     // check for org in approved partner list
-
-    base('User information').select({
-      view: 'All enrolled users'
-    }).firstPage(function(err, records) {
-      if (err) { console.error(err); return; }
-      records.forEach(function(record) {
-        console.log('Retrieved', record.get('Name'));
-      });
-    });
-
     let clientList;
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List for Online Form", "Name"],
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
-      // This function (`page`) will get called for each page of records.
       records.forEach(function(record) {
         console.log(record.get("Client List for Online Form"))
         clientList = record.get("Client List for Online Form");
@@ -47,7 +36,12 @@ exports.handler = function(event, context, callback) {
     });
 
   } else {
-    // ADD ERROR HANDLING, IF NOT ADVOCATE 
+    callback(null, {
+      statusCode: 500,
+      body: JSON.stringify({
+        message: "error, not authorized"
+      })
+    });
   }
 
 };

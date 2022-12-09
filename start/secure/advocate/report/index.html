@@ -7,28 +7,45 @@
     <link rel="stylesheet" href="/styles/site.css">
     <title>Advocate Login: Unlock NYC</title>
     <style>
+        #form-page {
+            padding: 5%;
+        }
+
     </style>
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </head>
 
 <body>
-    <h1>
-        SUCCESS LOGIN
-    </h1>
+    <div id="form-page">
+        <h1>
+            SUCCESS LOGIN
+        </h1>
+        <h2 id="email"></h2>
+        <h3 id="org"></h3>
+        <select name="clients" id="clients">
+            <select>
+    </div>
     <script>
         $(document).ready(async function () {
-            let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
-            console.log(userInfo);
+            let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
+            let {userInfo} = window.localStorage.getItem("gotrue.user");
+            $("h2#email").html(userInfo.email);
+            $("h3#org").html(userInfo.app_metadata.org)
             let response = await fetch('/.netlify/functions/read-advocate', {
                 method: 'POST',
-                body: JSON.stringify(userInfo),
+                body: JSON.stringify(userToken),
                 headers: {
                     "Content-Type": "application/json"
                 }
             });
             let data = await response.json();
             console.log(data)
+            let clientList = data.clientList.split(",")
+            for (client in clientList) {
+                $('select#clients').append($('<option>', {value: `${client}`, text: `${client}`}));
+            }
+
         });
     </script>
 </body>
