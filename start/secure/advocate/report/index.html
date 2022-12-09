@@ -70,7 +70,7 @@
             console.log(data)
             let clientList = data.clientList;
             for (i = 0; i < clientList.length; i++) {
-                $('select#clients').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
+                $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
 
         });
