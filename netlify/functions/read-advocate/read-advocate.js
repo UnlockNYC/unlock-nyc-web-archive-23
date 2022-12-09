@@ -23,12 +23,8 @@ exports.handler = function(event, context, callback) {
         let clientList = [];
         for (i = 0; i < clients.length; i++) {
           // get user info for every item in client list
-          base('User information').find(clients[i], function(err, record) {
-            if (err) { console.error(err); return; }
-            clientList.push({
-              clientName: record.get("Name")
-            });
-          });
+          let clientInfo = getUserInfo(record);
+          clientList.push(clientInfo);
         }
         console.log(clientList)
       });
@@ -45,6 +41,15 @@ exports.handler = function(event, context, callback) {
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
+  }
+
+  function getUserInfo(record) {
+    base('User information').find(record.id, function(err, record) {
+      if (err) { console.error(err); return; }
+      return ({
+        clientName: record.get("Name")
+      })
+    });
   }
 
 
