@@ -27,34 +27,16 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, async function done(err) {
+    }, function done(err) {
       if (err) { console.error(err); return; }
-      for (client in clientList) {
-        const userName = await getUser(client);
-        console.log(userName);
-        clientInfo.push(userName);
-      }
-      console.log(clientInfo);
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({ clientList: "TESTING" })
+        body: JSON.stringify({ clientList: clientList.join(",") })
       });
     });
-
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
 
-  function getUser(record) {
-    console.log(record);
-    return new Promise((resolve, reject) => {
-      base('User information').find(record, function(err, record) {
-        if (err) { console.error(err); return; }
-        let userName = record.get("Name");
-        console.log(userName);
-        resolve(userName);
-      });
-    });
-  }
 };
