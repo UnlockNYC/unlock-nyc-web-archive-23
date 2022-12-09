@@ -89,7 +89,7 @@
             // submit form data
             $("input#submit-report").submit(async function (e) {
                 e.preventDefault();
-                $.ajax({
+                /*$.ajax({
                     url: '/.netlify/functions/submit-advocate',
                     type: 'post',
                     data: $('form#advocate-report').serialize(),
@@ -98,24 +98,27 @@
                         alert("?!");
                     }
                 });
-            });
-            /*
-            const formData = new FormData($("form#advocate-report"));
-            formBody = {};
-            formData.forEach(function (value, key) {
-                formBody[key] = value;
-            });
-
-            alert(formBody);
-
-            const response = await fetch('/.netlify/functions/submit-advocate', {
-                method: 'POST',
-                body: formBody
-            });
-            const data = await response.json();
-            console.log(data);
             });*/
-        });
+
+                const formData = new FormData($("form#advocate-report"));
+                formBody = {};
+                for (let entry of data) {
+                    console.log(entry)
+                }
+                formData.forEach(function (value, key) {
+                    formBody[key] = value;
+                });
+
+                console.log(formBody)
+
+                /*const response = await fetch('/.netlify/functions/submit-advocate', {
+                     method: 'POST',
+                     body: formBody
+                 });
+                 const data = await response.json();
+                 console.log(data);
+                 });*/
+            });
 
     </script>
 </body>
