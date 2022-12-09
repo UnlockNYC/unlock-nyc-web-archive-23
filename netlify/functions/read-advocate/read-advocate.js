@@ -42,7 +42,7 @@ exports.handler = function(event, context, callback) {
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
-  function getUserInfo(record) {
+  async function getUserInfo(record) {
     base('User information').find(record, function(err, record) {
       if (err) { console.error(err); return; }
       console.log(record.get("Name"));
