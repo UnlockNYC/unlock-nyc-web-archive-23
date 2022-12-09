@@ -8,15 +8,18 @@ const handler = async (event) => {
   try {
     base('All reports').create({
       "Report Type": "CCHR reports"
-    }, function(err, record) {
+    }, function(err, records) {
       if (err) {
         console.error(err);
+        return;
       }
-      console.log(record.getId());
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ message: `report submitted` })
-      }
+      records.forEach(function(record) {
+        console.log(record.getId());
+        return {
+          statusCode: 200,
+          body: JSON.stringify({ message: 'report submitted' })
+        }
+      });
     });
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
