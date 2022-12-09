@@ -30,8 +30,9 @@ exports.handler = function(event, context, callback) {
     }, async function done(err) {
       if (err) { console.error(err); return; }
       for (const client in clientList) {
-        const response = await getUser(client).then(data => response.json());
-        clientInfo.push(data);
+        const response = await getUser(client);
+        const clientName = response.json();
+        clientInfo.push(clientName);
       }
       console.log(clientInfo);
       callback(null, {
