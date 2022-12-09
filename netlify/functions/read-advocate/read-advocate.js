@@ -19,7 +19,7 @@ exports.handler = function(event, context, callback) {
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
-      filterByFormula: `{Name}=${decoded.app_metadata.org}`
+      filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       // This function (`page`) will get called for each page of records.
       records.forEach(function(record) {
