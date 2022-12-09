@@ -43,8 +43,8 @@
             let data = await response.json();
             console.log(data)
             let clientList = data.clientList.split(",")
-            for (client in clientList) {
-                $('select#clients').append($('<option>', {value: `${client}`, text: `${client}`}));
+            for (i = 0; i < clientList.length; i++) {
+                $('select#clients').append($('<option>', {value: `${client[i]}`, text: `${client[i]}`}));
             }
 
         });
