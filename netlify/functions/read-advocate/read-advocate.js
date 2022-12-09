@@ -14,6 +14,7 @@ exports.handler = function(event, context, callback) {
     // query airtable, 
     // check for org in approved partner list
     let clientList = [];
+    let clientInfo = [];
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
@@ -28,10 +29,20 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify({ clientList: clientList.join(",") })
-      });
+      for (i = 0; i < clientList.length; i++) {
+        base('User information').find(clientList[i], function(err, record) {
+          if (err) { console.error(err); return; }
+          clientInfo.push(record.get("Name"));
+          if (i == clientList.length - 1) {
+            console.log(clientInfo);
+            callback(null, {
+              statusCode: 200,
+              body: JSON.stringify({ clientList: clientList.join(",") })
+            });
+          }
+        });
+      }
+
     });
 
 
