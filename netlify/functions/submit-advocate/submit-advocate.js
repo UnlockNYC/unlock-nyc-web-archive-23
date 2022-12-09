@@ -1,7 +1,5 @@
-import * as Busboy from "busboy"
-import * as Airtable from "airtable"
-
-//const Airtable = require('airtable');
+const Airtable = require('airtable');
+const Busboy = require('busboy');
 
 exports.handler = async function(event, context, callback) {
   var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
