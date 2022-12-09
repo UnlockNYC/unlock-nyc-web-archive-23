@@ -28,12 +28,9 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
-      console.log(clientList);
-      console.log(clientList.join(","));
-      console.log(JSON.stringify(clientList.join(",")));
       callback(null, {
         statusCode: 200,
-        body: JSON.stringify({ message: "TEST!" })
+        body: JSON.stringify({ clientList: clientList.join(",") })
       });
     });
 
