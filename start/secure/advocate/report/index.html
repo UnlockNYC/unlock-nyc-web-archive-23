@@ -86,33 +86,18 @@
             }
 
             // submit form data
-            $("form#advocate-report").submit(function (e) {
+            $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
-                /*$.ajax({
-                    url: '/.netlify/functions/submit-advocate',
-                    type: 'post',
-                    data: $('form#advocate-report').serialize(),
-                    success: function () {
-                        console.log('submitted form');
-                        alert("?!");
-                    }
+                let formBody = formToJSON($("form#advocate-report")[0]);
+
+                const response = await fetch('/.netlify/functions/submit-advocate', {
+                    method: 'POST',
+                    body: formBody
                 });
-            });*/
+                const data = await response.json();
+                console.log(data);
 
-                const formData = new FormData($("form#advocate-report")[0]);
-                formBody = {};
-                for (let entry of formData) {
-                    console.log(entry)
-                }
-                formData.forEach(function (value, key) {
-                    formBody[key] = value;
-                });
-
-                console.log(formBody)
-
-                let test = formToJSON($("form#advocate-report")[0]);
-                console.log(test);
-
+                // turn formData into JSON
                 function formToJSON(form) {
                     const formData = new FormData(form);
                     const obj = {};
@@ -121,14 +106,6 @@
                     });
                     return JSON.stringify(obj);
                 }
-
-                /*const response = await fetch('/.netlify/functions/submit-advocate', {
-                     method: 'POST',
-                     body: formBody
-                 });
-                 const data = await response.json();
-                 console.log(data);
-                 });*/
             });
         });
 
