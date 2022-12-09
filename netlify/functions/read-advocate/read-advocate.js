@@ -29,7 +29,7 @@ exports.handler = function(event, context, callback) {
     }, function done(err) {
       if (err) { console.error(err); return; }
       console.log(clientList);
-      callback(null, {
+      return callback(null, {
         statusCode: 200,
         body: clientList.join(",")
       });
