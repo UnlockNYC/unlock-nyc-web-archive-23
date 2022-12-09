@@ -21,26 +21,16 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       // This function (`page`) will get called for each page of records.
-      records.forEach(async function(record) {
+      records.forEach(function(record) {
         let clients = record.get("Client List");
-        console.log(clients);
         clientList = clients;
-        console.log(clientList);
       });
-
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, function done(err) {
+    }, async function done(err) {
       if (err) { console.error(err); return; }
       for (i = 0; i < clientList.length; i++) {
-        base('User information').find(clientList[i], function(err, record) {
-          if (err) { console.error(err); return; }
-          console.log(record.id);
-          console.log(record.get("Name"));
-          clientInfo.push({
-            clientName: record.get("Name")
-          });
-        });
+        await getUserInfo(clientList[i]);
       }
       console.log(clientInfo);
       callback(null, {
@@ -51,5 +41,14 @@ exports.handler = function(event, context, callback) {
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
+  }
+  function getUserInfo(record) {
+    base('User information').find(record, function(err, record) {
+      if (err) { console.error(err); return; }
+      console.log(record.get("Name"));
+      clientInfo.push({
+        clientName: record.get("Name")
+      });
+    });
   }
 };
