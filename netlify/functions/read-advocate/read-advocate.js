@@ -13,27 +13,34 @@ exports.handler = function(event, context, callback) {
 
     // query airtable, 
     // check for org in approved partner list
-    let clientList = [];
-    let clientInfo = [];
-    base('Partner organizations').select({
-      maxRecords: 1,
-      fields: ["Report Form Logins", "Client List", "Name"],
-      filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
-    }).eachPage(function page(records, fetchNextPage) {
-      // This function (`page`) will get called for each page of records.
-      records.forEach(function(record) {
-        let clients = record.get("Client List");
-        clientList = clients;
-      });
-      // If there are no more records, `done` will get called.
-      fetchNextPage();
-    }, function done(err) {
+
+    base('User information').select({
+      view: 'All enrolled users'
+    }).firstPage(function(err, records) {
       if (err) { console.error(err); return; }
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify({ clientList: clientList.join(",") })
+      records.forEach(function(record) {
+        console.log('Retrieved', record.get('Name'));
       });
     });
+
+    let clientList;
+    base('Partner organizations').select({
+      maxRecords: 1,
+      fields: ["Report Form Logins", "Client List for Online Form", "Name"],
+      filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
+    }).firstPage(function page(err, records) {
+      if (err) { console.error(err); return; }
+      records.forEach(function(record) {
+        clientList = record.get("Client List");
+      });
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({
+          clientList: clientList
+        })
+      });
+    });
+
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
