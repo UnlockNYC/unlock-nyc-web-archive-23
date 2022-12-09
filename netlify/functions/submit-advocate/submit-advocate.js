@@ -4,10 +4,10 @@ exports.handler = function(event, context, callback) {
   var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
   // TEST for now, staging base
 
-  console.log(event.body);
+  let reportData = event.body;
   base('All reports').create({
     "Report Type": "CCHR reports",
-    "@name": ""
+    "@name": reportData.client.split(",")
   }, function(err, record) {
     if (err) {
       console.error(err);
