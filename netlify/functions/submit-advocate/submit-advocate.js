@@ -13,11 +13,11 @@ const handler = async (event) => {
         console.error(err);
       }
       console.log(record.getId());
+      return {
+        statusCode: 200,
+        body: JSON.stringify({ message: `report submitted` })
+      }
     });
-    return {
-      statusCode: 200,
-      body: JSON.stringify({ message: `report submitted` })
-    }
   } catch (error) {
     return { statusCode: 500, body: error.toString() }
   }
