@@ -21,8 +21,8 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        clientList = record.get("Client List for Online Form").split(",");
-        recordList = record.get("Record List for Online Form").split(",");
+        clientList = record.get("Client List for Online Form");
+        recordList = record.get("Record List for Online Form");
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
