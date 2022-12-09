@@ -34,8 +34,6 @@ exports.handler = function(event, context, callback) {
     }, function done(err) {
       if (err) { console.error(err); return; }
       console.log(clientList);
-      console.log(recordList);
-      console.log(typeof (recordList));
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
