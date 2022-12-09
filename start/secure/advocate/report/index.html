@@ -64,11 +64,13 @@
             // TEST for now, staging base 
 
             console.log(userInfo);
+
+            // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
             $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}`);
 
-            // first load advocate info based on user login token
+            // call function that queries Airtable for client list 
             let response = await fetch('/.netlify/functions/read-advocate', {
                 method: 'POST',
                 body: JSON.stringify(userToken),
@@ -87,13 +89,20 @@
             // submit form data
             $("input#submit-report").submit(async function (e) {
                 e.preventDefault();
-                const formBody = JSON.stringify(Object.fromEntries(new FormData(e.target)));
+                const formData = new FormData($("form#advocate-report");
+                formBody = {};
+                formData.forEach(function (value, key) {
+                    formBody[key] = value;
+                });
+
+                alert(formBody);
+
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
-                    body: formBody
+                    body: JSON.stringify(formBody)
                 });
                 const data = await response.json();
-                console.log(data)
+                console.log(data);
             });
 
         });
