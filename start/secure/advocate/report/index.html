@@ -46,8 +46,7 @@
         </h1>
         <h2 id="email"></h2>
         <h2 id="org"></h2>
-        <form id="advocate-report" action="/.netlify/functions/submit-advocate" method="post"
-            enctype="multipart/form-data">
+        <form id="advocate-report" action="" method="post">
             <select name="client" id="clients-choice">
             </select>
             <p>Is the person that you are reporting on behalf missing from this list? Fill out a <a id="new-user-form"
@@ -57,7 +56,7 @@
         </form>
     </div>
     <script>
-        $(document).ready(function () {
+        $(document).ready(async function () {
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
             let newUserForm = "https://airtable.com/shrjDxUcmjIdrVtTq?prefill_Organization%20choice=";
