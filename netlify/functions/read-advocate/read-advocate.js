@@ -27,23 +27,14 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, function done(err) {
+    }, async function done(err) {
       if (err) { console.error(err); return; }
       console.log("moving onto last loop");
       for (i = 0; i < clientList.length; i++) {
-        base('User information').find(clientList[i], function(err, record) {
-          if (err) { console.error(err); return; }
-          console.log(i)
-          console.log(record.get("Name"));
-          clientInfo.push(record.get("Name"));
-          if (i == clientList.length - 1) {
-            console.log(clientInfo);
-            callback(null, {
-              statusCode: 200,
-              body: JSON.stringify({ clientInfo: clientInfo.join(",") })
-            });
-          }
-        });
+        console.log(i)
+        let name = await getUser(clientList[i]);
+        console.log(name)
+        clientInfo.push(name)
       }
 
     });
@@ -51,6 +42,15 @@ exports.handler = function(event, context, callback) {
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
+  }
+
+  async function getUser(record) {
+    base('User information').find(record, function(err, record) {
+      if (err) { console.error(err); return; }
+      let userName = record.get("Name");
+      console.log(userName);
+      return userName;
+    });
   }
 
 };
