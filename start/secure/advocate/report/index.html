@@ -29,7 +29,8 @@
     <script>
         $(document).ready(async function () {
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
-            let {userInfo} = window.localStorage.getItem("gotrue.user");
+            let userInfo = window.localStorage.getItem("gotrue.user");
+            console.log(userInfo);
             $("h2#email").html(userInfo.email);
             $("h3#org").html(userInfo.app_metadata.org)
             let response = await fetch('/.netlify/functions/read-advocate', {
