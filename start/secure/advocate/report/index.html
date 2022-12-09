@@ -46,10 +46,11 @@
         </h1>
         <h2 id="email"></h2>
         <h2 id="org"></h2>
-        <form id="advocate-report" action="/.netlify/functions/submit-advocate" method="post">
+        <form id="advocate-report" action="/.netlify/functions/submit-advocate" method="post"
+            enctype="multipart/form-data">
             <select name="client" id="clients-choice">
             </select>
-            <p>Does the person that you are reporting on behalf missing from this list? Fill out a <a id="new-user-form"
+            <p>Is the person that you are reporting on behalf missing from this list? Fill out a <a id="new-user-form"
                     href="https://weunlock.nyc" target="blank">new user enrollment</a> form first, and then return to
                 refresh this page.</p>
             <input type="submit" value="Submit Report"></input>
