@@ -14,7 +14,6 @@ exports.handler = function(event, context, callback) {
     // query airtable, 
     // check for org in approved partner list
     let clientList = [];
-    let clientInfo = [];
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Name"],
@@ -27,32 +26,17 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, async function done(err) {
+    }, function done(err) {
       if (err) { console.error(err); return; }
-      for (i = 0; i < clientList.length; i++) {
-        await getUserInfo(clientList[i]);
-        if (i == clientList.length - 1) {
-          console.log(clientInfo);
-          callback(null, {
-            statusCode: 200,
-            body: JSON.stringify(clientInfo)
-          });
-          break;
-        }
-      }
-
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify(clientList)
+      });
     });
+
 
   } else {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
-  async function getUserInfo(record) {
-    base('User information').find(record, function(err, record) {
-      if (err) { console.error(err); return; }
-      console.log(record.get("Name"));
-      clientInfo.push({
-        clientName: record.get("Name")
-      });
-    });
-  }
+
 };
