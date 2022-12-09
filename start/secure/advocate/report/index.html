@@ -89,7 +89,7 @@
             // submit form data
             $("input#submit-report").submit(async function (e) {
                 e.preventDefault();
-                const formData = new FormData($("form#advocate-report");
+                const formData = new FormData($("form#advocate-report"));
                 formBody = {};
                 formData.forEach(function (value, key) {
                     formBody[key] = value;
