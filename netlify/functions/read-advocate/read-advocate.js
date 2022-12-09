@@ -29,17 +29,16 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, async function done(err) {
       if (err) { console.error(err); return; }
-      for (const client in clientList) {
-        const response = await getUser(client);
-        const clientName = resolve(response);
-        console.log(clientName);
-        clientInfo.push(clientName);
+      for (client in clientList) {
+        const userName = await getUser(client);
+        console.log(userName);
+        clientInfo.push(userName);
       }
       console.log(clientInfo);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({ clientList: "TESTING" })
-      })
+      });
     });
 
 
@@ -47,12 +46,14 @@ exports.handler = function(event, context, callback) {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
 
-  async function getUser(record) {
-    base('User information').find(record, function(err, record) {
-      if (err) { console.error(err); return; }
-      let userName = record.get("Name");
-      console.log(userName);
-      return userName;
+  function getUser(record) {
+    return new Promise((resolve, reject) => {
+      base('User information').find(record, function(err, record) {
+        if (err) { console.error(err); return; }
+        let userName = record.get("Name");
+        console.log(userName);
+        resolve(userName);
+      });
     });
   }
 };
