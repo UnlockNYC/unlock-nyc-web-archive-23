@@ -1,6 +1,6 @@
 const Airtable = require('airtable');
 
-const handler = async (event) => {
+exports.handler = function(event, context, callback) {
   var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
   // TEST for now, staging base
 
@@ -8,21 +8,16 @@ const handler = async (event) => {
 
   base('All reports').create({
     "Report Type": "CCHR reports"
-  }, function(err, records) {
+  }, function(err, record) {
     if (err) {
       console.error(err);
-      return {
-        statusCode: 500
-      }
+      return;
     }
-    records.forEach(function(record) {
-      console.log(record.getId());
-      return {
-        statusCode: 200,
-        body: JSON.stringify({ message: 'report submitted' })
-      }
-    });
+    console.log(record.getId());
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({ message: 'report submitted' })
+    })
   });
 }
 
-module.exports = { handler }
