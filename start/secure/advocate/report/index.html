@@ -65,7 +65,7 @@
             });
             let data = await response.json();
             console.log(data)
-            let clientList = data.clientList.split(",")
+            let clientList = data.clientList;
             for (i = 0; i < clientList.length; i++) {
                 $('select#clients').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
