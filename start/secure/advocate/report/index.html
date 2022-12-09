@@ -46,8 +46,11 @@
         </h1>
         <h2 id="email"></h2>
         <h2 id="org"></h2>
-        <select name="clients" id="clients">
-            <select>
+        <form id="advocate-report" action="/.netlify/functions/submit-advocate" method="post">
+            <select name="clients" id="clients">
+            </select>
+            <input type="submit">Submit Report</input>
+        </form>
     </div>
     <script>
         $(document).ready(async function () {

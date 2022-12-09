@@ -22,7 +22,6 @@ exports.handler = function(event, context, callback) {
       records.forEach(function(record) {
         let names = record.get("Client List Names").split(",");
         let ids = record.get("Client List");
-        console.log(ids);
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
