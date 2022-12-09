@@ -29,7 +29,11 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, async function done(err) {
       if (err) { console.error(err); return; }
-      await getUsers();
+      for (const client in clientList) {
+        const response = await getUser(client).then(data => response.json());
+        clientInfo.push(data);
+      }
+      console.log(clientInfo);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({ clientList: clientInfo })
@@ -41,7 +45,7 @@ exports.handler = function(event, context, callback) {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
 
-  function getName(record) {
+  async function getUser(record) {
     base('User information').find(record, function(err, record) {
       if (err) { console.error(err); return; }
       let userName = record.get("Name");
@@ -49,19 +53,4 @@ exports.handler = function(event, context, callback) {
       return userName;
     });
   }
-
-  async function getUsers() {
-    let result;
-    let promises = [];
-    for (let i = 0; i < clientList.length; i++) {
-      promises.push(getName(clientList[i]));
-    }
-    result = await Promise.all(promises);
-    for (let i = 0; i < clientList.length; i++) {
-      clientInfo[i]['result'] = result[i];
-    }
-    return clientInfo;
-  }
-
-
 };
