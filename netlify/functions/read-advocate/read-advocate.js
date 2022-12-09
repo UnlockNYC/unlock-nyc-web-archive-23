@@ -27,21 +27,13 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, function done(err) {
+    }, async function done(err) {
       if (err) { console.error(err); return; }
-      console.log("moving onto last loop");
-      for (i = 0; i < clientList.length; i++) {
-        console.log(i)
-        let name = getUser(clientList[i]);
-        console.log(name)
-        clientInfo.push(name);
-        if (i == clientList.length - 1) {
-          callback(null, {
-            statusCode: 200,
-            body: JSON.stringify({ clientList: clientInfo.join(",") })
-          })
-        }
-      }
+      await getUsers();
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({ clientList: clientInfo })
+      })
     });
 
 
@@ -49,7 +41,7 @@ exports.handler = function(event, context, callback) {
     // ADD ERROR HANDLING, IF NOT ADVOCATE 
   }
 
-  function getUser(record) {
+  function getName(record) {
     base('User information').find(record, function(err, record) {
       if (err) { console.error(err); return; }
       let userName = record.get("Name");
@@ -57,5 +49,19 @@ exports.handler = function(event, context, callback) {
       return userName;
     });
   }
+
+  async function getUsers() {
+    let result;
+    let promises = [];
+    for (let i = 0; i < clientList.length; i++) {
+      promises.push(getName(clientList[i]));
+    }
+    result = await Promise.all(promises);
+    for (let i = 0; i < clientList.length; i++) {
+      clientInfo[i]['result'] = result[i];
+    }
+    return clientInfo;
+  }
+
 
 };
