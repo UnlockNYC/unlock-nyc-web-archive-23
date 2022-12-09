@@ -101,7 +101,7 @@
 
                 const formData = new FormData($("form#advocate-report")[0]);
                 formBody = {};
-                for (let entry of data) {
+                for (let entry of formData) {
                     console.log(entry)
                 }
                 formData.forEach(function (value, key) {
@@ -109,6 +109,18 @@
                 });
 
                 console.log(formBody)
+
+                let test = formToJSON($("form#advocate-report")[0]);
+                console.log(test)l
+
+                function formToJSON(form) {
+                    const formData = new FormData(form);
+                    const obj = {};
+                    formData.forEach((value, key) => {
+                        obj[key] = value;
+                    });
+                    return JSON.stringify(obj);
+                }
 
                 /*const response = await fetch('/.netlify/functions/submit-advocate', {
                      method: 'POST',
