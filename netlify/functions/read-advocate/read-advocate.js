@@ -1,7 +1,7 @@
 const Airtable = require('airtable');
 const jwt_decode = require('jwt-decode');
 
-exports.handler = function(event, context) {
+exports.handler = async function(event, context) {
   const data = JSON.parse(event.body);
   const token = data.access_token;
   let decoded = jwt_decode(token);
@@ -33,10 +33,7 @@ exports.handler = function(event, context) {
       console.log(JSON.stringify(clientList.join(",")));
       return {
         statusCode: 200,
-        body: JSON.stringify({ clientList: clientList.join(",") }),
-        headers: {
-          "content-type": "application/json"
-        }
+        body: JSON.stringify({ clientList: clientList.join(",") })
       }
     });
 
