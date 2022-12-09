@@ -27,16 +27,21 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, async function done(err) {
-      if (err) { console.error(err); return; }
-      for (i = 0; i < clientList.length; i++) {
-        await getUserInfo(clientList[i]);
+    }, async function done() {
+      try {
+        for (i = 0; i < clientList.length; i++) {
+          await getUserInfo(clientList[i]);
+        }
+        console.log(clientInfo);
+        callback(null, {
+          statusCode: 200,
+          body: JSON.stringify(clientInfo)
+        });
       }
-      console.log(clientInfo);
-      callback(null, {
-        statusCode: 200,
-        body: JSON.stringify(clientInfo)
-      });
+      catch (err) {
+        console.error(err);
+        return;
+      }
     });
 
   } else {
