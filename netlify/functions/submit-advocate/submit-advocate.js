@@ -5,9 +5,11 @@ exports.handler = function(event, context, callback) {
   // TEST for now, staging base
 
   let reportData = event.body;
+  console.log(reportData);
+  console.log(reportData.client);
   base('All reports').create({
     "Report Type": "CCHR reports",
-    "@name": reportData.client.split(",")
+    "@name": [`${reportData.client}`]
   }, function(err, record) {
     if (err) {
       console.error(err);
