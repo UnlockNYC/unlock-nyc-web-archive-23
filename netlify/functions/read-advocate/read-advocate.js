@@ -27,10 +27,10 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, function done(err) {
+    }, async function done(err) {
       if (err) { console.error(err); return; }
       for (const client in clientList) {
-        const response = getUser(client);
+        const response = await getUser(client);
         const clientName = resolve(response);
         console.log(clientName);
         clientInfo.push(clientName);
