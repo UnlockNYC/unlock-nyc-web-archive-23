@@ -17,7 +17,7 @@ exports.handler = function(event, context, callback) {
     let recordList;
     base('Partner organizations').select({
       maxRecords: 1,
-      fields: ["Report Form Logins", "Client List for Online Form", "Name"],
+      fields: ["Report Form Logins", "Client List for Online Form", "Name", "Record List for Online Form"],
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
