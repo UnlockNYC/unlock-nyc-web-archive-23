@@ -18,6 +18,8 @@
 
 - **staging/back-end edits:** we use [Glitch](https://www.glitch.com) to make edits, preview and share them, and then export them to this repo.
 
+- **functions:** we use Netlify functions to authenticate advocates who have logins and are reporting on behalf of others 
+
 ### project structure
 
 - in the`_includes` folder, you'll find all the site's template files, written in [Liquid](https://github.com/Shopify/liquid).  When 11ty runs, it uses these files to generate HTML pages and stores them in a folder called `build.` You won't see the `build` folder in this repo! It's generated every time 11ty runs, and hidden via the `.gitignore` file.
