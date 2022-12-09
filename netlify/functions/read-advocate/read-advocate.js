@@ -19,20 +19,20 @@ exports.handler = function(event, context, callback) {
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List for Online Form", "Name"],
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
-    }).firstPage(function page(err, records, done) {
+    }).firstPage(function page(err, records) {
       if (err) { console.error(err); return; }
       records.forEach(function(record) {
         console.log(record.get("Client List"));
         clientList = record.get("Client List");
       });
-    }, done(function() {
+    }, function done() {
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
           clientList: clientList
         })
       });
-    }));
+    });
 
 
   } else {
