@@ -20,8 +20,14 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        console.log(record.get("Client List for Online Form"))
-        clientList = record.get("Client List for Online Form");
+        let names = record.get("Client List for Online Form").split(",");
+        let ids = record.get("Record List for Online Form").split(", ");
+        for (i = 0; i < names.length; i++) {
+          clientList.push({
+            name: names[i],
+            id: ids[i]
+          });
+        }
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
@@ -30,7 +36,7 @@ exports.handler = function(event, context, callback) {
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
-          clientList: clientList
+          clientList: clientList.join(",")
         })
       });
     });
