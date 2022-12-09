@@ -27,21 +27,12 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, async function done() {
-      try {
-        for (i = 0; i < clientList.length; i++) {
-          await getUserInfo(clientList[i]);
-        }
-        console.log(clientInfo);
-        callback(null, {
-          statusCode: 200,
-          body: JSON.stringify(clientInfo)
-        });
+    }, async function done(err) {
+      if (err) { console.error(err); return; }
+      for (i = 0; i < clientList.length; i++) {
+        await getUserInfo(clientList[i]);
       }
-      catch (err) {
-        console.error(err);
-        return;
-      }
+      await sendResponse();
     });
 
   } else {
@@ -54,6 +45,14 @@ exports.handler = function(event, context, callback) {
       clientInfo.push({
         clientName: record.get("Name")
       });
+    });
+  }
+
+  async function sendResponse() {
+    console.log(clientInfo);
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify(clientInfo)
     });
   }
 };
