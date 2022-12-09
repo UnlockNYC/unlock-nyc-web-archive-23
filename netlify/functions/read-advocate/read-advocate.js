@@ -36,6 +36,10 @@ exports.handler = function(event, context, callback) {
         console.log(name)
         clientInfo.push(name)
       }
+      callback(null, {
+        statusCode: 200,
+        body: JSON.stringify({ clientList: clientInfo.join(",") })
+      })
 
     });
 
