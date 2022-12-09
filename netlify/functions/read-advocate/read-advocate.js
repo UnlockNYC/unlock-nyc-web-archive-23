@@ -18,12 +18,12 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       // This function (`page`) will get called for each page of records.
-      records.forEach(function(record) {
+      records.forEach(async function(record) {
         let clients = record.get("Client List");
         let clientList = [];
         for (i = 0; i < clients.length; i++) {
           // get user info for every item in client list
-          let clientInfo = getUserInfo(record);
+          let clientInfo = await getUserInfo(record);
           clientList.push(clientInfo);
         }
         console.log(clientList)
