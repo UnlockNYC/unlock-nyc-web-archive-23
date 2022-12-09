@@ -47,6 +47,7 @@ exports.handler = function(event, context, callback) {
   }
 
   function getUser(record) {
+    console.log(record);
     return new Promise((resolve, reject) => {
       base('User information').find(record, function(err, record) {
         if (err) { console.error(err); return; }
