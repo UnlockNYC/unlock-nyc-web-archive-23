@@ -20,7 +20,7 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        let names = record.get("Client List for Online Form");
+        let names = record.get("Client List for Online Form").split(",");
         let ids = record.get("Record List for Online Form");
         for (i = 0; i < names.length; i++) {
           clientList.push({
