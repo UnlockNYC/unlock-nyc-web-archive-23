@@ -13,7 +13,7 @@ exports.handler = function(event, context, callback) {
 
     // query airtable, 
     // check for org in approved partner list
-    let clientList;
+    let clientList = [];
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List for Online Form", "Name"],
@@ -21,7 +21,9 @@ exports.handler = function(event, context, callback) {
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
         let names = record.get("Client List for Online Form").split(",");
+        console.log(names);
         let ids = record.get("Record List for Online Form").split(", ");
+        console.log(ids);
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
@@ -33,6 +35,7 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
+      console.log(clientList);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
