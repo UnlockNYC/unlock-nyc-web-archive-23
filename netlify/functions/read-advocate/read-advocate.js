@@ -28,6 +28,7 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, function done(err) {
       if (err) { console.error(err); return; }
+      console.log(clientList);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify(clientList)
