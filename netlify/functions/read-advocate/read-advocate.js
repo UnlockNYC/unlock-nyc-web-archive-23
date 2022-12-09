@@ -23,7 +23,9 @@ exports.handler = function(event, context, callback) {
       // This function (`page`) will get called for each page of records.
       records.forEach(async function(record) {
         let clients = record.get("Client List");
+        console.log(clients);
         clientList = clients;
+        console.log(clientList);
       });
 
       // If there are no more records, `done` will get called.
@@ -33,6 +35,8 @@ exports.handler = function(event, context, callback) {
       for (i = 0; i < clientList.length; i++) {
         base('User information').find(clientList[i], function(err, record) {
           if (err) { console.error(err); return; }
+          console.log(record.id);
+          console.log(record.get("Name"));
           clientInfo.push({
             clientName: record.get("Name")
           });
