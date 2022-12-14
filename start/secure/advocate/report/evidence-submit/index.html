@@ -57,9 +57,12 @@
     </div>
     <script>
         $(document).ready(async function () {
-            let userToken = JSON.stringify(window.localStorage.getItem("gotrue.user")).token;
+            let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
             // TEST for now, staging base 
+
+            console.log(userToken.access_token);
+            console.log(typeof (userToken.access_token));
 
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
