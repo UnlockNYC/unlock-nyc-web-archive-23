@@ -15,6 +15,7 @@ const spaces_bucket = 'staging-unlock'; // TEST STAGING
 exports.handler = async function(event, context, callback) {
 
   const fields = await parseMultipartForm(event);
+  console.log(fields);
   const record = fields.record;
   const numFiles = fields["files[]"].length;
   console.log(record);
