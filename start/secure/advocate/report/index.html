@@ -91,7 +91,7 @@
                     body: formBody
                 });
                 const data = await response.json();
-                console.log(data);
+                console.log(data.statusCode);
 
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {
