@@ -15,12 +15,11 @@ const spaces_bucket = 'staging-unlock'; // TEST STAGING
 exports.handler = async function(event, context, callback) {
 
   const fields = await parseMultipartForm(event);
-  console.log(fields);
   const record = fields.record;
   const numFiles = fields["files[]"].length;
+  console.log(record);
 
   for (i = 0; i < numFiles; i++) {
-    console.log(i);
     let file = fields["files[]"][i];
     fileParams = {
       Bucket: spaces_bucket,
@@ -33,7 +32,10 @@ exports.handler = async function(event, context, callback) {
   if (i == numFiles) {
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify({ message: "testing" })
+      body: JSON.stringify({
+        statusCode: 200,
+        message: `${numFiles} file(s) uploaded`
+      })
     });
   }
 

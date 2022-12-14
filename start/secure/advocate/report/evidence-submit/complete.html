@@ -46,14 +46,10 @@
         </h1>
         <h2 id="email"></h2>
         <h2 id="org"></h2>
-        <h2>UPLOAD EVIDENCE</h2>
-        <button id="no-evidence">I don't need to upload evidence</button>
-        <form id="advocate-evidence" action="" method="post">
-            <label for="files">Select evidence to upload:</label>
-            <input type="file" id="files" name="files[]" multiple>
-            <input type="submit" value="Add Evidence to Report">
-        </form>
-
+        <h2>THANK YOU</h2>
+        <h2>You and the tenant will receive a confirmation e-mail about your report.</h2>
+        <h2 id="report-id">report #:<span></span>
+            <h2>
     </div>
     <script>
         $(document).ready(async function () {
@@ -61,36 +57,15 @@
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
             // TEST for now, staging base 
 
-            // first load advocate info based on user login token
-            $("h2#email").html(userInfo.email);
-            $("h2#org").html(userInfo.app_metadata.org)
-
             // get newly created report ID from URL parameters
             const queryString = window.location.search;
             const urlParams = new URLSearchParams(queryString);
             const report = urlParams.get('id');
 
-            // no evidence flow
-            $("button#no-evidence").click(function () {
-                window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
-            });
-            // submit form data
-            $("form#advocate-evidence").submit(async function (e) {
-                e.preventDefault();
-                alert("SUBMIT!");
-                let formData = new FormData($("form#advocate-evidence")[0]);
-                formData.append('record', report);
-                console.log([...formData]);
-                const response = await fetch('/.netlify/functions/upload-evidence', {
-                    method: 'POST',
-                    body: formData
-                });
-                const data = await response.json();
-                if (data.statusCode == 200) {
-                    window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
-                }
-
-            });
+            // first load advocate info based on user login token
+            $("h2#email").html(userInfo.email);
+            $("h2#org").html(userInfo.app_metadata.org);
+            $("h2#report-id span").html(report)
         });
 
     </script>
