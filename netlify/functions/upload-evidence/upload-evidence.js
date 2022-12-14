@@ -1,4 +1,4 @@
-import Busboy from 'busboy'
+const busboy = require('busboy');
 
 exports.handler = async function(event, context, callback) {
 
@@ -11,47 +11,36 @@ exports.handler = async function(event, context, callback) {
 
   function parseMultipartForm(event) {
     return new Promise((resolve) => {
-      // we'll store all form fields inside of this
       const fields = {};
-
-      // let's instantiate our busboy instance!
-      const busboy = new Busboy({
-        // it uses request headers
-        // to extract the form boundary value (the ----WebKitFormBoundary thing)
+      const bb = busboy({
         headers: event.headers
       });
 
-      // before parsing anything, we need to set up some handlers.
-      // whenever busboy comes across a file ...
-      busboy.on(
-        "file",
-        (fieldname, filestream, filename, transferEncoding, mimeType) => {
-          // ... we take a look at the file's data ...
-          filestream.on("data", (data) => {
-            // ... and write the file's name, type and content into `fields`.
-            fields[fieldname] = {
-              filename,
-              type: mimeType,
-              content: data,
-            };
+      bb.on("file", (name, file, info) => {
+        const { filename, encoding, mimeType } = info;
+        file.on("data", (data) => {
+          if (!fields[name])
+            fields[name] = []
+
+          fields[name].push({
+            filename,
+            type: mimeType,
+            content: data,
           });
-        }
+        })
+      }
       );
 
-      // whenever busboy comes across a normal field ...
-      busboy.on("field", (fieldName, value) => {
-        // ... we write its value into `fields`.
+      bb.on("field", (fieldName, value) => {
         fields[fieldName] = value;
       });
 
-      // once busboy is finished, we resolve the promise with the resulted fields.
-      busboy.on("finish", () => {
+      bb.on("close", () => {
         resolve(fields)
       });
 
-      // now that all handlers are set up, we can finally start processing our request!
-      busboy.write(event.body);
+      bb.end(Buffer.from(event.body, 'base64'));
     });
-  }
 
+  }
 }
