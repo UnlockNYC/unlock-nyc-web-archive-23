@@ -92,7 +92,7 @@
                 });
                 const data = await response.json();
                 if (data.statusCode == 200) {
-                    window.location.href = `evidence-submit/index.html?id=${data.record}`
+                    window.location.href = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`
                 }
 
                 // turn formData into JSON, stringify for fetch request
