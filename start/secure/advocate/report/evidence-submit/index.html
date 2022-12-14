@@ -72,7 +72,7 @@
 
             // no evidence flow
             $("button#no-evidence").click(function () {
-                window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
+                window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${report}`;
             });
             // submit form data
             $("form#advocate-evidence").submit(async function (e) {
@@ -87,7 +87,7 @@
                 });
                 const data = await response.json();
                 if (data.statusCode == 200) {
-                    window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
+                    window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${report}`;
                 }
 
             });
