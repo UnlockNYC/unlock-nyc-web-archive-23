@@ -63,7 +63,6 @@
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
-            $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}`);
 
             // get newly created report ID from URL parameters
             const queryString = window.location.search;
