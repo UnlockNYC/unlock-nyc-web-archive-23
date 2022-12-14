@@ -61,9 +61,6 @@
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
             // TEST for now, staging base 
 
-            console.log(userToken.access_token);
-            console.log(typeof (userToken.access_token));
-
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
@@ -94,6 +91,8 @@
                 const data = await response.json();
                 if (data.statusCode == 200) {
                     window.location.href = `/start/secure/advocate/report/evidence-submit/complete.html?id=${report}`;
+                } else {
+                    alert("there is a problem with authorization. please contact unlock nyc.");
                 }
 
             });
