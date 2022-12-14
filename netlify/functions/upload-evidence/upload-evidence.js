@@ -15,7 +15,7 @@ exports.handler = async function(event, context, callback) {
       const fields = {};
 
       // let's instantiate our busboy instance!
-      const busboy = Busboy({
+      const busboy = new Busboy({
         // it uses request headers
         // to extract the form boundary value (the ----WebKitFormBoundary thing)
         headers: event.headers
