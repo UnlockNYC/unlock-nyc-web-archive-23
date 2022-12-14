@@ -82,7 +82,7 @@
                 alert("SUBMIT!");
                 let formData = new FormData($("form#advocate-evidence")[0]);
                 formData.append('record', report);
-                formData.append('token', userToken.access_token)
+                formData.append('token', JSON.stringifiy(userToken.access_token));
                 console.log([...formData]);
                 const response = await fetch(functionUrl, {
                     method: 'POST',
