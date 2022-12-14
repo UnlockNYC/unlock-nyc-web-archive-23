@@ -24,7 +24,7 @@ exports.handler = async function(event, context, callback) {
     let file = fields["files[]"][i];
     fileParams = {
       Bucket: spaces_bucket,
-      Key: `${record}/${file.filename}`,
+      Key: `reports/${record}/${file.filename}`,
       Body: file.content
     };
     await uploadEvidence(fileParams);
