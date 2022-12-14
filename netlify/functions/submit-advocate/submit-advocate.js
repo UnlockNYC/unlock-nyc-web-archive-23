@@ -17,7 +17,11 @@ exports.handler = function(event, context, callback) {
     console.log(record.getId());
     callback(null, {
       statusCode: 200,
-      body: JSON.stringify({ message: 'report submitted' })
+      body: JSON.stringify({
+        statusCode: 200,
+        message: 'report submitted',
+        record: record.getId()
+      })
     })
   });
 }
