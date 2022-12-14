@@ -77,15 +77,14 @@
             // submit form data
             $("form#advocate-evidence").submit(async function (e) {
                 e.preventDefault();
+                let functionUrl = 'https://unlock-staging.glitch.me/report/advocate-add-file';
+                // let functionUrl = '/.netlify/functions/upload-evidence';
                 alert("SUBMIT!");
                 let formData = new FormData($("form#advocate-evidence")[0]);
                 formData.append('record', report);
+                formData.append('token', userToken)
                 console.log([...formData]);
-                /*const response = await fetch('/.netlify/functions/upload-evidence', {
-                    method: 'POST',
-                    body: formData
-                    });*/
-                const response = await fetch('https://unlock-staging.glitch.me/report/advocate-add-file', {
+                const response = await fetch(functionUrl, {
                     method: 'POST',
                     body: formData
                 });
