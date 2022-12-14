@@ -1,13 +1,50 @@
 const busboy = require('busboy');
+const aws = require("aws-sdk");
+
+aws.config.update({
+  accessKeyId: process.env.DO_SPACES_KEY,
+  secretAccessKey: process.env.DO_SPACES_SECRET
+});
+const spacesEndpoint = new aws.Endpoint("nyc3.digitaloceanspaces.com");
+const s3 = new aws.S3({
+  endpoint: spacesEndpoint
+});
+
+const spaces_bucket = 'staging-unlock'; // TEST STAGING
 
 exports.handler = async function(event, context, callback) {
 
   const fields = await parseMultipartForm(event);
   console.log(fields);
-  callback(null, {
-    statusCode: 200,
-    body: JSON.stringify({ message: "testing" })
-  });
+  const record = fields.record;
+  const numFiles = fields["files[]"].length;
+
+  for (i = 0; i < numFiles; i++) {
+    console.log(i);
+    let file = fields["files[]"][i];
+    fileParams = {
+      Bucket: spaces_bucket,
+      Key: `${record}/${file.filename}`,
+      Body: file.content
+    };
+    await uploadEvidence(fileParams);
+  }
+
+  if (i == numFiles) {
+    callback(null, {
+      statusCode: 200,
+      body: JSON.stringify({ message: "testing" })
+    });
+  }
+
+  async function uploadEvidence(parameters) {
+    s3.upload(parameters, function(err) {
+      if (err) {
+        console.log(err);
+      }
+      console.log("1 file uploaded");
+    });
+  }
 
   function parseMultipartForm(event) {
     return new Promise((resolve) => {

@@ -75,6 +75,7 @@
                 e.preventDefault();
                 alert("SUBMIT!");
                 let formData = new FormData($("form#advocate-evidence")[0]);
+                formData.append('record', report);
                 console.log([...formData])
                 const response = await fetch('/.netlify/functions/upload-evidence', {
                     method: 'POST',
