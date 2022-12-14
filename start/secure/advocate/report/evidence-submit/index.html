@@ -74,17 +74,14 @@
             $("form#advocate-evidence").submit(async function (e) {
                 e.preventDefault();
                 alert("SUBMIT!");
-                // let formBody = formToJSON($("form#advocate-evidence")[0]);
                 let formData = new FormData($("form#advocate-evidence")[0]);
-                console.log(formData)
-                /*const response = await fetch('/.netlify/functions/upload-evidence', {
+                console.log([...formData])
+                const response = await fetch('/.netlify/functions/upload-evidence', {
                     method: 'POST',
-                    body: formBody
+                    body: formData
                 });
                 const data = await response.json();
-                if (data.statusCode == 200) {
-                    window.location.href = `/evidence-submit/index.html?id=${data.record}`
-                    }*/
+                console.log(data);
 
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {
