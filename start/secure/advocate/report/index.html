@@ -31,11 +31,32 @@
                     href="https://weunlock.nyc" target="blank">new user enrollment</a> form first, and then return to
                 refresh this page.</p>
             <label class="form-field" for="story">Can you tell us more about what happened?</label>
-            <input type="textarea" id="story" name="story">
+            <input class="wide-text" type="textarea" id="story" name="story">
             <label class="form-field" for="date">What date did the discrimination happen?</label>
             <input type="date" id="incidentDate" name="incidentDate">
             <label class="form-field" for="reportAddress">What is the building address?</label>
-            <input type="text" id="reportAddress" name="reportAddress" required autocomplete="off">
+            <input class="wide-text" type="text" id="reportAddress" name="reportAddress" required autocomplete="off">
+            <label class="form-field" for="unit">Apartment/Unit number?</label>
+            <input type="text" id="unit" name="unit">
+            <label class="form-field" for="website">What website did you use to find the apartment?</label>
+            <select name="website" id="website">
+                <!--MAB NOTE: could use metadata API to fill from Airtable? -->
+                <option>Apartments .com</option>
+                <option>Craigslist</option>
+                <option>Facebook Marketplace</option>
+                <option>Streeteasy</option>
+                <option>Trulia</option>
+                <option>Zillow</option>
+                <option>Other</option>
+            </select>
+            <label class="form-field" for="url">What is the URL of the listing?</label>
+            <input class="wide-text" type="text" id="url" name="url">
+            <label class="form-field" for="available">Is the listing still available?</label>
+            <select name="available" id="available">
+                <option>yes</option>
+                <option>no</option>
+                <option>unknown</option>
+            </select>
 
             <input id="submit-report" type="submit" value="Continue"></input>
         </form>

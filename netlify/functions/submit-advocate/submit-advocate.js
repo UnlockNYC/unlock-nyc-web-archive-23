@@ -5,12 +5,16 @@ exports.handler = function(event, context, callback) {
   // TEST for now, staging base
 
   let reportData = JSON.parse(event.body);
+  let fullAddress = `${reportData.reportAddress} - Unit: ${reportData.unit}`;
   base('All reports').create({
     "Report Type": "CCHR reports",
     "@name": [`${reportData.client}`],
     "@story": reportData.story,
     "@date_specific": reportData.incidentDate,
-    "@address": reportData.reportAddress
+    "@address": fullAddress,
+    "@listing": reportData.website,
+    "@url": reportData.url,
+    "available?": reportData.available
   }, function(err, record) {
     if (err) {
       console.error(err);

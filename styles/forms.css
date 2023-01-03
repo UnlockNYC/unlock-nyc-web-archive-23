@@ -32,3 +32,8 @@ input {
     display: block;
     margin-bottom: 10px;
 }
+
+input.wide-text {
+    width: 100%;
+    max-width: 400px;
+}
