@@ -7,7 +7,10 @@ exports.handler = function(event, context, callback) {
   let reportData = JSON.parse(event.body);
   base('All reports').create({
     "Report Type": "CCHR reports",
-    "@name": [`${reportData.client}`]
+    "@name": [`${reportData.client}`],
+    "@story": reportData.story,
+    "@date_specific": reportData.incidentDate,
+    "@address": reportData.reportAddress
   }, function(err, record) {
     if (err) {
       console.error(err);
