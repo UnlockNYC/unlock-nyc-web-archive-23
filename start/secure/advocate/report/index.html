@@ -63,6 +63,7 @@
     </div>
     <script>
         $(document).ready(async function () {
+
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
             let newUserForm = "https://airtable.com/shrjDxUcmjIdrVtTq?prefill_Organization%20choice=";
@@ -96,8 +97,7 @@
             let addressField;
 
             function initAutocomplete() {
-                console.log("HERE GOOGLE!");
-                addressField = $("input#report-address");
+                addressField = document.querySelector("#report-address");
                 // Create the autocomplete object, restricting the search predictions to
                 // addresses in New York City
                 autocomplete = new google.maps.places.Autocomplete(addressField, {
@@ -171,8 +171,11 @@
                 //address2Field.focus();
             }
 
-            window.initAutocomplete = initAutocomplete;
-            initAutocomplete();
+            //window.initAutocomplete = initAutocomplete;
+            $(window).on("load", function () {
+                initAutocomplete();
+            });
+
 
             // submit form data
             $("form#advocate-report").submit(async function (e) {
