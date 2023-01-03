@@ -73,7 +73,6 @@
             $("h2#org").html(userInfo.app_metadata.org)
             $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}`);
 
-            initAutocomplete();
             // call function that queries Airtable for client list 
             let response = await fetch('/.netlify/functions/read-advocate', {
                 method: 'POST',
