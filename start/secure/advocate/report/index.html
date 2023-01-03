@@ -6,7 +6,7 @@
     <meta name="viewport"
         content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link rel="stylesheet" href="/styles/site.css">
-    <link rel="stylesheet" href="/start/secure/advocate/report/forms.css">
+    <link rel="stylesheet" href="/styles/forms.css">
     <title>Advocate Login: Unlock NYC</title>
     <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -67,9 +67,6 @@
             for (i = 0; i < clientList.length; i++) {
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
-
-            // sets the date to default to today
-            $('#incidentDate').val(new Date().toDateInputValue());
 
             // Google Maps Places Autcomplete
             // for address input form, code from:
