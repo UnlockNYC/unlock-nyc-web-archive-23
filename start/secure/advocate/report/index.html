@@ -139,7 +139,17 @@
                         }
 
                         case "route": {
-                            address1 += component.short_name;
+                            address1 += `${component.short_name}, `;
+                            break;
+                        }
+
+                        case "sublocality_level_1": { /*city*/
+                            address1 += `${component.long_name}, `;
+                            break;
+                        }
+
+                        case "administrative_area_level_1": { /*state*/
+                            address1 += `${component.short_name} `;
                             break;
                         }
 
@@ -148,10 +158,10 @@
                             break;
                         }
 
-                        case "postal_code_suffix": {
+                        /*case "postal_code_suffix": {
                             postcode = `${postcode}-${component.long_name}`;
                             break;
-                        }
+                        }*/
                         /*case "locality":
                             document.querySelector("#locality").value = component.long_name;
                             break;
