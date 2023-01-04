@@ -11,7 +11,8 @@
         "airtable": "0.11.6",
         "jwt-decode": "3.1.2",
         "busboy": "1.6.0",
-        "aws-sdk": "2.1275.0"
+        "aws-sdk": "2.1275.0",
+        "node-fetch": "3.3.0"
     },
     "license": "MIT",
     "keywords": [

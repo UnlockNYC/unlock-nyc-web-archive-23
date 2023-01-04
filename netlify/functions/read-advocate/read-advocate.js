@@ -1,5 +1,6 @@
 const Airtable = require('airtable');
 const jwt_decode = require('jwt-decode');
+import fetch from 'node-fetch';
 
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
@@ -31,9 +32,11 @@ exports.handler = function(event, context, callback) {
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
-    }, function done(err) {
+    }, async function done(err) {
       if (err) { console.error(err); return; }
       console.log(`${clientList.length} user records found.`);
+      let schema = await getSchema();
+      console.log(schema);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
@@ -51,4 +54,14 @@ exports.handler = function(event, context, callback) {
     });
   }
 
+  async function getSchema() {
+    const response = await fetch('https://api.airtable.com/v0/meta/bases/appiZpVxsiS1Ev5Zv/tables', {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${provess.env.AIRTABLE_ACCESS_TOKEN}`
+      }
+    });
+    const data = await response.json();
+    return data;
+  }
 };

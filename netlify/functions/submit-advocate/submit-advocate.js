@@ -7,14 +7,16 @@ exports.handler = function(event, context, callback) {
   let reportData = JSON.parse(event.body);
   let fullAddress = `${reportData.reportAddress} - Unit: ${reportData.unit}`;
   base('All reports').create({
-    "Report Type": "CCHR reports",
-    "@name": [`${reportData.client}`],
-    "@story": reportData.story,
-    "@date_specific": reportData.incidentDate,
-    "@address": fullAddress,
-    "@listing": reportData.website,
-    "@url": reportData.url,
-    "available?": reportData.available
+    // the following uses airtable field IDs 
+    // instead of column names, to protect in case of changes
+    "fldAA5F50YecZRHsS": "CCHR reports", // Report Type
+    "fldmkXAGphcHd2wkb": [`${reportData.client}`], // @name, client name
+    "fld9LxV8g98hxNn0U": reportData.story, // @story
+    "fldRLw8j0MvaYC6w2": reportData.incidentDate, // @date_specific
+    "fldXkr2FlRPTvo1bO": fullAddress, // @address
+    "fldhEdkPi8horzLD4": reportData.website, // @listing, source website
+    "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing 
+    "fldLDDBMmULQ5gI1n": reportData.available // available? is apt. still available?
   }, function(err, record) {
     if (err) {
       console.error(err);
