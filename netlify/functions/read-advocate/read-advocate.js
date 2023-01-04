@@ -36,7 +36,9 @@ exports.handler = function(event, context, callback) {
       if (err) { console.error(err); return; }
       console.log(`${clientList.length} user records found.`);
       let schema = await getSchema();
-      console.log(schema);
+      let fields = schema.tables[1].fields;
+      console.log(JSON.stringify(fields));
+      console.log(fields);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
