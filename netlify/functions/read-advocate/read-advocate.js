@@ -37,7 +37,8 @@ exports.handler = function(event, context, callback) {
       console.log(`${clientList.length} user records found.`);
       let schemaList = [];
       let schema = await getSchema();
-      let fields = JSON.stringify(schema.tables[1].fields).join(",");
+      let fields = schema.tables[1].fields;
+      console.log(fields);
       for (let i = 0; i < fields.length; i++) {
         if (fields[i].id == "fldhEdkPi8horzLD4") { // @listing column 
           schemaList.push(`${fields[i].name}: ${fields[i].options}`);
