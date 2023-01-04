@@ -7,6 +7,13 @@ exports.handler = function(event, context, callback) {
   const token = data.access_token;
   let decoded = jwt_decode(token);
 
+  let columns = {
+    listing: "fldhEdkPi8horzLD4",
+    discriminationType: "fldp0Cdze4QBCRIQy",
+    denialType: "fldZYKk8mQAJe05b5"
+  }
+  /* NOTE: CHANGES based on env! staging base for now */
+
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only
     var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
@@ -41,17 +48,17 @@ exports.handler = function(event, context, callback) {
       for (let i = 0; i < fields.length; i++) {
         let column;
         let selectOptions;
-        if (fields[i].id == "fldhEdkPi8horzLD4") { // listing website column 
+        if (fields[i].id == columns.listing) {
           column = fields[i].id;
           selectOptions = fields[i].options.choices;
           schemaList.push({ [column]: JSON.stringify(selectOptions) });
         }
-        if (fields[i].id == "fldp0Cdze4QBCRIQy") { // discrimination type column
+        if (fields[i].id == columns.discriminationType) {
           column = fields[i].id;
           selectOptions = fields[i].options.choices;
           schemaList.push({ [column]: JSON.stringify(selectOptions) });
         }
-        if (fields[i].id == "fldZYKk8mQAJe05b5") { // discrimination type column
+        if (fields[i].id == columns.denialType) {
           column = fields[i].id;
           selectOptions = fields[i].options.choices;
           schemaList.push({ [column]: JSON.stringify(selectOptions) });
