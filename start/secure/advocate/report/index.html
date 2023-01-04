@@ -101,7 +101,7 @@
                             let options = JSON.parse(reportSchema[i][Object.keys(reportSchema[i])[0]]);
                             console.log(options);
                             for (j = 0; j < options.length; j++) {
-                                $(this).append($('<option>', {value: `${options[i].name}`, text: `${options[i].name}`}));
+                                $(this).append($('<option>', {value: `${options[j].name}`, text: `${options[j].name}`}));
                             }
                         }
 
