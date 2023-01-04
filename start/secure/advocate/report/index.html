@@ -94,7 +94,7 @@
             console.log(reportSchema);
 
             $("select").each(function () {
-                if ($(this).hasAttribute("data-id")) {
+                if ($(this).attr("data-id")) {
                     for (i = 0; i < reportSchema.length; i++) {
                         if ($(this).attr("data-id") == Object.keys(reportSchema[i])[0]) {
                             console.log(reportsSchema[i][Object.keys(reportSchema[i])[0]]);
