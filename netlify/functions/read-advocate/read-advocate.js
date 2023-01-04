@@ -41,8 +41,9 @@ exports.handler = function(event, context, callback) {
       for (let i = 0; i < fields.length; i++) {
         if (fields[i].id == "fldhEdkPi8horzLD4") { // @listing column 
           console.log(fields[i]);
-          schemaList.push(`${fields[i].name}: ${fields[i].options}`);
-          console.log(`${fields[i].name}: ${fields[i].options}`);
+          console.log(fields[i].options.choices);
+          schemaList.push(`${fields[i].name}: ${fields[i].options.choices}`);
+          console.log(`${fields[i].name}: ${fields[i].options.choices}`);
         }
       }
       console.log(schemaList)
