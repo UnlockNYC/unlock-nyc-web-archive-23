@@ -89,6 +89,10 @@
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
 
+            // getting the rest of airtable schema
+            let reportSchema = data.schemaList;
+            console.log(reportSchema);
+
             // Google Maps Places Autcomplete
             // for address input form, code from:
             // https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
@@ -110,7 +114,7 @@
                 const mapBounds = new google.maps.LatLngBounds(southwest, northeast);
                 autocomplete.setBounds(mapBounds);
 
-                addressField.focus();
+                //addressField.focus();
                 // When the user selects an address from the drop-down, populate the
                 // address fields in the form.
                 autocomplete.addListener("place_changed", fillInAddress);
