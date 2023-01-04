@@ -48,7 +48,14 @@ exports.handler = function(event, context, callback) {
       for (let i = 0; i < fields.length; i++) {
         let column;
         let selectOptions;
-        if (fields[i].id == columns.listing) {
+        for (const key in columns) {
+          if (columns[key] == fields[i].id) {
+            column = fields[i].id;
+            selectOptions = fields[i].options.choices;
+            schemaList.push({ [column]: JSON.stringify(selectOptions) });
+          }
+        }
+        /*if (fields[i].id == columns.listing) {
           column = fields[i].id;
           selectOptions = fields[i].options.choices;
           schemaList.push({ [column]: JSON.stringify(selectOptions) });
@@ -62,7 +69,7 @@ exports.handler = function(event, context, callback) {
           column = fields[i].id;
           selectOptions = fields[i].options.choices;
           schemaList.push({ [column]: JSON.stringify(selectOptions) });
-        }
+          }*/
       }
       console.log(schemaList);
       console.log(clientList);
