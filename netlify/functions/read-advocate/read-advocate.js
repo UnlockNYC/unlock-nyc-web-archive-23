@@ -1,6 +1,6 @@
 const Airtable = require('airtable');
 const jwt_decode = require('jwt-decode');
-import fetch from 'node-fetch';
+const fetch = require('node-fetch@2');
 
 exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
@@ -55,6 +55,7 @@ exports.handler = function(event, context, callback) {
   }
 
   async function getSchema() {
+    console.log("running schema");
     const response = await fetch('https://api.airtable.com/v0/meta/bases/appiZpVxsiS1Ev5Zv/tables', {
       method: 'GET',
       headers: {
