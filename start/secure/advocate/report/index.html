@@ -39,15 +39,15 @@
             <label class="form-field" for="unit">Apartment/Unit number?</label>
             <input type="text" id="unit" name="unit">
             <label class="form-field" for="website">What website did you use to find the apartment?</label>
-            <select name="website" id="website">
+            <select name="website" id="website" data-id="fldhEdkPi8horzLD4">
                 <!--MAB NOTE: could use metadata API to fill from Airtable? -->
-                <option>Apartments .com</option>
+                <!--<option>Apartments .com</option>
                 <option>Craigslist</option>
                 <option>Facebook Marketplace</option>
                 <option>Streeteasy</option>
                 <option>Trulia</option>
                 <option>Zillow</option>
-                <option>Other</option>
+                <option>Other</option>-->
             </select>
             <label class="form-field" for="url">What is the URL of the listing?</label>
             <input class="wide-text" type="text" id="url" name="url">
@@ -92,6 +92,17 @@
             // getting the rest of airtable schema
             let reportSchema = data.schema;
             console.log(reportSchema);
+
+            $("select").each(function () {
+                if ($(this).hasAttribute("data-id")) {
+                    for (i = 0; i < reportSchema.length; i++) {
+                        if ($(this).attr("data-id") == Object.keys(reportSchema[i])[0]) {
+                            console.log(reportsSchema[i][Object.keys(reportSchema[i])[0]];
+                        }
+
+                    }
+                }
+            });
 
             // Google Maps Places Autcomplete
             // for address input form, code from:
