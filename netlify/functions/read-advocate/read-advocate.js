@@ -35,14 +35,20 @@ exports.handler = function(event, context, callback) {
     }, async function done(err) {
       if (err) { console.error(err); return; }
       console.log(`${clientList.length} user records found.`);
+      let schemaList = [];
       let schema = await getSchema();
-      let fields = schema.tables[1].fields;
-      console.log(JSON.stringify(fields));
-      console.log(fields);
+      let fields = JSON.stringify(schema.tables[1].fields).join(",");
+      for (let i = 0; i < fields.length; i++) {
+        if (fields[i].id == "fldhEdkPi8horzLD4") { // @listing column 
+          schemaList.push(`${fields[i].name}: ${fields[i].options}`);
+        }
+      }
+      console.log(schemaList)
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
-          clientList: clientList
+          clientList: clientList,
+          schema: schemaList
         })
       });
     });
