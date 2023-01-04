@@ -40,22 +40,12 @@
             <input type="text" id="unit" name="unit">
             <label class="form-field" for="website">What website did you use to find the apartment?</label>
             <select name="website" id="website" data-id="fldhEdkPi8horzLD4">
-                <!--MAB NOTE: could use metadata API to fill from Airtable? -->
-                <!--<option>Apartments .com</option>
-                <option>Craigslist</option>
-                <option>Facebook Marketplace</option>
-                <option>Streeteasy</option>
-                <option>Trulia</option>
-                <option>Zillow</option>
-                <option>Other</option>-->
+                <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
             <label class="form-field" for="url">What is the URL of the listing?</label>
             <input class="wide-text" type="text" id="url" name="url">
             <label class="form-field" for="available">Is the listing still available?</label>
-            <select name="available" id="available">
-                <option>yes</option>
-                <option>no</option>
-                <option>unknown</option>
+            <select name="available" id="available" data-id="fldLDDBMmULQ5gI1n">
             </select>
 
             <input id="submit-report" type="submit" value="Continue"></input>

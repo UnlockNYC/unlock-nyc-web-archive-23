@@ -10,7 +10,8 @@ exports.handler = function(event, context, callback) {
   let columns = {
     listing: "fldhEdkPi8horzLD4",
     discriminationType: "fldp0Cdze4QBCRIQy",
-    denialType: "fldZYKk8mQAJe05b5"
+    denialType: "fldZYKk8mQAJe05b5",
+    aptAvailable: "fldLDDBMmULQ5gI1n"
   }
   /* NOTE: CHANGES based on env! staging base for now */
 
