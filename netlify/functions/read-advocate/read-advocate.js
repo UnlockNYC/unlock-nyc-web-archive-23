@@ -43,7 +43,7 @@ exports.handler = function(event, context, callback) {
           console.log(fields[i]);
           console.log(fields[i].options.choices);
           let columnName = fields[i].name;
-          let selectOptions = fields[i].options.choicesl
+          let selectOptions = fields[i].options.choices;
           schemaList.push({ [columnName]: selectOptions });
         }
       }
