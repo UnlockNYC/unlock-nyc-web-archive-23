@@ -39,12 +39,22 @@ exports.handler = function(event, context, callback) {
       let schema = await getSchema();
       let fields = schema.tables[1].fields;
       for (let i = 0; i < fields.length; i++) {
-        if (fields[i].id == "fldhEdkPi8horzLD4") { // @listing column 
-          console.log(fields[i]);
-          console.log(fields[i].options.choices);
-          let columnName = fields[i].name;
-          let selectOptions = fields[i].options.choices;
-          schemaList.push({ [columnName]: JSON.stringify(selectOptions) });
+        let column;
+        let selectOptions;
+        if (fields[i].id == "fldhEdkPi8horzLD4") { // listing website column 
+          column = fields[i].id;
+          selectOptions = fields[i].options.choices;
+          schemaList.push({ [column]: JSON.stringify(selectOptions) });
+        }
+        if (fields[i].id == "fldp0Cdze4QBCRIQy") { // discrimination type column
+          column = fields[i].id;
+          selectOptions = fields[i].options.choices;
+          schemaList.push({ [column]: JSON.stringify(selectOptions) });
+        }
+        if (fields[i].id == "fldZYKk8mQAJe05b5") { // discrimination type column
+          column = fields[i].id;
+          selectOptions = fields[i].options.choices;
+          schemaList.push({ [column]: JSON.stringify(selectOptions) });
         }
       }
       console.log(schemaList);
