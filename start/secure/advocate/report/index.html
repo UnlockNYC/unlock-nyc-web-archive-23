@@ -98,7 +98,7 @@
                     for (i = 0; i < reportSchema.length; i++) {
                         if ($(this).attr("data-id") == Object.keys(reportSchema[i])[0]) {
                             console.log(reportSchema[i][Object.keys(reportSchema[i])[0]]);
-                            let options = reportSchema[i][Object.keys(reportSchema[i])[0]].split(",");
+                            let options = JSON.parse(reportSchema[i][Object.keys(reportSchema[i])[0]]);
                             console.log(options);
                             for (j = 0; j < options.length; j++) {
                                 $(this).append($('<option>', {value: `${options[i].name}`, text: `${options[i].name}`}));
