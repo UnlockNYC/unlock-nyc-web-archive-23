@@ -44,10 +44,11 @@ exports.handler = function(event, context, callback) {
           console.log(fields[i].options.choices);
           let columnName = fields[i].name;
           let selectOptions = fields[i].options.choices;
-          schemaList.push({ [columnName]: selectOptions });
+          schemaList.push({ [columnName]: JSON.stringify(selectOptions) });
         }
       }
-      console.log(schemaList)
+      console.log(schemaList);
+      console.log(clientList);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
