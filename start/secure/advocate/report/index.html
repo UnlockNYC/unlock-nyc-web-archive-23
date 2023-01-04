@@ -95,6 +95,8 @@
 
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
+                    // data-id attribute on select dropdowns match the field IDs from airtable
+                    // to join with schema, for selection <options>
                     for (i = 0; i < reportSchema.length; i++) {
                         if ($(this).attr("data-id") == Object.keys(reportSchema[i])[0]) {
                             console.log(reportSchema[i][Object.keys(reportSchema[i])[0]]);
