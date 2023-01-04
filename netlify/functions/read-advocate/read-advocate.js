@@ -38,10 +38,11 @@ exports.handler = function(event, context, callback) {
       let schemaList = [];
       let schema = await getSchema();
       let fields = schema.tables[1].fields;
-      console.log(fields);
       for (let i = 0; i < fields.length; i++) {
         if (fields[i].id == "fldhEdkPi8horzLD4") { // @listing column 
+          console.log(fields[i]);
           schemaList.push(`${fields[i].name}: ${fields[i].options}`);
+          console.log(`${fields[i].name}: ${fields[i].options}`);
         }
       }
       console.log(schemaList)
