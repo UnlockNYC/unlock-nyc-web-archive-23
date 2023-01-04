@@ -44,10 +44,13 @@ exports.handler = function(event, context, callback) {
       console.log(`${clientList.length} user records found.`);
       let schemaList = [];
       let schema = await getSchema();
-      let fields = schema.tables[1].fields;
+      let fields = schema.tables[1].fields; // reports table
       for (let i = 0; i < fields.length; i++) {
         let column;
         let selectOptions;
+        // check if any of the field IDs match
+        // the columns object written @ top 
+        // if so, add to array that we'll send to web form
         for (const key in columns) {
           if (columns[key] == fields[i].id) {
             column = fields[i].id;
@@ -55,21 +58,6 @@ exports.handler = function(event, context, callback) {
             schemaList.push({ [column]: JSON.stringify(selectOptions) });
           }
         }
-        /*if (fields[i].id == columns.listing) {
-          column = fields[i].id;
-          selectOptions = fields[i].options.choices;
-          schemaList.push({ [column]: JSON.stringify(selectOptions) });
-        }
-        if (fields[i].id == columns.discriminationType) {
-          column = fields[i].id;
-          selectOptions = fields[i].options.choices;
-          schemaList.push({ [column]: JSON.stringify(selectOptions) });
-        }
-        if (fields[i].id == columns.denialType) {
-          column = fields[i].id;
-          selectOptions = fields[i].options.choices;
-          schemaList.push({ [column]: JSON.stringify(selectOptions) });
-          }*/
       }
       console.log(schemaList);
       console.log(clientList);
