@@ -11,7 +11,8 @@ exports.handler = function(event, context, callback) {
     listing: "fldhEdkPi8horzLD4",
     discriminationType: "fldp0Cdze4QBCRIQy",
     denialType: "fldZYKk8mQAJe05b5",
-    aptAvailable: "fldLDDBMmULQ5gI1n"
+    aptAvailable: "fldLDDBMmULQ5gI1n",
+    intervention: "fldHfhNDDz7Vgviec"
   }
   /* NOTE: CHANGES based on env! staging base for now */
 

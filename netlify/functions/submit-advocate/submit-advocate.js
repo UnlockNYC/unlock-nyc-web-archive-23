@@ -10,13 +10,16 @@ exports.handler = function(event, context, callback) {
     // the following uses airtable field IDs 
     // instead of column names, to protect in case of changes
     "fldAA5F50YecZRHsS": "CCHR reports", // Report Type
-    "fldmkXAGphcHd2wkb": [`${reportData.client}`], // @name, client name
+    "fldmkXAGphcHd2wkb": [`${reportData.client}`], // @name, client name,
+    "fldp0Cdze4QBCRIQy": reportData.discriminationType, // @type, no vouchers, etc.
     "fld9LxV8g98hxNn0U": reportData.story, // @story
     "fldRLw8j0MvaYC6w2": reportData.incidentDate, // @date_specific
     "fldXkr2FlRPTvo1bO": fullAddress, // @address
     "fldhEdkPi8horzLD4": reportData.website, // @listing, source website
+    "fldZYKk8mQAJe05b5": reportData.denialType, // @denialtype, phone email etc.
     "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing 
-    "fldLDDBMmULQ5gI1n": reportData.available // available? is apt. still available?
+    "fldLDDBMmULQ5gI1n": reportData.available, // available? is apt. still available?,
+    "fldHfhNDDz7Vgviec": reportData.intervention // Does tenant want this apt?
   }, function(err, record) {
     if (err) {
       console.error(err);

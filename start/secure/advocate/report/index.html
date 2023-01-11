@@ -25,11 +25,17 @@
         <h2 id="email"></h2>
         <h2 id="org"></h2>
         <form id="advocate-report" action="" method="post">
+            <label class="form-field" for="client">Who are you reporting on behalf of today?</label>
             <select name="client" id="clients-choice">
             </select>
             <p>Is the person that you are reporting on behalf missing from this list? Fill out a <a id="new-user-form"
                     href="https://weunlock.nyc" target="blank">new user enrollment</a> form first, and then return to
                 refresh this page.</p>
+            <label class="form-field" for="discriminationType">What type of discrimination are you reporting
+                today?</label>
+            <select name="discriminationType" id="discriminationType" data-id="fldp0Cdze4QBCRIQy">
+                <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
+            </select>
             <label class="form-field" for="story">Can you tell us more about what happened?</label>
             <input class="wide-text" type="textarea" id="story" name="story">
             <label class="form-field" for="date">What date did the discrimination happen?</label>
@@ -42,10 +48,22 @@
             <select name="website" id="website" data-id="fldhEdkPi8horzLD4">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
+            <label class="form-field" for="denialType">Where did the discrimination happen?</label>
+            <select name="denialType" id="denialType" data-id="fldZYKk8mQAJe05b5">
+                <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
+            </select>
             <label class="form-field" for="url">What is the URL of the listing?</label>
             <input class="wide-text" type="text" id="url" name="url">
             <label class="form-field" for="available">Is the listing still available?</label>
             <select name="available" id="available" data-id="fldLDDBMmULQ5gI1n">
+                <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
+            </select>
+            <label class="form-field" for="rent">What is the rent of the apartment you were looking at?</label>
+            <input type="number" min="1" step="any" name="rent" id="rent">
+            <label class="form-field" for="intervention">Is your client interested in a pre-complaint
+                intervention?</label>
+            <select name="intervention" id="intervention" data-id="fldHfhNDDz7Vgviec">
+                <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
 
             <input id="submit-report" type="submit" value="Continue"></input>
@@ -64,7 +82,7 @@
             $("h2#org").html(userInfo.app_metadata.org)
             $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}`);
 
-            // call function that queries Airtable for client list 
+            // call function that queries Airtable for client list and column schema
             let response = await fetch('/.netlify/functions/read-advocate', {
                 method: 'POST',
                 body: JSON.stringify(userToken),
