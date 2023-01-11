@@ -100,7 +100,6 @@
 
             // getting the rest of airtable schema
             let reportSchema = data.schema;
-            //console.log(reportSchema);
 
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
@@ -108,9 +107,8 @@
                     // to join with schema, for selection <options>
                     for (i = 0; i < reportSchema.length; i++) {
                         if ($(this).attr("data-id") == Object.keys(reportSchema[i])[0]) {
-                            //console.log(reportSchema[i][Object.keys(reportSchema[i])[0]]);
                             let options = JSON.parse(reportSchema[i][Object.keys(reportSchema[i])[0]]);
-                            //console.log(options);
+                            // this returns the multi or single select options strings from airtable
                             for (j = 0; j < options.length; j++) {
                                 if ($(this).hasClass("multi")) {
                                     // for multi select, create checkboxes
@@ -162,8 +160,6 @@
                 const place = autocomplete.getPlace();
                 let address1 = "";
                 let postcode = "";
-
-                console.log(place);
 
                 // Get each component of the address from the place details,
                 // and then fill-in the corresponding field on the form.
@@ -232,16 +228,15 @@
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
                 let formBody = formToJSON($("form#advocate-report")[0]);
-                console.log(formBody);
+                //console.log(formBody);
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
                     body: formBody
                 });
                 const data = await response.json();
-                /*if (data.statusCode == 200) {
+                if (data.statusCode == 200) {
                     window.location.href = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`
-                    }*/
-                console.log(data);
+                }
 
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {
@@ -253,6 +248,7 @@
 
                     // parse and add multiselect arrays
                     let multiArrays = ["denialType"];
+                    // if more, name to array here
                     for (let i = 0; i < multiArrays.length; i++) {
                         let multiAll = formData.getAll(multiArrays[i]);
                         // delete from JSON object the singular, only last chosen item
