@@ -114,10 +114,10 @@
                             for (j = 0; j < options.length; j++) {
                                 if ($(this).hasClass("multi")) {
                                     // for multi select, create checkboxes
-                                    let name = $(this).attr("name");
-                                    $(this).after(`<div class='multi-checkboxes' id='${name}'>`);
-                                    $(`<div class='multi-checkboxes' id='${name}'>`).append($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label><br>`));
-                                    // $(this).after($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label>`));
+                                    //let name = $(this).attr("name");
+                                    //$(this).after(`<div class='multi-checkboxes' id='${name}'>`);
+                                    //$(`<div class='multi-checkboxes' id='${name}'>`).append($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label><br>`));
+                                    $(this).after($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label><br>`));
                                 } else {
                                     // for single select, create dropdown options
                                     $(this).append($('<option>', {value: `${options[j].name}`, text: `${options[j].name}`}));
