@@ -37,3 +37,7 @@ input.wide-text {
     width: 100%;
     max-width: 400px;
 }
+
+input[type="checkbox"] {
+    display:inline;
+}
