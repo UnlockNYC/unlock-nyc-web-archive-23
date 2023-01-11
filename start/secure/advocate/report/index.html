@@ -254,7 +254,7 @@
                     // parse and add multiselect arrays
                     let multiArrays = ["denialType"];
                     for (let i = 0; i < multiArrays.length; i++) {
-                        let multiAll = formData.getAll(multiArrays[i]).split(",");
+                        let multiAll = formData.getAll(multiArrays[i]).join(",");
                         // delete from JSON object the singular, only last chosen item
                         delete obj[multiArrays[i]];
                         // add new list of multiselect to JSON object
