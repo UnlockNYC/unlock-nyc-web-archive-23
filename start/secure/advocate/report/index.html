@@ -116,7 +116,6 @@
                                     // for multi select, create checkboxes
                                     let name = $(this).attr("name");
                                     $(this).after($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label>`));
-                                    $(this).remove();
                                 } else {
                                     // for single select, create dropdown options
                                     $(this).append($('<option>', {value: `${options[j].name}`, text: `${options[j].name}`}));
@@ -126,6 +125,10 @@
                     }
                 }
             });
+
+            // remove multiselect in favor of checkboxes
+            // after their options are written
+            $("select.multi").remove();
 
             // Google Maps Places Autcomplete
             // for address input form, code from:
