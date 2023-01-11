@@ -17,7 +17,7 @@ exports.handler = function(event, context, callback) {
     "fldRLw8j0MvaYC6w2": reportData.incidentDate, // @date_specific
     "fldXkr2FlRPTvo1bO": fullAddress, // @address
     "fldhEdkPi8horzLD4": reportData.website, // @listing, source website
-    "fldZYKk8mQAJe05b5": [`${reportData.denialType}`], // @denialtype, phone email etc.
+    "fldZYKk8mQAJe05b5": reportData.denialType, // @denialtype, phone email etc.
     "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing 
     "fldLDDBMmULQ5gI1n": reportData.available, // available? is apt. still available?,
     "fldHfhNDDz7Vgviec": reportData.intervention // Does tenant want this apt?
