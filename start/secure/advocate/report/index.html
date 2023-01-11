@@ -49,7 +49,7 @@
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
             <label class="form-field" for="denialType">Where did the discrimination happen?</label>
-            <select name="denialType[]" id="denialType" data-id="fldZYKk8mQAJe05b5" class="multi">
+            <select name="denialType" id="denialType" data-id="fldZYKk8mQAJe05b5" class="multi">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
 
@@ -115,7 +115,9 @@
                                 if ($(this).hasClass("multi")) {
                                     // for multi select, create checkboxes
                                     let name = $(this).attr("name");
-                                    $(this).after($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label>`));
+                                    $(this).after(`<div class='multi-checkboxes' id='${name}'>`);
+                                    $(`<div class='multi-checkboxes' id='${name}'>`).append($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label><br>`));
+                                    // $(this).after($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label>`));
                                 } else {
                                     // for single select, create dropdown options
                                     $(this).append($('<option>', {value: `${options[j].name}`, text: `${options[j].name}`}));
@@ -228,11 +230,11 @@
             //window.initAutocomplete = initAutocomplete;
             initAutocomplete();
 
-
             // submit form data
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
                 let formBody = formToJSON($("form#advocate-report")[0]);
+                console.log(formBody);
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
                     body: formBody
