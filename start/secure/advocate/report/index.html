@@ -235,7 +235,7 @@
             // submit form data
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
-                let formBody = formToJSON($("form#advocate-report")[0]);
+                let formBody = await formToJSON($("form#advocate-report")[0]);
                 let evidenceCheck = formBody.evidence;
                 console.log(formBody);
                 console.log(evidenceCheck);

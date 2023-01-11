@@ -21,6 +21,10 @@
                 console.log('login', user);
                 window.location.href = '/start/secure/advocate/report';
             });
+
+            if (window.localStorage.getItem('gotrue.user') !== undefined) {
+                window.location.href = '/start/secure/advocate/report';
+            }
         });
 
     </script>
