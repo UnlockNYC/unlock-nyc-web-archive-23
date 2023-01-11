@@ -49,9 +49,10 @@
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
             <label class="form-field" for="denialType">Where did the discrimination happen?</label>
-            <select name="denialType" id="denialType" data-id="fldZYKk8mQAJe05b5">
+            <select name="denialType" id="denialType" data-id="fldZYKk8mQAJe05b5" class="multi">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
+
             <label class="form-field" for="url">What is the URL of the listing?</label>
             <input class="wide-text" type="text" id="url" name="url">
             <label class="form-field" for="available">Is the listing still available?</label>
@@ -111,10 +112,16 @@
                             let options = JSON.parse(reportSchema[i][Object.keys(reportSchema[i])[0]]);
                             console.log(options);
                             for (j = 0; j < options.length; j++) {
-                                $(this).append($('<option>', {value: `${options[j].name}`, text: `${options[j].name}`}));
+                                if ($(this).hasClass("multi")) {
+                                    // for multi select, create checkboxes
+                                    let name = $(this).attr("name");
+                                    $(this).append($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label>`));
+                                } else {
+                                    // for single select, create dropdown options
+                                    $(this).append($('<option>', {value: `${options[j].name}`, text: `${options[j].name}`}));
+                                }
                             }
                         }
-
                     }
                 }
             });
