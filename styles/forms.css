@@ -41,3 +41,10 @@ input.wide-text {
 input[type="checkbox"] {
     display:inline;
 }
+
+button, input[type="submit"] {
+    margin-bottom: 25px;
+    border:none;
+    padding: 12px;
+    border: 1px solid Black;
+}
