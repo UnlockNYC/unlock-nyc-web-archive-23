@@ -248,7 +248,7 @@
                     const formData = new FormData(form);
                     console.log(formData);
                     console.log("all test?");
-                    console.log(formData.getAll(denialType));
+                    console.log(formData.getAll("denialType"));
                     const obj = {};
                     formData.forEach((value, key) => {
                         obj[key] = value;
