@@ -67,10 +67,13 @@
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
             <label for="evidence">Do you have evidence to upload and add to this case?</label>
-            <label class="form-field" for="evidence-yes">Yes</label>
+            <select required name="evidence" id="evidence" data-id="fld39iqRmYpy5M8j2">
+                <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
+            </select>
+            <!--<label class="form-field" for="evidence-yes">Yes</label>
             <input type="radio" required name="evidence" value="yes" id="evidence-yes">
             <label class="form-field" for="evidence-no">No</label>
-            <input type="radio" required name="evidence" value="no" id="evidence-no">
+            <input type="radio" required name="evidence" value="no" id="evidence-no">-->
 
             <input id="submit-report" type="submit" value="Continue"></input>
         </form>
@@ -234,7 +237,6 @@
                 e.preventDefault();
                 let formBody = formToJSON($("form#advocate-report")[0]);
                 let evidenceCheck = formBody.evidence;
-                delete formBody.evidence;
                 //console.log(formBody);
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
@@ -242,7 +244,7 @@
                 });
                 const data = await response.json();
                 let redirect;
-                if (evidenceCheck == "yes") {
+                if (evidenceCheck == "Yes") {
                     redirect = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`;
                 } else {
                     redirect = '/start/secure/advocate/report/evidence-submit/complete.html';

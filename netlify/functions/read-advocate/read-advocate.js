@@ -12,9 +12,12 @@ exports.handler = function(event, context, callback) {
     discriminationType: "fldp0Cdze4QBCRIQy",
     denialType: "fldZYKk8mQAJe05b5",
     aptAvailable: "fldLDDBMmULQ5gI1n",
-    intervention: "fldHfhNDDz7Vgviec"
+    intervention: "fldHfhNDDz7Vgviec",
+    evidence: "fld39iqRmYpy5M8j2"
   }
   /* NOTE: CHANGES based on env! staging base for now */
+  // this is a list of columns with dropdown options
+  // to send schema to populate form
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only

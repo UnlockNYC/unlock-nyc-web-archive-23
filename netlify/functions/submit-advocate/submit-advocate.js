@@ -19,8 +19,10 @@ exports.handler = function(event, context, callback) {
     "fldhEdkPi8horzLD4": reportData.website, // @listing, source website
     "fldZYKk8mQAJe05b5": reportData.denialType, // @denialtype, phone email etc.
     "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing 
+    "fldXZwgcmk4hwJD1I": reportData.rent,
     "fldLDDBMmULQ5gI1n": reportData.available, // available? is apt. still available?,
-    "fldHfhNDDz7Vgviec": reportData.intervention // Does tenant want this apt?
+    "fldHfhNDDz7Vgviec": reportData.intervention, // Does tenant want this apt?
+    "fld39iqRmYpy5M8j2": reportData.evidence // @evidence, y/n, uploaded via digital ocean
   }, function(err, record) {
     if (err) {
       console.error(err);
