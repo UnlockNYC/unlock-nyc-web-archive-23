@@ -115,8 +115,6 @@
                                 if ($(this).hasClass("multi")) {
                                     // for multi select, create checkboxes
                                     let name = $(this).attr("name");
-                                    //$(this).after(`<div class='multi-checkboxes' id='${name}'>`);
-                                    //$(`<div class='multi-checkboxes' id='${name}'>`).append($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label><br>`));
                                     $(this).after($(`<input type='checkbox' name='${name}' value='${options[j].name}' id='${options[j].name}'><label for='${options[j].name}'>${options[j].name}</label><br>`));
                                 } else {
                                     // for single select, create dropdown options
@@ -240,9 +238,10 @@
                     body: formBody
                 });
                 const data = await response.json();
-                if (data.statusCode == 200) {
+                /*if (data.statusCode == 200) {
                     window.location.href = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`
-                }
+                    }*/
+                console.log(data);
 
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {
