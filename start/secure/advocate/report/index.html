@@ -246,13 +246,20 @@
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {
                     const formData = new FormData(form);
-                    console.log(formData);
-                    console.log("all test?");
-                    console.log(formData.getAll("denialType"));
                     const obj = {};
                     formData.forEach((value, key) => {
                         obj[key] = value;
                     });
+
+                    // parse and add multiselect arrays
+                    let multiArrays = ["denialType"];
+                    for (let i = 0; i < multiArrays.length; i++) {
+                        let multiAll = formData.getAll(multiArrays[i]).split(",");
+                        // delete from JSON object the singular, only last chosen item
+                        delete obj[multiArrays[i]];
+                        // add new list of multiselect to JSON object
+                        obj[multiArrays[i]] = multiAll;
+                    }
                     return JSON.stringify(obj);
                 }
             });
