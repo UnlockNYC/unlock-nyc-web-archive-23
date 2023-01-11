@@ -237,7 +237,8 @@
                 e.preventDefault();
                 let formBody = formToJSON($("form#advocate-report")[0]);
                 let evidenceCheck = formBody.evidence;
-                //console.log(formBody);
+                console.log(formBody);
+                console.log(evidenceCheck);
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
                     body: formBody
@@ -249,9 +250,12 @@
                 } else {
                     redirect = '/start/secure/advocate/report/evidence-submit/complete.html';
                 }
-                if (data.statusCode == 200) {
+                console.log(redirect);
+                /*if (data.statusCode == 200) {
                     window.location.href = redirect;
-                }
+                } else {
+                    alert("There has been an error submitting your report. Please reach out to Unlock NYC ASAP.");
+                    }*/
 
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {
