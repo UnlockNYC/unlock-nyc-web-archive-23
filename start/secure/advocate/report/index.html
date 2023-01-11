@@ -242,13 +242,13 @@
                 });
                 const data = await response.json();
                 let redirect;
-                if (formBody.evidence == "yes") {
+                if (evidenceCheck == "yes") {
                     redirect = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`;
                 } else {
                     redirect = '/start/secure/advocate/report/evidence-submit/complete.html';
                 }
                 if (data.statusCode == 200) {
-                    window.location.href = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`
+                    window.location.href = redirect;
                 }
 
                 // turn formData into JSON, stringify for fetch request
