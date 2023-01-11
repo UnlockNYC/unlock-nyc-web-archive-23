@@ -235,8 +235,8 @@
             // submit form data
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
-                let formBody = await formToJSON($("form#advocate-report")[0]);
-                let evidenceCheck = formBody.evidence;
+                let evidenceCheck = $("input[name='evidence']").val();
+                let formBody = formToJSON($("form#advocate-report")[0]);
                 console.log(formBody);
                 console.log(evidenceCheck);
                 const response = await fetch('/.netlify/functions/submit-advocate', {
