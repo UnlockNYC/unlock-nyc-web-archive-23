@@ -34,9 +34,11 @@ exports.handler = function(event, context, callback) {
     base('Partner organizations').select({
       maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Client List Names", "Name"],
-      filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
+      filterByFormula: `{Name}=${decoded.app_metadata.org}`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
+        console.log(record.get("Name"));
+        console.log(record.fields);
         let names = record.get("Client List Names").split(",");
         let ids = record.get("Client List");
         console.log(names);
