@@ -27,8 +27,9 @@ exports.handler = function(event, context, callback) {
     // query airtable, 
     // check for org in approved partner list
     let clientList = [];
+    console.log(decoded.app_metadata.org);
     base('Partner organizations').select({
-      maxRecords: 1,
+      maxRecords: 10,
       fields: ["Report Form Logins", "Client List", "Client List Names", "Name"],
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
