@@ -3,7 +3,6 @@ const jwt_decode = require('jwt-decode');
 const fetch = require('node-fetch');
 
 exports.handler = function(event, context, callback) {
-  console.log("I'M HERE!");
   const data = JSON.parse(event.body);
   const token = data.access_token;
   let decoded = jwt_decode(token);
@@ -27,8 +26,6 @@ exports.handler = function(event, context, callback) {
 
     // query airtable, 
     // check for org in approved partner list
-    console.log("HERE, WHAT ABOUT HERE?!");
-    console.log(decoded);
     let clientList = [];
     console.log(decoded.app_metadata.org);
     base('Partner organizations').select({
@@ -37,12 +34,8 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `{Name}="${decoded.app_metadata.org}"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        console.log(record.get("Name"));
-        console.log(record.fields);
         let names = record.get("Client List Names").split(",");
         let ids = record.get("Client List");
-        console.log(names);
-        console.log(ids);
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
@@ -54,7 +47,6 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, async function done(err) {
       if (err) { console.error(err); return; }
-      console.log(clientList);
       console.log(`${clientList.length} user records found.`);
       let schemaList = [];
       let schema = await getSchema();
