@@ -70,10 +70,6 @@
             <select required name="evidence" id="evidence" data-id="fld39iqRmYpy5M8j2">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
-            <!--<label class="form-field" for="evidence-yes">Yes</label>
-            <input type="radio" required name="evidence" value="yes" id="evidence-yes">
-            <label class="form-field" for="evidence-no">No</label>
-            <input type="radio" required name="evidence" value="no" id="evidence-no">-->
 
             <input id="submit-report" type="submit" value="Continue"></input>
         </form>
@@ -135,6 +131,13 @@
             // remove multiselect in favor of checkboxes
             // after their options are written
             $("select.multi").remove();
+            // clean up null options from airtable
+            $("option").each(function () {
+                let text = $(this).html();
+                if (text == "null") {
+                    $(this).remove();
+                }
+            })
 
             // Google Maps Places Autcomplete
             // for address input form, code from:
@@ -251,11 +254,11 @@
                     redirect = '/start/secure/advocate/report/evidence-submit/complete.html';
                 }
                 console.log(redirect);
-                /*if (data.statusCode == 200) {
+                if (data.statusCode == 200) {
                     window.location.href = redirect;
                 } else {
                     alert("There has been an error submitting your report. Please reach out to Unlock NYC ASAP.");
-                    }*/
+                }
 
                 // turn formData into JSON, stringify for fetch request
                 function formToJSON(form) {

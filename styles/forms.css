@@ -15,7 +15,7 @@ h2 {
     font-size: 18px;
 }
 
-select#clients {
+select#clients-choice {
     border: 1px solid black;
     padding: 10px 18px 10px 18px;
     border-radius: 10px;
@@ -30,7 +30,7 @@ label.form-field {
 
 input {
     display: block;
-    margin-bottom: 10px;
+    margin-bottom: 20px;
 }
 
 input.wide-text {
@@ -43,7 +43,7 @@ input[type="checkbox"] {
 }
 
 button, input[type="submit"], select {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
     border:none;
     padding: 12px;
     border: 1px solid Black;
