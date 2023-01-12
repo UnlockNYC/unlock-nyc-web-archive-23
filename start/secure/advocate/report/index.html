@@ -250,7 +250,7 @@
                 if (evidenceCheck == "Yes") {
                     redirect = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`;
                 } else {
-                    redirect = '/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}';
+                    redirect = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
                 }
                 console.log(redirect);
                 if (data.statusCode == 200) {
