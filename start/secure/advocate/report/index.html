@@ -240,8 +240,7 @@
                 e.preventDefault();
                 let evidenceCheck = $("select#evidence option:selected").val();
                 let formBody = formToJSON($("form#advocate-report")[0]);
-                console.log(formBody);
-                console.log(evidenceCheck);
+                //console.log(formBody);
                 const response = await fetch('/.netlify/functions/submit-advocate', {
                     method: 'POST',
                     body: formBody
@@ -251,7 +250,7 @@
                 if (evidenceCheck == "Yes") {
                     redirect = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`;
                 } else {
-                    redirect = '/start/secure/advocate/report/evidence-submit/complete.html';
+                    redirect = '/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}';
                 }
                 console.log(redirect);
                 if (data.statusCode == 200) {
