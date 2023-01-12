@@ -15,6 +15,10 @@ h2 {
     font-size: 18px;
 }
 
+form {
+    margin-top: 50px;
+}
+
 select#clients-choice {
     border: 1px solid black;
     padding: 10px 18px 10px 18px;
@@ -47,4 +51,9 @@ button, input[type="submit"], select {
     border:none;
     padding: 12px;
     border: 1px solid Black;
+}
+
+input[type="submit"] {}
+    background-color: #efc02a;
+    margin-top: 30px;
 }
