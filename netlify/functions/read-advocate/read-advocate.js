@@ -3,6 +3,7 @@ const jwt_decode = require('jwt-decode');
 const fetch = require('node-fetch');
 
 exports.handler = function(event, context, callback) {
+  console.log("I'M HERE!");
   const data = JSON.parse(event.body);
   const token = data.access_token;
   let decoded = jwt_decode(token);
@@ -26,6 +27,7 @@ exports.handler = function(event, context, callback) {
 
     // query airtable, 
     // check for org in approved partner list
+    console.log("HERE, WHAT ABOUT HERE?!");
     console.log(decoded);
     let clientList = [];
     console.log(decoded.app_metadata.org);
