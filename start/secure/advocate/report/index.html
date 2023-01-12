@@ -66,7 +66,7 @@
             <select name="intervention" id="intervention" data-id="fldHfhNDDz7Vgviec">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
-            <label for="evidence">Do you have evidence to upload and add to this case?</label>
+            <label class="form-field" for="evidence">Do you have evidence to upload and add to this case?</label>
             <select required name="evidence" id="evidence" data-id="fld39iqRmYpy5M8j2">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
@@ -235,7 +235,7 @@
             // submit form data
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
-                let evidenceCheck = $("input[name='evidence']").val();
+                let evidenceCheck = $("select#evidence option:selected").val();
                 let formBody = formToJSON($("form#advocate-report")[0]);
                 console.log(formBody);
                 console.log(evidenceCheck);
