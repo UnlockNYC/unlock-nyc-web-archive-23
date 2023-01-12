@@ -29,7 +29,7 @@ exports.handler = function(event, context, callback) {
     let clientList = [];
     console.log(decoded.app_metadata.org);
     base('Partner organizations').select({
-      maxRecords: 10,
+      maxRecords: 1,
       fields: ["Report Form Logins", "Client List", "Client List Names", "Name"],
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
@@ -48,6 +48,7 @@ exports.handler = function(event, context, callback) {
       fetchNextPage();
     }, async function done(err) {
       if (err) { console.error(err); return; }
+      console.log(clientList);
       console.log(`${clientList.length} user records found.`);
       let schemaList = [];
       let schema = await getSchema();
