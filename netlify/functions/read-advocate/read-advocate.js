@@ -26,6 +26,7 @@ exports.handler = function(event, context, callback) {
 
     // query airtable, 
     // check for org in approved partner list
+    console.log(decoded);
     let clientList = [];
     console.log(decoded.app_metadata.org);
     base('Partner organizations').select({
