@@ -33,6 +33,7 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `"{Name}='${decoded.app_metadata.org}'"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
+        console.log(record);
         let names = record.get("Client List Names").split(",");
         let ids = record.get("Client List");
         for (i = 0; i < names.length; i++) {
