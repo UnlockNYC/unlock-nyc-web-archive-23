@@ -13,7 +13,8 @@ exports.handler = function(event, context, callback) {
     denialType: "fldZYKk8mQAJe05b5",
     aptAvailable: "fldLDDBMmULQ5gI1n",
     intervention: "fldHfhNDDz7Vgviec",
-    evidence: "fld39iqRmYpy5M8j2"
+    evidence: "fld39iqRmYpy5M8j2",
+    contact: "fld0KWctTTkkMxaRW"
   }
   /* NOTE: CHANGES based on env! staging base for now */
   // this is a list of columns with dropdown options
