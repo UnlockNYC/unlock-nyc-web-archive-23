@@ -53,8 +53,8 @@ exports.handler = function(event, context, callback) {
         }),
         headers: {}
       });
-      const data = response.json();
-      console.log(data);
+      const next = response.json();
+      console.log(next);
     }
   });
 }
