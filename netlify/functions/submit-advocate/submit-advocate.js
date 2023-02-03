@@ -31,8 +31,9 @@ exports.handler = function(event, context, callback) {
       return;
     }
     console.log("new report created by advocate form");
-    console.log(record.getId());
-    sendConfirm(reportData, record.getId());
+    let recordId = record.getId();
+    console.log(recordId);
+    sendConfirm(reportData, recordId);
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
