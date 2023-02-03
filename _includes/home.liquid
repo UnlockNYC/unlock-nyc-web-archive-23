@@ -195,12 +195,14 @@
       let currentAddress = window.location.href;
       if (currentAddress.indexOf("#") > -1 && currentAddress.indexOf("confirmation_token") == -1) {
         let anchor = window.location.hash;
-        anchor = anchor.replace("#", "");
-        console.log(anchor);
-        let dimension = $("#" + anchor).offset().top;
-        $("body, html").animate({
-          scrollTop: dimension - 100
-        });
+        if (anchor) {
+            anchor = anchor.replace("#", "");
+            console.log(anchor);
+            let dimension = $("#" + anchor).offset().top;
+            $("body, html").animate({
+            scrollTop: dimension - 100
+            });
+        }
       }
 
       function slideTextCheck() {
