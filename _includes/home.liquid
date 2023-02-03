@@ -193,6 +193,7 @@
 
 
       let currentAddress = window.location.href;
+      console.log(currentAddress);
       if (currentAddress.indexOf("#") > -1 && currentAddress.indexOf("confirmation_token") == -1) {
         let anchor = window.location.hash;
         if (anchor) {
