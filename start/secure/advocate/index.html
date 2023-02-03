@@ -25,9 +25,7 @@
                 window.location.href = '/start/secure/advocate/report';
             });
 
-            let token = localStorage.getItem("gotrue.user");
-            console.log(token);
-            console.log(JSON.parse(token));
+            let token = JSON.parse(localStorage.getItem("gotrue.user"));
             if (token.app_metadata.roles[0] == "advocate") {
                 window.location.href = '/start/secure/advocate/report';
             }
