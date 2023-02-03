@@ -17,6 +17,9 @@
         $(document).ready(function () {
             netlifyIdentity.open();
 
+            const user = netlifyIdentity.currentUser();
+            netlifyIdentity.on('init', user => console.log('init', user));
+
             netlifyIdentity.on('login', function (user) {
                 console.log('login', user);
                 window.location.href = '/start/secure/advocate/report';
