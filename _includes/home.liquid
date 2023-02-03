@@ -114,16 +114,15 @@
             console.log('login', user);
             window.location.href = '/start/secure/advocate/report';
         });
-        
-        // check for addition of login token, re-direct for advocate
-        window.addEventListener('storage', () => {
-           let token = JSON.parse(localStorage.getItem("gotrue.user"));
+                
+        if(window.netlifyIdentity) {
+            let token = JSON.parse(localStorage.getItem("gotrue.user"));
+            console.log(token);
             if (token.app_metadata.roles[0] == "advocate") {
                 window.location.href = '/start/secure/advocate/report';
             }
-        });
+        }
         
-        console.log(Document.referrer);
         
 
       slideTextCheck();
