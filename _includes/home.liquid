@@ -106,11 +106,12 @@
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
     $(document).ready(function() {
-    
-    netlifyIdentity.on('login', function (user) {
-                console.log('login', user);
-                window.location.href = '/start/secure/advocate/report';
-    });
+        const user = netlifyIdentity.currentUser();
+        netlifyIdentity.on('init', user => console.log('init', user));
+        netlifyIdentity.on('login', function (user) { 
+            console.log('login', user);
+            window.location.href = '/start/secure/advocate/report';
+        });
 
       slideTextCheck();
 
