@@ -46,7 +46,7 @@ exports.handler = function(event, context, callback) {
     async function sendConfirm(report) {
       const response = await fetch('https://unlock-staging.glitch.me/send-report-confirm', {
         method: 'POST',
-        body: JSON.stringify({
+        body: JSON.parse({
           name: reportData.name,
           address: reportData.address,
           url: reportData.url,
