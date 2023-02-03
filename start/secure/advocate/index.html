@@ -24,6 +24,11 @@
                 console.log('login', user);
                 window.location.href = '/start/secure/advocate/report';
             });
+
+            let token = localStorage.getItem("gotrue.user");
+            if (token.app_metadata.roles[0] == "advocate") {
+                window.location.href = '/start/secure/advocate/report';
+            }
         });
 
     </script>
