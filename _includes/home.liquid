@@ -115,7 +115,7 @@
             window.location.href = '/start/secure/advocate/report';
         });
         
-        if (window.netlifyIdentity) {
+       /*if (window.netlifyIdentity) {
             setTimeout(function() {
                 let token = JSON.parse(localStorage.getItem("gotrue.user"));
                 console.log(token);
@@ -123,15 +123,6 @@
                     window.location.href = '/start/secure/advocate/report';
                 }
             }, 3500);
-        }
-   
-                
-        /*if(window.netlifyIdentity) {
-            let token = JSON.parse(localStorage.getItem("gotrue.user"));
-            console.log(token);
-            if (token.app_metadata.roles[0] == "advocate") {
-                window.location.href = '/start/secure/advocate/report';
-            }
         }*/
         
       slideTextCheck();
