@@ -43,8 +43,8 @@ exports.handler = function(event, context, callback) {
       })
     });
 
-    function sendConfirm(report) {
-      const response = fetch('https://unlock-staging.glitch.me/send-report-confirm', {
+    async function sendConfirm(report) {
+      const response = await fetch('https://unlock-staging.glitch.me/send-report-confirm', {
         method: 'POST',
         body: JSON.stringify({
           name: reportData.name,
