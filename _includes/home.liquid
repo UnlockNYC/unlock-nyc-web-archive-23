@@ -122,6 +122,10 @@
                 window.location.href = '/start/secure/advocate/report';
             }
         });
+        
+        if ($("div.modalContainer").length != 0) {
+            console.log("THIS WAY!");
+        }
 
       slideTextCheck();
 
@@ -193,7 +197,6 @@
 
 
       let currentAddress = window.location.href;
-      console.log(currentAddress);
       if (currentAddress.indexOf("#") > -1 && currentAddress.indexOf("confirmation_token") == -1) {
         let anchor = window.location.hash;
         if (anchor) {
@@ -204,10 +207,6 @@
             scrollTop: dimension - 100
             });
         }
-      }
-      
-      if (currentAddress.indexOf("confirmation_token") > -1) {
-        console.log("THIS WAY");
       }
 
       function slideTextCheck() {
