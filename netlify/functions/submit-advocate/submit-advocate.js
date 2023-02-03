@@ -33,7 +33,7 @@ exports.handler = function(event, context, callback) {
     console.log("new report created by advocate form");
     let recordId = record.getId();
     console.log(recordId);
-    sendConfirm(reportData, recordId);
+    sendConfirm(recordId);
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
@@ -43,14 +43,14 @@ exports.handler = function(event, context, callback) {
       })
     });
 
-    function sendConfirm(data, id) {
+    function sendConfirm(report) {
       const response = fetch('https://unlock-staging.glitch.me/send-report-confirm', {
         method: 'POST',
         body: JSON.stringify({
-          name: data.name,
-          address: data.address,
-          url: data.url,
-          report: id
+          name: reportData.name,
+          address: reportData.address,
+          url: reportData.url,
+          report: report
         }),
         headers: {}
       });
