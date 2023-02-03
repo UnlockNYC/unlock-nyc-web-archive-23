@@ -1,5 +1,5 @@
 [[redirects]]
-  from = "/start/secure/advocate/*"
+  from = "/start/secure/advocate/report/*"
   to = "/start/secure/advocate/report/:splat"
   force = true
   status = 200
