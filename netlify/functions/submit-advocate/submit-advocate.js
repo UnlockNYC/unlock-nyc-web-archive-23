@@ -1,4 +1,5 @@
 const Airtable = require('airtable');
+const fetch = require('node-fetch');
 
 exports.handler = function(event, context, callback) {
   var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
@@ -31,6 +32,7 @@ exports.handler = function(event, context, callback) {
     }
     console.log("new report created by advocate form");
     console.log(record.getId());
+    sendConfirm(reportData, record.getId());
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
@@ -38,7 +40,22 @@ exports.handler = function(event, context, callback) {
         message: 'report submitted',
         record: record.getId()
       })
-    })
+    });
+
+    function sendConfirm(data, id) {
+      const response = fetch('https://unlock-staging.glitch.me/send-report-confirm', {
+        method: 'POST',
+        body: JSON.stringify({
+          name: data.name,
+          address: data.address,
+          url: data.url,
+          report: id
+        }),
+        headers: {}
+      });
+      const data = response.json();
+      console.log(data);
+    }
   });
 }
 
