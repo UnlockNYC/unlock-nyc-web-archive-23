@@ -53,7 +53,7 @@ exports.handler = function(event, context, callback) {
           report: report
         },
         headers: {
-          'Content Type': 'application/json'
+          'Content-Type': 'application/json'
         }
       });
       const next = response.json();
