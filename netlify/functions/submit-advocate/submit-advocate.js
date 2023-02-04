@@ -53,7 +53,8 @@ exports.handler = function(event, context, callback) {
           report: report
         }),
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
+          'Authorization': '357435987sdfsdfkj'
         }
       });
       console.log(response);
