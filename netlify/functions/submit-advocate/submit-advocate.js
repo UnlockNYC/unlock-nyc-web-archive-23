@@ -37,7 +37,7 @@ exports.handler = function(event, context, callback) {
     let clientName = record.get("Name for Confirm E-Mail");
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
-    let forSendGrid = tenantEmail.join(",") + ", " + advocateEmail.join(",");
+    let forSendGrid = (tenantEmail.join(",") + ", " + advocateEmail.join(",")).split(",");
     sendConfirm(recordId);
 
     callback(null, {
