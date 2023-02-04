@@ -54,7 +54,7 @@ exports.handler = function(event, context, callback) {
         }),
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': '357435987sdfsdfkj'
+          'Authorization': process.env.CONFIRM_EMAIL_AUTH
         }
       });
       console.log(response);
