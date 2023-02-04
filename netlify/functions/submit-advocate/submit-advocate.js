@@ -55,7 +55,7 @@ exports.handler = function(event, context, callback) {
         body: JSON.stringify({
           email: forSendGrid,
           name: clientName,
-          address: reportData.address,
+          address: fullAddress,
           url: reportData.url,
           report: report
         }),
