@@ -33,10 +33,11 @@ exports.handler = function(event, context, callback) {
     console.log("new report created by advocate form");
     let recordId = record.getId();
     console.log(record);
-    let clientName = record.get("Name for Confirm Email");
+    let clientName = record.get("Name for Confirm E-Mail");
     let tenantEmail = record.get("Tenant E-Mail");
-    console.log(tenantEmail);
-    console.log(clientName);
+    let advocateEmail = record.get("Advocate E-Mail");
+    let emailParam = tenantEmail.join(",") + ", " + advocateEmail.join(",");
+    console.log(emailParam);
     console.log(recordId);
     sendConfirm(recordId);
     callback(null, {
@@ -52,6 +53,7 @@ exports.handler = function(event, context, callback) {
       const response = await fetch('https://unlock-staging.glitch.me/report/send-report-confirm', {
         method: 'POST',
         body: JSON.stringify({
+          //email: 
           name: clientName,
           address: reportData.address,
           url: reportData.url,
