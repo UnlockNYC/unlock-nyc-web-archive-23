@@ -32,8 +32,9 @@ exports.handler = function(event, context, callback) {
     }
     console.log("new report created by advocate form");
     let recordId = record.getId();
-    let clientName = record.getCellValue("Name for Confirm Email");
-    let tenantEmail = record.getCellValue("Tenant E-Mail");
+    console.log(record);
+    let clientName = record.get("Name for Confirm Email");
+    let tenantEmail = record.get("Tenant E-Mail");
     console.log(tenantEmail);
     console.log(clientName);
     console.log(recordId);
@@ -54,7 +55,8 @@ exports.handler = function(event, context, callback) {
           name: clientName,
           address: reportData.address,
           url: reportData.url,
-          report: report
+          report: report,
+          advocate: true
         }),
         headers: {
           'Content-Type': 'application/json',
