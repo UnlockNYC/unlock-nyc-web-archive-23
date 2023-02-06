@@ -132,11 +132,13 @@
         }*/
         
         if (loginAttempt == true) {
-            let token = JSON.parse(localStorage.getItem("gotrue.user"));
-            console.log(token);
-            if (token.app_metadata.roles[0] == "advocate") {
-               $("li#donate").prepend("<li id='advocate-login'>👥 login</li>");
-            }     
+            setTimeout(function() {
+                let token = JSON.parse(localStorage.getItem("gotrue.user"));
+                console.log(token);
+                if (token.app_metadata.roles[0] == "advocate") {
+                    $("li#donate").prepend("<li id='advocate-login'>👥 login</li>");
+                }
+            }, 3500);     
         }
         
       slideTextCheck();
