@@ -136,7 +136,7 @@
                 let token = JSON.parse(localStorage.getItem("gotrue.user"));
                 console.log(token);
                 if (token.app_metadata.roles[0] == "advocate") {
-                    $("li#donate").prepend("<li id='advocate-login'>👥 login</li>");
+                    $("li#donate").before("<li id='advocate-login'><a href="/start/secure/advocate">👥 advocates</a></li>");
                 }
             }, 3500);     
         }
