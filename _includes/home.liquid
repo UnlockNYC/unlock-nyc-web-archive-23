@@ -105,7 +105,11 @@
   <script src="/scripts/slider.js"></script>
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    console.log(window.location.hash);
+    let login = window.location.hash;
+    if (login.indexOf("confirmation") > -1) {
+        console.log("NETLIFY TRYING TO CONFIRM!");
+        $("li#donate").preprend("<li id="advocate-login">👥 login</li>");
+    }
     // netlify identity, for advocate login
     const user = netlifyIdentity.currentUser();
     netlifyIdentity.on('init', user => console.log('init', user));
