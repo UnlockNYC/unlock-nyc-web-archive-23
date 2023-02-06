@@ -105,11 +105,11 @@
   <script src="/scripts/slider.js"></script>
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-    let login = window.location.hash;
-    console.log(login);
-    if (login.indexOf("confirmation") > -1) {
-        console.log("NETLIFY TRYING TO CONFIRM!");
-        $("li#donate").preprend("<li id='advocate-login'>👥 login</li>");
+    let confirmation = window.location.hash;
+    let loginAttempt = false;
+    if (confirmation.indexOf("confirmation") > -1) {
+        console.log("NETLIFY TRYING TO CONFIRM ADVOCATE!");
+        loginAttempt = true;
     }
     // netlify identity, for advocate login
     const user = netlifyIdentity.currentUser();
@@ -130,6 +130,14 @@
                 }
             }, 3500);
         }*/
+        
+        if (loginAttempt == true) {
+            let token = JSON.parse(localStorage.getItem("gotrue.user"));
+            console.log(token);
+            if (token.app_metadata.roles[0] == "advocate") {
+               $("li#donate").prepend("<li id='advocate-login'>👥 login</li>");
+            }     
+        });
         
       slideTextCheck();
 
