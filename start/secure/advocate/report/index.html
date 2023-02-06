@@ -242,6 +242,8 @@
             // submit form data
             $("form#advocate-report").submit(async function (e) {
                 e.preventDefault();
+                $("input#submit-report").css("background-color", "#f123c3");
+                $("input#submit-report").html(". . .");
                 let evidenceCheck = $("select#evidence option:selected").val();
                 let formBody = formToJSON($("form#advocate-report")[0]);
                 //console.log(formBody);
