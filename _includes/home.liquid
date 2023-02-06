@@ -106,6 +106,15 @@
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
   
+    function checkIdentity() {
+        let token = JSON.parse(localStorage.getItem("gotrue.user"));
+        if (token.app_metadata.roles[0] == "advocate") {
+            return true;
+        } else {
+            return false;
+        } 
+    }
+  
     // netlify identity, advocate confirmation flow
     let confirmation = window.location.hash;
     let loginAttempt = false;
@@ -123,14 +132,16 @@
     $(document).ready(function() {
         
         // netlify identity, add menu link if login successful
-        if (loginAttempt == true) {
-            setTimeout(function() {
-                let token = JSON.parse(localStorage.getItem("gotrue.user"));
-                if (token.app_metadata.roles[0] == "advocate") {
-                    $("li#donate").before("<li id='advocate-login'><a href='/start/secure/advocate'>👥 advocates</a></li>");
-                }
-            }, 3500);     
+        /*if (loginAttempt == true) {
+            setTimeout(checkIdentity(), 3500);     
+        }*/
+        
+      setTimeout(function() {
+        let login = checkIdentity();
+        if (login == true) {
+            $("li#donate").before("<li id='advocate-login'><a href='/start/secure/advocate'>👥 advocates</a></li>");
         }
+      }, 3500);
         
       slideTextCheck();
 
