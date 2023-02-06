@@ -105,18 +105,17 @@
   <script src="/scripts/slider.js"></script>
   <script type="text/javascript" src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
   <script>
-  
-  console.log(window.location.hash);
+    console.log(window.location.hash);
+    // netlify identity, for advocate login
+    const user = netlifyIdentity.currentUser();
+    netlifyIdentity.on('init', user => console.log('init', user));
+    netlifyIdentity.on('login', function (user) { 
+        console.log('login', user);
+        window.location.href = '/start/secure/advocate/report';
+    });  
+    
     $(document).ready(function() {
     
-        // netlify identity, for advocate login
-        const user = netlifyIdentity.currentUser();
-        netlifyIdentity.on('init', user => console.log('init', user));
-        netlifyIdentity.on('login', function (user) { 
-            console.log('login', user);
-            window.location.href = '/start/secure/advocate/report';
-        });
-        
        /*if (window.netlifyIdentity) {
             setTimeout(function() {
                 let token = JSON.parse(localStorage.getItem("gotrue.user"));
