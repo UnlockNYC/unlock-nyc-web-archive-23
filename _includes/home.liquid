@@ -108,11 +108,13 @@
   
     function checkIdentity() {
         let token = JSON.parse(localStorage.getItem("gotrue.user"));
-        if (token.app_metadata.roles[0] == "advocate") {
-            return true;
-        } else {
-            return false;
-        } 
+        if (token) {
+            if (token.app_metadata.roles[0] == "advocate") {
+                return true;
+            } else {
+                return false;
+            } 
+        }
     }
   
     // netlify identity, advocate confirmation flow
@@ -120,6 +122,7 @@
     let loginAttempt = false;
     if (confirmation.indexOf("confirmation") > -1) {
         loginAttempt = true;
+        console.log("advocate confirmation: " + loginAttempt); 
     }
     
     // netlify widget
@@ -131,11 +134,7 @@
     
     $(document).ready(function() {
         
-        // netlify identity, add menu link if login successful
-        /*if (loginAttempt == true) {
-            setTimeout(checkIdentity(), 3500);     
-        }*/
-        
+      // check netlify identity, add redirect link
       setTimeout(function() {
         let login = checkIdentity();
         if (login == true) {
