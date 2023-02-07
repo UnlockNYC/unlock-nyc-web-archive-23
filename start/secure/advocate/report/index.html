@@ -309,7 +309,9 @@
         $("div#logout").click(function () {
             netlifyIdentity.logout();
             alert("You are logged out of your advocate account @ Unlock NYC.");
-            window.location.href = "/start/secure/advocate";
+            setTimeout(function () {
+                window.location.href = "/start/secure/advocate";
+            }, 2000);
         });
 
     </script>
