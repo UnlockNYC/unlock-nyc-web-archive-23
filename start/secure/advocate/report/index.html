@@ -12,21 +12,6 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjSD4KtZNkPXvMFeuyKLVIV_FdQtfQD34&libraries=places">
     </script>
-    <style>
-        div#logout {
-            position: absolute;
-            right: 9%;
-            top: 0;
-            cursor: pointer;
-            padding: 12px;
-        }
-
-        div#logout:hover {
-            background-color: Black;
-            color: White;
-        }
-
-    </style>
 </head>
 
 <body>
@@ -304,15 +289,18 @@
                     return JSON.stringify(obj);
                 }
             });
+
+            $("div#logout").click(function () {
+                netlifyIdentity.logout();
+                alert("You are logged out of your advocate account @ Unlock NYC.");
+                setTimeout(function () {
+                    window.location.href = "/start/secure/advocate";
+                }, 2000);
+            });
+
         });
 
-        $("div#logout").click(function () {
-            netlifyIdentity.logout();
-            alert("You are logged out of your advocate account @ Unlock NYC.");
-            setTimeout(function () {
-                window.location.href = "/start/secure/advocate";
-            }, 2000);
-        });
+
 
     </script>
 </body>

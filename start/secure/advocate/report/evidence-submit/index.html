@@ -17,6 +17,9 @@
             UNLOCK<br>NYC<br>
         </h1>
         <h2>ADVOCATE REPORT FORM</h2>
+        <div id="logout">
+            👋 LOGOUT
+        </div>
         <h2 id="org"></h2>
         <h2 id="email"></h2>
         <h2>UPLOAD EVIDENCE</h2>
@@ -68,6 +71,14 @@
                     alert("there is a problem with authorization. please contact unlock nyc.");
                 }
 
+            });
+
+            $("div#logout").click(function () {
+                netlifyIdentity.logout();
+                alert("You are logged out of your advocate account @ Unlock NYC.");
+                setTimeout(function () {
+                    window.location.href = "/start/secure/advocate";
+                }, 2000);
             });
         });
 

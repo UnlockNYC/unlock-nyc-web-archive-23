@@ -69,3 +69,16 @@ input[type="submit"] {
 input[type="submit"]:hover {
     background-color: #f123c3;
 }
+
+div#logout {
+    position: absolute;
+    right: 9%;
+    top: 0;
+    cursor: pointer;
+    padding: 12px;
+}
+
+div#logout:hover {
+    background-color: Black;
+    color: White;
+}
