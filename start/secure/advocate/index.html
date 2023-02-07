@@ -14,22 +14,24 @@
 <body>
     <div data-netlify-identity-menu></div>
     <script>
-        netlifyIdentity.open();
+        $(document).ready(function () {
+            netlifyIdentity.open();
 
-        const user = netlifyIdentity.currentUser();
-        netlifyIdentity.on('init', user => console.log('init', user));
+            const user = netlifyIdentity.currentUser();
+            netlifyIdentity.on('init', user => console.log('init', user));
 
-        netlifyIdentity.on('login', function (user) {
-            console.log('login', user);
-            window.location.href = '/start/secure/advocate/report';
-        });
+            netlifyIdentity.on('login', function (user) {
+                console.log('login', user);
+                window.location.href = '/start/secure/advocate/report';
+            });
 
-        /*let token = JSON.parse(localStorage.getItem("gotrue.user"));
-        if (token.app_metadata.roles[0] == "advocate") {
-            window.location.href = '/start/secure/advocate/report';
-        }*/
-      // above is too hot - if token expires, infinite loop
+            /*let token = JSON.parse(localStorage.getItem("gotrue.user"));
+            if (token.app_metadata.roles[0] == "advocate") {
+                window.location.href = '/start/secure/advocate/report';
+            }*/
+            // above is too hot - if token expires, infinite loop
 
+        });       
     </script>
 </body>
 
