@@ -12,6 +12,20 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjSD4KtZNkPXvMFeuyKLVIV_FdQtfQD34&libraries=places">
     </script>
+    <style>
+        div#logout {
+            position: absolute;
+            right: 0;
+            top: 0;
+            cursor: pointer;
+            padding: 12px;
+        }
+
+        div#logout:hover {
+            background-color: Black;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -22,6 +36,9 @@
         <h2>ADVOCATE REPORT FORM</h2>
         <h2 id="org"></h2>
         <h2 id="email"></h2>
+        <div id="logout">
+            👋 LOGOUT
+        </div>
 
         <form id="advocate-report" action="" method="post">
             <label class="form-field" for="client">Who are you reporting on behalf of today?</label>
@@ -286,6 +303,12 @@
                     return JSON.stringify(obj);
                 }
             });
+        });
+
+        $("div#logout").click(function () {
+            netlifyIdentity.logout();
+            alert("You are logged out of your advocate account @ Unlock NYC.");
+            window.location.href = "/start/secure/advocate";
         });
 
     </script>
