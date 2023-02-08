@@ -24,7 +24,8 @@ exports.handler = function(event, context, callback) {
   // query airtable, 
   // check for e-mail in approved partner list
   base('Advocates').select({
-    fields: ["fld507vee2P1MzsmW", "Name"]
+    fields: ["fld507vee2P1MzsmW", "fldsQvRzwPtcUS1Ve"], // email, name
+    returnFieldsByFieldId: true
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
