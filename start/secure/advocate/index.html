@@ -35,7 +35,7 @@
                 window.location.href = '/start/secure/advocate/report';
             });
 
-            if ($("li.netlify-identity-user-details").html.indexOf("Logged in") > -1) {
+            if ($("li.netlify-identity-user-details").html().indexOf("Logged in") > -1) {
                 $("<li><a href='/start/secure/advocate/report'>Make a report<a></li>").insertAfter($("li.netlify-identity-user-details"));
             }
 
