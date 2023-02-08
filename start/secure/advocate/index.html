@@ -35,6 +35,10 @@
                 window.location.href = '/start/secure/advocate/report';
             });
 
+            if ($("li.netlify-identity-user-details").html.indexOf("Logged in") > -1) {
+                $("<li><a href='/start/secure/advocate/report'>Make a report<a></li>").insertAfter($("li.netlify-identity-user-details"));
+            }
+
             /*let token = JSON.parse(localStorage.getItem("gotrue.user"));
             if (token.app_metadata.roles[0] == "advocate") {
                 window.location.href = '/start/secure/advocate/report';
