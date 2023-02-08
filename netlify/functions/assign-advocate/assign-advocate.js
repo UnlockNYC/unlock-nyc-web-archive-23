@@ -23,12 +23,12 @@ exports.handler = function(event, context, callback) {
 
   // query airtable, 
   // check for e-mail in approved partner list
-  base('Partner organizations').select({
+  base('Advocates').select({
     fields: ["Report Form Logins", "Name"]
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
     records.forEach(function(record) {
-      let email = record.get("Report Form Logins");
+      let email = record.get("fld507vee2P1MzsmW"); // email address column, advocate table
       if (email.indexOf(user.email) > -1) {
         approval = true;
         console.log("MATCH, REQUEST APPROVED");
