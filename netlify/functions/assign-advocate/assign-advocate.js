@@ -24,7 +24,7 @@ exports.handler = function(event, context, callback) {
   // query airtable, 
   // check for e-mail in approved partner list
   base('Advocates').select({
-    fields: ["fld507vee2P1MzsmW", "fldsQvRzwPtcUS1Ve"], // email, name
+    fields: ["fld507vee2P1MzsmW", "fldsQvRzwPtcUS1Ve", "fldeT7EYWva8lEMJh"], // email, name, org name
     returnFieldsByFieldId: true
   }).eachPage(function page(records, fetchNextPage) {
     // This function (`page`) will get called for each page of records.
@@ -33,7 +33,7 @@ exports.handler = function(event, context, callback) {
       if (email.indexOf(user.email) > -1) {
         approval = true;
         console.log("MATCH, REQUEST APPROVED");
-        responseBody.app_metadata.org = record.get("Name");
+        responseBody.app_metadata.org = record.get("fldeT7EYWva8lEMJh"); // org name
       }
     });
     // If there are no more records, `done` will get called.
