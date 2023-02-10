@@ -5,8 +5,8 @@ questions: '<h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC wor
   with voucher holders and advocates to build tools that make it easier to identify,
   document, and report “source of income” discrimination on your housing search. If
   you live in New York City and you have a voucher (such as CityFHEPS, Section 8,
-  FHEPS, or HASA), you can use our website to tell us about unfair treatment by a
-  broker, management company, or landlord. We can add your report to our advocacy
+  EHV, FHEPS, or HASA), you can use our website to tell us about unfair treatment
+  by a broker, management company, or landlord. We can add your report to our advocacy
   database, and we can also connect you to an organization or government agency who
   can tell you about your rights and your options to address that specific incident.</p><p>We
   also know that the housing search with a voucher can often be frustrating, discouraging,
@@ -32,12 +32,12 @@ questions: '<h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC wor
   <a href="https://weunlock.nyc/soi-report/" title="SOI report">here</a>)</p><p>If
   you want individual help with your specific situation, you can also request that
   we send a copy of your report to organizations who provide counseling on your rights
-  and may be able to connect you to legal services if needed. In 2021, we connected
-  our users to the NYC Commission on Human Rights when they requested it. In 2022,
-  we are working on adding more options to our tool.</p><p>You also don’t have to
-  use Unlock NYC to report! If you prefer, you can report directly to agencies and
-  organizations such as the <a href="https://www1.nyc.gov/site/cchr/law/source-of-income.page"
-  title="NYCCHR">NYC Commission on Human Rights</a>, the <a href="https://www1.nyc.gov/site/hra/help/income-discrimination.page"
+  and may be able to connect you to legal services if needed. We can currently connect
+  you with the NYC Commission on Human Rights, the Fair Housing Justice Center, or
+  Fordham Law School''s housing clinic. </p><p>You also don’t have to use Unlock NYC
+  to report! If you prefer, you can report directly to agencies and organizations
+  such as the <a href="https://www1.nyc.gov/site/cchr/law/source-of-income.page" title="NYCCHR">NYC
+  Commission on Human Rights</a>, the <a href="https://www1.nyc.gov/site/hra/help/income-discrimination.page"
   title="HRA DSS SOI Unit">HRA/DSS Source of Income Unit</a>, the <a href="https://www.fairhousingjustice.org/our-work/housing-discrimination-complaints/"
   title="FHJC">Fair Housing Justice Center</a>, the <a href="https://dhr.ny.gov/complaint#file"
   title="NYS DHR">New York State Division of Human Rights</a>, or the <a href="https://ag.ny.gov/source-income-discrimination"
@@ -64,7 +64,7 @@ questions: '<h1>Questions</h1><h2>What does Unlock NYC do?</h2><p>Unlock NYC wor
   housing search. There are organizations all over the city who have been doing amazing
   work to support voucher holders for much longer than we have, and we want to make
   sure you know about them! We are building an online learning center for voucher
-  holders that will launch in 2022, but in the meantime we made <a href="https://linktr.ee/weunlocknyc">this
+  holders that will launch soon, but in the meantime we made <a href="https://linktr.ee/weunlocknyc">this
   list of resources</a> you might find helpful.</p>'
 
 ---
