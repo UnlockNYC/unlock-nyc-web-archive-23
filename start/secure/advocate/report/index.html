@@ -13,8 +13,7 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjSD4KtZNkPXvMFeuyKLVIV_FdQtfQD34&libraries=places&callback=initAutocomplete">
         </script>
-    <!-- MAB, fix callback -->
-
+    <!-- MAB, fix google api callback -->
 </head>
 
 <body>
@@ -31,52 +30,77 @@
 
         <form id="advocate-report" action="" method="post">
             <label class="form-field" for="client">Who are you reporting on behalf of today?</label>
+            <p class="explainer">
+                Is the person that you are reporting on behalf missing from this list? <br>
+                Fill out a <a id="new-user-form" href="https://weunlock.nyc" target="blank">new user enrollment</a> form
+                first, and then return to refresh this page.
+            </p>
             <select name="client" id="clients-choice">
             </select>
-            <p>Is the person that you are reporting on behalf missing from this list? Fill out a <a id="new-user-form"
-                    href="https://weunlock.nyc" target="blank">new user enrollment</a> form first, and then return to
-                refresh this page.</p>
-            <label class="form-field" for="discriminationType">What type of discrimination are you reporting
-                today?</label>
+            <label class="form-field" for="discriminationType">What best describes the discriminatory tactic that you
+                are reporting today?</label>
             <select name="discriminationType" id="discriminationType" data-id="fldp0Cdze4QBCRIQy">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
             <label class="form-field" for="story">Can you tell us more about what happened?</label>
-            <input class="wide-text" type="textarea" id="story" name="story">
+            <p class="explainer">
+                A few sentences is fine. Any details you have about the name, position, and/or contact information for
+                the broker, agent, and/or landlord that you communicated with can help expedite processing for this
+                report.
+            </p>
+            <textarea class="wide-text" rows="6" id="story" name="story"></textarea>
             <label class="form-field" for="date">What date did the discrimination happen?</label>
+            <p class="explainer">
+                If the discriminatory treatment took place over more than one day, select the most recent date.
+            </p>
             <input required type="date" id="incidentDate" name="incidentDate">
             <label class="form-field" for="reportAddress">What is the building address?</label>
             <input class="wide-text" type="text" id="reportAddress" name="reportAddress" required autocomplete="off">
-            <label class="form-field" for="unit">Apartment/Unit number?</label>
+            <label class="form-field" for="unit">What is the apartment/unit number?</label>
             <input type="text" id="unit" name="unit">
-            <label class="form-field" for="website">What website did you use to find the apartment?</label>
+            <label class="form-field" for="rent">What is the monthly rent listed for the unit?</label>
+            <input type="number" min="1" step="any" name="rent" id="rent" placeholder="$">
+            <label class="form-field" for="website">What website did you use to find this listing?</label>
             <select name="website" id="website" data-id="fldhEdkPi8horzLD4">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
+            <label class="form-field" for="url">What is the URL of the listing?</label>
+            <input class="wide-text" type="text" id="url" name="url">
             <label class="form-field" for="denialType">Where did the discrimination happen?</label>
+            <p class="explainer">
+                Select all that apply.
+            </p>
             <select name="denialType" id="denialType" data-id="fldZYKk8mQAJe05b5" class="multi">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
 
-            <label class="form-field" for="url">What is the URL of the listing?</label>
-            <input class="wide-text" type="text" id="url" name="url">
             <label class="form-field" for="available">Is the listing still available?</label>
             <select name="available" id="available" data-id="fldLDDBMmULQ5gI1n">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
-            <label class="form-field" for="rent">What is the rent of the apartment you were looking at?</label>
-            <input type="number" min="1" step="any" name="rent" id="rent" placeholder="$">
+
             <label class="form-field" for="intervention">Is your client interested in a pre-complaint
                 intervention?
             </label>
+            <p class="explainer">
+                If you have questions about this, please see the FAQs <a href="https://weunlock.nyc" target="_blank">on
+                    our website</a>.
+            </p>
             <select name="intervention" id="intervention" data-id="fldHfhNDDz7Vgviec">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
-            <label class="form-field" for="contact">Who should be the point of contact for this report?</label>
+            <label class="form-field" for="contact">Who should be the primary point of contact for this report?</label>
+            <p class="explainer">
+                We will CC both you and your client on the report if we refer it to our partner organizations.
+            </p>
             <select name="contact" id="contact" data-id="fld0KWctTTkkMxaRW">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
-            <label class="form-field" for="evidence">Do you have evidence to upload and add to this case?</label>
+            <label class="form-field" for="evidence">Do you have evidence to upload and add to this report?</label>
+            <p class="explainer">
+                Evidence might include screenshots of emails or texts, audio or video recordings, and/or comparator
+                tests conducted by the tenant or an advocate.
+            </p>
             <select required name="evidence" id="evidence" data-id="fld39iqRmYpy5M8j2">
                 <!--OPTIONS FILLED BY AIRTABLE METADATA API CALL -->
             </select>
@@ -95,7 +119,6 @@
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
-            $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}`);
 
             // call function that queries Airtable for client list and column schema
             let response = await fetch('/.netlify/functions/read-advocate', {
@@ -111,6 +134,8 @@
             let advocate = data.advocate;
             console.log(orgList);
             console.log(advocate);
+            // prefill new user form
+            $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}&prefill_Advocate=${advocate}`);
             // populate client dropdown options
             for (i = 0; i < clientList.length; i++) {
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));

@@ -39,12 +39,19 @@ label.form-field {
     margin-top: 10px;
 }
 
+p.explainer {
+    font-size: 15px; 
+    font-style: italic;
+    margin-top: 0; 
+    max-width: 400px;
+}
+
 input {
     display: block;
     margin-bottom: 20px;
 }
 
-input.wide-text {
+input.wide-text, textarea.wide-text {
     width: 100%;
     max-width: 400px;
 }
