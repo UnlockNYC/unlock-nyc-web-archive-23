@@ -40,6 +40,7 @@ exports.handler = function(event, context, callback) {
 
     if (advocateEmail == undefined) {
       console.log("no advocate assigned yet");
+      advocateEmail = "madeline.blount@gmail.com";
       /*base('User information').find("recmT5Ynt3WiqElU3", function(err, record) {
         if (err) { console.error(err); return; }
         console.log("made it here?!");
