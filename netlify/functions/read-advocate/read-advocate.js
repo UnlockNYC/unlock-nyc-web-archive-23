@@ -26,17 +26,18 @@ exports.handler = function(event, context, callback) {
     // currently TEST: STAGING BASE 
 
     // query airtable, 
-    // check for org in approved partner list
+    // check for advocate in approved advocate list
     let clientList = [];
     console.log(decoded.app_metadata.org);
-    base('Partner organizations').select({
+    console.log(decoded.email);
+    base('Advocates').select({
       maxRecords: 1,
-      fields: ["Report Form Logins", "Client List", "Client List Names", "Name"],
-      filterByFormula: `{Name}="${decoded.app_metadata.org}"`
+      fields: ["Email Address", "Advocate Client List", "Advocate Client List Names", "Organization Name for Online Form"],
+      filterByFormula: `{Email Address}="${decoded.email}"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        let names = record.get("Client List Names").split(",");
-        let ids = record.get("Client List");
+        let names = record.get("Advocate Client List Names").split(",");
+        let ids = record.get("Advocate Client List");
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
