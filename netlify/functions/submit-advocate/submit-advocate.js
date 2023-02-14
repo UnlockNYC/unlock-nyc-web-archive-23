@@ -38,7 +38,6 @@ exports.handler = function(event, context, callback) {
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
 
-    console.log(advocateEmail);
     if (advocateEmail == undefined) {
       console.log("no advocate assigned yet");
       advocateEmail = "madeline.blount@gmail.com";
@@ -70,13 +69,9 @@ exports.handler = function(event, context, callback) {
     } else {
       forSendGrid = advocateEmail;
     }
-    if (advocateEmail == undefined) {
-      console.log("STILL NO ADVOCATE ASSIGNED!");
-      return;
-    } else {
-      console.log(forSendGrid);
-      sendConfirm(recordId);
-    }
+
+    console.log(forSendGrid);
+    sendConfirm(recordId);
 
     callback(null, {
       statusCode: 200,
