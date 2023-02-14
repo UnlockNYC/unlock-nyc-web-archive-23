@@ -78,6 +78,7 @@ exports.handler = function(event, context, callback) {
       }
       console.log(schemaList);
       console.log(clientList);
+      console.log(orgList);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
