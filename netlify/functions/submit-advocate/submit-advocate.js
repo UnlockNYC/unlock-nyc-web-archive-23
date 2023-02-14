@@ -38,31 +38,6 @@ exports.handler = function(event, context, callback) {
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
 
-    if (advocateEmail == undefined) {
-      console.log("no advocate assigned yet");
-      advocateEmail = "madeline.blount@gmail.com";
-      console.log(advocateEmail);
-      /*base('User information').find("recmT5Ynt3WiqElU3", function(err, record) {
-        if (err) { console.error(err); return; }
-        console.log("made it here?!");
-        console.log('Retrieved', record.id);
-        console.log(record.get('Advocate E-Mail'));
-      });*/
-      // if there is no advocate assigned ...
-      /*base('User information').update(reportData.client, {
-        "Advocate": [`${reportData.advocate}`]
-      }, function(err, record) {
-        if (err) {
-          console.error(err);
-          return;
-        }
-        console.log(record.get('Advocate'));
-        console.log(record.get('Advocate E-Mail'));
-        advocateEmail = record.get('Advocate E-Mail');
-        console.log(advocateEmail);
-        });*/
-    }
-
     let forSendGrid;
     if (tenantEmail) {
       forSendGrid = (tenantEmail.join(",") + ", " + advocateEmail.join(",")).split(",");
@@ -70,7 +45,6 @@ exports.handler = function(event, context, callback) {
       forSendGrid = advocateEmail;
     }
 
-    console.log(forSendGrid);
     sendConfirm(recordId);
 
     callback(null, {
