@@ -37,13 +37,29 @@ exports.handler = function(event, context, callback) {
     let clientName = record.get("Name for Confirm E-Mail");
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
+
+    if (advocateEmail == undefined) {
+      // if there is no advocate assigned ...
+      base('User information').update(`${reportData.client}`, {
+        "Advocate": [`${reportData.advocate}`]
+      }, function(err, record) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log(record.get('Advocate'));
+        console.log(record.get('Advocate E-Mail'));
+        avocateEmail = record.get('Advocate E-Mail');
+      });
+    }
+
+
     let forSendGrid;
     if (tenantEmail) {
       forSendGrid = (tenantEmail.join(",") + ", " + advocateEmail.join(",")).split(",");
     } else {
       forSendGrid = advocateEmail;
     }
-    // WILL I NEED TO SEND ADVOCATE AND/OR ORG NAME, AS WELL? 
 
     sendConfirm(recordId);
 
