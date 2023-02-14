@@ -39,7 +39,7 @@ exports.handler = function(event, context, callback) {
     let advocateEmail = record.get("Advocate E-Mail");
 
     let forSendGrid;
-    if (tenantEmail) {
+    if (tenantEmail && advocateEmail) {
       forSendGrid = (tenantEmail.join(",") + ", " + advocateEmail.join(",")).split(",");
     } else {
       forSendGrid = advocateEmail;
