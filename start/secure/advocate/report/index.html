@@ -154,7 +154,7 @@
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
             for (j = 0; j < orgList.length; j++) {
-                $('select#org-clients').append($('<option>', {value: `${orgList[i].id}`, text: `${orgList[i].name}`}));
+                $('select#org-clients').append($('<option>', {value: `${orgList[j].id}`, text: `${orgList[j].name}`}));
             }
 
             $("a#full-org").click(function () {
