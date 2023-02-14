@@ -29,6 +29,7 @@ exports.handler = function(event, context, callback) {
     // check for advocate in approved advocate list
     let clientList = [];
     let orgList = [];
+    let advocateId;
     console.log(decoded.app_metadata.org);
     console.log(decoded.email);
     base('Advocates').select({
@@ -37,7 +38,7 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `{Email Address}="${decoded.email}"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
-        let advocateId = record.getId();
+        advocateId = record.getId();
         let names = record.get("Advocate Client List Names").split(",");
         let ids = record.get("Advocate Client List");
         let fullOrgList = record.get("Full Org Client List");
