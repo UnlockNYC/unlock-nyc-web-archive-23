@@ -58,7 +58,13 @@ exports.handler = function(event, context, callback) {
           return;
         }
         console.log("added an advocate");
-        console.log(record.get('Advocate E-mail'));
+        advocateEmail = record.get('Advocate E-mail');
+        console.log(advocateEmail);
+        if (tenantEmail && advocateEmail) {
+          forSendGrid = (tenantEmail.join(",") + ", " + advocateEmail.join(",")).split(",");
+        } else {
+          forSendGrid = advocateEmail;
+        }
         sendConfirm(recordId);
       });
     }
