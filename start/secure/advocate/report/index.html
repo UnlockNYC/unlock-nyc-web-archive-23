@@ -52,7 +52,7 @@
             </p>
             <select name="client" id="clients-choice">
             </select>
-            <select name="client" id="org-clients">
+            <select name="org-client" id="org-clients">
             </select>
             <label class="form-field" for="discriminationType">What best describes the discriminatory tactic that you
                 are reporting today?</label>
@@ -133,6 +133,8 @@
             let newUserForm = "https://airtable.com/shrjDxUcmjIdrVtTq?prefill_Organization%20choice=";
             // TEST for now, staging base 
 
+            let advocateAssign = false;
+
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
@@ -163,6 +165,7 @@
             }
 
             $("a#full-org").click(function () {
+                advocateAssign = true;
                 $("select#clients-choice").hide();
                 $("select#org-clients").show();
                 $("span#new-user").show();
@@ -346,6 +349,13 @@
                         // add new list of multiselect to JSON object
                         obj[multiArrays[i]] = multiAll;
                     }
+
+                    // choose which client list: advocate, or org (needs assigning) 
+                    if (advocateAssign) {
+                        obj['client'] = obj['org-client'];
+                    }
+                    delete obj['org-client'];
+
                     return JSON.stringify(obj);
                 }
             });
