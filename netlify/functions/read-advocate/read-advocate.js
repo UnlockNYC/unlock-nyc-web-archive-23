@@ -41,13 +41,14 @@ exports.handler = function(event, context, callback) {
         let ids = record.get("Advocate Client List");
         let fullOrgList = record.get("Full Org Client List");
         let fullOrgNames = record.get("Full Org List Names");
+        console.log(fullOrgNames);
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
             id: ids[i]
           });
         }
-        for (j = 0; j < fullOrgList.length; j++) {
+        for (j = 0; j < fullOrgNames.length; j++) {
           orgList.push({
             name: fullOrgNames[j],
             id: fullOrgList[j]
