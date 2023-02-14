@@ -28,20 +28,29 @@ exports.handler = function(event, context, callback) {
     // query airtable, 
     // check for advocate in approved advocate list
     let clientList = [];
+    let orgList = [];
     console.log(decoded.app_metadata.org);
     console.log(decoded.email);
     base('Advocates').select({
       maxRecords: 1,
-      fields: ["Email Address", "Advocate Client List", "Advocate Client List Names", "Organization Name for Online Form"],
+      fields: ["Email Address", "Advocate Client List", "Advocate Client List Names", "Full Org Client List", "Full Org List Names"],
       filterByFormula: `{Email Address}="${decoded.email}"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
         let names = record.get("Advocate Client List Names").split(",");
         let ids = record.get("Advocate Client List");
+        let fullOrgList = record.get("Full Org Client List");
+        let fullOrgNames = record.get("Full Org List Names");
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
             id: ids[i]
+          });
+        }
+        for (j = 0; j < fullOrgList.length; j++) {
+          orgList.push({
+            name: fullOrgNames[j],
+            id: fullOrgList[j]
           });
         }
       });
@@ -73,6 +82,7 @@ exports.handler = function(event, context, callback) {
         statusCode: 200,
         body: JSON.stringify({
           clientList: clientList,
+          orgList: orgList,
           schema: schemaList
         })
       });
