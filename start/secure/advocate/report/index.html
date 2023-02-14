@@ -108,7 +108,9 @@
             let data = await response.json();
             let clientList = data.clientList;
             let orgList = data.orgList;
+            let advocate = data.advocate;
             console.log(orgList);
+            console.log(advocate);
             // populate client dropdown options
             for (i = 0; i < clientList.length; i++) {
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));

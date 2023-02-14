@@ -37,10 +37,11 @@ exports.handler = function(event, context, callback) {
       filterByFormula: `{Email Address}="${decoded.email}"`
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
+        let advocateId = record.getId();
         let names = record.get("Advocate Client List Names").split(",");
         let ids = record.get("Advocate Client List");
         let fullOrgList = record.get("Full Org Client List");
-        let fullOrgNames = record.get("Full Org List Names");
+        let fullOrgNames = record.get("Full Org List Names").split(",");
         console.log(fullOrgNames);
         for (i = 0; i < names.length; i++) {
           clientList.push({
@@ -83,6 +84,7 @@ exports.handler = function(event, context, callback) {
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
+          advocate: advocateId,
           clientList: clientList,
           orgList: orgList,
           schema: schemaList
