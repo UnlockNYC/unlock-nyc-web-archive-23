@@ -49,7 +49,7 @@ exports.handler = function(event, context, callback) {
         }
         console.log(record.get('Advocate'));
         console.log(record.get('Advocate E-Mail'));
-        avocateEmail = record.get('Advocate E-Mail');
+        advocateEmail = record.get('Advocate E-Mail');
       });
     }
 
