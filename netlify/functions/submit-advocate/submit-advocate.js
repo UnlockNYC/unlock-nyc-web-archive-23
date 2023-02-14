@@ -40,8 +40,13 @@ exports.handler = function(event, context, callback) {
 
     if (advocateEmail == undefined) {
       console.log("no advocate assigned yet");
+      base('User information').find(reportData.client, function(err, record) {
+        if (err) { console.error(err); return; }
+        console.log('Retrieved', record.id);
+        console.log(record.get('Advocate E-Mail'));
+      });
       // if there is no advocate assigned ...
-      base('User information').update(reportData.client, {
+      /*base('User information').update(reportData.client, {
         "Advocate": [`${reportData.advocate}`]
       }, function(err, record) {
         if (err) {
@@ -52,7 +57,7 @@ exports.handler = function(event, context, callback) {
         console.log(record.get('Advocate E-Mail'));
         advocateEmail = record.get('Advocate E-Mail');
         console.log(advocateEmail);
-      });
+        });*/
     }
 
     let forSendGrid;
