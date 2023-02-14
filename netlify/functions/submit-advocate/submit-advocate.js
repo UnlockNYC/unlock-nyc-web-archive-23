@@ -40,8 +40,9 @@ exports.handler = function(event, context, callback) {
 
     if (advocateEmail == undefined) {
       console.log("no advocate assigned yet");
-      base('User information').find(reportData.client, function(err, record) {
+      base('User information').find("recmT5Ynt3WiqElU3", function(err, record) {
         if (err) { console.error(err); return; }
+        console.log("made it here?!");
         console.log('Retrieved', record.id);
         console.log(record.get('Advocate E-Mail'));
       });
