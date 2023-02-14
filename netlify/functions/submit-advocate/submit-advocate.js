@@ -44,8 +44,11 @@ exports.handler = function(event, context, callback) {
     } else {
       forSendGrid = advocateEmail;
     }
+    console.log(forSendGrid);
 
-    if (advocateEmail == undefined) {
+    if (advocateEmail) {
+      sendConfirm(recordId);
+    } else {
       console.log("missing advocate assignment");
       console.log(reportData.client);
       base('User information').find(reportData.client, function(err, record) {
@@ -54,7 +57,7 @@ exports.handler = function(event, context, callback) {
       });
     }
 
-    sendConfirm(recordId);
+    // sendConfirm(recordId);
 
     callback(null, {
       statusCode: 200,
