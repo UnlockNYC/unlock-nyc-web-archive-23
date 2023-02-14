@@ -37,8 +37,9 @@ exports.handler = function(event, context, callback) {
     let clientName = record.get("Name for Confirm E-Mail");
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
-
+    console.log(advocateEmail);
     if (advocateEmail == undefined) {
+      console.log("if statement!!")
       // if there is no advocate assigned ...
       base('User information').update(`${reportData.client}`, {
         "Advocate": [`${reportData.advocate}`]
