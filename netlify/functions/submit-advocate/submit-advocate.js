@@ -38,9 +38,11 @@ exports.handler = function(event, context, callback) {
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
 
+    console.log(advocateEmail);
     if (advocateEmail == undefined) {
       console.log("no advocate assigned yet");
       advocateEmail = "madeline.blount@gmail.com";
+      console.log(advocateEmail);
       /*base('User information').find("recmT5Ynt3WiqElU3", function(err, record) {
         if (err) { console.error(err); return; }
         console.log("made it here?!");
@@ -72,6 +74,7 @@ exports.handler = function(event, context, callback) {
       console.log("STILL NO ADVOCATE ASSIGNED!");
       return;
     } else {
+      console.log(forSendGrid);
       sendConfirm(recordId);
     }
 
