@@ -40,12 +40,12 @@ exports.handler = function(event, context, callback) {
 
     if (advocateEmail == undefined) {
       console.log("no advocate assigned yet");
-      base('User information').find("recmT5Ynt3WiqElU3", function(err, record) {
+      /*base('User information').find("recmT5Ynt3WiqElU3", function(err, record) {
         if (err) { console.error(err); return; }
         console.log("made it here?!");
         console.log('Retrieved', record.id);
         console.log(record.get('Advocate E-Mail'));
-      });
+      });*/
       // if there is no advocate assigned ...
       /*base('User information').update(reportData.client, {
         "Advocate": [`${reportData.advocate}`]
@@ -67,8 +67,12 @@ exports.handler = function(event, context, callback) {
     } else {
       forSendGrid = advocateEmail;
     }
-
-    sendConfirm(recordId);
+    if (advocateEmail == undefined) {
+      console.log("STILL NO ADVOCATE ASSIGNED!");
+      return;
+    } else {
+      sendConfirm(recordId);
+    }
 
     callback(null, {
       statusCode: 200,
