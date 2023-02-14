@@ -44,16 +44,22 @@ exports.handler = function(event, context, callback) {
     } else {
       forSendGrid = advocateEmail;
     }
-    console.log(forSendGrid);
 
     if (advocateEmail) {
       sendConfirm(recordId);
     } else {
       console.log("missing advocate assignment");
       console.log(reportData.client);
-      base('User information').find(reportData.client, function(err, record) {
-        if (err) { console.error(err); return; }
-        console.log('Retrieved', record.id);
+      base('User information').update(reportData.client, {
+        "Advocate": [`${reportData.advocate}`]
+      }, function(err, record) {
+        if (err) {
+          console.error(err);
+          return;
+        }
+        console.log("added an advocate");
+        console.log(record.get('Advocate E-mail'));
+        sendConfirm(recordId);
       });
     }
 
