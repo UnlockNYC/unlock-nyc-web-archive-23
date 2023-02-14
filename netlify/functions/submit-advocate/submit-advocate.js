@@ -37,11 +37,11 @@ exports.handler = function(event, context, callback) {
     let clientName = record.get("Name for Confirm E-Mail");
     let tenantEmail = record.get("Tenant E-Mail");
     let advocateEmail = record.get("Advocate E-Mail");
-    console.log(advocateEmail);
+
     if (advocateEmail == undefined) {
-      console.log("if statement!!")
+      console.log("no advocate assigned yet");
       // if there is no advocate assigned ...
-      base('User information').update(`${reportData.client}`, {
+      base('User information').update(reportData.client, {
         "Advocate": [`${reportData.advocate}`]
       }, function(err, record) {
         if (err) {
@@ -51,9 +51,9 @@ exports.handler = function(event, context, callback) {
         console.log(record.get('Advocate'));
         console.log(record.get('Advocate E-Mail'));
         advocateEmail = record.get('Advocate E-Mail');
+        console.log(advocateEmail);
       });
     }
-
 
     let forSendGrid;
     if (tenantEmail) {
