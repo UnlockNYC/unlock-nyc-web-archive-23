@@ -45,6 +45,15 @@ exports.handler = function(event, context, callback) {
       forSendGrid = advocateEmail;
     }
 
+    if (advocateEmail == undefined) {
+      console.log("missing advocate assignment");
+      console.log(reportData.client);
+      base('User information').find(reportData.client, function(err, record) {
+        if (err) { console.error(err); return; }
+        console.log('Retrieved', record.id);
+      });
+    }
+
     sendConfirm(recordId);
 
     callback(null, {
