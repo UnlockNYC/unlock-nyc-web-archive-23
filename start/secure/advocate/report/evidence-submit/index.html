@@ -26,7 +26,7 @@
         <!--<button id="no-evidence">I don't need to upload evidence</button>-->
         <form id="advocate-evidence" action="" method="post">
             <label for="files">Select evidence to upload: (you may hold 'Shift' to upload multiple files)</label>
-            <input type="file" id="files" name="files[]" multiple>
+            <input type="file" id="files" name="files[]" multiple style="margin-top: 20px;">
             <input type="submit" value="Add Evidence to Report">
         </form>
 
@@ -54,7 +54,9 @@
             $("form#advocate-evidence").submit(async function (e) {
                 e.preventDefault();
                 let functionUrl = 'https://unlock-staging.glitch.me/report/advocate-add-file';
-                // let functionUrl = '/.netlify/functions/upload-evidence';
+                // STAGING!! change domain
+                $("input#submit-report").css("background-color", "#f123c3");
+                $("input#submit-report").attr("value", " . . .");
                 alert("Submitting your evidence now!");
                 let formData = new FormData($("form#advocate-evidence")[0]);
                 formData.append('record', report);

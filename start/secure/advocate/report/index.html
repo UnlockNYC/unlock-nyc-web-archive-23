@@ -14,6 +14,16 @@
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjSD4KtZNkPXvMFeuyKLVIV_FdQtfQD34&libraries=places&callback=initAutocomplete">
         </script>
     <!-- MAB, fix google api callback -->
+    <style>
+        span#new-user {
+            display: none;
+        }
+
+        select#org-clients {
+            display: none;
+        }
+
+    </style>
 </head>
 
 <body>
@@ -31,11 +41,14 @@
         <form id="advocate-report" action="" method="post">
             <label class="form-field" for="client">Who are you reporting on behalf of today?</label>
             <p class="explainer">
-                Is the person that you are reporting on behalf missing from this list? <br>
-                Fill out a <a id="new-user-form" href="https://weunlock.nyc" target="blank">new user enrollment</a> form
-                first, and then return to refresh this page.
+                Is the person that you are reporting on behalf missing from this list? <a id="full-org">Check this
+                    list</a><br>
+                <span id="new-user">Fill out a <a id="new-user-form" href="https://weunlock.nyc" target="blank">new user
+                        enrollment</a> form first, and then return to refresh this page.</span>
             </p>
             <select name="client" id="clients-choice">
+            </select>
+            <select name="client" id="org-clients">
             </select>
             <label class="form-field" for="discriminationType">What best describes the discriminatory tactic that you
                 are reporting today?</label>
@@ -132,14 +145,24 @@
             let clientList = data.clientList;
             let orgList = data.orgList;
             let advocate = data.advocate;
-            console.log(orgList);
-            console.log(advocate);
+            // console.log(orgList);
+            // console.log(advocate);
             // prefill new user form
             $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}&prefill_Advocate=${advocate}`);
             // populate client dropdown options
             for (i = 0; i < clientList.length; i++) {
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
             }
+            for (j = 0; j < orgList.length; j++) {
+                $('select#org-clients').append($('<option>', {value: `${orgList[i].id}`, text: `${orgList[i].name}`}));
+            }
+
+            $("a#full-org").click(function () {
+                $("select#clients-choice").hide();
+                $("select#org-clients").show();
+                $("span#new-user").show();
+            })
+
 
             // getting the rest of airtable schema
             let reportSchema = data.schema;
