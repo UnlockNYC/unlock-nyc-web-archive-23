@@ -147,7 +147,7 @@
             $("h2#org").html(userInfo.app_metadata.org)
 
             // call function that queries Airtable for client list and column schema
-            let response = await fetch('/.netlify/functions/read-advocate', {
+            let response = await fetch('/.netlify/functions/staging-read-advocate', {
                 method: 'POST',
                 body: JSON.stringify(userToken),
                 headers: {
