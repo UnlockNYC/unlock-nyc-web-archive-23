@@ -34,7 +34,9 @@ exports.handler = function(event, context, callback) {
     returnFieldsByFieldId: true
   }).eachPage(function page(records, fetchNextPage) {
     records.forEach(function(record) {
+      console.log(record);
       let email = record.get("fldDdJrgCAe1YD1xv"); // PROD BASE - email address column, advocate table
+      console.log(email);
       if (email.indexOf(user.email) > -1) {
         approval = true;
         console.log("MATCH, REQUEST APPROVED");
