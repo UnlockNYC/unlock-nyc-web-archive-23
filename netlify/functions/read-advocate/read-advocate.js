@@ -69,7 +69,6 @@ exports.handler = function(event, context, callback) {
       console.log(`${clientList.length} user records found.`);
       let schemaList = [];
       let schema = await getSchema();
-      console.log(schema);
       let fields = schema.tables[1].fields; // reports table
       for (let i = 0; i < fields.length; i++) {
         let column;
