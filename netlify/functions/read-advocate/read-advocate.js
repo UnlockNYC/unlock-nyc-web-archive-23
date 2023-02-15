@@ -39,26 +39,28 @@ exports.handler = function(event, context, callback) {
     }).eachPage(function page(records, fetchNextPage) {
       records.forEach(function(record) {
         advocateId = record.getId();
-        let names = record.get("Advocate Client List Names").split(",");
         let ids = record.get("Advocate Client List");
         let fullOrgList = record.get("Full Org Client List");
-        let fullOrgNames = record.get("Full Org List Names").split(",");
-        console.log(fullOrgNames);
+        let names = record.get("Advocate Client List Names");
+        if (names !== undefined) {
+          names = names.split(",");
+        }
+        let fullOrgNames = record.get("Full Org List Names");
+        if (fullOrgNames !== undefined) {
+          fullOrgNames = fullOrgNames.split(",");
+        }
         for (i = 0; i < names.length; i++) {
           clientList.push({
             name: names[i],
             id: ids[i]
           });
         }
-        if (fullOrgNames) {
-          for (j = 0; j < fullOrgNames.length; j++) {
-            orgList.push({
-              name: fullOrgNames[j],
-              id: fullOrgList[j]
-            });
-          }
+        for (j = 0; j < fullOrgNames.length; j++) {
+          orgList.push({
+            name: fullOrgNames[j],
+            id: fullOrgList[j]
+          });
         }
-
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
