@@ -323,7 +323,7 @@
                 let evidenceCheck = $("select#evidence option:selected").val();
                 let formBody = formToJSON($("form#advocate-report")[0]);
                 //console.log(formBody);
-                const response = await fetch('/.netlify/functions/submit-advocate', {
+                const response = await fetch('/.netlify/functions/staging-submit-advocate', {
                     method: 'POST',
                     body: formBody
                 });
