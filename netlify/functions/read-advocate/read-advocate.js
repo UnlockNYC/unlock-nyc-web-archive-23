@@ -50,12 +50,15 @@ exports.handler = function(event, context, callback) {
             id: ids[i]
           });
         }
-        for (j = 0; j < fullOrgNames.length; j++) {
-          orgList.push({
-            name: fullOrgNames[j],
-            id: fullOrgList[j]
-          });
+        if (fullOrgNames) {
+          for (j = 0; j < fullOrgNames.length; j++) {
+            orgList.push({
+              name: fullOrgNames[j],
+              id: fullOrgList[j]
+            });
+          }
         }
+
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();

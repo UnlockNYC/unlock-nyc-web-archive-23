@@ -81,6 +81,7 @@ exports.handler = function(event, context, callback) {
     });
 
     async function sendConfirm(report) {
+      // STAGING!! change url base
       const response = await fetch('https://unlock-staging.glitch.me/report/send-report-confirm', {
         method: 'POST',
         body: JSON.stringify({
