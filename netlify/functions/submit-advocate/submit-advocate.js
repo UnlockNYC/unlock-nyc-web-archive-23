@@ -2,29 +2,28 @@ const Airtable = require('airtable');
 const fetch = require('node-fetch');
 
 exports.handler = function(event, context, callback) {
-  var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
-  // TEST for now, staging base
+  var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('app3RonGnLm3P4aVF');
+  // PROD REPORTS BASE
 
   let reportData = JSON.parse(event.body);
-  console.log(reportData);
   let fullAddress = `${reportData.reportAddress} - Unit: ${reportData.unit}`;
   base('All reports').create({
     // the following uses airtable field IDs 
     // instead of column names, to protect in case of changes
-    "fldAA5F50YecZRHsS": "CCHR reports", // Report Type
-    "fldmkXAGphcHd2wkb": [`${reportData.client}`], // @name, client name,
-    "fldp0Cdze4QBCRIQy": reportData.discriminationType, // @type, no vouchers, etc.
-    "fld9LxV8g98hxNn0U": reportData.story, // @story
-    "fldRLw8j0MvaYC6w2": reportData.incidentDate, // @date_specific
-    "fldXkr2FlRPTvo1bO": fullAddress, // @address
-    "fldhEdkPi8horzLD4": reportData.website, // @listing, source website
-    "fldZYKk8mQAJe05b5": reportData.denialType, // @denialtype, phone email etc.
-    "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing 
-    "fldXZwgcmk4hwJD1I": parseInt(reportData.rent),
-    "fldLDDBMmULQ5gI1n": reportData.available, // available? is apt. still available?,
-    "fldHfhNDDz7Vgviec": reportData.intervention, // Does tenant want this apt?,
-    "fld0KWctTTkkMxaRW": reportData.contact, // who is point of contact, tenant/advocate?
-    "fld39iqRmYpy5M8j2": reportData.evidence // @evidence, y/n, uploaded via digital ocean
+    "fldls47eVrIeaqMo2": "CCHR reports", // Report Type
+    "fld7cW2PkKGJoBBgl": [`${reportData.client}`], // @name, client name,
+    "fldaSBFI9xkDNqNMI": reportData.discriminationType, // @type, no vouchers, etc.
+    "fldUDwnhbCCjImsW4": reportData.story, // @story
+    "fldCDvAsVfZc9bbsc": reportData.incidentDate, // @date_specific
+    "fldIcquOgkjVGX67Y": fullAddress, // @address
+    "fld2wcMYdBLqC8Qze": reportData.website, // @listing, source website
+    "fldKQJMhhj4Lpza7f": reportData.denialType, // @denialtype, phone email etc.
+    "flduNauzqPxKbWmsR": reportData.url, // @url, listing 
+    "fldIRvIlhNyjHiIXS": parseInt(reportData.rent),
+    "fld3LQiU1MEcyqADh": reportData.available, // available? is apt. still available?,
+    "flds7gfMy2BXr4nam": reportData.intervention, // Does tenant want this apt?,
+    "fldkit1voLUsvQ3Im": reportData.contact, // who is point of contact, tenant/advocate?
+    "fldO1hS0hrTAgldfc": reportData.evidence // @evidence, y/n, uploaded via digital ocean
   }, function(err, record) {
     if (err) {
       console.error(err);
