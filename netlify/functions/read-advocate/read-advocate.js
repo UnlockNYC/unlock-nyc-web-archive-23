@@ -8,22 +8,22 @@ exports.handler = function(event, context, callback) {
   let decoded = jwt_decode(token);
 
   let columns = {
-    listing: "fldhEdkPi8horzLD4",
-    discriminationType: "fldp0Cdze4QBCRIQy",
-    denialType: "fldZYKk8mQAJe05b5",
-    aptAvailable: "fldLDDBMmULQ5gI1n",
-    intervention: "fldHfhNDDz7Vgviec",
-    evidence: "fld39iqRmYpy5M8j2",
-    contact: "fld0KWctTTkkMxaRW"
+    listing: "fld2wcMYdBLqC8Qze",
+    discriminationType: "fldaSBFI9xkDNqNMI",
+    denialType: "fldKQJMhhj4Lpza7f",
+    aptAvailable: "fld3LQiU1MEcyqADh",
+    intervention: "flds7gfMy2BXr4nam",
+    evidence: "fldO1hS0hrTAgldfc",
+    contact: "fldkit1voLUsvQ3Im"
   }
-  /* NOTE: CHANGES based on env! staging base for now */
+  /* NOTE: CHANGES based on env! THIS IS PROD REPORTS BASE */
   // this is a list of columns with dropdown options
   // to send schema to populate form
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only
-    var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
-    // currently TEST: STAGING BASE 
+    var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('app3RonGnLm3P4aVF');
+    // currently PROD: REPORTS BASE
 
     // query airtable, 
     // check for advocate in approved advocate list
@@ -61,11 +61,6 @@ exports.handler = function(event, context, callback) {
             });
           }
         }
-        console.log(names);
-        console.log(fullOrgNames);
-        console.log(clientList);
-        console.log(orgList);
-
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
@@ -89,9 +84,6 @@ exports.handler = function(event, context, callback) {
           }
         }
       }
-      console.log(schemaList);
-      console.log(clientList);
-      console.log(orgList);
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
@@ -114,7 +106,8 @@ exports.handler = function(event, context, callback) {
 
   async function getSchema() {
     console.log("running schema");
-    const response = await fetch('https://api.airtable.com/v0/meta/bases/appiZpVxsiS1Ev5Zv/tables', {
+    // PROD REPORTS BASE
+    const response = await fetch('https://api.airtable.com/v0/meta/bases/app3RonGnLm3P4aVF/tables', {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`

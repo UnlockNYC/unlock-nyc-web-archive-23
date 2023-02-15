@@ -137,20 +137,17 @@
 
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
             let userInfo = JSON.parse(window.localStorage.getItem("gotrue.user"));
-            let newUserForm = "https://airtable.com/shrElSuAipPFb4fFZ?prefill_Organization%20choice=";
-            // PROD REPORTS BASE, "User Information" table
+            let newUserForm = "https://airtable.com/shrjDxUcmjIdrVtTq?prefill_Organization%20choice=";
+            // TEST for now, staging base 
 
             let advocateAssign = false;
-            // initially, we assume we don't need to assign an advocate
-            // to a tenant, but if the tenant doesn't appear on list,
-            // we will make this true and assign
 
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
 
             // call function that queries Airtable for client list and column schema
-            let response = await fetch('/.netlify/functions/read-advocate', {
+            let response = await fetch('/.netlify/functions/staging-read-advocate', {
                 method: 'POST',
                 body: JSON.stringify(userToken),
                 headers: {
@@ -161,9 +158,12 @@
             let clientList = data.clientList;
             let orgList = data.orgList;
             let advocate = data.advocate;
+            // console.log(orgList);
+            // console.log(advocate);
             // prefill hidden advocate field & new user form
             $("input#advocate").val(advocate);
             $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}&prefill_Advocate=${advocate}`);
+            // consider hiding advocate? MAB
             // populate client dropdown options
             for (i = 0; i < clientList.length; i++) {
                 $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
@@ -312,6 +312,7 @@
                 }
             }
 
+            //window.initAutocomplete = initAutocomplete;
             initAutocomplete();
 
             // submit form data
@@ -321,7 +322,8 @@
                 $("input#submit-report").attr("value", " . . .");
                 let evidenceCheck = $("select#evidence option:selected").val();
                 let formBody = formToJSON($("form#advocate-report")[0]);
-                const response = await fetch('/.netlify/functions/submit-advocate', {
+                //console.log(formBody);
+                const response = await fetch('/.netlify/functions/staging-submit-advocate', {
                     method: 'POST',
                     body: formBody
                 });
@@ -332,6 +334,7 @@
                 } else {
                     redirect = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
                 }
+                console.log(redirect);
                 if (data.statusCode == 200) {
                     window.location.href = redirect;
                 } else {
