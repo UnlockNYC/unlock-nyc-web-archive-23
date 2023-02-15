@@ -8,6 +8,12 @@ pageTitle: Press
 
 For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.nyc) and we will get back to you as soon as we can.
 
+<br> 
+
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
+
+City Limits - ["Opinion: Mayor’s Budget Slashes Vital Funding in the Face of Humanitarian Crisis"](https://citylimits.org/2023/02/08/opinion-mayors-budget-slashes-vital-funding-in-the-face-of-humanitarian-crisis/ "Opinion: Mayor’s Budget Slashes Vital Funding in the Face of Humanitarian Crisis") 02.08.2023
+
 <br>
 
 ![Home](https://trinitywallstreet.org/themes/gesso/logo.svg)
