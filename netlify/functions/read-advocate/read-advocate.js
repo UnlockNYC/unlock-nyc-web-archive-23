@@ -44,23 +44,28 @@ exports.handler = function(event, context, callback) {
         let names = record.get("Advocate Client List Names");
         if (names !== undefined) {
           names = names.split(",");
+          for (i = 0; i < names.length; i++) {
+            clientList.push({
+              name: names[i],
+              id: ids[i]
+            });
+          }
         }
         let fullOrgNames = record.get("Full Org List Names");
         if (fullOrgNames !== undefined) {
           fullOrgNames = fullOrgNames.split(",");
+          for (j = 0; j < fullOrgNames.length; j++) {
+            orgList.push({
+              name: fullOrgNames[j],
+              id: fullOrgList[j]
+            });
+          }
         }
-        for (i = 0; i < names.length; i++) {
-          clientList.push({
-            name: names[i],
-            id: ids[i]
-          });
-        }
-        for (j = 0; j < fullOrgNames.length; j++) {
-          orgList.push({
-            name: fullOrgNames[j],
-            id: fullOrgList[j]
-          });
-        }
+        console.log(names);
+        console.log(fullOrgNames);
+        console.log(clientList);
+        console.log(orgList);
+
       });
       // If there are no more records, `done` will get called.
       fetchNextPage();
