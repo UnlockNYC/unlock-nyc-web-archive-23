@@ -30,17 +30,17 @@ exports.handler = function(event, context, callback) {
   // query airtable, 
   // check for e-mail in approved partner list
   base('Advocates').select({
-    fields: ["fldDdJrgCAe1YD1xv", "fldI6KDv6htRgpemE", "fld04CrtAkQn3CYmR"], // PROD BASE - email, name, org name
+    fields: [emailField, advNameField, orgNameField], // PROD BASE - email, name, org name
     returnFieldsByFieldId: true
   }).eachPage(function page(records, fetchNextPage) {
     records.forEach(function(record) {
       console.log(record);
-      let email = record.get("fldDdJrgCAe1YD1xv"); // PROD BASE - email address column, advocate table
+      let email = record.get(emailField); // PROD BASE - email address column, advocate table
       console.log(email);
       if (email.indexOf(user.email) > -1) {
         approval = true;
         console.log("MATCH, REQUEST APPROVED");
-        responseBody.app_metadata.org = record.get("fld04CrtAkQn3CYmR"); // PROD BASE - org name
+        responseBody.app_metadata.org = record.get(orgNameField); // PROD BASE - org name
       }
     });
     // If there are no more records, `done` will get called.
