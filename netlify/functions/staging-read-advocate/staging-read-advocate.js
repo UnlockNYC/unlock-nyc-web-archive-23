@@ -117,7 +117,7 @@ exports.handler = function(event, context, callback) {
     const response = await fetch('https://api.airtable.com/v0/meta/bases/appiZpVxsiS1Ev5Zv/tables', {
       method: 'GET',
       headers: {
-        'Authorization': `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
+        'Authorization': `Bearer ${process.env.AIRTABLE_ACCESS_STAGING}`
       }
     });
     const data = await response.json();
