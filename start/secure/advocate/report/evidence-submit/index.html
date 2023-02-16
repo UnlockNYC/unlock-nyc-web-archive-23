@@ -57,7 +57,7 @@
                 // PROD!! function URL 
                 $("input#submit-report").css("background-color", "#f123c3");
                 $("input#submit-report").attr("value", " . . .");
-                alert("Submitting your evidence now!");
+                // alert("Submitting your evidence now!");
                 let formData = new FormData($("form#advocate-evidence")[0]);
                 formData.append('record', report);
                 formData.append('token', userToken.access_token);
