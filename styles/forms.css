@@ -83,7 +83,11 @@ a.file-button {
     font-size: 24px;
     text-decoration: none;
     display: block;
-    margin-top: 25px;
+    width: 320px;
+    color: Black !important;
+    font-weight: 600;
+    margin-top: 50px;
+    font-family: monospace;
 }
 
 div#logout {
