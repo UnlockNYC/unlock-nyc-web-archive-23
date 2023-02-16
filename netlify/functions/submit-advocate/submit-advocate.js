@@ -68,8 +68,6 @@ exports.handler = function(event, context, callback) {
       });
     }
 
-    // sendConfirm(recordId);
-
     callback(null, {
       statusCode: 200,
       body: JSON.stringify({
@@ -80,8 +78,8 @@ exports.handler = function(event, context, callback) {
     });
 
     async function sendConfirm(report) {
-      // STAGING!! change url base
-      const response = await fetch('https://unlock-staging.glitch.me/report/send-report-confirm', {
+      // PROD, URL base
+      const response = await fetch('https://secure.weunlock.nyc/report/send-report-confirm', {
         method: 'POST',
         body: JSON.stringify({
           email: forSendGrid,

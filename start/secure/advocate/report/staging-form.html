@@ -330,7 +330,7 @@
                 const data = await response.json();
                 let redirect;
                 if (evidenceCheck == "Yes") {
-                    redirect = `/start/secure/advocate/report/evidence-submit/index.html?id=${data.record}`;
+                    redirect = `/start/secure/advocate/report/evidence-submit/staging-evidence.html?id=${data.record}`;
                 } else {
                     redirect = `/start/secure/advocate/report/evidence-submit/complete.html?id=${data.record}`;
                 }
