@@ -23,6 +23,9 @@
   <body>
 
   <div id="page">
+    <div id="advocate-login">
+    👥 advocates
+    </div>
     <section id="top" class="full">
       <div id="crowd-friends"></div>
       <div id="key-friend" role="img" aria-label="A woman reaches for a key"></div>
@@ -137,7 +140,8 @@
       setTimeout(function() {
         let login = checkIdentity();
         if (login == true) {
-            $("li#donate").before("<li id='advocate-login'><a href='/start/secure/advocate'>👥 advocates</a></li>");
+            //$("li#donate").before("<li id='advocate-login'><a href='/start/secure/advocate'>👥 advocates</a></li>");
+            $("#advocate-login").show();
         }
       }, 3500);
         
