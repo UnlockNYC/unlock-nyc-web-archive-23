@@ -1,0 +1,1342 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>UNLOCK SOI DRAFT MAP - 2023</title>
+    <meta
+      name="viewport"
+      content="initial-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.6.3.min.js"
+      integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
+      crossorigin="anonymous"
+    ></script>
+    <!--<script
+      src="https://code.jquery.com/jquery-3.6.3.slim.js"
+      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
+      crossorigin="anonymous"
+    ></script>-->
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
+    <script
+      async
+      src="https://unlocknyc-analytics.netlify.app/tracker.js"
+      data-ackee-server="https://unlocknyc-analytics.netlify.app"
+      data-ackee-domain-id="d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c"
+      data-ackee-opts="{ 'ignoreLocalhost': true, 'detailed': true }"
+    ></script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;600&display=swap");
+      @font-face {
+        font-family: "Intro Rust";
+        src: url("https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2FIntroRust-Base.otf")
+          format("truetype");
+      }
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      a:visited {
+        color: Blue;
+      }
+      #data-window {
+        position: absolute;
+        top: 20px;
+        left: 20px;
+        width: 30%;
+        max-width: 450px;
+        background-color: White;
+        padding: 25px;
+        border-radius: 8px;
+        border: 1px solid Darkblue;
+      }
+      #data-window h2 {
+        font-family: "Intro Rust", monospace;
+        font-size: 23px;
+      }
+      #data-window h2#title {
+        margin-bottom: 0;
+        margin-top: 0;
+      }
+      #data-window h2#location {
+        margin-top: 0;
+        margin-bottom: 4px;
+      }
+      #data-window h3 {
+        font-family: "Open Sans", sans-serif;
+        font-weight: 300;
+        margin-top: 0;
+        margin-bottom: 4px;
+      }
+
+      #data-window h3#elected {
+        font-size: 16px;
+        font-style: normal;
+        letter-spacing: -0.5px;
+        text-decoration: underline;
+        font-weight: bold;
+      }
+
+      #data-window h3#neighborhoods {
+        font-style: italic;
+        font-size: 13px;
+      }
+
+      #data-window h4 {
+        font-family: "Open Sans", sans-serif;
+        font-size: 12px;
+        font-style: italic;
+        font-weight: 300;
+      }
+      #data-window #intro p,
+      #data-window #cd-wrap,
+      #data-window #cd-wrap p {
+        font-family: "Open Sans", sans-serif;
+        font-size: 14px;
+        font-weight: 300;
+      }
+      #data-window #action button {
+        border: none;
+        padding: 6px 13px;
+        background-color: #23296a;
+        color: White;
+        font-size: 16px;
+        font-family: "Open Sans", sans-serif;
+        cursor: pointer;
+      }
+      #data-window #action button:hover {
+        background-color: #efc02a;
+        color: #23296a;
+      }
+      #data-window #cd-wrap {
+        display: none;
+      }
+      div#cd-chart div.bar-chart {
+        padding: 8px;
+        text-align: right;
+        height: 16px;
+        margin-bottom: 3px;
+        background-color: #caf0f8;
+      }
+
+      div#cd-chart div.chart-label {
+        position: absolute;
+        left: 32px;
+        font-size: 13px;
+        font-weight: 900;
+      }
+      #restart {
+        position: absolute;
+        right: 8.5px;
+        top: 200px;
+        background-color: White;
+        padding: 4px 5px;
+        border-radius: 5px;
+        font-size: 16px;
+        border: 2px solid #999;
+        filter: grayscale(100%);
+        -webkit-filter: grayscale(100%);
+      }
+      #restart:hover {
+        background-color: LightGray;
+        border-color: Black;
+        filter: grayscale(0%);
+        -webkit-filter: grayscale(0%);
+        cursor: pointer;
+      }
+      #map {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
+      }
+      #legend {
+        position: absolute;
+        right: 5px;
+        bottom: 70px;
+        font-family: "Open Sans", sans-serif;
+        font-size: 13px;
+        text-align: right;
+        background-color: rgba(255, 255, 255, 0.85);
+        padding: 12px;
+        border-radius: 8px;
+        border: 1px solid Black;
+      }
+      #legend p {
+        margin-top: 0;
+        margin-bottom: 3px;
+      }
+      #legend div.key-wrap {
+        display: inline;
+        margin-left: -3px;
+      }
+      #legend div.key {
+        display: inline-block;
+        width: 22px;
+        height: 22px;
+        margin-right: -1px;
+      }
+      .mapboxgl-ctrl-top-right {
+        top: 50px !important;
+      }
+      div.mapboxgl-popup-content {
+        padding-top: 0;
+        border-radius: 10px;
+      }
+      div.mapboxgl-popup-content p {
+        font-family: "Open Sans", sans-serif !important;
+        font-size: 14px;
+        font-weight: 300;
+        margin-top: 5px;
+        margin-bottom: 12px;
+      }
+      div.pop-address {
+        background-color: #23296a;
+        width: calc(100% + 20px);
+        margin-left: -10px;
+        color: White;
+        font-weight: 500;
+        padding: 5px 10px;
+        box-sizing: border-box;
+      }
+      div.pop-address p {
+        font-weight: 600;
+        padding-bottom: 0;
+        margin-bottom: 5px;
+      }
+      button.mapboxgl-popup-close-button {
+        color: White;
+      }
+      a.mapboxgl-ctrl-logo {
+        display: none;
+      }
+      #about {
+        position: absolute;
+        width: 100%;
+        height: 60px;
+        left: 0;
+        bottom: 0;
+        background-color: #23296a;
+        text-align: center;
+        box-sizing: border-box;
+        padding: 10px;
+        transition: all 300ms;
+        -webkit-transition: all 300ms;
+      }
+      #about h2 {
+        font-family: "Intro Rust", monospace;
+        color: White;
+        font-size: 20px;
+        margin: 0;
+        padding-top: 8px;
+        cursor: pointer;
+      }
+      #about.open {
+        /*height: 400px;
+        top: calc(100vh - 50px);*/
+      }
+      #about-copy {
+        padding: 5%;
+        text-align: left;
+        display: grid;
+        grid-template-columns: 30% auto;
+        grid-column-gap: 8%;
+      }
+      #about-copy h2 {
+        color: Black;
+      }
+      #about-copy p {
+        font-family: "Open Sans", sans-serif;
+      }
+      #about-copy ul {
+        font-family: "Open Sans", sans-serif;
+      }
+      #about-copy ul li {
+        margin-bottom: 20px;
+      }
+
+      #report {
+        position: absolute;
+        top: 20px;
+      }
+      div.report-button {
+        cursor: pointer;
+        display: inline-block;
+        margin-right: 8px;
+        background-color: #23296a;
+        color: White;
+        font-family: "Intro Rust", monospace;
+        font-size: 17px;
+        z-index: 10;
+        right: 5px;
+        padding: 6px 10px;
+      }
+      div.report-button:hover {
+        background-color: #efc02a;
+        color: #23296a;
+      }
+      div#logo-grid {
+        padding-top: 50px;
+        display: grid;
+        grid-template-columns: 50% auto;
+        grid-template-rows: 100%;
+        grid-column-gap: 8%;
+      }
+      img.logo {
+        max-width: 200px;
+      }
+
+      @media only screen and (max-width: 1300px) and (max-height: 900px) {
+        #data-window {
+          top: 10px;
+          left: 10px;
+          padding: 15px;
+          max-width: 600px;
+          width: 35%;
+        }
+        #data-window h2 {
+          font-size: 19px;
+        }
+        #data-window h3#elected {
+          font-size: 14px;
+        }
+
+        #data-window h3#neighborhoods {
+          font-size: 12px;
+        }
+        #data-window #intro p,
+        #cd-wrap,
+        #data-window #cd-wrap p {
+          font-size: 13px;
+          margin-top: 8px;
+          margin-bottom: 8px;
+        }
+        div#cd-chart div.chart-label {
+          left: 20px;
+          margin-top: -4px;
+          font-size: 12px;
+        }
+        div#cd-chart div.bar-chart {
+          height: 10px;
+          margin-bottom: 1px;
+        }
+        #about {
+          height: 40px;
+          padding: 0;
+        }
+      }
+    </style>
+    <!--<link rel="stylesheet" href="https://weunlock.nyc/styles/site.css">-->
+  </head>
+  <body>
+    <!-- Load the `mapbox-gl-geocoder` plugin. -->
+    <script src="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v5.0.0/mapbox-gl-geocoder.css"
+      type="text/css"
+    />
+    <div id="map"></div>
+    <div id="legend"></div>
+    <div id="data-window">
+      <h2 id="title">Source of Income Discrimination</h2>
+      <h2 id="location">in NYC</h2>
+      <div id="intro">
+        <p>
+          <strong>Source of income (SOI) discrimination</strong> is one of the
+          most commmon forms of illegal housing bias in New York City. When tenants
+          with rental assistance vouchers inquire about a listing, landlords and
+          brokers unlawfully deny or ignore them.
+        </p>
+        <p>
+          Left underenforced, SOI discrimination prolongs homelessness, excludes
+          families from high-opportunity areas, exacerbates segregation, and
+          negatively impacts both physical and mental wellbeing.
+        </p>
+        <p>
+          This map visualizes the rate of source of income (SOI) discrimination
+          reports by City Council district. The data covers SOI reports received
+          by Neighbors Together and Unlock NYC since January 2018, and is
+          updated regularly as new reports are submitted through Unlock NYC’s
+          <a href="https://weunlock.nyc/start" target="_blank">chatbot</a>.
+        </p>
+        <p>Click on a district to learn more.</p>
+      </div>
+      <h3 id="elected"></h3>
+      <h3 id="neighborhoods"></h3>
+      <div id="cd-wrap">
+        <div id="cd-text">
+          <p>
+            <strong>District <span class="cd-number">XX</span></strong> has the
+            <strong
+              ><span class="ranking">X</span> highest rate of SOI
+              discrimination</strong
+            >
+            in New York City, based on cumulative data (2018 - 2023) from Unlock
+            NYC and Neighbors Together.
+            <!--Looking at the 3 last months only,
+            <strong
+              >District <span class="cd-number">XX</span> ranked
+              <span class="ranking">XX</span>.</strong
+            >-->
+          </p>
+          <!--<p>
+            Note: Districts with high rates of reported SOI discrimination are often the areas where voucher holders can find housing 
+            within their payment standards. From our participatory research, we learned that many high-end 
+            neighborhoods are off-limits for voucher holders, either due to financial or psychological barriers. The reported data is a 
+            reflection of where voucher holders are able to apply for housing - and yet still face discrimination.
+          </p>-->
+          <p>
+            The most common denial tactics in CD<span class="cd-number"
+              >XX</span
+            >
+            are:
+          </p>
+        </div>
+        <div id="cd-chart">
+          <div id="ghosting" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Ghosting: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="no_vouchers" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">No vouchers: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="income_requirements" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Income requirements: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="credit" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Credit requirements: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="disc_ad" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Discriminatory ad: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="scam" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Scam: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="steering" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Steering: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="bait" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Bait and switch: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="delays" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Delays: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+          <div id="other" class="bar-chart">
+            <div class="chart-label">
+              <span class="tactic">Other: </span
+              ><span class="tactic-rate"></span>
+            </div>
+          </div>
+        </div>
+        <div id="action">
+          <p>
+            Do you live in District <span class="cd-number">XX</span>? If so,
+            contact your City Council Member to let them know that you want them
+            to advocate for increased funding for CCHR in the Fiscal Year 2024
+            budget.
+          </p>
+          <a id="email" href="https://www.weunlock.nyc" target="_blank">
+            <button id="call">✉️ Take Action</button>
+          </a>
+        </div>
+      </div>
+      <!--<h4 id="sources">
+        Data sources: City Council District Boundaries via
+        <a
+          href="https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi"
+          target="_blank"
+          >NYC Open Data</a
+        >, SOI discrimination data via
+        <a href="https://weunlock.nyc" target="_blank">Unlock NYC</a> and
+        <a href="https://neighborstogether.org/" target="_blank"
+          >Neighbors Together</a
+        >, Population data via American Community Survey (2019) and
+        <a
+          href="https://esri-nyc-office.hub.arcgis.com/datasets/907764c06da0404d9c29c054010cd67b_0/explore?location=40.705384%2C-73.978189%2C10.89&showTable=true"
+          target="_blank"
+          >ESRI New York City</a
+        >.
+      </h4>-->
+    </div>
+    <!--end of data-window-->
+    <div id="about">
+      <h2>ABOUT THIS MAP</h2>
+      <div id="about-copy">
+        <div class="about-column">
+          <p>
+            This map is brought to you by a collaboration between Unlock NYC and
+            Neighbors Together, and builds off the findings and policy
+            recommendations we laid out in our 2022 participatory action report,
+            <a
+              href="https://unlock-nyc-web.glitch.me/soi-report"
+              target="_blank"
+              >An Illusion of Choice: How Source of Income Discrimination and
+              Voucher Policies Perpetuate Housing Inequality.</a
+            >
+          </p>
+          <h2>Data Sources</h2>
+          <ul>
+            <li>
+              City Council District Boundaries via
+              <a
+                href="https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi"
+                target="_blank"
+                >NYC Open Data</a
+              >
+            </li>
+            <li>
+              SOI discrimination data via
+              <a href="https://weunlock.nyc" target="_blank">Unlock NYC</a> and
+              <a href="https://neighborstogether.org/" target="_blank"
+                >Neighbors Together</a
+              >
+            </li>
+            <li>
+              Population data via American Community Survey (2019) and
+              <a
+                href="https://esri-nyc-office.hub.arcgis.com/datasets/907764c06da0404d9c29c054010cd67b_0/explore?location=40.705384%2C-73.978189%2C10.89&showTable=true"
+                target="_blank"
+                >ESRI New York City</a
+              >.
+            </li>
+            <li>
+              Standardized addresses via NYC Department of City Planning’s
+              <a href="https://geosearch.planninglabs.nyc/" target="_blank"
+                >NYC GeoSearch API</a
+              >
+              and
+              <a
+                href="https://developers.google.com/apis-explorer"
+                target="_blank"
+                >Google Developer API
+              </a>
+            </li>
+            <li>
+              Borough-block-lot (BBL) numbers via
+              <a href="https://geosearch.planninglabs.nyc/" target="_blank"
+                >NYC GeoSearch API</a
+              >
+              and
+              <a href="https://maps.nyc.gov/geoclient/v1/doc" target="_blank"
+                >NYC GeoClient API
+              </a>
+            </li>
+          </ul>
+          <div style="text-align: left; margin-bottom: 20px; margin-top: 50px">
+            <a href="https://weunlock.nyc/start" target="_blank"
+              ><div class="report-button report-track">Report Discrimination</div></a
+            ><br /><br />
+            <a
+              href="mailto:jessica@weunlock.nyc?Subject=SOI%20Discrimination%20Map"
+              ><div id="press-button" class="report-button">
+                Press Inquiry
+              </div></a
+            >
+          </div>
+        </div>
+        <!-- end column 1-->
+        <div class="about-column">
+          <h2>Methodology</h2>
+          <p>
+            The dataset analyzed on this map consists of over 1,500 crowdsourced
+            reports of source of income discrimination collected since January
+            2018. About 500 were collected by Neighbors Together at
+            <a
+              href="https://www.stopsidnyc.com/new-events/2018/12/3/neighbors-together-housing-search-9l6ga-65d8c-rwe2b-x4f97-zbe94-6fs7a-d7g7r"
+              target="_blank"
+              >housing search clinics</a
+            >, where staff members pair up with voucher holders to assist them
+            in applying for housing with a voucher. An additional 1,000+ were
+            collected through Unlock NYC’s
+            <a href="https://weunlock.nyc/start/" target="_blank">chatbot</a>,
+            launched in January 2021 to provide a user-friendly, mobile-based
+            tool for New Yorkers to record phone calls with brokers and report
+            discrimination on the go. Of the ~1,500 reports received, 1,266
+            include an address, and were therefore mapped. The data on the map
+            is updated regularly as we receive more reports from New Yorkers
+            facing discrimination.
+          </p>
+          <p>
+            When New Yorkers file a report through Unlock’s tool, they typically
+            include a description of the incident, the address of the property
+            they were turned down from, and the date. They also upload evidence,
+            such as screenshots of SMS conversations with brokers or a phone
+            recording. Our team then follows-up with each user to connect them
+            to government agencies and resources to help them exercise their
+            rights and find housing.
+          </p>
+          <p>
+            We used open data sources to generate a standardized address and a
+            borough-block-lot number (BBL) for each report, and to join our
+            dataset with existing information about City Council districts. We
+            normalized our data to generate a rate of SOI discrimination per
+            100,000 people in each district, using population data from the
+            American Community Survey (2019).
+          </p>
+          <p>
+            Given its crowdsourced nature, the data is not exhaustive - it does
+            not provide a complete survey of every single incident of SOI
+            discrimination in New York City, as many of these go unreported.
+            City agencies that interface with voucher holders such as the Human
+            Resources Administration and the Department of Homeless Services, as
+            well as some shelters, homelessness prevention service providers,
+            nonprofits that work with voucher holders, and agencies that
+            administer voucher programs do not systematically report
+            discrimination. There is no unified, centralized system to track SOI
+            discrimination and make this data available to the public in New
+            York City. The lack of visibility around the issue makes it harder
+            to track repeat discriminators, to quantify the scope of the
+            problem, and to take enforcement actions to protect tenants from SOI
+            discrimination.
+          </p>
+          <h2>Key Findings</h2>
+          <ul>
+            <li>
+              <strong
+                >We’ve received reports in all five boroughs, and every single
+                City Council district. </strong
+              >Wherever they look, tenants looking for housing with a rental
+              assistance voucher are met with denials.
+            </li>
+            <li>
+              Rents are intensely unaffordable in New York City.
+              <strong
+                >Even after voucher holders won an increase to voucher payment
+                standards in 2021, people are still locked out of high-income
+                neighborhoods. </strong
+              >For example, fewer addresses were reported in Lower Manhattan,
+              indicating that voucher holders are less likely to apply to
+              apartments in wealthy communities.
+            </li>
+            <li>
+              Meanwhile, we see
+              <strong
+                >several hot spots where vouchers have reported numerous
+                instances of discrimination</strong
+              >, primarily in Central Brooklyn, Northern Manhattan, and the East
+              Bronx. As of March 1, 2023, the districts with the highest rates
+              of SOI discrimination were District 10 in Manhattan, Districts 41,
+              40, 45 in Brooklyn, and District 13 in the Bronx.
+            </li>
+            <li>
+              It is worth noting that districts with high rates of reported SOI
+              discrimination are often the areas where voucher holders can find
+              housing within their voucher payment standards. From our
+              <a href="https://weunlock.nyc/soi-report" target="_blank"
+                >participatory research</a
+              >, we learned that
+              <strong
+                >many high-end neighborhoods are off-limits for voucher
+                holders</strong
+              >, either due to financial and/or psychological barriers. The
+              reported data is a reflection of where voucher holders are able to
+              apply for housing - and yet still face discrimination.
+            </li>
+          </ul>
+          <h2>Our Solutions</h2>
+          <p>
+            We are facing a humanitarian crisis, with
+            <a
+              href="https://www.ny1.com/nyc/all-boroughs/news/2022/07/19/tenants-struggle-amid-unprecedented-rental-market"
+              target="_blank"
+              >unprecedented rent hikes</a
+            >
+            and
+            <a
+              href="https://www.coalitionforthehomeless.org/basic-facts-about-homelessness-new-york-city/"
+              target="_blank"
+              >homelessness rates not seen since the Great Depression.</a
+            >
+            SOI discrimination perpetuates homelessness by preventing New
+            Yorkers from moving out of shelters and into permanent, stable
+            housing.
+          </p>
+          <p>
+            <strong
+              >In order to house our neighbors, the City needs to invest
+              significantly more resources in SOI discrimination
+              enforcement:</strong
+            >
+          </p>
+          <ul>
+            <li>
+              Increase funding and staffing at the City Commission on Human
+              Rights, bringing the Commission staffing as a whole back up to its
+              pre-2019 staffing levels. The mayor’s fiscal year 2024 preliminary
+              budget cuts 20 full-time employees from the Commission when what
+              is needed is more staffing and resources
+            </li>
+            <li>
+              Provide resources for public education on source of income
+              discrimination and how to submit effective discrimination reports
+            </li>
+            <li>
+              Offer competitive salaries and flexible remote work policies to
+              attract a qualified workforce to the agencies that interface with
+              voucher holders
+            </li>
+            <li>
+              Include SOI discrimination as a form of harassment in the
+              “Certificate of No Harassment” (CONH) Program, disqualifying an
+              offending landlord’s application
+            </li>
+            <li>Increase fines on discriminatory landlords</li>
+            <li>
+              Publicly list SOI discrimination instances on the HPD building
+              info database
+            </li>
+            <li>Eliminate credit requirement for voucher holders</li>
+            <li>Build more affordable housing at or below 30% of AMI</li>
+            <li>
+              Increase funding for and staffing of case managers and housing
+              specialists to ensure meaningful assistance to homeless clients
+              using vouchers
+            </li>
+            <li>
+              Provide funding to grassroots organizations assisting voucher
+              holders
+            </li>
+            <li>Sponsor Know Your Rights trainings and housing searches</li>
+          </ul>
+          <p>
+            <strong
+              >Furthermore, New York State should support enforcement and
+              institute the following recommendations:
+            </strong>
+          </p>
+          <ul>
+            <li>
+              Improve coordination between enforcement agencies at the state and
+              city level
+            </li>
+            <li>
+              Ensure that every voucher holding New Yorker receives adequate
+              information about their rights and pathways to justice
+            </li>
+            <li>
+              Require enforcement agencies to publicly report how many SOI
+              complaints they receive each year and to track outcomes through
+              clear and transparent metrics
+            </li>
+            <li>
+              Revoke licenses of brokers who repeatedly discriminate against
+              voucher holders
+            </li>
+            <li>
+              Pass Good Cause Eviction: This bill would provide protections to
+              the 1.6 million households living in unregulated rental units
+              statewide, 600,000 of whom live in New York City
+            </li>
+            <li>
+              Pass the Housing Access Voucher Program: This bill would create a
+              statewide voucher that pays fair market rent and allows recipients
+              to increase their earnings until their rent is 30% of their
+              income
+            </li>
+          </ul>
+
+          <h2>About Us:</h2>
+          <div id="logo-grid">
+            <div>
+              <img
+                class="logo"
+                src="https://cdn.glitch.global/f2bcdff6-dcc0-4b87-8547-c89cc0d4d4f2/unlock-horizontal.png?v=1677534099856"
+              />
+              <p>
+                <a href="https://weunlock.nyc" target="_blank"
+                  >Unlock NYC’s free tools</a
+                >
+                help you record your phone calls with landlords and brokers and
+                report unfair treatment during your housing search.
+              </p>
+            </div>
+            <div>
+              <img
+                class="logo"
+                src="https://cdn.glitch.global/f2bcdff6-dcc0-4b87-8547-c89cc0d4d4f2/nt_logo_horiz_35-2.webp?v=1677534059241"
+              />
+              <p>
+                Neighbors Together is committed to ending hunger and poverty in
+                Ocean Hill, Brownsville and Bedford- Stuyvesant, three of the
+                lowest- income areas in New York City.
+                <a href="https://neighborstogether.org" target="_blank"
+                  >https://neighborstogether.org</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <a href="https://weunlock.nyc/start" target="_blank">
+      <div id="report" class="report-button report-track">Report Discrimination</div>
+    </a>
+    <div id="restart">🌎</div>
+    <script>
+      mapboxgl.accessToken =
+        "pk.eyJ1IjoibWFiMTQ5OCIsImEiOiJjbGR3Y2R3bHkwNjEwM29xZmVpZnl1ZTlnIn0._3b0kVKOCnPOHHtoWwftpw";
+
+      let startCenter = [-74.09564103822086, 40.69973724220384];
+      let startZoom = 10;
+      let closeUp = 12.55;
+
+      const map = new mapboxgl.Map({
+        container: "map", // container ID
+        style: "mapbox://styles/mab1498/cldwckgd7007x01nw3ymcv84m", // style URL
+        center: startCenter, // starting position [lng, lat]
+        zoom: startZoom,
+        minZoom: 9,
+        maxZoom: 16,
+      });
+
+      // text templates, data window
+
+      let introText = `<p><strong>Source of income (SOI) discrimination</strong> is one of the common forms of illegal housing bias in New York City. When tenants with rental assistance vouchers inquire about a listing, landlords and brokers unlawfully deny or ignore them.</p><p>Left underenforced, SOI discrimination prolongs homelessness, excludes families from high-opportunity areas, exacerbates segregation, and rate of source of income (SOI) discrimination reports by City Council district. The data covers SOI reports received by Neighbors Together and Unlock NYC since January 2018, and is updated every day as new reports are submitted through Unlock NYC’s <a href='https://weunlock.nyc/start' target='_blank'>chatbot</a>.</p><p>Click on a district to learn more. </p>`;
+
+      let fillLegend = `
+      <p>SOI Rate<br />per 100k people</p>
+      <div>
+        <div style="width: 20px;text-align: left;float: left;display: inline-block;">0</div>
+        <div style="width: 20px;text-align: right;display: inline-block;vertical-align: middle;">40</div>
+      </div>
+      <div class="key-wrap">
+        <div class="key" style="background-color: #caf0f8"></div>
+        <!--0-10%-->
+      </div>
+      <div class="key-wrap">
+        <div class="key" style="background-color: #48cae4"></div>
+        <!--11-20%-->
+      </div>
+      <div class="key-wrap">
+        <div class="key" style="background-color: #0096c7"></div>
+        <!--21-30%-->
+      </div>
+      <div class="key-wrap">
+        <div class="key" style="background-color: #023e8a"></div>
+        <!--31-39%-->
+      </div>
+      <div class="key-wrap">
+        <div class="key" style="background-color: #03045e"></div>
+        <!--40+%-->
+      </div>`;
+
+      let pointLegend = `<p>SOI Reports</p>
+      1 <div class="key" style="background-color:#913DF3; border-radius: 50%; width: 10px; height: 10px;
+      display:inline-block;"></div>
+      = 1 report
+      `;
+
+      let actionEmail = `%0D%0AHomelessness in New York City is at a record high, with over 70,000 men, women, and children sleeping in shelters each night. Despite this fact, the City is cutting resources that could help people move out of homelessness! New Yorkers need increased investments in housing our neighbors, not more short-sighted cuts.%0D%0A%0D%0AAs your constituent, I am asking you to take action to ensure increased funding for the City Commission on Human Rights, the only city agency that enforces against source of income discrimination (SOI). The practice of SOI is illegal, but it is one of the most common barriers that keeps people stuck in homelessness. When well resourced, the City Commission on Human Rights (CCHR) is able to intervene in discrimination cases, and help people gain access to apartments, viewings, applications, and permanent housing. I am asking that you fight for CCHR to be funded at pre-2019 levels in the upcoming Fiscal Year 2024 city budget. Talk to your colleagues and ask them to do the same, reach out to the budget negotiating team members, and raise the issue with Speaker Adams.  We must not ignore a crisis that is solvable- it is time to restore funding to CCHR so that our city can begin to move people out of homelessness and #MakeVouchersWork.%0D%0A%0D%0ASincerely,%0D%0A[Your name here]%0D%0A[Your email here]%0D%0A[Your address here]`;
+
+      // Add the control to the map.
+      map.addControl(
+        new MapboxGeocoder({
+          accessToken: mapboxgl.accessToken,
+          marker: false,
+          mapboxgl: mapboxgl,
+        })
+      );
+
+      map.addControl(new mapboxgl.NavigationControl());
+
+      map.on("load", () => {
+        /// set legend
+        $("#legend").html(fillLegend);
+
+        /// adding sources ///
+
+        map.addSource("cityCouncilDistricts", {
+          type: "geojson",
+          data: "https://unlock.nyc3.digitaloceanspaces.com/public/cd.geojson?v=7",
+        });
+
+        // cd data modified from here:
+        // https://www.nyc.gov/site/planning/data-maps/open-data/districts-download-metadata.page
+
+        map.addSource("reports", {
+          type: "geojson",
+          data: "https://unlock.nyc3.digitaloceanspaces.com/public/anonReports.geojson?v=3",
+        });
+
+        /// adding layers ///
+
+        map.addLayer(
+          {
+            id: "reports",
+            type: "circle",
+            source: "reports",
+            minzoom: closeUp - 1,
+            paint: {
+              "circle-radius": 6.5,
+              "circle-stroke-width": 1,
+              "circle-color": "#913DF3",
+              "circle-stroke-color": "white",
+            },
+          },
+          "neighborhoods"
+        );
+
+        map.addLayer(
+          {
+            id: "cd",
+            type: "fill",
+            source: "cityCouncilDistricts", // reference the data source
+            layout: {},
+            paint: {
+              //"fill-color": "#0080ff", // blue color fill
+              //"fill-opacity": 0.5,
+              "fill-color": [
+                "interpolate",
+                ["linear"],
+                ["get", "soi_rate"],
+                0,
+                "#CAF0F8",
+                10,
+                "#48CAE4",
+                20,
+                "#0096C7",
+                30,
+                "#023E8A",
+                40,
+                "#03045E",
+              ],
+              "fill-opacity": 0.75,
+            },
+          },
+          "reports"
+        );
+
+        map.addLayer({
+          id: "cd-numbers",
+          type: "symbol",
+          source: "cityCouncilDistricts",
+          maxzoom: closeUp,
+          layout: {
+            "icon-image": "house",
+            "icon-size": 0.1,
+            "text-field": ["get", "CounDist"],
+            "text-size": 18,
+          },
+          paint: {
+            "text-halo-width": 2.5,
+            "text-halo-color": "#ffffff",
+          },
+        });
+
+        map.addLayer({
+          id: "outline",
+          type: "line",
+          source: "cityCouncilDistricts",
+          layout: {},
+          paint: {
+            "line-color": "#444",
+            "line-width": 0.3,
+          },
+        });
+
+        map.addLayer(
+          {
+            id: "selected-cd",
+            type: "fill",
+            minzoom: closeUp,
+            source: "cityCouncilDistricts",
+            layout: {
+              visibility: "none",
+            },
+            paint: {
+              "fill-color": "#0080ff", // blue color fill
+              "fill-opacity": 0.5,
+            },
+          },
+          "cd"
+        );
+
+        map.addLayer({
+          id: "hover-cd",
+          type: "fill",
+          source: "cityCouncilDistricts",
+          layout: {},
+          paint: {
+            "fill-color": "#888888",
+            "fill-opacity": [
+              "case",
+              ["boolean", ["feature-state", "hover"], false],
+              0.2,
+              0,
+            ],
+          },
+        });
+
+        /// zoom-based effects ///
+
+        map.setPaintProperty("outline", "line-width", [
+          "interpolate",
+          // cd outline layer
+          ["exponential", 1],
+          ["zoom"],
+          // When zoom is 10, set width
+          10,
+          0.3,
+          // When zoom is the closeUp value, set width
+          closeUp,
+          2,
+        ]);
+
+        map.setPaintProperty("cd", "fill-opacity", [
+          "step",
+          ["zoom"],
+          // initial fill opacity
+          0.75,
+          // When zoom is the closeUp value, set fill opacity
+          closeUp - 0.5,
+          0,
+        ]);
+
+        map.on("zoom", () => {});
+
+        map.on("zoomend", () => {
+          currentZoom = map.getZoom();
+          if (currentZoom < closeUp) {
+            $("div#data-window #intro").html(introText);
+            $("div#data-window h2#location").html(`in NYC`);
+            $("div#data-window h3#elected").html("");
+            $("div#data-window h3#neighborhoods").html("");
+            $("div#data-window #cd-wrap").hide();
+            $("#legend").html(fillLegend);
+          } else {
+            //$("div#data-window #cd-text").show();
+            //$("div#data-window #cd-chart").show();
+            $("#legend").html(pointLegend);
+          }
+        });
+
+        /// click+hover effects ///
+
+        let hoveredStateId = null;
+
+        map.on("mouseenter", "cd", (e) => {
+          map.getCanvas().style.cursor = "pointer";
+        });
+
+        map.on("click", "cd", (e) => {
+          // when click on city council district ...
+          // here we go!
+          map.getCanvas().style.cursor = "pointer";
+
+          let cdData = e.features[0].properties;
+
+          // OBJECT EXAMPLE:
+          /*"properties": {
+            "OBJECTID":2,
+            "CounDist":2,
+            "Shape__Area":57059302.015274,
+            "Shape__Length":43085.9506670172,
+            "ranking": 1,
+            "soi_rate":1.7276030659195745,
+            "num_reports": 3,
+            "ghosting":0.3333333333333333,
+            "no_vouchers":0.3333333333333333,
+            "income_requirements":0,"
+            credit":0,
+            "disc_ad":0,
+            "scam":0,
+            "steering":0,
+            "bait":0,
+            "delays":0,
+            "other":0.3333333333333333
+            } */
+
+          // show highlighted cd on map
+          map.setFilter("selected-cd", ["==", "CounDist", cdData.CounDist]);
+          map.setLayoutProperty("selected-cd", "visibility", "visible");
+
+          let coordinates = e.features[0].geometry.coordinates.slice();
+
+          // clean up member, email, neighborhoods strings
+          // MAB: could do this backend, rather than on fly ...
+          if (cdData.member) {
+            cdData.member = cdData.member.replace(/[\[\]\\\/"]/g, "");
+          } else {
+            cdData.member = " ";
+          }
+
+          if (cdData.neighborhoods) {
+            cdData.neighborhoods = cdData.neighborhoods.replace(
+              /[\[\]\\\/"]/g,
+              ""
+            );
+          } else {
+            cdData.neighborhoods = " ";
+          }
+
+          if (cdData.email) {
+            cdData.email = cdData.email.replace(/[\[\]\\\/"]/g, "");
+          }
+
+          // adjust so center is slightly to right
+          // make room for data window
+          e.lngLat["lng"] -= 0.023;
+
+          // change data window
+          $("div#data-window #intro").html("");
+          $("div#data-window h2#location").html(`in CD${cdData.CounDist}`);
+          $("div#data-window h3#elected").html(
+            `City Council Member: ${cdData.member}`
+          );
+          $("div#data-window h3#neighborhoods").html(
+            `Neighborhoods: ${cdData.neighborhoods}`
+          );
+          $("div#data-window span.cd-number").html(`${cdData.CounDist}`);
+
+          let suffix;
+          if (cdData.ranking % 10 == 1) {
+            suffix = "st";
+          } else if (cdData.ranking % 10 == 2) {
+            suffix = "nd";
+          } else if (cdData.ranking % 10 == 3) {
+            suffix = "rd";
+          } else {
+            suffix = "th";
+          }
+
+          $("div#data-window span.ranking").html(`${cdData.ranking}${suffix}`);
+
+          $("div#data-window #cd-chart div").each(function () {
+            let tactic = $(this).attr("id");
+            for (const key in cdData) {
+              // looping through all properties in cdData
+              if (key == tactic) {
+                // match div id to data property, which is % of tactic
+                //console.log(key);
+                //console.log(cdData[key]);
+                let tacticRate = +(cdData[key] * 100).toFixed(2);
+                // making sure that tacticRate is a number here, not string
+                let numReports = Math.round(
+                  (tacticRate / 100) * cdData.num_reports
+                );
+                let reportString = "reports";
+                if (numReports == 1) {
+                  reportString = "report";
+                }
+                $(this).attr("data-rate", tacticRate);
+                // MAB: number of reports here now, not tactic rate
+                $(this)
+                  .find("span.tactic-rate")
+                  .html(`${numReports} ${reportString}`);
+                $(this).css("width", `${tacticRate}%`);
+                /*if (tacticRate < 10) {
+                  $(this).css("background-color", "Lightgray");
+                } else {
+                  $(this).css("background-color", "#caf0f8"); // reset background color for non-gray bars
+                }*/
+              }
+            }
+          });
+
+          // THANKS, CHATGPT!
+          // MAB, clean this up - make sure you understand what's happening
+          // and that there's no useless repeats ...
+
+          function sortChart() {
+            // necessary to show all for sorting!
+            $("div#data-window #cd-chart div.bar-chart").show();
+            const tempDiv = $("<div></div>"); // create temporary div to hold sorted divs
+
+            $("div#data-window #cd-chart div.bar-chart").each(function () {
+              let tacticRate = parseFloat($(this).attr("data-rate"));
+              if (tacticRate == 0) {
+                $(this).hide();
+              } /*else if (tacticRate < 10) {
+                $(this).css("background-color", "Lightgray");
+              }*/
+              if ($(this).attr("id") == "other") {
+                $(this).hide();
+              }
+              $(this).appendTo(tempDiv); // add div to temporary div
+            });
+
+            tempDiv
+              .children("div.bar-chart")
+              .sort(function (a, b) {
+                return (
+                  parseFloat($(b).attr("data-rate")) -
+                  parseFloat($(a).attr("data-rate"))
+                );
+              })
+              .appendTo($("#cd-chart")); // sort temporary div and add sorted divs to #cd-chart
+          }
+
+          sortChart();
+
+          $("div#data-window #cd-wrap").show();
+          let memberEmail = cdData.email.toString();
+          let memberName = cdData.member;
+          $("div#data-window a#email").attr(
+            "href",
+            `mailto:${memberEmail}?Subject=Let's%20end%20Source%20of%20Income%20(SOI)%20discrimimation&body=Dear%20${memberName},%0D%0A${actionEmail}`
+          );
+
+          // now we fly ...
+
+          map.flyTo({
+            center: e.lngLat.wrap(),
+            zoom: closeUp,
+            duration: 1200, // Animate over x seconds
+            essential: true,
+          });
+        }); // end function, on cd layer click
+
+        map.on("mousemove", "hover-cd", (e) => {
+          // on hover, highlight cd
+          if (e.features.length > 0) {
+            if (hoveredStateId !== null) {
+              map.setFeatureState(
+                { source: "cityCouncilDistricts", id: hoveredStateId },
+                { hover: false }
+              );
+            }
+            hoveredStateId = e.features[0].id;
+            map.setFeatureState(
+              { source: "cityCouncilDistricts", id: hoveredStateId },
+              { hover: true }
+            );
+          }
+        });
+
+        map.on("mouseleave", "hover-cd", () => {
+          // un-highlight cd for hover effect
+          if (hoveredStateId !== null) {
+            map.setFeatureState(
+              { source: "cityCouncilDistricts", id: hoveredStateId },
+              { hover: false }
+            );
+          }
+          hoveredStateId = null;
+        });
+
+        map.on("click", "reports", (e) => {
+          // get coordinates array.
+          const coordinates = e.features[0].geometry.coordinates.slice();
+          // get data properties from geoJSON
+          const time = e.features[0].properties.time;
+          const cd = e.features[0].properties.cd;
+          let denial = e.features[0].properties.denial;
+          let address = e.features[0].properties.address;
+
+          // clean up denial string
+          if (denial) {
+            denial = denial.replace(/[\[\]\\\/"]/g, "");
+            denial = denial.replace(/[,]/g, ", ");
+          } else {
+            denial = "Unknown";
+          }
+
+          // clean up address string, remove NY USA etc.
+          address = address.split(",", 2).join(",");
+
+          // Ensure that if the map is zoomed out such that multiple
+          // copies of the feature are visible, the popup appears
+          // over the copy being pointed to.
+          while (Math.abs(e.lngLat.lng - coordinates[0]) > 180) {
+            coordinates[0] += e.lngLat.lng > coordinates[0] ? 360 : -360;
+          }
+
+          let template = `
+            <div class="pop-address">
+              <p>${address}</p>
+            </div> 
+            <p>This address was reported for SOI discrimination in ${time}.</p>
+            <p>Denial Tactic: ${denial}</p>
+            `;
+
+          new mapboxgl.Popup()
+            .setLngLat(coordinates)
+            .setHTML(template)
+            .addTo(map);
+        });
+
+        $("div#restart").click(function () {
+          map.flyTo({
+            center: startCenter,
+            zoom: startZoom,
+            duration: 2000,
+            essential: true,
+          });
+        });
+
+        $("#about").click(function () {
+          $(this).addClass("open");
+          map.scrollZoom.disable();
+          setTimeout(function () {
+            $("html, body").animate(
+              {
+                scrollTop: $(window).height() * 0.6,
+              },
+              300
+            );
+          }, 100);
+        });
+        $(document).scroll(function () {
+          if ($(document).scrollTop() == 0) {
+            map.scrollZoom.enable();
+          }
+        });
+      }); // end on load
+
+      // ackee analytics events
+      $("#press-button").click(function () {
+        // press inquiry
+        instance.action("7b6362f5-d572-4c38-ae67-730be4f7bb20", {
+          key: "Click",
+          value: 1,
+        });
+      });
+      $("div.report-track").click(function () {
+        // report discrimination, 2 buttons
+        instance.action("fb71375b-ca06-4a1f-a65d-bf5650432ace", {
+          key: "Click",
+          value: 1,
+        });
+      });
+      $("button#call").click(function () {
+        // take action, email button
+        instance.action("ae6292d4-b1ae-4139-9e44-6dc1c6882054", {
+          key: "Click",
+          value: 1,
+        });
+      });
+    </script>
+  </body>
+</html>
