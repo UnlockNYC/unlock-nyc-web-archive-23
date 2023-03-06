@@ -14,3 +14,6 @@ module.exports = function(eleventyConfig) {
     }
   }
 };
+
+// ackee
+const ackeeTracker = require('ackee-tracker');
