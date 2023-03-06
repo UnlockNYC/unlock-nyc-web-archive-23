@@ -1211,12 +1211,24 @@
 
           // now we fly ...
 
-          map.flyTo({
-            center: e.lngLat.wrap(),
-            zoom: closeUp,
-            duration: 1200, // Animate over x seconds
-            essential: true,
-          });
+          let cdZoom = map.getZoom();
+          alert(cdZoom);
+
+          if (cdZoom < closeUp) {
+            map.flyTo({
+              center: e.lngLat.wrap(),
+              zoom: closeUp, // was just closeUp
+              duration: 1200, // Animate over x seconds
+              essential: true,
+            });
+          } else {
+            e.lngLat["lng"] += 0.019;
+            map.flyTo({
+              center: e.lngLat.wrap(),
+              duration: 1200, // Animate over x seconds
+              essential: true,
+            });
+          }
         }); // end function, on cd layer click
 
         map.on("mousemove", "hover-cd", (e) => {
