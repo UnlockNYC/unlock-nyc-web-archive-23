@@ -12,8 +12,7 @@
         "jwt-decode": "3.1.2",
         "busboy": "1.6.0",
         "aws-sdk": "2.1275.0",
-        "node-fetch": "2.x.x",
-        "ackee-tracker": "^5.1.0"
+        "node-fetch": "2.x.x"
     },
     "license": "MIT",
     "keywords": [
