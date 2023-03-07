@@ -808,7 +808,6 @@
     </a>
     <div id="restart">🌎</div>   
     <script src="/scripts/ackee-tracker.min.js"></script>
-    <!--<script src="https://unlocknyc-analytics.netlify.app/ackee-tracker.min.js"></script>-->
     <script>
       mapboxgl.accessToken =
         "pk.eyJ1IjoibWFiMTQ5OCIsImEiOiJjbGR3Y2R3bHkwNjEwM29xZmVpZnl1ZTlnIn0._3b0kVKOCnPOHHtoWwftpw";
@@ -1332,30 +1331,28 @@
       }); // end on load
       
       // ackee analytics events
-      const instance = ackeeTracker.create('https://unlocknyc-analytics.netlify.app').record('d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c');
+      const instance = ackeeTracker.create('https://unlocknyc-analytics.netlify.app');
+      instance.record('d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c');
       $("#press-button").click(function () {
         // press inquiry
-        /*instance.action("7b6362f5-d572-4c38-ae67-730be4f7bb20", {
+        instance.action("7b6362f5-d572-4c38-ae67-730be4f7bb20", {
           key: "Click",
           value: 1,
-        });*/
-        instance.action('7b6362f5-d572-4c38-ae67-730be4f7bb20', { key: 'Click', value: 1 });
+        });
       });
       $("div.report-track").click(function () {
         // report discrimination, 2 buttons
-        /*instance.action("fb71375b-ca06-4a1f-a65d-bf5650432ace", {
+        instance.action("fb71375b-ca06-4a1f-a65d-bf5650432ace", {
           key: "Click",
           value: 1,
-        });*/
-        instance.action('fb71375b-ca06-4a1f-a65d-bf5650432ace', { key: 'Click', value: 1 })
+        });
       });
       $("button#call").click(function () {
         // take action, email button
-        /*instance.action("ae6292d4-b1ae-4139-9e44-6dc1c6882054", {
+        instance.action("ae6292d4-b1ae-4139-9e44-6dc1c6882054", {
           key: "Click",
           value: 1,
-        });*/
-        instance.action('ae6292d4-b1ae-4139-9e44-6dc1c6882054', { key: 'Click', value: 1 })
+        });
       });
     </script>
   </body>
