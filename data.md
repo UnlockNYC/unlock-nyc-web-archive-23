@@ -49,6 +49,13 @@ img.report-sample {
   max-width: 30%;
 }
   
+@media only screen and (max-width: 900px) {
+  div#data-grid {
+    grid-template-columns: 100%;
+    grid-column-gap: none;
+  }
+}
+  
 </style>
 
 <div id="data-grid">
