@@ -7,7 +7,6 @@
       name="viewport"
       content="initial-scale=1,maximum-scale=1,user-scalable=no"
     />
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1" />-->
     <link
       href="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.css"
       rel="stylesheet"
@@ -17,11 +16,6 @@
       integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU="
       crossorigin="anonymous"
     ></script>
-    <!--<script
-      src="https://code.jquery.com/jquery-3.6.3.slim.js"
-      integrity="sha256-DKU1CmJ8kBuEwumaLuh9Tl/6ZB6jzGOBV/5YpNE2BWc="
-      crossorigin="anonymous"
-    ></script>-->
     <script src="https://api.mapbox.com/mapbox-gl-js/v2.12.0/mapbox-gl.js"></script>
     <script
       async
@@ -40,7 +34,6 @@
       body {
         margin: 0;
         padding: 0;
-        display: none;
       }
       a:visited {
         color: Blue;
@@ -240,10 +233,6 @@
         padding-top: 8px;
         cursor: pointer;
       }
-      #about.open {
-        /*height: 400px;
-        top: calc(100vh - 50px);*/
-      }
       #about-copy {
         padding: 5%;
         text-align: left;
@@ -271,7 +260,7 @@
       div.report-button {
         cursor: pointer;
         display: inline-block;
-        margin-right: 8px;
+        margin-right: 6px;
         background-color: #23296a;
         color: White;
         font-family: "Intro Rust", monospace;
@@ -333,9 +322,83 @@
           height: 40px;
           padding: 0;
         }
+        #legend {
+          bottom: 45px;
+        }
+      }
+      @media only screen 
+  and (min-device-width: 1024px) 
+  and (max-device-width: 1366px) 
+        and (-webkit-min-device-pixel-ratio: 2) {
+        .mapboxgl-ctrl-geocoder {
+          display: block !important;
+        }
+      }
+      @media only screen and (max-width: 900px) {
+        #data-window {
+          width: 100%;
+          max-width: none;
+          top: initial;
+          bottom: 40px;
+          height: 155px;
+          left: 0;
+          border-radius: 0;
+          border: 0;
+          border-top: 1px solid Black;
+          border-right: 2px solid rgb(54, 54, 54);
+          box-sizing: border-box;
+          overflow-y: scroll;
+        }
+        .mapboxgl-ctrl-top-right {
+          top: 30px !important;
+        }
+        .mapboxgl-ctrl-top-right .mapboxgl-ctrl {
+          margin: 6px 6px 0 0 !important;
+        }
+        .mapboxgl-ctrl-geocoder {
+          display: none;
+        }
+        .mapboxgl-ctrl-geocoder--input {
+          font-size: 13px !important;
+          padding: 2px 2px 2px 40px !important;
+          height: 40px !important;
+        }
+        .mapboxgl-ctrl-geocoder--icon-search {
+           top: 8px !important;
+          
+        }
+        .mapboxgl-ctrl-bottom-right {
+          opacity: 0;
+        }
+        #legend {
+          bottom: 285px;
+          background-color: White;
+          right: initial;
+          left: 3px;
+          zoom: 0.70;
+          
+        }
+        #report {
+          top: 0;
+          right: 0;
+          margin-right: 0;
+        }
+        #restart {
+          top: 130px; /*180px w/search*/
+          padding: 3.5px;
+          right: 6px;
+        }
+        #about-copy {
+          grid-template-columns: 100%;
+        }
+        #logo-grid {
+          grid-template-columns: 100% !important;
+          grid-template-rows: none !important;
+          grid-column-gap: 0 !important;
+        }
+        
       }
     </style>
-    <!--<link rel="stylesheet" href="https://weunlock.nyc/styles/site.css">-->
   </head>
   <body>
     <!-- Load the `mapbox-gl-geocoder` plugin. -->
@@ -353,9 +416,9 @@
       <div id="intro">
         <p>
           <strong>Source of income (SOI) discrimination</strong> is one of the
-          most commmon forms of illegal housing bias in New York City. When tenants
-          with rental assistance vouchers inquire about a listing, landlords and
-          brokers unlawfully deny or ignore them.
+          most commmon forms of illegal housing bias in New York City. When
+          tenants with rental assistance vouchers inquire about a listing,
+          landlords and brokers unlawfully deny or ignore them.
         </p>
         <p>
           Left underenforced, SOI discrimination prolongs homelessness, excludes
@@ -383,18 +446,7 @@
             >
             in New York City, based on cumulative data (2018 - 2023) from Unlock
             NYC and Neighbors Together.
-            <!--Looking at the 3 last months only,
-            <strong
-              >District <span class="cd-number">XX</span> ranked
-              <span class="ranking">XX</span>.</strong
-            >-->
           </p>
-          <!--<p>
-            Note: Districts with high rates of reported SOI discrimination are often the areas where voucher holders can find housing 
-            within their payment standards. From our participatory research, we learned that many high-end 
-            neighborhoods are off-limits for voucher holders, either due to financial or psychological barriers. The reported data is a 
-            reflection of where voucher holders are able to apply for housing - and yet still face discrimination.
-          </p>-->
           <p>
             The most common denial tactics in CD<span class="cd-number"
               >XX</span
@@ -476,23 +528,6 @@
           </a>
         </div>
       </div>
-      <!--<h4 id="sources">
-        Data sources: City Council District Boundaries via
-        <a
-          href="https://data.cityofnewyork.us/City-Government/City-Council-Districts/yusd-j4xi"
-          target="_blank"
-          >NYC Open Data</a
-        >, SOI discrimination data via
-        <a href="https://weunlock.nyc" target="_blank">Unlock NYC</a> and
-        <a href="https://neighborstogether.org/" target="_blank"
-          >Neighbors Together</a
-        >, Population data via American Community Survey (2019) and
-        <a
-          href="https://esri-nyc-office.hub.arcgis.com/datasets/907764c06da0404d9c29c054010cd67b_0/explore?location=40.705384%2C-73.978189%2C10.89&showTable=true"
-          target="_blank"
-          >ESRI New York City</a
-        >.
-      </h4>-->
     </div>
     <!--end of data-window-->
     <div id="about">
@@ -558,9 +593,57 @@
               </a>
             </li>
           </ul>
+          <h2>Definitions:</h2>
+          <p>Here is how we define the denial tactics included on the map:</p>
+          <ul>
+            <li>
+              <strong>Ghosting</strong>: Not responding after a prospective
+              tenant mentions their voucher is mentioned
+            </li>
+            <li>
+              <strong>No vouchers</strong>: Explicit denials, such as “the
+              landlord doesn’t take vouchers” or “no programs”
+            </li>
+            <li>
+              <strong>Income requirements</strong>: Setting minimum income
+              requirements, such as “you need to earn 40x the rent”. As long as
+              a tenant’s voucher covers the rent of the apartment they are
+              applying for, they cannot be subjected to income requirements, nor
+              required to provide a guarantor.
+            </li>
+            <li>
+              <strong>Credit requirements</strong>: Setting a minimum credit
+              score, such as “must have credit above 750.” Tenants whose
+              vouchers cover 100% of the rent cannot be rejected based on their
+              credit score.
+            </li>
+            <li>
+              <strong>Discriminatory ad</strong>: Listing advertisements that
+              contain discriminatory language in the ad, such as “No Section 8”
+            </li>
+            <li>
+              <strong>Steering</strong>: Attempting to influence a tenant's
+              neighborhood or community choice based on their status as a
+              voucher holder (example: "there aren't a lot of voucher holders in
+              that neighborhood. Have you tried East New York? You might be more
+              comfortable there")
+            </li>
+            <li>
+              <strong>Bait and switch</strong>: Advertising photos for one
+              apartment, but upon contacting or coming to the viewing, showing
+              them a totally different (usually worse) unit
+            </li>
+            <li>
+              <strong>Other</strong>: Anything not captured in the above
+              categories - tactics constantly change, and we will update these
+              in the future as we keep up.
+            </li>
+          </ul>
           <div style="text-align: left; margin-bottom: 20px; margin-top: 50px">
             <a href="https://weunlock.nyc/start" target="_blank"
-              ><div class="report-button report-track">Report Discrimination</div></a
+              ><div class="report-button report-track">
+                Report Discrimination
+              </div></a
             ><br /><br />
             <a
               href="mailto:jessica@weunlock.nyc?Subject=SOI%20Discrimination%20Map"
@@ -632,7 +715,9 @@
                 >We’ve received reports in all five boroughs, and every single
                 City Council district. </strong
               >Wherever they look, tenants looking for housing with a rental
-              assistance voucher are met with denials.
+              assistance voucher are met with denials. Across the board, the
+              most common denial is ghosting, which is reported in nearly 50% of
+              cases.
             </li>
             <li>
               Rents are intensely unaffordable in New York City.
@@ -650,9 +735,9 @@
                 >several hot spots where vouchers have reported numerous
                 instances of discrimination</strong
               >, primarily in Central Brooklyn, Northern Manhattan, and the East
-              Bronx. As of March 1, 2023, the districts with the highest rates
-              of SOI discrimination were District 10 in Manhattan, Districts 41,
-              40, 45 in Brooklyn, and District 13 in the Bronx.
+              Bronx. As of March 6, 2023, the districts with the highest rates
+              of SOI discrimination were Districts 45, 41, 40 in Brooklyn,
+              District 10 in Manhattan, and District 18 in the Bronx.
             </li>
             <li>
               It is worth noting that districts with high rates of reported SOI
@@ -766,8 +851,7 @@
             <li>
               Pass the Housing Access Voucher Program: This bill would create a
               statewide voucher that pays fair market rent and allows recipients
-              to increase their earnings until their rent is 30% of their
-              income
+              to increase their earnings until their rent is 30% of their income
             </li>
           </ul>
 
@@ -805,11 +889,12 @@
       </div>
     </div>
     <a href="https://weunlock.nyc/start" target="_blank">
-      <div id="report" class="report-button report-track">Report Discrimination</div>
+      <div id="report" class="report-button report-track">
+        Report Discrimination
+      </div>
     </a>
     <div id="restart">🌎</div>
-    <!--<script async src="/dist/ackee-tracker.min.js"></script>-->
-    <!--<script src="https://unlocknyc-analytics.netlify.app/ackee-tracker.min.js"></script>-->
+    <script src="/scripts/ackee-tracker.min.js"></script>
     <script>
       mapboxgl.accessToken =
         "pk.eyJ1IjoibWFiMTQ5OCIsImEiOiJjbGR3Y2R3bHkwNjEwM29xZmVpZnl1ZTlnIn0._3b0kVKOCnPOHHtoWwftpw";
@@ -817,6 +902,16 @@
       let startCenter = [-74.09564103822086, 40.69973724220384];
       let startZoom = 10;
       let closeUp = 12.55;
+      
+      if ($(window).width() < 900) {
+        startCenter = [-73.89000000000000, 40.64973724220384];
+        startZoom = 9.55;
+      }
+      
+      if ($(window).width() > 1600) {
+        startCenter = [-74.00064103822086, 40.69973724220384];
+        startZoom = 10.5;
+      }
 
       const map = new mapboxgl.Map({
         container: "map", // container ID
@@ -880,12 +975,26 @@
       map.on("load", () => {
         /// set legend
         $("#legend").html(fillLegend);
+        
+        /// low bandwidth check ///
+        
+        setTimeout(function() {
+          if (map.isSourceLoaded('cityCouncilDistricts') == false) {
+            map.flyTo({
+              center: [-73.956903,40.712014],
+              zoom: startZoom + 2,
+              duration: 1200, // Animate over x seconds
+              essential: true,
+            });
+          }     
+        }, 6000);
 
         /// adding sources ///
 
         map.addSource("cityCouncilDistricts", {
           type: "geojson",
-          data: "https://unlock.nyc3.digitaloceanspaces.com/public/cd.geojson?v=7",
+          //data: "https://unlock.nyc3.digitaloceanspaces.com/public/cd.geojson?v=7",
+          data: "https://public-unlock.nyc3.cdn.digitaloceanspaces.com/map/cd.geojson"
         });
 
         // cd data modified from here:
@@ -893,7 +1002,8 @@
 
         map.addSource("reports", {
           type: "geojson",
-          data: "https://unlock.nyc3.digitaloceanspaces.com/public/anonReports.geojson?v=3",
+          //data: "https://unlock.nyc3.digitaloceanspaces.com/public/anonReports.geojson?v=3",
+          data: "https://public-unlock.nyc3.cdn.digitaloceanspaces.com/map/anonReports.geojson"
         });
 
         /// adding layers ///
@@ -1139,14 +1249,13 @@
 
           $("div#data-window span.ranking").html(`${cdData.ranking}${suffix}`);
 
+          // creating bar chart in data window
           $("div#data-window #cd-chart div").each(function () {
             let tactic = $(this).attr("id");
             for (const key in cdData) {
               // looping through all properties in cdData
               if (key == tactic) {
                 // match div id to data property, which is % of tactic
-                //console.log(key);
-                //console.log(cdData[key]);
                 let tacticRate = +(cdData[key] * 100).toFixed(2);
                 // making sure that tacticRate is a number here, not string
                 let numReports = Math.round(
@@ -1157,23 +1266,14 @@
                   reportString = "report";
                 }
                 $(this).attr("data-rate", tacticRate);
-                // MAB: number of reports here now, not tactic rate
+                // number of reports here now, not tactic rate
                 $(this)
                   .find("span.tactic-rate")
                   .html(`${numReports} ${reportString}`);
                 $(this).css("width", `${tacticRate}%`);
-                /*if (tacticRate < 10) {
-                  $(this).css("background-color", "Lightgray");
-                } else {
-                  $(this).css("background-color", "#caf0f8"); // reset background color for non-gray bars
-                }*/
               }
             }
           });
-
-          // THANKS, CHATGPT!
-          // MAB, clean this up - make sure you understand what's happening
-          // and that there's no useless repeats ...
 
           function sortChart() {
             // necessary to show all for sorting!
@@ -1184,14 +1284,14 @@
               let tacticRate = parseFloat($(this).attr("data-rate"));
               if (tacticRate == 0) {
                 $(this).hide();
-              } /*else if (tacticRate < 10) {
-                $(this).css("background-color", "Lightgray");
-              }*/
+              }
               if ($(this).attr("id") == "other") {
                 $(this).hide();
               }
               $(this).appendTo(tempDiv); // add div to temporary div
             });
+
+            // sort, highest # first
 
             tempDiv
               .children("div.bar-chart")
@@ -1331,9 +1431,13 @@
           }
         });
       }); // end on load
-      
+
       // ackee analytics events
-      /*const instance = ackeeTracker.create('https://unlocknyc-analytics.netlify.app').record('d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c');
+      // initialize ackeeTracker
+      const instance = ackeeTracker.create(
+        "https://unlocknyc-analytics.netlify.app"
+      );
+      instance.record("d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c");
       $("#press-button").click(function () {
         // press inquiry
         instance.action("7b6362f5-d572-4c38-ae67-730be4f7bb20", {
@@ -1354,7 +1458,7 @@
           key: "Click",
           value: 1,
         });
-      });*/
+      });
     </script>
   </body>
 </html>
