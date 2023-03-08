@@ -57,7 +57,7 @@ img.report-sample {
       <div class="data-img" style="background: url('https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/map-data-img.png'); background-size: cover;">
       </div>
       <div>
-        <strong>Mapping SOI Discrimination in NYC</strong> (2023, interactive map - coming soon)
+        <strong>Mapping SOI Discrimination in NYC</strong> (2023, interactive map)
       </div> 
     </a>
   </div>
