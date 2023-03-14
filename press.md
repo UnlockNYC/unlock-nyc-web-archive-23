@@ -12,6 +12,8 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/glogo12.png)
 
+Gothamist - ["New Yorkers in NYC’s poorest neighborhoods face higher housing discrimination, analysis finds"](https://gothamist.com/news/new-yorkers-in-nycs-poorest-neighborhoods-face-higher-housing-discrimination-analysis-finds) 3.08.2023
+
 <br>
 
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
