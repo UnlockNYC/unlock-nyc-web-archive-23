@@ -8,7 +8,11 @@ pageTitle: Press
 
 For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.nyc) and we will get back to you as soon as we can.
 
-<br> 
+<br>
+
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/glogo12.png)
+
+<br>
 
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
 
