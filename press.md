@@ -10,6 +10,14 @@ For press inquiries, please contact [hello@weunlock.nyc](mailto:hello@weunlock.n
 
 <br>
 
+![Pix11 Logo - Origins of Health, LLC](https://www.originsofhealth.com/wp-content/uploads/2020/03/Pix11-Logo.png)
+
+PIX11 - "[NYC tenants report rampant housing discrimination by landlords over vouchers](https://pix11.com/news/local-news/nyc-tenants-report-rampant-housing-discrimination-from-landlords-over-vouchers/)" 3.23.2023
+
+<br>
+
+<br>
+
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/glogo12.png)
 
 Gothamist - ["New Yorkers in NYC’s poorest neighborhoods face higher housing discrimination, analysis finds"](https://gothamist.com/news/new-yorkers-in-nycs-poorest-neighborhoods-face-higher-housing-discrimination-analysis-finds) 3.08.2023
