@@ -26,7 +26,7 @@ Gothamist - ["New Yorkers in NYC’s poorest neighborhoods face higher housing d
 
 <br>
 
-![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/companyventureslogo.png)
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/company-ventures.png)
 
 Company Ventures - ["WITH FREE DIGITAL TOOLS, UNLOCK NYC IS EXPANDING ACCESS TO RENTAL SUBSIDIES FOR HOMELESS NEW YORKERS" ](https://companyventures.co/post/with-free-digital-tools-unlock-nyc-is-expanding-access-to-rental-subsidies)3.07.2023
 
