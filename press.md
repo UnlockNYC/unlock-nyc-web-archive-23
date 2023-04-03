@@ -24,6 +24,16 @@ Gothamist - ["New Yorkers in NYC’s poorest neighborhoods face higher housing d
 
 <br>
 
+<br>
+
+Company Ventures - ["WITH FREE DIGITAL TOOLS, UNLOCK NYC IS EXPANDING ACCESS TO RENTAL SUBSIDIES FOR HOMELESS NEW YORKERS" ](https://companyventures.co/post/with-free-digital-tools-unlock-nyc-is-expanding-access-to-rental-subsidies)3.07.2023
+
+![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/companyventureslogo.png)
+
+<br>
+
+<br>
+
 ![](https://raw.githubusercontent.com/mab253/unlock-nyc-web/main/uploads/city_limits_logo.jpeg)
 
 City Limits - ["Opinion: Mayor’s Budget Slashes Vital Funding in the Face of Humanitarian Crisis"](https://citylimits.org/2023/02/08/opinion-mayors-budget-slashes-vital-funding-in-the-face-of-humanitarian-crisis/ "Opinion: Mayor’s Budget Slashes Vital Funding in the Face of Humanitarian Crisis") 02.08.2023
