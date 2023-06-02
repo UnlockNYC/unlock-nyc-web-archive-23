@@ -185,7 +185,7 @@
 
             // getting the rest of airtable schema
             let getSchema = await fetch('https://unlock-staging.glitch.me/data/schema.json', {
-                method: 'POST',
+                method: 'GET',
                 //body: JSON.stringify(userToken),
                 headers: {
                     "Content-Type": "application/json"
