@@ -183,7 +183,7 @@
 
 
             // getting airtable schema
-            let getSchema = await fetch('https://weunlock.nyc/start/secure/advocate/report/schema.json', {
+            let getSchema = await fetch('schema.json', {
                 method: 'GET',
                 headers: {
                     "Content-Type": "application/json"
@@ -191,7 +191,7 @@
             });
             let schema = await getSchema.json();
             console.log(schema);
-            let schemaList = [];
+            let reportSchema = [];
             let columns = {
                 listing: "fld2wcMYdBLqC8Qze",
                 discriminationType: "fldaSBFI9xkDNqNMI",
@@ -216,14 +216,11 @@
                   if (columns[key] == fields[i].id) {
                     column = fields[i].id;
                     selectOptions = fields[i].options.choices;
-                    schemaList.push({ [column]: JSON.stringify(selectOptions) });
+                    reportSchema.push({ [column]: JSON.stringify(selectOptions) });
                   }
                 }
             }
             
-            let reportSchema = schemaList;
-            console.log(reportSchema);
-
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
                     // data-id attribute on select dropdowns match the field IDs from airtable
