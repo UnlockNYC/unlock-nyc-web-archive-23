@@ -190,7 +190,7 @@
                 }
             });
             let schema = await getSchema.json();
-            let reportSchema = [];
+            let schemaList = [];
             let columns = {
                 listing: "fld2wcMYdBLqC8Qze",
                 discriminationType: "fldaSBFI9xkDNqNMI",
@@ -215,10 +215,13 @@
                   if (columns[key] == fields[i].id) {
                     column = fields[i].id;
                     selectOptions = fields[i].options.choices;
-                    reportSchema.push({ [column]: JSON.stringify(selectOptions) });
+                    schemaList.push({ [column]: JSON.stringify(selectOptions) });
                   }
                 }
             }
+            
+            let reportSchema = schemaList;
+            console.log(reportSchema);
 
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
