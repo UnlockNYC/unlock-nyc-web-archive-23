@@ -184,6 +184,7 @@
 
 
             // getting the rest of airtable schema
+            // was in previous payload before: data.schema
             let getSchema = await fetch('https://unlock-staging.glitch.me/data/schema.json', {
                 method: 'GET',
                 //body: JSON.stringify(userToken),
@@ -191,10 +192,38 @@
                     "Content-Type": "application/json"
                 }
             });
-            //let data = await response.json();
-            let reportSchema = await getSchema.json();
-            console.log(getSchema);
-            console.log(reportSchema);
+            let schema = await getSchema.json();
+            let schemaList = [];
+            let columns = {
+                listing: "fldhEdkPi8horzLD4",
+                discriminationType: "fldp0Cdze4QBCRIQy",
+                denialType: "fldZYKk8mQAJe05b5",
+                aptAvailable: "fldLDDBMmULQ5gI1n",
+                intervention: "fldHfhNDDz7Vgviec",
+                evidence: "fld39iqRmYpy5M8j2",
+                contact: "fld0KWctTTkkMxaRW"
+              }
+              /* NOTE: CHANGES based on env! staging base for now */
+              // this is a list of columns with dropdown options
+              // to send schema to populate form
+            
+            let fields = schema.tables[1].fields; // reports table
+            for (let i = 0; i < fields.length; i++) {
+                let column;
+                let selectOptions;
+                // check if any of the field IDs match
+                // the columns object written @ top 
+                // if so, add to array that we'll send to web form
+                for (const key in columns) {
+                  if (columns[key] == fields[i].id) {
+                    column = fields[i].id;
+                    selectOptions = fields[i].options.choices;
+                    schemaList.push({ [column]: JSON.stringify(selectOptions) });
+                  }
+                }
+            }
+            
+            let reportSchema = schemaList;
 
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
