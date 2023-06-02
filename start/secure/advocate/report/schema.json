@@ -1,0 +1,4589 @@
+{
+    "tables": [
+        {
+            "id": "tblAQdJITKVqen1qn",
+            "name": "User information",
+            "primaryFieldId": "fldSYzrGeyp7tSCFw",
+            "fields": [
+                {
+                    "type": "singleLineText",
+                    "id": "fldSYzrGeyp7tSCFw",
+                    "name": "Name"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selB1SplDpVIEhpD9",
+                                "name": "New user orientation needed"
+                            },
+                            {
+                                "id": "selQKSUC2bkchDp6h",
+                                "name": "Follow-up support needed"
+                            },
+                            {
+                                "id": "selCzjLkvsSd6e6X4",
+                                "name": "Active intervention"
+                            },
+                            {
+                                "id": "selmPRddpgX4otXKp",
+                                "name": "Potential set-aside candidate"
+                            },
+                            {
+                                "id": "selac6jOV06hivQrJ",
+                                "name": "Closed"
+                            },
+                            {
+                                "id": "sel7JjKGQwftvJN1O",
+                                "name": "Active formal complaint"
+                            }
+                        ]
+                    },
+                    "id": "fldw2TFuVGWSlssAs",
+                    "name": "Outreach tags",
+                    "description": "Used in Outreach interface"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selO6SfFTYgLyPeFz",
+                                "name": "Spanish"
+                            },
+                            {
+                                "id": "selRMujxBcLKUEpgK",
+                                "name": "English"
+                            },
+                            {
+                                "id": "sellfLpEEIyRo3boW",
+                                "name": "American Sign Language"
+                            }
+                        ]
+                    },
+                    "id": "fldzFMaE8tWKIzKZg",
+                    "name": "Language(s) spoken"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sele4c4daS38Gnz3o",
+                                "name": "1:1 housing search consultation"
+                            },
+                            {
+                                "id": "sel8Ub0NywNKD7iyw",
+                                "name": "Assistance with application process"
+                            },
+                            {
+                                "id": "selcsqfHcflVcFMNj",
+                                "name": "Participated in our work (e.g., user testing or advocacy)"
+                            },
+                            {
+                                "id": "selDpj7cFCznz6XAj",
+                                "name": "Unlock NYC letter of support"
+                            },
+                            {
+                                "id": "sel2M1LT2mvqNthsN",
+                                "name": "Other referral"
+                            },
+                            {
+                                "id": "selYYAni5oVEyy09q",
+                                "name": "Assigned a volunteer advocate"
+                            },
+                            {
+                                "id": "selcQoHrfvdmZuOWo",
+                                "name": "Attended a know your rights workshop"
+                            }
+                        ]
+                    },
+                    "id": "fldrxFvBzE529E31W",
+                    "name": "Activities"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selqQJawFRU0FvoJl",
+                                "name": "Offered a viewing"
+                            },
+                            {
+                                "id": "selTEeUA0jUH7gqpZ",
+                                "name": "Completed an application"
+                            },
+                            {
+                                "id": "selEw7HIaLsqv1Ewd",
+                                "name": "Signed a lease"
+                            },
+                            {
+                                "id": "selJRb4w4mGWfbTsp",
+                                "name": "Moved into an apartment"
+                            },
+                            {
+                                "id": "selqhxpfBOuE9P67a",
+                                "name": "Pursued a formal complaint"
+                            },
+                            {
+                                "id": "sel4ECDaHX8cRRW8D",
+                                "name": "Offered damages/compensation"
+                            },
+                            {
+                                "id": "selcsqfHcflVcFMNj",
+                                "name": "Participated in our work (e.g., user testing or advocacy)"
+                            },
+                            {
+                                "id": "sel3sm7jFXvn08HTS",
+                                "name": "Eviction stay or stop"
+                            },
+                            {
+                                "id": "selBwhSh1arKuIp8x",
+                                "name": "Unknown"
+                            },
+                            {
+                                "id": "selWKoaTCJMXBzMFD",
+                                "name": "Red tape situation resolved"
+                            }
+                        ]
+                    },
+                    "id": "fldXvQFB6nvboFxaN",
+                    "name": "Outcome(s)"
+                },
+                {
+                    "type": "checkbox",
+                    "options": {
+                        "icon": "check",
+                        "color": "greenBright"
+                    },
+                    "id": "fldkBOkxpjfAgtaSU",
+                    "name": "Ashley follow-up"
+                },
+                {
+                    "type": "checkbox",
+                    "options": {
+                        "icon": "check",
+                        "color": "greenBright"
+                    },
+                    "id": "fldsbwoy8UNbW9Ig9",
+                    "name": "Testimonial?"
+                },
+                {
+                    "type": "richText",
+                    "id": "fldbfEAzLvtrPmitu",
+                    "name": "Internal notes and action items"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selnu6g93PFOhbaBz",
+                                "name": "Needs a voucher"
+                            },
+                            {
+                                "id": "selWGXllz4Fxzjtpc",
+                                "name": "Actively searching"
+                            },
+                            {
+                                "id": "selt5MhIV3V2pLHLs",
+                                "name": "Search on pause"
+                            },
+                            {
+                                "id": "selK9uJMDMMNihuES",
+                                "name": "Application pending"
+                            },
+                            {
+                                "id": "selLD0EMmYZ5bV33B",
+                                "name": "Lease signed"
+                            },
+                            {
+                                "id": "selbN8j3rdHXRzGzU",
+                                "name": "Moved in"
+                            },
+                            {
+                                "id": "selKJIhayS3No6O8D",
+                                "name": "Unknown"
+                            },
+                            {
+                                "id": "selmXGf3hNvsXqbDA",
+                                "name": "N/A"
+                            }
+                        ]
+                    },
+                    "id": "fld8OX8FfjfW2xod1",
+                    "name": "Housing search stage"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tbl0DRO5ma4FirjIN",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldvhF156I1Wlg1QK"
+                    },
+                    "id": "fldBOr4KbZIHtH79k",
+                    "name": "Organization"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblY7Tdj2CS8YqnIG",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldVgXyw4b8vi08Wm"
+                    },
+                    "id": "fldEbY603pel8ZQre",
+                    "name": "Advocate"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selDxkzgKzKRqNmls",
+                                "name": "he, him, his"
+                            },
+                            {
+                                "id": "selyPY0jEJnozzcm9",
+                                "name": "she, her, hers"
+                            },
+                            {
+                                "id": "selCxI1T9fZgushe4",
+                                "name": "they, them, theirs"
+                            },
+                            {
+                                "id": "selRTzH9dRA9TJAVg",
+                                "name": "no pronouns"
+                            },
+                            {
+                                "id": "sel03MLCAnrgqrW3k",
+                                "name": "no preference"
+                            },
+                            {
+                                "id": "selGb0aLOp68dB26Q",
+                                "name": "other"
+                            }
+                        ]
+                    },
+                    "id": "fldPXewDIM7sYlEyt",
+                    "name": "Pronouns"
+                },
+                {
+                    "type": "phoneNumber",
+                    "id": "fldkqtNHGJjWtE6Po",
+                    "name": "Phone number"
+                },
+                {
+                    "type": "email",
+                    "id": "fldOs6fXwzu0wZHIo",
+                    "name": "Email address"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblKTce21T0FFknAi",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldmkXAGphcHd2wkb"
+                    },
+                    "id": "fldYptgmxu6n4PIx2",
+                    "name": "Reports submitted"
+                },
+                {
+                    "type": "count",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldYptgmxu6n4PIx2"
+                    },
+                    "id": "fldP1K5Kr1x7QxYmh",
+                    "name": "# reports"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel0ZdO9Xdvp2HbKt",
+                                "name": "CityFHEPS"
+                            },
+                            {
+                                "id": "selfXSyZX5IBLcWiW",
+                                "name": "FHEPS"
+                            },
+                            {
+                                "id": "selHTLXPyXKslgy95",
+                                "name": "Section 8"
+                            },
+                            {
+                                "id": "sel8xZvsu7BqQ9nW1",
+                                "name": "HUD-VASH"
+                            },
+                            {
+                                "id": "sel5MILECWDdQ4Edb",
+                                "name": "HRA – Other"
+                            },
+                            {
+                                "id": "sel8X5TeAGOYUOqvR",
+                                "name": "HRA – Other"
+                            },
+                            {
+                                "id": "sel8twSrG3LOEnrUz",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "selCIWE36bh3xioxw",
+                                "name": "SOTA"
+                            }
+                        ]
+                    },
+                    "id": "fld4dbCd6fla1ddh3",
+                    "name": "Voucher"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldWLPhsh9x2mMclq",
+                    "name": "Other voucher"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldWLPhsh9x2mMclq",
+                            "fld4dbCd6fla1ddh3"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldFwaLelrkJGzp2S",
+                    "name": "Voucher for Report"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld1fpfhkHNUp7ijA",
+                            "fld2TocHgcwPA58wd"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldRHFm3Nm44Yn6Oi",
+                    "name": "Agency for Report"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel92ezKxSVev9aDe",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "seloLGKk4tOBL22TG",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selWZg5QycGCBGcxj",
+                                "name": "I don't know",
+                                "color": "grayLight1"
+                            }
+                        ]
+                    },
+                    "id": "fldlXMD5ri4QXLvYU",
+                    "name": "Section 8, porting?"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldHzBKSehfu9ktyq",
+                    "name": "Where are you porting from?"
+                },
+                {
+                    "type": "date",
+                    "options": {
+                        "dateFormat": {
+                            "name": "local",
+                            "format": "l"
+                        }
+                    },
+                    "id": "fldpsXwNu9PrIYrfu",
+                    "name": "Voucher expiration"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selZvIH1iA1sE9RaH",
+                                "name": "I have my own place"
+                            },
+                            {
+                                "id": "seldh2mOTDniI1V1O",
+                                "name": "I am staying with family or friends"
+                            },
+                            {
+                                "id": "selrwYiPAtnzz3EKQ",
+                                "name": "I am staying in a shelter"
+                            },
+                            {
+                                "id": "selVc1xqyn8gDXQQR",
+                                "name": "I am experiencing street homelessness"
+                            },
+                            {
+                                "id": "sel881gAdUzrRD4ij",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "selK18yItcDiC9e2c",
+                                "name": "I am in a room or a single room occupancy (SRO)"
+                            }
+                        ]
+                    },
+                    "id": "fldtADNtPKouYwgxt",
+                    "name": "Current housing situation"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldK72tLOmmwjrBd9",
+                    "name": "Other housing situation"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fld9teyYZYJOBE6hp",
+                    "name": "Adults"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldpe3QBqmEYi44hm",
+                    "name": "Children"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld9teyYZYJOBE6hp",
+                            "fldpe3QBqmEYi44hm"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fld7lZI2KHB0061Wt",
+                    "name": "Family size"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selvfEsyXBDUeldze",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selEXe0afx4GleFHQ",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selK8GhUx5DXe7UvL",
+                                "name": "I prefer not to say",
+                                "color": "grayLight1"
+                            }
+                        ]
+                    },
+                    "id": "fldtANJxZQrcDm8C5",
+                    "name": "In housing court?"
+                },
+                {
+                    "type": "currency",
+                    "options": {
+                        "precision": 0,
+                        "symbol": "$"
+                    },
+                    "id": "fldvE9yGdh3pSwMVs",
+                    "name": "Voucher max"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selEhExiktUptfjOQ",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selpYyE47XEV2W9oI",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "sel6EjNZynLTHU5KI",
+                                "name": "I don't know",
+                                "color": "grayLight1"
+                            },
+                            {
+                                "id": "selsRFef5AG9t2Xf8",
+                                "name": "No ",
+                                "color": "blueLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldvUdQrBqYe8OGpo",
+                    "name": "Portion?"
+                },
+                {
+                    "type": "currency",
+                    "options": {
+                        "precision": 0,
+                        "symbol": "$"
+                    },
+                    "id": "fldhDEko43Y9zSDMt",
+                    "name": "Portion amount"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldf7VdmMnngdVh1Z",
+                    "name": "Credit score"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fld8ZMimEictCkoP8",
+                    "name": "Anything else to share?"
+                },
+                {
+                    "type": "lastModifiedTime",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldbfEAzLvtrPmitu"
+                        ],
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fldYmLrubTFoC06MC",
+                    "name": "Notes last updated"
+                },
+                {
+                    "type": "lastModifiedTime",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldYptgmxu6n4PIx2"
+                        ],
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fldJIdTkue6f24Ony",
+                    "name": "Last time they reported with Unlock"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldJIdTkue6f24Ony"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldWrHLd8ddRPZxtp",
+                    "name": "Days since last report"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel3ifZkTfh1bR3u4",
+                                "name": "Facebook",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "sel1K0EEuXprrINJy",
+                                "name": "Twitter",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "sel5CFDLgChsszzMF",
+                                "name": "Internet search",
+                                "color": "redLight2"
+                            },
+                            {
+                                "id": "selueHYYZQru4Ek1o",
+                                "name": "A friend or family member",
+                                "color": "tealLight2"
+                            },
+                            {
+                                "id": "selfp7Ngr8S7S7xt6",
+                                "name": "A case worker or organization",
+                                "color": "yellowLight2"
+                            },
+                            {
+                                "id": "selitEMXA9eN1Bu4W",
+                                "name": "Record it. Report it! booklet",
+                                "color": "orangeLight2"
+                            },
+                            {
+                                "id": "selNgE54Zt9wo6Yhy",
+                                "name": "Other",
+                                "color": "greenLight2"
+                            },
+                            {
+                                "id": "seltRG3gt7LNKCa7V",
+                                "name": "Google search",
+                                "color": "purpleBright"
+                            },
+                            {
+                                "id": "selLKKiyZAnFxOVJU",
+                                "name": "Reddit",
+                                "color": "pinkBright"
+                            }
+                        ]
+                    },
+                    "id": "fldBpswMDtVKubUdM",
+                    "name": "How they found out about us"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldyNmeSQsyAk43kj",
+                    "name": "Other"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldBOr4KbZIHtH79k",
+                        "fieldIdInLinkedTable": "fldiIgLEXOosJBBT1",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "fldgBrysDeP1ZvN3K",
+                    "name": "CC E-Mail to Org"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldEbY603pel8ZQre",
+                        "fieldIdInLinkedTable": "fld507vee2P1MzsmW",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "fldJYEhmZsXMNiVgc",
+                    "name": "Advocate E-mail"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldHssjf0YXluiljg",
+                    "name": "Record ID"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldYptgmxu6n4PIx2",
+                        "fieldIdInLinkedTable": "fldl9ZySBROT2C4JD",
+                        "result": {
+                            "type": "multipleSelects",
+                            "options": {
+                                "choices": [
+                                    {
+                                        "id": "selzkITHYd9Iz5EG3",
+                                        "name": "Tenant moved into the apartment",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "sel90AvQtJk0oj3Jk",
+                                        "name": "Tenant signed a lease",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "seluJZjy4pYJED46S",
+                                        "name": "Tenant offered to view / apply to the apartment ",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "seldRHUhbMwtxvy0d",
+                                        "name": "Tenant moved into another unit from an intervention",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "selCtL06nI2h8MEci",
+                                        "name": "Resolved (other)",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "selzuCYfPjUrgWP9K",
+                                        "name": "CCHR used as a tip",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "selCa7J9XZD8Me46G",
+                                        "name": "Tenant decided they didn't want that apartment",
+                                        "color": "grayLight1"
+                                    },
+                                    {
+                                        "id": "seloDmI2dhxUerjq1",
+                                        "name": "Landlord/broker showed evidence to clear allegation",
+                                        "color": "grayLight1"
+                                    },
+                                    {
+                                        "id": "selRnfyx90lYGfAhj",
+                                        "name": "Tenant didn't qualify for apartment",
+                                        "color": "grayLight1"
+                                    },
+                                    {
+                                        "id": "selxhwQ55423UsLZJ",
+                                        "name": "No response from tenant",
+                                        "color": "grayLight1"
+                                    },
+                                    {
+                                        "id": "selH8RRLbyJ7Ml4mP",
+                                        "name": "No response from control test",
+                                        "color": "grayLight1"
+                                    },
+                                    {
+                                        "id": "selJX3IEM764wrLMy",
+                                        "name": "Not enough evidence",
+                                        "color": "redBright"
+                                    },
+                                    {
+                                        "id": "selFh3kvb8bI9aM9X",
+                                        "name": "Didn't state a clear claim",
+                                        "color": "redBright"
+                                    },
+                                    {
+                                        "id": "selvZeleLbUFaxDCQ",
+                                        "name": "Landlord/broker uncooperative",
+                                        "color": "redBright"
+                                    },
+                                    {
+                                        "id": "selssT5JpTFSaPax1",
+                                        "name": "Unit off-market before intervention took place",
+                                        "color": "redBright"
+                                    },
+                                    {
+                                        "id": "selzAD0386dJl16Qq",
+                                        "name": "No response/action from receiving agency",
+                                        "color": "redBright"
+                                    },
+                                    {
+                                        "id": "selYbmGI1gDUqTgzn",
+                                        "name": "Unknown/pending outcome",
+                                        "color": "yellowBright"
+                                    },
+                                    {
+                                        "id": "selnWRvQIPzI45c3T",
+                                        "name": "Cease and desist",
+                                        "color": "tealLight1"
+                                    },
+                                    {
+                                        "id": "selYj3GNK1Y2jdIrY",
+                                        "name": "PCI attempted",
+                                        "color": "cyanBright"
+                                    },
+                                    {
+                                        "id": "sel8x120fiDIo66Hq",
+                                        "name": "PCI failed",
+                                        "color": "cyanLight2"
+                                    },
+                                    {
+                                        "id": "sels0fPSOYK3wNP1q",
+                                        "name": "Formal complaint",
+                                        "color": "redLight2"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "id": "fld07CrMvS9Iq4gec",
+                    "name": "Outcome(s) of individual reports"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldbZFdOJ0j1qK9nW",
+                    "name": "Organization choice"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldBOr4KbZIHtH79k"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld5Slqr8UoNkHYLi",
+                    "name": "Org for Report"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldkqtNHGJjWtE6Po"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldCSMCuwlySB2dAv",
+                    "name": "Raw phone"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selyD6cVHiQP4ulww",
+                                "name": "NYCHA"
+                            },
+                            {
+                                "id": "selw3BCzHiKeVi2Th",
+                                "name": "HPD"
+                            },
+                            {
+                                "id": "selhgwLM98h41b0Db",
+                                "name": "DHCR"
+                            },
+                            {
+                                "id": "sel14orfgvgpjnePD",
+                                "name": "CVR"
+                            },
+                            {
+                                "id": "sel5AReadFyFsReRG",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "sely1ICMT8UUoB0IH",
+                                "name": "I don't know"
+                            }
+                        ]
+                    },
+                    "id": "fld1fpfhkHNUp7ijA",
+                    "name": "If Section 8, what agency?"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld2TocHgcwPA58wd",
+                    "name": "Other Section 8 agency"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldzfRwRhGX0dukkY",
+                    "name": "Case worker contact"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selKYSwFpISkwMAFY",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selO4UlJCk0Zq0Z1L",
+                                "name": "No",
+                                "color": "redBright"
+                            }
+                        ]
+                    },
+                    "id": "fldUIoLa9W0SeZWQB",
+                    "name": "Consent to contact case worker?"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldEEmo4J6rbKDpvW",
+                    "name": "Who will be living in the apartment with you?"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "flddXaiCUi6XxsEPv",
+                    "name": "Reason: housing court"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld9C9IhBz5AxCEpR",
+                    "name": "Housing court index number"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldYiaPL93yf9C23Q",
+                    "name": "Housing situation notes"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "seltrK1dLushNWYQ7",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selk1JtZLk2D7MuJ0",
+                                "name": "No",
+                                "color": "redBright"
+                            }
+                        ]
+                    },
+                    "id": "fldKxPa8hzni7u5KS",
+                    "name": "Do you have an attorney?"
+                },
+                {
+                    "type": "date",
+                    "options": {
+                        "dateFormat": {
+                            "name": "local",
+                            "format": "l"
+                        }
+                    },
+                    "id": "fld8cdnniXK6LOS1z",
+                    "name": "Contact date"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selkd18nMXX9We6zZ",
+                                "name": "Brooklyn"
+                            },
+                            {
+                                "id": "selybqP6AdIuf4QVy",
+                                "name": "Bronx"
+                            },
+                            {
+                                "id": "selnkH7rKsaTF4Hbe",
+                                "name": "Manhattan"
+                            },
+                            {
+                                "id": "selLFBaMCwV4VMeRg",
+                                "name": "Staten Island"
+                            },
+                            {
+                                "id": "selrzmxqd3L8MQVPn",
+                                "name": "Queens"
+                            }
+                        ]
+                    },
+                    "id": "fldHtJBEAWZfgrLwj",
+                    "name": "Geographic areas"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldVZBLvXOBUCaeTT",
+                    "name": "Other apartment needs"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selkaygtFRtNnqJbh",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selD4FmMFGGszBDeR",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "sel94DWwsAKe7rS5C",
+                                "name": "Maybe",
+                                "color": "grayLight1"
+                            }
+                        ]
+                    },
+                    "id": "fldd1SJoS3YA90HCo",
+                    "name": "Pets"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selH3gxaRhiWtEuGU",
+                                "name": "Dog"
+                            },
+                            {
+                                "id": "selzljmCW9DBwOYT1",
+                                "name": "Cat"
+                            },
+                            {
+                                "id": "selyC9cOOAGsKNlpY",
+                                "name": "Fish"
+                            },
+                            {
+                                "id": "sel1bzowA8DxZsqeG",
+                                "name": "Rodent (hamster, mouse, guinea pig, etc.)"
+                            },
+                            {
+                                "id": "sel770LqZrRzdtRIc",
+                                "name": "Other"
+                            }
+                        ]
+                    },
+                    "id": "fld4jg3bDT9jXM1Bj",
+                    "name": "Pets type"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sell1xwN5ixYhPAqE",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selbw4rbhzPJ4iLxj",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selkIcukPwqx0o9Gi",
+                                "name": "I don't know",
+                                "color": "grayLight1"
+                            }
+                        ]
+                    },
+                    "id": "fldErNl8O5p4D26FW",
+                    "name": "Service or support animal"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selv0WRAGgESkxeQf",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selVsTOdtl6btIovJ",
+                                "name": "No",
+                                "color": "redBright"
+                            }
+                        ]
+                    },
+                    "id": "fld85mi6XZZC1ue0I",
+                    "name": "Doc note"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selDJv2YcMhbWHN7v",
+                                "name": "Yes, save my information!",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selwzFZgkjjPZR2ek",
+                                "name": "No, do not save my information.",
+                                "color": "grayLight1"
+                            }
+                        ]
+                    },
+                    "id": "fldvMlOImLMKCySJx",
+                    "name": "Consent to save info?"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selmgtJjgWIVXrXvJ",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selSUCd8ILTzPW2St",
+                                "name": "No",
+                                "color": "redBright"
+                            }
+                        ]
+                    },
+                    "id": "fldnXB0NmLndCta80",
+                    "name": "Attorney contact permission"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldVY3i2hA3OnH4mE",
+                    "name": "Attorney contact"
+                },
+                {
+                    "type": "createdTime",
+                    "options": {
+                        "result": {
+                            "type": "date",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                }
+                            }
+                        }
+                    },
+                    "id": "fldLvG84FfY3MTpkC",
+                    "name": "Date added"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldYptgmxu6n4PIx2",
+                        "fieldIdInLinkedTable": "fldmeOWIOCQoSLwMR",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldhHf7Q2s0cthyDE",
+                    "name": "All Reports Status"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld16j0LW8wzjP0Gf",
+                    "name": "All reports"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldYptgmxu6n4PIx2",
+                        "fieldIdInLinkedTable": "fldmeOWIOCQoSLwMR",
+                        "result": {
+                            "type": "singleSelect",
+                            "options": {
+                                "choices": [
+                                    {
+                                        "id": "selAmSbE3fWCr8GQj",
+                                        "name": "Needs additional information",
+                                        "color": "pinkBright"
+                                    },
+                                    {
+                                        "id": "selUWvpi4LHkHjDMv",
+                                        "name": "Needs control test",
+                                        "color": "yellowBright"
+                                    },
+                                    {
+                                        "id": "selcEcOvMu9UL4GEO",
+                                        "name": "Control test pending",
+                                        "color": "orangeBright"
+                                    },
+                                    {
+                                        "id": "selc8EtFUFzve1DbU",
+                                        "name": "Ready to refer",
+                                        "color": "purpleBright"
+                                    },
+                                    {
+                                        "id": "selJNBl1irZ6zNTFQ",
+                                        "name": "Report referral made",
+                                        "color": "tealBright"
+                                    },
+                                    {
+                                        "id": "seleeHfO2I1ijLjl5",
+                                        "name": "Referral partner confirmed receipt",
+                                        "color": "cyanBright"
+                                    },
+                                    {
+                                        "id": "seljsi7XywhzBVayN",
+                                        "name": "Pre-complaint intervention pending",
+                                        "color": "blueBright"
+                                    },
+                                    {
+                                        "id": "sel67SYAaXBNT6dSR",
+                                        "name": "Formal complaint pending",
+                                        "color": "purpleBright"
+                                    },
+                                    {
+                                        "id": "selI3Mybhw9YvUZzu",
+                                        "name": "Closed – Unsuccessful",
+                                        "color": "redBright"
+                                    },
+                                    {
+                                        "id": "selptyVAoYcQjohgk",
+                                        "name": "Closed – Positive outcome",
+                                        "color": "greenBright"
+                                    },
+                                    {
+                                        "id": "selcSV4lSyqZTTmW7",
+                                        "name": "Closed – Neutral outcome",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "selY7LOx9mIKjmR9C",
+                                        "name": "Status unknown",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "selMIGbyn60CVSpr7",
+                                        "name": "User opted to not submit to CCHR",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "selF3WsmLNGeu8s2L",
+                                        "name": "Duplicate report - delete when possible",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "selcNeSdxeTjS4Znv",
+                                        "name": "Generic report - do 1:1 outreach",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "sel4pEPN6uT1nsxkz",
+                                        "name": "Test report - delete when possible",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "selulbux8dPloZZeC",
+                                        "name": "Anonymous tip",
+                                        "color": "grayLight2"
+                                    },
+                                    {
+                                        "id": "selT7aiPwqPa9Eux0",
+                                        "name": "Referred to FHJC",
+                                        "color": "orangeLight1"
+                                    },
+                                    {
+                                        "id": "selDuNfwzR8eCHvCj",
+                                        "name": "Referred to FHLU",
+                                        "color": "pinkLight1"
+                                    },
+                                    {
+                                        "id": "selZKbpLuVfPdNtja",
+                                        "name": "Referred to DHR",
+                                        "color": "greenBright"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "id": "fldqrQ2BSCGEybkOm",
+                    "name": "Status (from Reports submitted)"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldYptgmxu6n4PIx2",
+                        "fieldIdInLinkedTable": "fldmeOWIOCQoSLwMR",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld0OlR7QUUXZLfJk",
+                    "name": "Status Rollup (from Reports submitted)"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld0OlR7QUUXZLfJk"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldcc5z3fp4uTLNDt",
+                    "name": "Reports Close or Refered?"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldzittYRrwa9Gb9d",
+                    "name": "Partner organizations copy"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldv9FXiD7tqYrBaN",
+                    "name": "Partner organizations copy copy"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viwDOyY6KGM8q23i3",
+                    "name": "All enrolled users",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwgXUHidNjq3dQoP",
+                    "name": "Neighbors Together",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwaHsutazHYcJ9Ce",
+                    "name": "Brooklyn Defender Services",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwzfXN9Q9Jgcofig",
+                    "name": "Unaffiliated",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwoXaZBPRcXOPhJc",
+                    "name": "Inactive users only",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwoKMpWpKKbvLkGi",
+                    "name": "Repeat users only",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwlsw3iPaL04ykqb",
+                    "name": "Moved in only",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwgwuvtzolic4AgY",
+                    "name": "Enroll a new user",
+                    "type": "form"
+                },
+                {
+                    "id": "viw8hFS2BJb8IiACq",
+                    "name": "Kalin - Metrics",
+                    "type": "grid"
+                }
+            ]
+        },
+        {
+            "id": "tblKTce21T0FFknAi",
+            "name": "All reports",
+            "primaryFieldId": "fldMUbkJsloTqFR2m",
+            "fields": [
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldXkr2FlRPTvo1bO",
+                            "fldp0Cdze4QBCRIQy"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldMUbkJsloTqFR2m",
+                    "name": "Report Reference"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "seltgmH2kkwltqBFq",
+                                "name": "CCHR reports"
+                            },
+                            {
+                                "id": "sel2kNp0XK9eJc03P",
+                                "name": "Housing Connect"
+                            },
+                            {
+                                "id": "selYp6kDHoGYY2JNA",
+                                "name": "Anonymous tips"
+                            },
+                            {
+                                "id": "sellUB4w7UOLrJjSF",
+                                "name": "Other"
+                            }
+                        ]
+                    },
+                    "id": "fldAA5F50YecZRHsS",
+                    "name": "Report Type",
+                    "description": "Reports will sort themselves into 1 of 3 types (see the Views column on the left)"
+                },
+                {
+                    "type": "createdTime",
+                    "options": {
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fld28H40nyLxNcQsa",
+                    "name": "Date submitted",
+                    "description": "Note: for reports marked 11/23/2021, note Date of Denial instead (11/23/21 is when we moved Neighbors Together reports to our full database, so the date reflects that rather than the date the member submitted)"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblAQdJITKVqen1qn",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldYptgmxu6n4PIx2"
+                    },
+                    "id": "fldmkXAGphcHd2wkb",
+                    "name": "@name"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldM7lRzxCmIlInsP",
+                    "name": "@botname",
+                    "description": "This is the name the person provided in the bot. In the column at left, start typing their name to see if we already have their information on file (also cross-check this information with the phone number they provide)"
+                },
+                {
+                    "type": "phoneNumber",
+                    "id": "fld54xjFTjU0xJYMB",
+                    "name": "@phone",
+                    "description": "This is the phone number the user provided in the bot when reporting"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "seluxpxxcqNCDlxXl",
+                                "name": "\"No vouchers\""
+                            },
+                            {
+                                "id": "sel2FHia6jex1Pz2i",
+                                "name": "Ghosting"
+                            },
+                            {
+                                "id": "selcNbyL5xUa3OoFe",
+                                "name": "Income requirements"
+                            },
+                            {
+                                "id": "sellyTn2PUO2ZBkHb",
+                                "name": "Discriminatory ad"
+                            },
+                            {
+                                "id": "sel8sjzA6SKylfVWH",
+                                "name": "Steering"
+                            },
+                            {
+                                "id": "selDimOjpik0g9mkV",
+                                "name": "Credit requirements"
+                            },
+                            {
+                                "id": "selN1az4fazSKNOe9",
+                                "name": "Scam"
+                            },
+                            {
+                                "id": "selI9RLMa9BpAaQFX",
+                                "name": "Bait and switch"
+                            },
+                            {
+                                "id": "selI0MIyPtjBQBV81",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "selp2FzTTdIe3wBIq",
+                                "name": "Application delays"
+                            }
+                        ]
+                    },
+                    "id": "fldp0Cdze4QBCRIQy",
+                    "name": "@type",
+                    "description": "Primary type of discrimination in report"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fld9LxV8g98hxNn0U",
+                    "name": "@story"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldRJJAXpPCDWuAlR",
+                            "fldRLw8j0MvaYC6w2"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldxV5PZ3xXV0Ly3i",
+                    "name": "Date of Denial"
+                },
+                {
+                    "type": "date",
+                    "options": {
+                        "dateFormat": {
+                            "name": "local",
+                            "format": "l"
+                        }
+                    },
+                    "id": "fldRLw8j0MvaYC6w2",
+                    "name": "@date_specific"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sela4CIl09Ox7StBy",
+                                "name": "Past day"
+                            },
+                            {
+                                "id": "selv5fUjdkyh1ZYdW",
+                                "name": "Past week"
+                            },
+                            {
+                                "id": "seltPPiTkqK3iXsnJ",
+                                "name": "Past month"
+                            },
+                            {
+                                "id": "selSqtGhw8Zl1ZEhM",
+                                "name": "Longer than a month"
+                            },
+                            {
+                                "id": "selJscqakbcTStJMN",
+                                "name": "null"
+                            }
+                        ]
+                    },
+                    "id": "fldRJJAXpPCDWuAlR",
+                    "name": "@date_general"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "seluz4u2sXVZVSdHF",
+                                "name": "Email ✉️",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selxsLpP5zUNShFCO",
+                                "name": "Phone call 📱",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "selb6D0C6MiiO2GcU",
+                                "name": "In person 🏢",
+                                "color": "tealLight2"
+                            },
+                            {
+                                "id": "selR4y0J157jWNboB",
+                                "name": "On a listing website, like Trulia or Craigslist 🔗",
+                                "color": "greenLight2"
+                            },
+                            {
+                                "id": "selPL2geOSh5sMgHB",
+                                "name": "Text message 💬",
+                                "color": "orangeLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldZYKk8mQAJe05b5",
+                    "name": "@denialtype"
+                },
+                {
+                    "type": "url",
+                    "id": "fldJVb2qvm3I0nhwH",
+                    "name": "@url"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selkXYIRSEx2pdK9q",
+                                "name": "CityFHEPS"
+                            },
+                            {
+                                "id": "sel4F4ep5pZyEztqp",
+                                "name": "FHEPS"
+                            },
+                            {
+                                "id": "selTNEcnHV3tWpUrW",
+                                "name": "Section 8"
+                            },
+                            {
+                                "id": "selqqi9yYB29fPEul",
+                                "name": "HUD-VASH"
+                            },
+                            {
+                                "id": "selE7GI6zfmGucTAs",
+                                "name": "HASA"
+                            },
+                            {
+                                "id": "sel0aS9Jo5GuBUbEQ",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "sel9cnOYPnndJClhG",
+                                "name": "HRA – Other"
+                            }
+                        ]
+                    },
+                    "id": "fldkpGFxvPhhhx1Pe",
+                    "name": "@voucher"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld2vPg4F8v6dgzWa",
+                    "name": "@voucher_other"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld5xOO4TFqafPrU8",
+                            "fldkpGFxvPhhhx1Pe",
+                            "fld2vPg4F8v6dgzWa"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldz9hJJZ4gUvy8xB",
+                    "name": "Voucher Type"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldhEdkPi8horzLD4",
+                            "fldM7pLiMX6SNqtnz"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldyTlYYMZwNcV3P3",
+                    "name": "Listing Source"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldXkr2FlRPTvo1bO",
+                    "name": "@address"
+                },
+                {
+                    "type": "multipleAttachments",
+                    "options": {
+                        "isReversed": false
+                    },
+                    "id": "fldKURxyZ2puS3hVR",
+                    "name": "Listing screenshot"
+                },
+                {
+                    "type": "currency",
+                    "options": {
+                        "precision": 0,
+                        "symbol": "$"
+                    },
+                    "id": "fldXZwgcmk4hwJD1I",
+                    "name": "Rent"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selcGDMUmJ2wMMzSs",
+                                "name": "Apartments .com"
+                            },
+                            {
+                                "id": "sel289MfmeWWVKXGK",
+                                "name": "Craigslist"
+                            },
+                            {
+                                "id": "seljU368CkcmUCChR",
+                                "name": "Facebook Marketplace"
+                            },
+                            {
+                                "id": "selFlvQ6QmYDzHF5i",
+                                "name": "Streeteasy"
+                            },
+                            {
+                                "id": "selHWZQf5uPBVMHuV",
+                                "name": "Trulia"
+                            },
+                            {
+                                "id": "selOclTpUYRU1zHnB",
+                                "name": "Zillow"
+                            },
+                            {
+                                "id": "seliXZSvNsJ1M1zH2",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "sel696xkOUbvglfIw",
+                                "name": "null"
+                            }
+                        ]
+                    },
+                    "id": "fldhEdkPi8horzLD4",
+                    "name": "@listing"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldM7pLiMX6SNqtnz",
+                    "name": "@listing_other"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selVawwxKuj1Yz4lh",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selGF2m6Ad8fMAp86",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selgFB7O4uncE8Ftm",
+                                "name": "null",
+                                "color": "blueLight2"
+                            }
+                        ]
+                    },
+                    "id": "fld39iqRmYpy5M8j2",
+                    "name": "@evidence"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fld3DEPtbfGZEDf1m",
+                    "name": "@evidence_upload"
+                },
+                {
+                    "type": "button",
+                    "id": "fldqgRlnTtua309r0",
+                    "name": "Create Case Page"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldsq6isg0CCvDKGx",
+                    "name": "Report ID"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selqrnQjI9xQIdVfP",
+                                "name": "Ashley"
+                            },
+                            {
+                                "id": "selNuG8m4tEF6iLv4",
+                                "name": "MAB"
+                            },
+                            {
+                                "id": "sel2IUWnfIqu1PkHR",
+                                "name": "Jessica"
+                            },
+                            {
+                                "id": "selR1BHkOSNQvnDlk",
+                                "name": "Manon"
+                            },
+                            {
+                                "id": "seldalidKEMtBFFeh",
+                                "name": "Annie"
+                            },
+                            {
+                                "id": "selXe9mAqrsVOAbWd",
+                                "name": "Lauren"
+                            },
+                            {
+                                "id": "sel0BSjERNGLozTSD",
+                                "name": "MANYC volunteer"
+                            },
+                            {
+                                "id": "selwYfA80u5N9n7s7",
+                                "name": "Etc"
+                            }
+                        ]
+                    },
+                    "id": "fldosiCHPc8eETfbT",
+                    "name": "Lead"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selAmSbE3fWCr8GQj",
+                                "name": "Needs additional information",
+                                "color": "pinkBright"
+                            },
+                            {
+                                "id": "selUWvpi4LHkHjDMv",
+                                "name": "Needs control test",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "selcEcOvMu9UL4GEO",
+                                "name": "Control test pending",
+                                "color": "orangeBright"
+                            },
+                            {
+                                "id": "selc8EtFUFzve1DbU",
+                                "name": "Ready to refer",
+                                "color": "purpleBright"
+                            },
+                            {
+                                "id": "selJNBl1irZ6zNTFQ",
+                                "name": "Report referral made",
+                                "color": "tealBright"
+                            },
+                            {
+                                "id": "seleeHfO2I1ijLjl5",
+                                "name": "Referral partner confirmed receipt",
+                                "color": "cyanBright"
+                            },
+                            {
+                                "id": "seljsi7XywhzBVayN",
+                                "name": "Pre-complaint intervention pending",
+                                "color": "blueBright"
+                            },
+                            {
+                                "id": "sel67SYAaXBNT6dSR",
+                                "name": "Formal complaint pending",
+                                "color": "purpleBright"
+                            },
+                            {
+                                "id": "selI3Mybhw9YvUZzu",
+                                "name": "Closed – Unsuccessful",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selptyVAoYcQjohgk",
+                                "name": "Closed – Positive outcome",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selcSV4lSyqZTTmW7",
+                                "name": "Closed – Neutral outcome",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selY7LOx9mIKjmR9C",
+                                "name": "Status unknown",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selMIGbyn60CVSpr7",
+                                "name": "User opted to not submit to CCHR",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selF3WsmLNGeu8s2L",
+                                "name": "Duplicate report - delete when possible",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selcNeSdxeTjS4Znv",
+                                "name": "Generic report - do 1:1 outreach",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "sel4pEPN6uT1nsxkz",
+                                "name": "Test report - delete when possible",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selulbux8dPloZZeC",
+                                "name": "Anonymous tip",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selT7aiPwqPa9Eux0",
+                                "name": "Referred to FHJC",
+                                "color": "orangeLight1"
+                            },
+                            {
+                                "id": "selDuNfwzR8eCHvCj",
+                                "name": "Referred to FHLU",
+                                "color": "pinkLight1"
+                            },
+                            {
+                                "id": "selZKbpLuVfPdNtja",
+                                "name": "Referred to DHR",
+                                "color": "greenBright"
+                            }
+                        ]
+                    },
+                    "id": "fldmeOWIOCQoSLwMR",
+                    "name": "Status"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selVawwxKuj1Yz4lh",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selGF2m6Ad8fMAp86",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selYBztYZ1wLAidTK",
+                                "name": "Unsure",
+                                "color": "grayLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldTRfj9jK66JR1xJ",
+                    "name": "Comparator test needed?"
+                },
+                {
+                    "type": "richText",
+                    "id": "fld3k2XhVBgO02qFL",
+                    "name": "Notes (Internal; not included in report page)"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selfVioZxBl54jr6A",
+                                "name": "Test",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selaj7ldMZKtbOTQM",
+                                "name": "Spam",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "seluRjDikVEP71PK1",
+                                "name": "Other",
+                                "color": "tealLight2"
+                            }
+                        ]
+                    },
+                    "id": "fld0Vocwk8AdXLJuG",
+                    "name": "Subtype"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "seliix7oFAjTW5dqO",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selcTIZy1gZQiP2wT",
+                                "name": "Maybe",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "selHz1lLLeQitugDW",
+                                "name": "No",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selnfNtZFWsnpbWiE",
+                                "name": "n/a",
+                                "color": "grayLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldHfhNDDz7Vgviec",
+                    "name": "Does tenant want this apt?"
+                },
+                {
+                    "type": "button",
+                    "id": "fldJJNNnf0o8APWE0",
+                    "name": "Send Report"
+                },
+                {
+                    "type": "checkbox",
+                    "options": {
+                        "icon": "check",
+                        "color": "greenBright"
+                    },
+                    "id": "fldJac7AshBuRYgiz",
+                    "name": "E-Mail Sent"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selzkITHYd9Iz5EG3",
+                                "name": "Tenant moved into the apartment",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "sel90AvQtJk0oj3Jk",
+                                "name": "Tenant signed a lease",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "seluJZjy4pYJED46S",
+                                "name": "Tenant offered to view / apply to the apartment ",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "seldRHUhbMwtxvy0d",
+                                "name": "Tenant moved into another unit from an intervention",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selCtL06nI2h8MEci",
+                                "name": "Resolved (other)",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selzuCYfPjUrgWP9K",
+                                "name": "CCHR used as a tip",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selCa7J9XZD8Me46G",
+                                "name": "Tenant decided they didn't want that apartment",
+                                "color": "grayLight1"
+                            },
+                            {
+                                "id": "seloDmI2dhxUerjq1",
+                                "name": "Landlord/broker showed evidence to clear allegation",
+                                "color": "grayLight1"
+                            },
+                            {
+                                "id": "selRnfyx90lYGfAhj",
+                                "name": "Tenant didn't qualify for apartment",
+                                "color": "grayLight1"
+                            },
+                            {
+                                "id": "selxhwQ55423UsLZJ",
+                                "name": "No response from tenant",
+                                "color": "grayLight1"
+                            },
+                            {
+                                "id": "selH8RRLbyJ7Ml4mP",
+                                "name": "No response from control test",
+                                "color": "grayLight1"
+                            },
+                            {
+                                "id": "selJX3IEM764wrLMy",
+                                "name": "Not enough evidence",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selFh3kvb8bI9aM9X",
+                                "name": "Didn't state a clear claim",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selvZeleLbUFaxDCQ",
+                                "name": "Landlord/broker uncooperative",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selssT5JpTFSaPax1",
+                                "name": "Unit off-market before intervention took place",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selzAD0386dJl16Qq",
+                                "name": "No response/action from receiving agency",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selYbmGI1gDUqTgzn",
+                                "name": "Unknown/pending outcome",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "selnWRvQIPzI45c3T",
+                                "name": "Cease and desist",
+                                "color": "tealLight1"
+                            },
+                            {
+                                "id": "selYj3GNK1Y2jdIrY",
+                                "name": "PCI attempted",
+                                "color": "cyanBright"
+                            },
+                            {
+                                "id": "sel8x120fiDIo66Hq",
+                                "name": "PCI failed",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "sels0fPSOYK3wNP1q",
+                                "name": "Formal complaint",
+                                "color": "redLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldl9ZySBROT2C4JD",
+                    "name": "Final outcome"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblY3fzHfAqYYMvpK",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldodvLWYsP4qP4rw"
+                    },
+                    "id": "fldArtdhWvpticIzM",
+                    "name": "Broker/Agent"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel6SuKf5dAD7qVBQ",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selSptvU2OTvp7gPu",
+                                "name": "No",
+                                "color": "redBright"
+                            }
+                        ]
+                    },
+                    "id": "flddJUXw8WIUamXNP",
+                    "name": "Do you remember the date that this happened?"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldOs6fXwzu0wZHIo",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "fld9W5boIvVaOQgHu",
+                    "name": "Tenant E-Mail"
+                },
+                {
+                    "type": "button",
+                    "id": "fldqAsZgttt5BiynM",
+                    "name": "Add to Case"
+                },
+                {
+                    "type": "url",
+                    "id": "fldmCW4gkaaCrkiy1",
+                    "name": "Case Page Link"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selt2gjmxuVsBpPuY",
+                                "name": "Ghosting"
+                            },
+                            {
+                                "id": "selhHk13TtcvqsG5Q",
+                                "name": "\"No vouchers\""
+                            },
+                            {
+                                "id": "sel7P52PGOs9GH6Xd",
+                                "name": "Income requirements"
+                            },
+                            {
+                                "id": "selc8DyAUZfATF0G9",
+                                "name": "Discriminatory ad"
+                            },
+                            {
+                                "id": "selSFg61NVeI095gE",
+                                "name": "Other"
+                            },
+                            {
+                                "id": "selpYG94rVCuFbhA0",
+                                "name": "Net effective rent"
+                            },
+                            {
+                                "id": "sel6bqvrwPBdVAnun",
+                                "name": "Nepotism"
+                            },
+                            {
+                                "id": "selTNO7kdYfmxEZx8",
+                                "name": "Credit requirements"
+                            },
+                            {
+                                "id": "selQL9LFiFkjEKAHo",
+                                "name": "Broker not taking on a client with a voucher"
+                            },
+                            {
+                                "id": "sela3fCiSAHG0xK3o",
+                                "name": "Steering"
+                            },
+                            {
+                                "id": "selKDXUWbN5zLfMvr",
+                                "name": "Bait and switch"
+                            },
+                            {
+                                "id": "selBpkX3myXQszSKe",
+                                "name": "Administrative burden/delay"
+                            },
+                            {
+                                "id": "selR4lIiSHdJt9NnL",
+                                "name": "Holding fee"
+                            }
+                        ]
+                    },
+                    "id": "fldltnHXQHHcPNT3f",
+                    "name": "Other Discrimination in Case"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld28H40nyLxNcQsa"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld27i1mpq9HjpLqU",
+                    "name": "Month"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld28H40nyLxNcQsa"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldtxV70mlqu8xOfj",
+                    "name": "Year"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld28H40nyLxNcQsa"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldWy1XdIcr6xTA0A",
+                    "name": "Days elapsed"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld9LxV8g98hxNn0U"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldJelYM768YRVHjn",
+                    "name": "Word count"
+                },
+                {
+                    "type": "lastModifiedTime",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldmeOWIOCQoSLwMR",
+                            "fld3k2XhVBgO02qFL",
+                            "fldl9ZySBROT2C4JD"
+                        ],
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fldSYrJDs3sTjJQpd",
+                    "name": "Last Modified"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel4RUx92b3cD8IFq",
+                                "name": "Yes",
+                                "color": "greenBright"
+                            },
+                            {
+                                "id": "selQKEBJHE9wF1FwS",
+                                "name": "No",
+                                "color": "redBright"
+                            }
+                        ]
+                    },
+                    "id": "fldJ8wPdKO4wtcif1",
+                    "name": "@recording"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld4tqxjBXXRN3GLC",
+                    "name": "Call Sid"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fld4dbCd6fla1ddh3",
+                        "result": {
+                            "type": "singleSelect",
+                            "options": {
+                                "choices": [
+                                    {
+                                        "id": "sel0ZdO9Xdvp2HbKt",
+                                        "name": "CityFHEPS"
+                                    },
+                                    {
+                                        "id": "selfXSyZX5IBLcWiW",
+                                        "name": "FHEPS"
+                                    },
+                                    {
+                                        "id": "selHTLXPyXKslgy95",
+                                        "name": "Section 8"
+                                    },
+                                    {
+                                        "id": "sel8xZvsu7BqQ9nW1",
+                                        "name": "HUD-VASH"
+                                    },
+                                    {
+                                        "id": "sel5MILECWDdQ4Edb",
+                                        "name": "HRA – Other"
+                                    },
+                                    {
+                                        "id": "sel8X5TeAGOYUOqvR",
+                                        "name": "HRA – Other"
+                                    },
+                                    {
+                                        "id": "sel8twSrG3LOEnrUz",
+                                        "name": "Other"
+                                    },
+                                    {
+                                        "id": "selCIWE36bh3xioxw",
+                                        "name": "SOTA"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "id": "fld5xOO4TFqafPrU8",
+                    "name": "@voucher_lookup"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldBOr4KbZIHtH79k",
+                        "result": {
+                            "type": "multipleRecordLinks",
+                            "options": {
+                                "isReversed": false,
+                                "prefersSingleRecordLink": false
+                            }
+                        }
+                    },
+                    "id": "fldp9kQo5qeGW4lFW",
+                    "name": "Organization"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldgBrysDeP1ZvN3K",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "fldcoELp3gVznGyyG",
+                    "name": "CC E-Mail to Org"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld3k2XhVBgO02qFL"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldhjdpysVAYLBAKG",
+                    "name": "Org lead"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldArtdhWvpticIzM"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldFDqEnXaACTXb8h",
+                    "name": "Broker identified?"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldJac7AshBuRYgiz"
+                        ],
+                        "result": {
+                            "type": "date",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                }
+                            }
+                        }
+                    },
+                    "id": "fld9ilExqnad1B49h",
+                    "name": "Date sent to CCHR"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldd0S8pjwADPjMHb",
+                    "name": "Borough"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldgQp8xJZxNL5iUk",
+                    "name": "address_standard"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selnWpRLyEHE55TBu",
+                                "name": "myself",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selpLipz6JCGxNbWk",
+                                "name": "someone else",
+                                "color": "cyanLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldD6aXHrC9LSd7lF",
+                    "name": "Are you reporting for yourself, or on behalf of someone else?"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel8HvFTfBnBqOqqx",
+                                "name": "Anonymous",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selt2cRK5ETZsxbKO",
+                                "name": "CCHR",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "selt3b81vf6HzjkyS",
+                                "name": "HRA",
+                                "color": "tealLight2"
+                            },
+                            {
+                                "id": "selWJD7MRTngUajmy",
+                                "name": "FHJC",
+                                "color": "greenLight2"
+                            },
+                            {
+                                "id": "selr3RNtfCzhJ0cYT",
+                                "name": "NY State DHR",
+                                "color": "yellowLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldEKWgUQLEzm1W3Y",
+                    "name": "Where do you want this report to go?"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fldXj0n3FmDXctQa2",
+                        "result": {
+                            "type": "multipleRecordLinks",
+                            "options": {
+                                "isReversed": false,
+                                "prefersSingleRecordLink": false
+                            }
+                        }
+                    },
+                    "id": "fldWnm2A6LnTbvRmr",
+                    "name": "Realty/Management company"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selO4m34fBkUasc7R",
+                                "name": "Tenant requested follow-up"
+                            },
+                            {
+                                "id": "sel1RKfRipHyC6NrM",
+                                "name": "Advocate requested follow-up"
+                            },
+                            {
+                                "id": "selAxoJIfLgFRI8g1",
+                                "name": "Unlock NYC wants to discuss"
+                            },
+                            {
+                                "id": "selk31xgEARmiGD8z",
+                                "name": "Needs decision on whether to move to formal complaint"
+                            }
+                        ]
+                    },
+                    "id": "fldPCkfmexPGwZjdg",
+                    "name": "Outreach flags"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fldb9rfBL1nm87uV1",
+                        "result": {
+                            "type": "phoneNumber"
+                        }
+                    },
+                    "id": "fldEdsuDer7x2fUIO",
+                    "name": "Broker phone number"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fld975oIChDeIzOIy",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "flduz3YbuxXMDmHyf",
+                    "name": "Broker email address"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selvzsFHIKcuSQQtC",
+                                "name": "NYC Commission on Human Rights",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selvi4tYyHqVAzrOz",
+                                "name": "Fair Housing Justice Center",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "selCZdBqP9HQJ0IbM",
+                                "name": "DSS Fair Housing Litigation Unit",
+                                "color": "tealLight2"
+                            },
+                            {
+                                "id": "selgiQxviscdyT67l",
+                                "name": "NY State Division of Human Rights",
+                                "color": "grayLight1"
+                            }
+                        ]
+                    },
+                    "id": "flda2102LW13mKYQB",
+                    "name": "Agency to Send"
+                },
+                {
+                    "type": "richText",
+                    "id": "fld5VZ95WWPSucHtK",
+                    "name": "Referral History"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fldhXsaYt9BY9qcnQ",
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldv5QTjrqXVADSC9",
+                    "name": "Broker Summary",
+                    "description": "for e-mail that goes to referral agencies"
+                },
+                {
+                    "type": "lastModifiedTime",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldmeOWIOCQoSLwMR"
+                        ],
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fldSWNUJv6Tno80QM",
+                    "name": "Last Time Modified (Status)"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldXvQFB6nvboFxaN",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldH01hwjjq5KajbF",
+                    "name": "User w Outreach Outcome?"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fld975oIChDeIzOIy",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "fldZ2LEHVBuRk2O46",
+                    "name": "Email (from Broker/Agent)"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fldb9rfBL1nm87uV1",
+                        "result": {
+                            "type": "phoneNumber"
+                        }
+                    },
+                    "id": "fldZQkVRmkJT90pHO",
+                    "name": "Phone number (from Broker/Agent)"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fld5YpEqKNMNLrgUH",
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldfxfpfOSf3w0JL2",
+                    "name": "# reports (from Broker/Agent)"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fldXj0n3FmDXctQa2",
+                        "result": {
+                            "type": "multipleRecordLinks",
+                            "options": {
+                                "isReversed": false,
+                                "prefersSingleRecordLink": false
+                            }
+                        }
+                    },
+                    "id": "fldrft9jj4WPSdv6w",
+                    "name": "Brokerage(s) associated with this broker/agent (from Broker/Agent)"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldArtdhWvpticIzM",
+                        "fieldIdInLinkedTable": "fldPHzMt8JohYbyPT",
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldQEauQN897vVsep",
+                    "name": "License # (from Broker/Agent)"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fld8OX8FfjfW2xod1",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldJJVNp4qUcU9WUf",
+                    "name": "Housing search stage Rollup (from @name)"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldtADNtPKouYwgxt",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "flddstxYxsdld7W3n",
+                    "name": "Current housing situation Rollup (from @name)"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldw2TFuVGWSlssAs",
+                        "result": {
+                            "type": "multipleSelects",
+                            "options": {
+                                "choices": [
+                                    {
+                                        "id": "selB1SplDpVIEhpD9",
+                                        "name": "New user orientation needed"
+                                    },
+                                    {
+                                        "id": "selQKSUC2bkchDp6h",
+                                        "name": "Follow-up support needed"
+                                    },
+                                    {
+                                        "id": "selCzjLkvsSd6e6X4",
+                                        "name": "Active intervention"
+                                    },
+                                    {
+                                        "id": "selmPRddpgX4otXKp",
+                                        "name": "Potential set-aside candidate"
+                                    },
+                                    {
+                                        "id": "selac6jOV06hivQrJ",
+                                        "name": "Closed"
+                                    },
+                                    {
+                                        "id": "sel7JjKGQwftvJN1O",
+                                        "name": "Active formal complaint"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "id": "fldMoAQsMjTXqOMkw",
+                    "name": "User flags"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldaB0ONW1WdzUrgB",
+                    "name": "User information 2"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld9ilExqnad1B49h",
+                            "fld28H40nyLxNcQsa"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldfKOX5pyMSgVRPd",
+                    "name": "Minutes (Time Summited-Time Sent)"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld9ilExqnad1B49h",
+                            "fld28H40nyLxNcQsa"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldwRMQfHc6xRtVVK",
+                    "name": "hours (Time Submitted-Time Sent)"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldLvG84FfY3MTpkC",
+                        "result": {
+                            "type": "date",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                }
+                            }
+                        }
+                    },
+                    "id": "fldmLGr0pUA2MVyZ5",
+                    "name": "Date added Rollup (from @name)"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldCf22USRu0Z9uXp",
+                    "name": "bbl"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 2
+                    },
+                    "id": "fldY4r0cdVFSETA8q",
+                    "name": "lat"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 2
+                    },
+                    "id": "fldB16Tdthj3YTQ6s",
+                    "name": "long"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldkNdy96HJtyCjxd",
+                    "name": "city council"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldOV3bwZ9sy5wDTb",
+                    "name": "zip code"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldtQ3ixLrWuTzisy",
+                    "name": "community district"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldryAUZ3OxxpQo0j",
+                    "name": "congressional district"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldAt90vTQyalQFE7",
+                    "name": "assembly district"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldK8ctY3RzTiVxEh",
+                    "name": "bin"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldzp5UA5u6MsQrof",
+                    "name": "corporation_name"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldRrriBL4M4vxHwC",
+                    "name": "business_address"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldilXx7TxGX3zlyf",
+                    "name": "owner_names"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldFloyYsGA9T1KVc",
+                    "name": "head_officer"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldxIeOj3wGC7Z8Yy",
+                    "name": "individual_owner"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld7wprgk2vSBbE8s",
+                    "name": "joint_owner"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldFloyYsGA9T1KVc",
+                            "fldxIeOj3wGC7Z8Yy",
+                            "fld7wprgk2vSBbE8s"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldDP0Kzdv1A4tV0t",
+                    "name": "owner"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldzSFMOScv5pvICR",
+                    "name": "total_violations"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fld4sg5tAKgSVQI8l",
+                    "name": "open_violations"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fld2okkSOXkifrObC",
+                    "name": "total_complaints"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldZqW9w1RO7IP2JU",
+                    "name": "recent_complaints"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldQuoZR4PkOglYvK",
+                    "name": "recent_complaints_type"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldESIwQIS4Fx3hGA",
+                    "name": "year_built"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fld7PWL0uHk3QDp17",
+                    "name": "residential_units"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "flduQ5oGrTeGv56Gu",
+                    "name": "evictions",
+                    "description": "from Dept. of Investigations; marshall; blank = 0"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldPSjJeuRbbtmmpS",
+                    "name": "eviction_filings",
+                    "description": "> 11 residential units; back to 2016; possible in aggregate LB"
+                },
+                {
+                    "type": "date",
+                    "options": {
+                        "dateFormat": {
+                            "name": "iso",
+                            "format": "YYYY-MM-DD"
+                        }
+                    },
+                    "id": "fldyX66T32zvW44b5",
+                    "name": "last_sale_date",
+                    "description": "from acris"
+                },
+                {
+                    "type": "currency",
+                    "options": {
+                        "precision": 2,
+                        "symbol": "$"
+                    },
+                    "id": "fldERShLIQKm7QYwq",
+                    "name": "last_sale_amount",
+                    "description": "from acris"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldkwTYrYXHk67Izj",
+                    "name": "rs_units_2007"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldzSCClCBzN16RQr",
+                    "name": "rs_units_latest"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldKQbIkPBEB7U7U7",
+                    "name": "rs_units_difference"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldI7P3szCGSSRbf6",
+                    "name": "year_j51",
+                    "description": "started"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldS4FjZV2ZqGKjkE",
+                    "name": "year_421a",
+                    "description": "started"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fldotecrsqtBK1oXE",
+                    "name": "portfolio_size"
+                },
+                {
+                    "type": "number",
+                    "options": {
+                        "precision": 0
+                    },
+                    "id": "fld1hSh4pqOne105g",
+                    "name": "portfolio_code"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldMpOg5xlP8Ve4nB",
+                    "name": "building_class"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldCyE7kvjQp9HOhJ",
+                    "name": "violation_class",
+                    "description": "open violations, HPD"
+                },
+                {
+                    "type": "button",
+                    "id": "fldvqkQ9oHXlZ2cBI",
+                    "name": "Refresh Data"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fld3EshL76S9BWgxq",
+                    "name": "new_corporation_name"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selB8s4sSIjdCca1L",
+                                "name": "yes",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selPRiu6RWSdszRxm",
+                                "name": "no",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "seltyopo8nQhH97ow",
+                                "name": "unknown",
+                                "color": "tealLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldLDDBMmULQ5gI1n",
+                    "name": "available?"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldWjpsHZKgCeRkIZ",
+                    "name": "new_business_address"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldOMo7NAk4FrszML",
+                            "fld7WrNABsJy2hViW",
+                            "fldZdUMq3VAPbUchw"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld6JKvCH8q06tun0",
+                    "name": "new_owner"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldYU2dZbsNgmR0yM",
+                    "name": "new_owner_names"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldOMo7NAk4FrszML",
+                    "name": "new_head_officer"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld7WrNABsJy2hViW",
+                    "name": "new_individual_owner"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldZdUMq3VAPbUchw",
+                    "name": "new_joint_owner"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldyX66T32zvW44b5"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldlNRvhawehr3fVo",
+                    "name": "ownership_change"
+                },
+                {
+                    "type": "lastModifiedTime",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldY4r0cdVFSETA8q",
+                            "fldyX66T32zvW44b5",
+                            "fld1hSh4pqOne105g"
+                        ],
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fld7ARreN34PrHCZp",
+                    "name": "last_data_pull"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selmlOYGsyMOnN2m2",
+                                "name": "Tenant",
+                                "color": "blueLight2"
+                            },
+                            {
+                                "id": "selE6szyFptpivk3f",
+                                "name": "Advocate",
+                                "color": "cyanLight2"
+                            },
+                            {
+                                "id": "selJ0i9SuXJDmzxMr",
+                                "name": "Both",
+                                "color": "tealLight2"
+                            }
+                        ]
+                    },
+                    "id": "fld0KWctTTkkMxaRW",
+                    "name": "Contact"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldmkXAGphcHd2wkb"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld7NNHMpRGMjqR0m",
+                    "name": "Name for Confirm E-Mail"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldJYEhmZsXMNiVgc",
+                        "result": {
+                            "type": "email"
+                        }
+                    },
+                    "id": "fld8l7BUpNVJydGwh",
+                    "name": "Advocate E-Mail"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldmkXAGphcHd2wkb",
+                        "fieldIdInLinkedTable": "fldEbY603pel8ZQre",
+                        "result": {
+                            "type": "multipleRecordLinks",
+                            "options": {
+                                "isReversed": false,
+                                "prefersSingleRecordLink": false
+                            }
+                        }
+                    },
+                    "id": "fldIglJJhjjnEEMzM",
+                    "name": "Advocate"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld9LxV8g98hxNn0U",
+                            "fldyTlYYMZwNcV3P3",
+                            "fldJVb2qvm3I0nhwH"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld1pLDgrOFvl0he2",
+                    "name": "Parkchester?"
+                },
+                {
+                    "type": "checkbox",
+                    "options": {
+                        "icon": "check",
+                        "color": "greenBright"
+                    },
+                    "id": "fldC8eghtdkDZoq0h",
+                    "name": "Confirm Parkchester"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viw8iNLfT0VFJFnD5",
+                    "name": "All: By Date",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwrAvkP67ySoP2Wh",
+                    "name": "Ready for Geo Sync",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwvb8M6UY9WccGmw",
+                    "name": "Portfolio TEST",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwJzqCg4NhqJWJ2B",
+                    "name": "Sync: for Data/Advocacy",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwigt2GDxkMdstON",
+                    "name": "Anonymous Tips: 28 Days",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwmKcZCZJnAPkEux",
+                    "name": "CCHR – Unlock NYC",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwqf9tprwqFfqMB3",
+                    "name": "Neighbors Together",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwYyk9cJPAmfzTJw",
+                    "name": "CCHR – Neighbors Together",
+                    "type": "grid"
+                },
+                {
+                    "id": "viw0e5GMFEPpRFPpZ",
+                    "name": "Address cleaning",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwKhg5cVkspp3mbx",
+                    "name": "Grouped by tenant",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwgiskwZ3nrlQXgv",
+                    "name": "Reports – Matthew Hastie",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwQraqdOoNs5Eaxt",
+                    "name": "Reports – Colleen Bryla",
+                    "type": "grid"
+                },
+                {
+                    "id": "viw18MO1mjzCU1k91",
+                    "name": "Reports – Kamilah Newton",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwVCsH2zxxabh169",
+                    "name": "Reports – Taleena Claborn",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwsJmYTm6IDchTyG",
+                    "name": "Reports – Melissa Nieves",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwIqmxRjj2RPH0MH",
+                    "name": "Reports – Parkchester Preservation Management",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwPfM1x0OExw7ZyE",
+                    "name": "Reports – Roshanna Harper",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwXOmmPT4B0Xaw04",
+                    "name": "Reports – Premier One Realty LLC",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwVdTd8hLAMJqp1b",
+                    "name": "Report Source of Income Discrimination!",
+                    "type": "form"
+                },
+                {
+                    "id": "viw9cD2mA1uYXw7og",
+                    "name": "Source of income discrimination reporting form for advocates and housing specialists",
+                    "type": "form"
+                },
+                {
+                    "id": "viwpjixmRKaMPxcN9",
+                    "name": "CCHR",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwYrd6zs8sGDjks8",
+                    "name": "All reports",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwHHxssIlvjmt7RE",
+                    "name": "Control tests",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwdXSLqbbcvk4cXb",
+                    "name": "Kalin Testing - Change in Status ",
+                    "type": "grid"
+                },
+                {
+                    "id": "viw08zXp3dPfNJVic",
+                    "name": "Kalin's Testing - Processing Reports",
+                    "type": "grid"
+                }
+            ]
+        },
+        {
+            "id": "tbl0DRO5ma4FirjIN",
+            "name": "Partner organizations",
+            "primaryFieldId": "fldumtslQnFJeTXVl",
+            "fields": [
+                {
+                    "type": "singleLineText",
+                    "id": "fldumtslQnFJeTXVl",
+                    "name": "Name"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldPDrawdUxpHdjAX",
+                    "name": "Point of contact"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblY7Tdj2CS8YqnIG",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fld2M2GtUXkOJ8akc"
+                    },
+                    "id": "fld37kSSJM71ygyIl",
+                    "name": "Advocates"
+                },
+                {
+                    "type": "email",
+                    "id": "fldiIgLEXOosJBBT1",
+                    "name": "CC E-Mail: Reports"
+                },
+                {
+                    "type": "phoneNumber",
+                    "id": "fldmrLoNVo9RNuRjy",
+                    "name": "Phone"
+                },
+                {
+                    "type": "count",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldvhF156I1Wlg1QK"
+                    },
+                    "id": "fldTY0rMVBXroNtF0",
+                    "name": "Total Clients"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblAQdJITKVqen1qn",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldBOr4KbZIHtH79k"
+                    },
+                    "id": "fldvhF156I1Wlg1QK",
+                    "name": "Client List"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldvhF156I1Wlg1QK"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld5Pt8FKW7DdarMu",
+                    "name": "Client List Names"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldvhF156I1Wlg1QK",
+                        "fieldIdInLinkedTable": "fldHssjf0YXluiljg",
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld7MxH5t3vHwon6r",
+                    "name": "Record List for Online Form"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fld7w560yA1y6Aom3",
+                    "name": "Report Form Logins"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viwtMem02GhCfK4YP",
+                    "name": "Grid view",
+                    "type": "grid"
+                }
+            ]
+        },
+        {
+            "id": "tblY7Tdj2CS8YqnIG",
+            "name": "Advocates",
+            "primaryFieldId": "fldsQvRzwPtcUS1Ve",
+            "fields": [
+                {
+                    "type": "singleLineText",
+                    "id": "fldsQvRzwPtcUS1Ve",
+                    "name": "Name"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tbl0DRO5ma4FirjIN",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fld37kSSJM71ygyIl"
+                    },
+                    "id": "fld2M2GtUXkOJ8akc",
+                    "name": "Organization"
+                },
+                {
+                    "type": "email",
+                    "id": "fld507vee2P1MzsmW",
+                    "name": "Email Address"
+                },
+                {
+                    "type": "phoneNumber",
+                    "id": "fldkVNN1BQXkttVjr",
+                    "name": "Phone"
+                },
+                {
+                    "type": "count",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldVgXyw4b8vi08Wm"
+                    },
+                    "id": "fldRs2Q0B3LU4MxFT",
+                    "name": "Total Clients"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblAQdJITKVqen1qn",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldEbY603pel8ZQre"
+                    },
+                    "id": "fldVgXyw4b8vi08Wm",
+                    "name": "Advocate Client List"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fld2M2GtUXkOJ8akc",
+                        "fieldIdInLinkedTable": "fldvhF156I1Wlg1QK",
+                        "result": {
+                            "type": "multipleRecordLinks",
+                            "options": {
+                                "isReversed": false,
+                                "prefersSingleRecordLink": false
+                            }
+                        }
+                    },
+                    "id": "fldpVkwshJwp23OZm",
+                    "name": "Full Org Client List"
+                },
+                {
+                    "type": "button",
+                    "id": "fld1gyN75JN4pJz8z",
+                    "name": "Send Invite"
+                },
+                {
+                    "type": "checkbox",
+                    "options": {
+                        "icon": "check",
+                        "color": "greenBright"
+                    },
+                    "id": "fldLqDgH3oImW3O8X",
+                    "name": "Invite Sent"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld2M2GtUXkOJ8akc"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldeT7EYWva8lEMJh",
+                    "name": "Organization Name for Online Form"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldVgXyw4b8vi08Wm"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld3jvxTqoV6T9vMn",
+                    "name": "Advocate Client List Names"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldpVkwshJwp23OZm"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldXLxngEYMDuURyN",
+                    "name": "Full Org List Names"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viwrggLeI855VJ8YI",
+                    "name": "Grid view",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwVNY7MZxvcORTa7",
+                    "name": "New Advocate Form",
+                    "type": "form"
+                }
+            ]
+        },
+        {
+            "id": "tblY3fzHfAqYYMvpK",
+            "name": "Brokers",
+            "primaryFieldId": "fldMWSn95gOQ0vvh8",
+            "fields": [
+                {
+                    "type": "singleLineText",
+                    "id": "fldMWSn95gOQ0vvh8",
+                    "name": "Name",
+                    "description": "Full name of the individual related to the report(s)"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel0NdiF29JAcLX3S",
+                                "name": "Real estate company"
+                            },
+                            {
+                                "id": "selS1cCGsCNBkMr3g",
+                                "name": "Management company"
+                            },
+                            {
+                                "id": "selFELFxFXmI3crdu",
+                                "name": "Unknown"
+                            },
+                            {
+                                "id": "selBdYWuLvCTUWyPj",
+                                "name": "Other"
+                            }
+                        ]
+                    },
+                    "id": "fldZjX1Q3eiiEoWdt",
+                    "name": "Category",
+                    "description": "Type of organization in which the individual is involved"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldgX0UtSTWmIGqQL",
+                    "name": "Role/title",
+                    "description": "The individual's role and/or position in the organization as stated on the company website or associated websites"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldPHzMt8JohYbyPT",
+                    "name": "License #",
+                    "description": "License number issued by the state, typically a combination of 11 letters and/or numerals. Lookup: https://appext20.dos.ny.gov/nydos/selSearchType.do"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblL0gRJfg9rX7IaJ",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldUXrv3Vd5sIjyPN"
+                    },
+                    "id": "fldXj0n3FmDXctQa2",
+                    "name": "Brokerage(s) associated with this broker/agent",
+                    "description": "Name of the brokerage(s) associated with the individual"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblKTce21T0FFknAi",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldArtdhWvpticIzM"
+                    },
+                    "id": "fldodvLWYsP4qP4rw",
+                    "name": "Reports associated with this broker/agent",
+                    "description": "The name of the report(s) associated with the individual"
+                },
+                {
+                    "type": "count",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldodvLWYsP4qP4rw"
+                    },
+                    "id": "fld5YpEqKNMNLrgUH",
+                    "name": "# reports",
+                    "description": "Total number of reports associated with the individual "
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld1TjkOEiSlrb89z"
+                        ],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldSGb07dxiebVHaC",
+                    "name": "# Unique User Reported",
+                    "description": "Number of distinct UnlockNYC users who reported the individual "
+                },
+                {
+                    "type": "richText",
+                    "id": "fldiGoWXGc17CdNS7",
+                    "name": "Notes (EXTERNAL)",
+                    "description": "Additional details and context information regarding the individual"
+                },
+                {
+                    "type": "phoneNumber",
+                    "id": "fldb9rfBL1nm87uV1",
+                    "name": "Phone number",
+                    "description": "Phone number of the individual. If multiple, separate with commas"
+                },
+                {
+                    "type": "email",
+                    "id": "fld975oIChDeIzOIy",
+                    "name": "Email",
+                    "description": "E-mail of the individual. If multiple known e-mails, separate with commas"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selvqZBENQRxm6zg7",
+                                "name": "\"No vouchers\" (smoking gun evidence)",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selLNsI1KlawiojEG",
+                                "name": "Ghosting (verified with comparator test)",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selavBjvdTH8mfrnb",
+                                "name": "Used discriminatory language (income, credit, guarantor, broker fee, etc)",
+                                "color": "redBright"
+                            },
+                            {
+                                "id": "selypbfNZzG7xisPq",
+                                "name": "Administrative burden / excessive delays",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "selmwswui9dIrFSoa",
+                                "name": "Potentially discriminatory, keep an eye out",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "selk91NeayfONqWo5",
+                                "name": "Rude or disrespectful to potential tenants",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "selhIWBRwLsDJlqmJ",
+                                "name": "Changed price of unit",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "seliiPZ14DYeb9Xvi",
+                                "name": "Steering",
+                                "color": "yellowBright"
+                            },
+                            {
+                                "id": "sel1Vg9hr6bh69pKg",
+                                "name": "No conclusive evidence",
+                                "color": "grayLight2"
+                            },
+                            {
+                                "id": "selplSCtF21l0dsE0",
+                                "name": "Real Broker LLC",
+                                "color": "purpleLight1"
+                            },
+                            {
+                                "id": "selSLrGwTwNe0x6so",
+                                "name": "Blocking",
+                                "color": "orangeLight1"
+                            }
+                        ]
+                    },
+                    "id": "fldxy7MjrE91CPxzA",
+                    "name": "Tactic(s) used",
+                    "description": "Indicates the type of tactic the individual used towards the UnlockNYC user"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldXj0n3FmDXctQa2",
+                        "fieldIdInLinkedTable": "fldjywaiDF5CLSive",
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld6D16cv1LfcIDsA",
+                    "name": "Name (from Brokerage(s) associated with this broker/agent)",
+                    "description": "Name of the brokerage(s) associated with the individual"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldXj0n3FmDXctQa2",
+                        "fieldIdInLinkedTable": "fld1S2c8EZbk9Fb4U",
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldf1pZ2rP5TMe0Hm",
+                    "name": "Total # of reports (from Brokerage(s) associated with this broker/agent)",
+                    "description": "Identifies the number of reports associated to each Company where the broker/agent is affiliated"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldodvLWYsP4qP4rw",
+                        "fieldIdInLinkedTable": "fldZYKk8mQAJe05b5",
+                        "result": {
+                            "type": "multipleSelects",
+                            "options": {
+                                "choices": [
+                                    {
+                                        "id": "seluz4u2sXVZVSdHF",
+                                        "name": "Email ✉️",
+                                        "color": "blueLight2"
+                                    },
+                                    {
+                                        "id": "selxsLpP5zUNShFCO",
+                                        "name": "Phone call 📱",
+                                        "color": "cyanLight2"
+                                    },
+                                    {
+                                        "id": "selb6D0C6MiiO2GcU",
+                                        "name": "In person 🏢",
+                                        "color": "tealLight2"
+                                    },
+                                    {
+                                        "id": "selR4y0J157jWNboB",
+                                        "name": "On a listing website, like Trulia or Craigslist 🔗",
+                                        "color": "greenLight2"
+                                    },
+                                    {
+                                        "id": "selPL2geOSh5sMgHB",
+                                        "name": "Text message 💬",
+                                        "color": "orangeLight2"
+                                    }
+                                ]
+                            }
+                        }
+                    },
+                    "id": "fldjqI3herZ6AmvBX",
+                    "name": "Tactic(s) reported",
+                    "description": "Indicates the method/medium the individual used to carry out the Tactic"
+                },
+                {
+                    "type": "multipleAttachments",
+                    "options": {
+                        "isReversed": false
+                    },
+                    "id": "fldZ1hU0l7QjH2aKS",
+                    "name": "Image",
+                    "description": "If possible, include an image of the agent. This is often available on their Streeteasy profile and/or their company website."
+                },
+                {
+                    "type": "checkbox",
+                    "options": {
+                        "icon": "check",
+                        "color": "greenBright"
+                    },
+                    "id": "fldLa1YuqQVP0XipQ",
+                    "name": "Research complete?",
+                    "description": "Indicates whether enough information was gathered about the individual "
+                },
+                {
+                    "type": "url",
+                    "id": "fldXU9waryoFZCqao",
+                    "name": "Image source",
+                    "description": "If you included an image, paste the URL of where you found the image here for our records"
+                },
+                {
+                    "type": "richText",
+                    "id": "fldgzobRPv3QnYWSh",
+                    "name": "Notes (INTERNAL)",
+                    "description": "Additional details or notes used only by the UnlockNYC team"
+                },
+                {
+                    "type": "multipleLookupValues",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldXj0n3FmDXctQa2",
+                        "fieldIdInLinkedTable": "fldUXrv3Vd5sIjyPN",
+                        "result": {
+                            "type": "multipleRecordLinks",
+                            "options": {
+                                "isReversed": false,
+                                "prefersSingleRecordLink": false
+                            }
+                        }
+                    },
+                    "id": "fld2oxZ5z78btT8ni",
+                    "name": "Associated names",
+                    "description": "Name(s) of other Broker/Agents who work at the same Brokerage(s)"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldXj0n3FmDXctQa2",
+                        "fieldIdInLinkedTable": "fldUXrv3Vd5sIjyPN",
+                        "referencedFieldIds": [
+                            "fld2oxZ5z78btT8ni"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld2EG6fjJAxIfBfo",
+                    "name": "Associated agents",
+                    "description": "Name(s) of other Broker/Agents who work at the same Brokerage(s) "
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldMWSn95gOQ0vvh8",
+                            "fldXj0n3FmDXctQa2",
+                            "fldb9rfBL1nm87uV1",
+                            "fld975oIChDeIzOIy"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldhXsaYt9BY9qcnQ",
+                    "name": "Broker Summary",
+                    "description": "Use: for e-mail that goes to referral agencies"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldMWSn95gOQ0vvh8",
+                            "fld5YpEqKNMNLrgUH"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldRt8HkGvLQpxy7X",
+                    "name": "Reference"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldodvLWYsP4qP4rw",
+                        "fieldIdInLinkedTable": "fldmkXAGphcHd2wkb",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fld1TjkOEiSlrb89z",
+                    "name": "Unique Users Reported",
+                    "description": "Use: to calculate \"# Unique Users Reported\""
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldodvLWYsP4qP4rw",
+                        "fieldIdInLinkedTable": "fld28H40nyLxNcQsa",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "dateTime",
+                            "options": {
+                                "dateFormat": {
+                                    "name": "local",
+                                    "format": "l"
+                                },
+                                "timeFormat": {
+                                    "name": "12hour",
+                                    "format": "h:mma"
+                                },
+                                "timeZone": "client"
+                            }
+                        }
+                    },
+                    "id": "fldbNXTw0lJLyzRMX",
+                    "name": "latest Report date",
+                    "description": "Displays the date of most recent report associated to the individual. Use: to calculate 'Report in the last 30 days?', 'Days since last report'"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldbNXTw0lJLyzRMX"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldQ21zZWBQEaWlLX",
+                    "name": "Report in the last 30days?",
+                    "description": "Identifies if the individual has a report in the last 30 days, \"Yes\" or \"[blank]\""
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldbNXTw0lJLyzRMX"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldjwjf87lQNQRi1z",
+                    "name": "days since latest report",
+                    "description": "Number of days since the most recent report associated to the broker/agent"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldItH9YKOFkvUMIe",
+                    "name": "Partner organizations"
+                },
+                {
+                    "type": "singleLineText",
+                    "id": "fldak6idFzPSIDPgn",
+                    "name": "All reports"
+                },
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fld5YpEqKNMNLrgUH"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldQK5yxwYGiwOWU7",
+                    "name": "Repeat offender?"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viwFnzs2QOXtPwA1n",
+                    "name": "All fields",
+                    "type": "grid"
+                },
+                {
+                    "id": "viwEZkmOBC6khZsmC",
+                    "name": "Kalin Sprint 1 – Broker list",
+                    "type": "grid"
+                }
+            ]
+        },
+        {
+            "id": "tblL0gRJfg9rX7IaJ",
+            "name": "Brokerages/Leasing companies",
+            "primaryFieldId": "fldjywaiDF5CLSive",
+            "fields": [
+                {
+                    "type": "singleLineText",
+                    "id": "fldjywaiDF5CLSive",
+                    "name": "Name",
+                    "description": "Name of the company"
+                },
+                {
+                    "type": "multipleRecordLinks",
+                    "options": {
+                        "linkedTableId": "tblY3fzHfAqYYMvpK",
+                        "isReversed": false,
+                        "prefersSingleRecordLink": false,
+                        "inverseLinkFieldId": "fldXj0n3FmDXctQa2"
+                    },
+                    "id": "fldUXrv3Vd5sIjyPN",
+                    "name": "Brokers",
+                    "description": "Name(s) of the broker/agents reported by UnlockNYC users"
+                },
+                {
+                    "type": "count",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldUXrv3Vd5sIjyPN"
+                    },
+                    "id": "fld61L66vrAA6Vadh",
+                    "name": "# brokers reported",
+                    "description": "Total number of reported brokers/agents associated to the company"
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldUXrv3Vd5sIjyPN",
+                        "fieldIdInLinkedTable": "fld5YpEqKNMNLrgUH",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fld1S2c8EZbk9Fb4U",
+                    "name": "Total # of reports",
+                    "description": "Total number of reports associated to the company "
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldUXrv3Vd5sIjyPN",
+                        "fieldIdInLinkedTable": "fldSGb07dxiebVHaC",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "number",
+                            "options": {
+                                "precision": 0
+                            }
+                        }
+                    },
+                    "id": "fldUX2raYQK9xdi22",
+                    "name": "Total # of Unique Users Reported",
+                    "description": "Number of distinct UnlockNYC users who reported the individuals associated to the company"
+                },
+                {
+                    "type": "richText",
+                    "id": "fldNc98xNQ4QdlHw5",
+                    "name": "Notes",
+                    "description": "Additional details and context information "
+                },
+                {
+                    "type": "rollup",
+                    "options": {
+                        "isValid": true,
+                        "recordLinkFieldId": "fldUXrv3Vd5sIjyPN",
+                        "fieldIdInLinkedTable": "fldZjX1Q3eiiEoWdt",
+                        "referencedFieldIds": [],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldoqtmj0tLFHus7o",
+                    "name": "Category Rollup (from Brokers)",
+                    "description": "Type of organization of the company"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viwvGdNFUeg7EwRRX",
+                    "name": "Grid view",
+                    "type": "grid"
+                }
+            ]
+        },
+        {
+            "id": "tbljy0yVLF2fcSdLj",
+            "name": "Outreach resources",
+            "primaryFieldId": "fldhzqc7sGLK2sFxf",
+            "fields": [
+                {
+                    "type": "singleLineText",
+                    "id": "fldhzqc7sGLK2sFxf",
+                    "name": "Name"
+                },
+                {
+                    "type": "multilineText",
+                    "id": "fldrCw9YOx9ZJ9cXq",
+                    "name": "Notes"
+                },
+                {
+                    "type": "multipleAttachments",
+                    "options": {
+                        "isReversed": false
+                    },
+                    "id": "fldABo5HsBpVCk6wv",
+                    "name": "Attachments"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "seleVXiM3hOGXgYzW",
+                                "name": "Todo",
+                                "color": "redLight2"
+                            },
+                            {
+                                "id": "selFnHS0UPLN76j13",
+                                "name": "In progress",
+                                "color": "yellowLight2"
+                            },
+                            {
+                                "id": "selYh7flakejKabnN",
+                                "name": "Done",
+                                "color": "greenLight2"
+                            }
+                        ]
+                    },
+                    "id": "fldnJ07g5lOxpCOpm",
+                    "name": "Status"
+                },
+                {
+                    "type": "url",
+                    "id": "fldxPNjgIxwqWTQq8",
+                    "name": "Website"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viwHgfUYjvD4TlE0w",
+                    "name": "Grid view",
+                    "type": "grid"
+                }
+            ]
+        },
+        {
+            "id": "tblcQ2M64xAD9dBx7",
+            "name": "Data dictionary",
+            "primaryFieldId": "fldzVoE5LhSVKjej5",
+            "fields": [
+                {
+                    "type": "formula",
+                    "options": {
+                        "isValid": true,
+                        "referencedFieldIds": [
+                            "fldN7ghmgTw0aY5CB",
+                            "fldTw0bteKxfd0JJB",
+                            "fldxqy0KUdNUXNyIX"
+                        ],
+                        "result": {
+                            "type": "singleLineText"
+                        }
+                    },
+                    "id": "fldzVoE5LhSVKjej5",
+                    "name": "Name"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selh6gEHQDJvS4pcf",
+                                "name": "Reports"
+                            }
+                        ]
+                    },
+                    "id": "fldN7ghmgTw0aY5CB",
+                    "name": "Base"
+                },
+                {
+                    "type": "multipleSelects",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "selPywGbK22DI8FVJ",
+                                "name": "Brokers"
+                            },
+                            {
+                                "id": "selx2I6y4Lmcg4Zfy",
+                                "name": "All reports"
+                            }
+                        ]
+                    },
+                    "id": "fldTw0bteKxfd0JJB",
+                    "name": "Table(s)"
+                },
+                {
+                    "type": "singleSelect",
+                    "options": {
+                        "choices": [
+                            {
+                                "id": "sel8BmiKtTnjk9QK4",
+                                "name": "Todo"
+                            },
+                            {
+                                "id": "selDEgHCEuETL4fly",
+                                "name": "In progress"
+                            },
+                            {
+                                "id": "selBXmYB91V70MSKc",
+                                "name": "Done"
+                            },
+                            {
+                                "id": "selI9mzutn4nGwWYU",
+                                "name": "Name"
+                            },
+                            {
+                                "id": "seld3TB2YbKg5ETzZ",
+                                "name": "Category"
+                            },
+                            {
+                                "id": "sel44pVGVBMwWEtXV",
+                                "name": "Role/title"
+                            },
+                            {
+                                "id": "sel5gglbfeIx1O9Sm",
+                                "name": "License #"
+                            },
+                            {
+                                "id": "selNB53vutkL6R3th",
+                                "name": "Phone number"
+                            },
+                            {
+                                "id": "sele5Zd4rOlgccmKi",
+                                "name": "Brokerage(s) associated with this broker/agent"
+                            },
+                            {
+                                "id": "selY1MQQOP4VaQUg4",
+                                "name": "Reports associated with this broker/agent"
+                            },
+                            {
+                                "id": "selUNIB6NR1YHd2iK",
+                                "name": "# reports"
+                            },
+                            {
+                                "id": "selvz6doADmIrEYkJ",
+                                "name": "Email"
+                            },
+                            {
+                                "id": "selTw2d5j5OTwXMh5",
+                                "name": "Associated websites"
+                            },
+                            {
+                                "id": "sel6XmtvwLKUy48de",
+                                "name": "Image"
+                            },
+                            {
+                                "id": "selrZx8iGg8DpU6zu",
+                                "name": "Image source"
+                            },
+                            {
+                                "id": "sel66acoGUaKz3wti",
+                                "name": "Notes (INTERNAL)"
+                            },
+                            {
+                                "id": "selbBYUw7BRRoEa0F",
+                                "name": "Notes (EXTERNAL)"
+                            },
+                            {
+                                "id": "seltoT4prp3le5oNX",
+                                "name": "Research complete?"
+                            },
+                            {
+                                "id": "seldr8GlQpxO8RRFS",
+                                "name": "@address"
+                            }
+                        ]
+                    },
+                    "id": "fldxqy0KUdNUXNyIX",
+                    "name": "Column name"
+                },
+                {
+                    "type": "richText",
+                    "id": "fldB8gvAKDLJ2DQ31",
+                    "name": "Sample"
+                },
+                {
+                    "type": "richText",
+                    "id": "fldeIl4fCigEbY8hc",
+                    "name": "Description"
+                }
+            ],
+            "views": [
+                {
+                    "id": "viw3UPQxmWKOGD4Rb",
+                    "name": "Grid view",
+                    "type": "grid"
+                }
+            ]
+        }
+    ]
+}
