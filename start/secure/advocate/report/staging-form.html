@@ -184,7 +184,15 @@
 
 
             // getting the rest of airtable schema
-            let reportSchema = data.schema;
+            let getSchema = await fetch('schema.json', {
+                method: 'POST',
+                //body: JSON.stringify(userToken),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            //let data = await response.json();
+            let reportSchema = await getSchema.json();
 
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
