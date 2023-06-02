@@ -182,8 +182,43 @@
             })
 
 
-            // getting the rest of airtable schema
-            let reportSchema = data.schema;
+            // getting airtable schema
+            let getSchema = await fetch('schema.json', {
+                method: 'GET',
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            let schema = await getSchema.json();
+            let reportSchema = [];
+            let columns = {
+                listing: "fld2wcMYdBLqC8Qze",
+                discriminationType: "fldaSBFI9xkDNqNMI",
+                denialType: "fldKQJMhhj4Lpza7f",
+                aptAvailable: "fld3LQiU1MEcyqADh",
+                intervention: "flds7gfMy2BXr4nam",
+                evidence: "fldO1hS0hrTAgldfc",
+                contact: "fldkit1voLUsvQ3Im"
+            }
+             /* NOTE: CHANGES based on env! THIS IS PROD REPORTS BASE */
+             // this is a list of columns with dropdown options
+             // to send schema to populate form
+            
+            let fields = schema.tables[1].fields; // reports table
+            for (let i = 0; i < fields.length; i++) {
+                let column;
+                let selectOptions;
+                // check if any of the field IDs match
+                // the columns object written @ top 
+                // if so, add to array that we'll send to web form
+                for (const key in columns) {
+                  if (columns[key] == fields[i].id) {
+                    column = fields[i].id;
+                    selectOptions = fields[i].options.choices;
+                    reportSchema.push({ [column]: JSON.stringify(selectOptions) });
+                  }
+                }
+            }
 
             $("select").each(function () {
                 if ($(this).attr("data-id")) {
