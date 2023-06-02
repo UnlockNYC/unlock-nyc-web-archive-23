@@ -67,7 +67,7 @@ exports.handler = function(event, context, callback) {
     }, async function done(err) {
       if (err) { console.error(err); return; }
       console.log(`${clientList.length} user records found.`);
-      let schemaList = [];
+      /*let schemaList = [];
       let schema = await getSchema();
       let fields = schema.tables[1].fields; // reports table
       for (let i = 0; i < fields.length; i++) {
@@ -83,14 +83,15 @@ exports.handler = function(event, context, callback) {
             schemaList.push({ [column]: JSON.stringify(selectOptions) });
           }
         }
-      }
+      }*/
+      // MAB 06.02.23: refactored, cached schema, front-end call
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
           advocate: advocateId,
           clientList: clientList,
-          orgList: orgList,
-          schema: schemaList
+          orgList: orgList
+          //schema: schemaList
         })
       });
     });
@@ -104,7 +105,7 @@ exports.handler = function(event, context, callback) {
     });
   }
 
-  async function getSchema() {
+ /* async function getSchema() {
     console.log("running schema");
     // PROD REPORTS BASE
     const response = await fetch('https://api.airtable.com/v0/meta/bases/app3RonGnLm3P4aVF/tables', {
@@ -115,5 +116,5 @@ exports.handler = function(event, context, callback) {
     });
     const data = await response.json();
     return data;
-  }
+  }*/
 };
