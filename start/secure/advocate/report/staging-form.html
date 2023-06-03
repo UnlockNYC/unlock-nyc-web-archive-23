@@ -146,44 +146,8 @@
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
-
-            // call function that queries Airtable for client list and column schema
-            let response = await fetch('/.netlify/functions/staging-read-advocate', {
-                method: 'POST',
-                body: JSON.stringify(userToken),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-            let data = await response.json();
-            let clientList = data.clientList;
-            let orgList = data.orgList;
-            let advocate = data.advocate;
-            // console.log(orgList);
-            // console.log(advocate);
-            // prefill hidden advocate field & new user form
-            $("input#advocate").val(advocate);
-            $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}&prefill_Advocate=${advocate}`);
-            // consider hiding advocate? MAB
-            // populate client dropdown options
-            for (i = 0; i < clientList.length; i++) {
-                $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
-            }
-            if (orgList) {
-                for (j = 0; j < orgList.length; j++) {
-                    $('select#org-clients').append($('<option>', {value: `${orgList[j].id}`, text: `${orgList[j].name}`}));
-                }
-            }
-
-            $("a#full-org").click(function () {
-                advocateAssign = true;
-                $("select#clients-choice").hide();
-                $("select#org-clients").show();
-                $("span#new-user").show();
-            })
-
-
-            // getting the rest of airtable schema
+            
+            // load Airtable column schema
             // was in previous payload before: data.schema
             let getSchema = await fetch('staging-schema.json', {
                 method: 'GET',
@@ -257,8 +221,44 @@
                 if (text == "null") {
                     $(this).remove();
                 }
-            })
+            });
 
+
+            // call function that queries Airtable for client list 
+            let response = await fetch('/.netlify/functions/staging-read-advocate', {
+                method: 'POST',
+                body: JSON.stringify(userToken),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            let data = await response.json();
+            let clientList = data.clientList;
+            let orgList = data.orgList;
+            let advocate = data.advocate;
+            // console.log(orgList);
+            // console.log(advocate);
+            // prefill hidden advocate field & new user form
+            $("input#advocate").val(advocate);
+            $("a#new-user-form").attr("href", `${newUserForm}${userInfo.app_metadata.org}&prefill_Advocate=${advocate}`);
+            // consider hiding advocate? MAB
+            // populate client dropdown options
+            for (i = 0; i < clientList.length; i++) {
+                $('select#clients-choice').append($('<option>', {value: `${clientList[i].id}`, text: `${clientList[i].name}`}));
+            }
+            if (orgList) {
+                for (j = 0; j < orgList.length; j++) {
+                    $('select#org-clients').append($('<option>', {value: `${orgList[j].id}`, text: `${orgList[j].name}`}));
+                }
+            }
+
+            $("a#full-org").click(function () {
+                advocateAssign = true;
+                $("select#clients-choice").hide();
+                $("select#org-clients").show();
+                $("span#new-user").show();
+            })
+            
             // Google Maps Places Autcomplete
             // for address input form, code from:
             // https://developers.google.com/maps/documentation/javascript/examples/places-autocomplete-addressform
