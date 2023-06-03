@@ -7,19 +7,6 @@ exports.handler = function(event, context, callback) {
   const token = data.access_token;
   let decoded = jwt_decode(token);
 
-  let columns = {
-    listing: "fld2wcMYdBLqC8Qze",
-    discriminationType: "fldaSBFI9xkDNqNMI",
-    denialType: "fldKQJMhhj4Lpza7f",
-    aptAvailable: "fld3LQiU1MEcyqADh",
-    intervention: "flds7gfMy2BXr4nam",
-    evidence: "fldO1hS0hrTAgldfc",
-    contact: "fldkit1voLUsvQ3Im"
-  }
-  /* NOTE: CHANGES based on env! THIS IS PROD REPORTS BASE */
-  // this is a list of columns with dropdown options
-  // to send schema to populate form
-
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only
     var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('app3RonGnLm3P4aVF');
@@ -67,24 +54,6 @@ exports.handler = function(event, context, callback) {
     }, async function done(err) {
       if (err) { console.error(err); return; }
       console.log(`${clientList.length} user records found.`);
-      /*let schemaList = [];
-      let schema = await getSchema();
-      let fields = schema.tables[1].fields; // reports table
-      for (let i = 0; i < fields.length; i++) {
-        let column;
-        let selectOptions;
-        // check if any of the field IDs match
-        // the columns object written @ top 
-        // if so, add to array that we'll send to web form
-        for (const key in columns) {
-          if (columns[key] == fields[i].id) {
-            column = fields[i].id;
-            selectOptions = fields[i].options.choices;
-            schemaList.push({ [column]: JSON.stringify(selectOptions) });
-          }
-        }
-      }*/
-      // MAB 06.02.23: refactored, cached schema, front-end call
       callback(null, {
         statusCode: 200,
         body: JSON.stringify({
@@ -104,17 +73,4 @@ exports.handler = function(event, context, callback) {
       })
     });
   }
-
- /* async function getSchema() {
-    console.log("running schema");
-    // PROD REPORTS BASE
-    const response = await fetch('https://api.airtable.com/v0/meta/bases/app3RonGnLm3P4aVF/tables', {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${process.env.AIRTABLE_ACCESS_TOKEN}`
-      }
-    });
-    const data = await response.json();
-    return data;
-  }*/
 };
