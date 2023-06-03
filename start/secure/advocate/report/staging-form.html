@@ -134,37 +134,6 @@
         </form>
     </div>
     <script>
-        
-        let schema = loadSchema();
-        
-        let schemaList = [];
-        let columns = {
-            listing: "fldhEdkPi8horzLD4",
-            discriminationType: "fldp0Cdze4QBCRIQy",
-            denialType: "fldZYKk8mQAJe05b5",
-            aptAvailable: "fldLDDBMmULQ5gI1n",
-            intervention: "fldHfhNDDz7Vgviec",
-            evidence: "fld39iqRmYpy5M8j2",
-            contact: "fld0KWctTTkkMxaRW"
-          }
-          /* NOTE: CHANGES based on env! staging base for now */
-          // this is a list of columns with dropdown options
-          // to send schema to populate form
-        
-        async function loadSchema() {
-            // load Airtable column schema
-            // was in previous payload before: data.schema
-            let getSchema = await fetch('staging-schema.json', {
-                method: 'GET',
-                //body: JSON.stringify(userToken),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-            let schema = await getSchema.json();
-            return schema;
-        }
-
         $(document).ready(async function () {
 
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
@@ -177,10 +146,31 @@
             // first load advocate info based on user login token
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
-            
-      
-            // fill in fields based on Airtable schema
-            
+          
+            // get Airtable schema
+            // was in previous payload before: data.schema, from netlify function
+            let getSchema = await fetch('staging-schema.json', {
+                method: 'GET',
+                //body: JSON.stringify(userToken),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+             });
+            let schema = await getSchema.json();
+            let schemaList = [];
+            let columns = {
+                listing: "fldhEdkPi8horzLD4",
+                discriminationType: "fldp0Cdze4QBCRIQy",
+                denialType: "fldZYKk8mQAJe05b5",
+                aptAvailable: "fldLDDBMmULQ5gI1n",
+                intervention: "fldHfhNDDz7Vgviec",
+                evidence: "fld39iqRmYpy5M8j2",
+                contact: "fld0KWctTTkkMxaRW"
+             }
+             /* NOTE: CHANGES based on env! staging base for now */
+             // this is a list of columns with dropdown options
+             // to send schema to populate form
+
             let fields = schema.tables[1].fields; // reports table
             for (let i = 0; i < fields.length; i++) {
                 let column;
