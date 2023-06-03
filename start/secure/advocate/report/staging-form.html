@@ -135,16 +135,8 @@
     </div>
     <script>
         
-        // load Airtable column schema
-        // was in previous payload before: data.schema
-        let getSchema = await fetch('staging-schema.json', {
-            method: 'GET',
-            //body: JSON.stringify(userToken),
-            headers: {
-                "Content-Type": "application/json"
-            }
-        });
-        let schema = await getSchema.json();
+        let schema = loadSchema();
+        
         let schemaList = [];
         let columns = {
             listing: "fldhEdkPi8horzLD4",
@@ -159,6 +151,20 @@
           // this is a list of columns with dropdown options
           // to send schema to populate form
         
+        async function loadSchema() {
+            // load Airtable column schema
+            // was in previous payload before: data.schema
+            let getSchema = await fetch('staging-schema.json', {
+                method: 'GET',
+                //body: JSON.stringify(userToken),
+                headers: {
+                    "Content-Type": "application/json"
+                }
+            });
+            let schema = await getSchema.json();
+            return schema;
+        }
+
         $(document).ready(async function () {
 
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
