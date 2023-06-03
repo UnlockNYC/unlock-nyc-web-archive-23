@@ -1,3 +1,6 @@
+/* MAB NOTE: refactored, this function not in use
+// secure.weunlock.nyc, due to file/payload  size limit */
+
 const busboy = require('busboy');
 const aws = require("aws-sdk");
 
