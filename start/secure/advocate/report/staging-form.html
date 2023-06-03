@@ -134,6 +134,31 @@
         </form>
     </div>
     <script>
+        
+        // load Airtable column schema
+        // was in previous payload before: data.schema
+        let getSchema = await fetch('staging-schema.json', {
+            method: 'GET',
+            //body: JSON.stringify(userToken),
+            headers: {
+                "Content-Type": "application/json"
+            }
+        });
+        let schema = await getSchema.json();
+        let schemaList = [];
+        let columns = {
+            listing: "fldhEdkPi8horzLD4",
+            discriminationType: "fldp0Cdze4QBCRIQy",
+            denialType: "fldZYKk8mQAJe05b5",
+            aptAvailable: "fldLDDBMmULQ5gI1n",
+            intervention: "fldHfhNDDz7Vgviec",
+            evidence: "fld39iqRmYpy5M8j2",
+            contact: "fld0KWctTTkkMxaRW"
+          }
+          /* NOTE: CHANGES based on env! staging base for now */
+          // this is a list of columns with dropdown options
+          // to send schema to populate form
+        
         $(document).ready(async function () {
 
             let userToken = JSON.parse(window.localStorage.getItem("gotrue.user")).token;
@@ -147,29 +172,8 @@
             $("h2#email").html(userInfo.email);
             $("h2#org").html(userInfo.app_metadata.org)
             
-            // load Airtable column schema
-            // was in previous payload before: data.schema
-            let getSchema = await fetch('staging-schema.json', {
-                method: 'GET',
-                //body: JSON.stringify(userToken),
-                headers: {
-                    "Content-Type": "application/json"
-                }
-            });
-            let schema = await getSchema.json();
-            let schemaList = [];
-            let columns = {
-                listing: "fldhEdkPi8horzLD4",
-                discriminationType: "fldp0Cdze4QBCRIQy",
-                denialType: "fldZYKk8mQAJe05b5",
-                aptAvailable: "fldLDDBMmULQ5gI1n",
-                intervention: "fldHfhNDDz7Vgviec",
-                evidence: "fld39iqRmYpy5M8j2",
-                contact: "fld0KWctTTkkMxaRW"
-              }
-              /* NOTE: CHANGES based on env! staging base for now */
-              // this is a list of columns with dropdown options
-              // to send schema to populate form
+      
+            // fill in fields based on Airtable schema
             
             let fields = schema.tables[1].fields; // reports table
             for (let i = 0; i < fields.length; i++) {
