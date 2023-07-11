@@ -22,7 +22,7 @@ exports.handler = function(event, context, callback) {
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only
-    var base = new Airtable({ apiKey: process.env.AIRTABLE_ACCES_TOKEN }).base('appiZpVxsiS1Ev5Zv');
+    var base = new Airtable({ apiKey: process.env.AIRTABLE_ACCESS_STAGING }).base('appiZpVxsiS1Ev5Zv');
     // currently TEST: STAGING BASE
 
     // query airtable,

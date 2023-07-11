@@ -2,14 +2,14 @@ const Airtable = require('airtable');
 const fetch = require('node-fetch');
 
 exports.handler = function(event, context, callback) {
-  var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
+  var base = new Airtable({ apiKey: process.env.AIRTABLE_ACCESS_STAGING }).base('appiZpVxsiS1Ev5Zv');
   // TEST for now, staging base
 
   let reportData = JSON.parse(event.body);
   console.log(reportData);
   let fullAddress = `${reportData.reportAddress} - Unit: ${reportData.unit}`;
   base('All reports').create({
-    // the following uses airtable field IDs 
+    // the following uses airtable field IDs
     // instead of column names, to protect in case of changes
     "fldAA5F50YecZRHsS": "CCHR reports", // Report Type
     "fldmkXAGphcHd2wkb": [`${reportData.client}`], // @name, client name,
@@ -19,7 +19,7 @@ exports.handler = function(event, context, callback) {
     "fldXkr2FlRPTvo1bO": fullAddress, // @address
     "fldhEdkPi8horzLD4": reportData.website, // @listing, source website
     "fldZYKk8mQAJe05b5": reportData.denialType, // @denialtype, phone email etc.
-    "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing 
+    "fldJVb2qvm3I0nhwH": reportData.url, // @url, listing
     "fldXZwgcmk4hwJD1I": parseInt(reportData.rent),
     "fldLDDBMmULQ5gI1n": reportData.available, // available? is apt. still available?,
     "fldHfhNDDz7Vgviec": reportData.intervention, // Does tenant want this apt?,
@@ -100,4 +100,3 @@ exports.handler = function(event, context, callback) {
     }
   });
 }
-
