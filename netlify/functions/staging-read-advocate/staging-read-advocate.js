@@ -22,10 +22,10 @@ exports.handler = function(event, context, callback) {
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only
-    var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('appiZpVxsiS1Ev5Zv');
-    // currently TEST: STAGING BASE 
+    var base = new Airtable({ apiKey: process.env.AIRTABLE_ACCES_TOKEN }).base('appiZpVxsiS1Ev5Zv');
+    // currently TEST: STAGING BASE
 
-    // query airtable, 
+    // query airtable,
     // check for advocate in approved advocate list
     let clientList = [];
     let orgList = [];
@@ -79,7 +79,7 @@ exports.handler = function(event, context, callback) {
         let column;
         let selectOptions;
         // check if any of the field IDs match
-        // the columns object written @ top 
+        // the columns object written @ top
         // if so, add to array that we'll send to web form
         for (const key in columns) {
           if (columns[key] == fields[i].id) {

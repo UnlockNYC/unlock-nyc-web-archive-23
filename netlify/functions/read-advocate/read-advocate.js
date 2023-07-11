@@ -9,10 +9,10 @@ exports.handler = function(event, context, callback) {
 
   if (decoded.app_metadata.roles[0] == 'advocate') {
     // if they've been verified as advocate only
-    var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('app3RonGnLm3P4aVF');
+    var base = new Airtable({ apiKey: process.env.AIRTABLE_ACCESS_TOKEN }).base('app3RonGnLm3P4aVF');
     // currently PROD: REPORTS BASE
 
-    // query airtable, 
+    // query airtable,
     // check for advocate in approved advocate list
     let clientList = [];
     let orgList = [];

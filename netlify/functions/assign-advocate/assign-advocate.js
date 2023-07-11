@@ -4,7 +4,7 @@ exports.handler = function(event, context, callback) {
   const data = JSON.parse(event.body);
   const { user } = data;
 
-  var base = new Airtable({ apiKey: process.env.AIRTABLE_API_KEY }).base('app3RonGnLm3P4aVF');
+  var base = new Airtable({ apiKey: process.env.AIRTABLE_ACCESS_TOKEN }).base('app3RonGnLm3P4aVF');
   // currently PROD REPORTS BASE
 
   let approval = false;
@@ -21,13 +21,13 @@ exports.handler = function(event, context, callback) {
     body: ""
   };
 
-  // field ids, airtable 
+  // field ids, airtable
   // from PROD REPORTS BASE
   let emailField = "fldDdJrgCAe1YD1xv";
   let advNameField = "fldI6KDv6htRgpemE";
   let orgNameField = "fld04CrtAkQn3CYmR"; // the column labeled 'for online form', just string
 
-  // query airtable, 
+  // query airtable,
   // check for e-mail in approved partner list
   base('Advocates').select({
     fields: [emailField, advNameField, orgNameField], // PROD BASE - email, name, org name
