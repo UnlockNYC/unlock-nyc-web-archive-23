@@ -40,3 +40,20 @@ and to follow consentful tech practices. If you'd like to request an aggregated 
 <p>
   <a href="https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/AnIllusionofChoice_FinalDigital_CORRECT.pdf?v=1644419510693" class="report">Download Report</a>
 </p>
+
+<script src="/scripts/ackee-tracker.min.js"></script>
+<script>
+  // ackee analytics events
+  // initialize ackeeTracker
+  const instance = ackeeTracker.create(
+    "https://unlocknyc-analytics.netlify.app"
+  );
+  instance.record("d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c");
+  $("a.report").click(function () {
+    // press inquiry
+    instance.action("e557204f-d595-4660-8554-2ca2475b4342", {
+      key: "Download",
+      value: 1,
+    });
+  });
+</script>
