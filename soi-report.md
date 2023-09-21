@@ -49,7 +49,7 @@ and to follow consentful tech practices. If you'd like to request an aggregated 
     "https://unlocknyc-analytics.netlify.app"
   );
   instance.record("d2255a40-e04e-4d2d-aa3a-b1b5da9cf52c");
-  $("a.report").click(function () {
+  document.querySelector("a.report").click(function () {
     // press inquiry
     instance.action("e557204f-d595-4660-8554-2ca2475b4342", {
       key: "Download",
