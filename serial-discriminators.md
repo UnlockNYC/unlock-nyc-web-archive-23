@@ -4,6 +4,10 @@ pageTitle: Serial Discriminators Report 2023
 ---
 
 <style>
+
+#page {
+  display: none; /*MAB, temp 10.16.2023*/
+}
   
 a.report {
   font-family: "Roboto Mono", monospace;
