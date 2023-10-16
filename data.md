@@ -8,7 +8,7 @@ pageTitle: Data
 div#data-grid {
   display: grid;
   width: 100%;
-  grid-template-columns: 33% 33% auto;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-column-gap: 8%;
   font-size: 17px;
   margin-top: -25px;
@@ -59,6 +59,15 @@ img.report-sample {
 </style>
 
 <div id="data-grid">
+  <div class="data-cell" style="display: none;">
+    <a href="/serial-discriminators">
+      <div class="data-img" style="background: url('https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/serial-discriminators-report-page.png?v=1697487990851'); background-size: cover; background-position: 0 -3px;">
+      </div>
+      <div>
+        <strong>Serial Discriminators List:</strong> Who is locking New Yorkers with housing vouchers out of the rental market? (report, 2023)  
+      </div>   
+    </a>
+  </div>
   <div class="data-cell">
     <a href="/data/soi-map" target="_blank">
       <div class="data-img" style="background: url('https://cdn.glitch.global/b185c63a-8d27-412b-b4cb-047ca0c8de79/map-data-img.png'); background-size: cover;">
