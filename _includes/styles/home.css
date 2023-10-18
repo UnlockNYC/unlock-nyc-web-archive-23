@@ -59,7 +59,8 @@ section#top #top-bg {
   position: absolute;
   top: 0;
   width: 85%;
-  background: url(https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Fwindows1_bg.jpg?v=1605212235576);
+  /*background: url(https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Fwindows1_bg.jpg?v=1605212235576);*/
+  background: url(https://raw.githubusercontent.com/UnlockNYC/unlock-nyc-web/main/uploads/windows1_bg.jpg);
   background-position: 0 0;
   background-size: cover;
   background-repeat: no-repeat;
@@ -68,7 +69,8 @@ section#top #top-bg {
 section#top #top-figures {
   width: 100%;
   height: calc(100vh - 72px);
-  background: url(https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Ftop_figures2.svg?v=1605041124725);
+  /*background: url(https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2Ftop_figures2.svg?v=1605041124725);*/
+  background: url(https://raw.githubusercontent.com/UnlockNYC/unlock-nyc-web/main/uploads/top_figures2.svg);
   background-size: cover;
   background-position: 0 0;
 }
