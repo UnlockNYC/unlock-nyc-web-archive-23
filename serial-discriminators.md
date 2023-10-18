@@ -1,6 +1,6 @@
 ---
 layout: layout.liquid
-pageTitle: Serial Discriminators Report 2023
+pageTitle: Report 2023
 ---
 
 <style>
