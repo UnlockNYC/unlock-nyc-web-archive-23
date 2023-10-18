@@ -1,6 +1,7 @@
 @font-face {
   font-family: "Intro Rust";
-  src: url("https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2FIntroRust-Base.otf")
+  src: url("https://cdn.glitch.com/b185c63a-8d27-412b-b4cb-047ca0c8de79%2FIntroRust-Base.otf");
+  src: url("https://raw.githubusercontent.com/UnlockNYC/unlock-nyc-web/main/assets/b185c63a-8d27-412b-b4cb-047ca0c8de79_IntroRust-Base.otf")
     format("truetype");
 }
 
