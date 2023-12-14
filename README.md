@@ -1,10 +1,10 @@
 <img src="https://cdn.glitch.me/dee07edd-bb63-4ffa-a606-d074a910b9c4%2FunlockSmall.png?v=1633719693017" alt="unlock nyc logo">
 
+# 🗂️ archive! this site was live 2020 - Dec, 2023
+
 **welcome!** Unlock NYC builds digital tools to make the apartment search process transparent, fair, and free from discrimination for all New Yorkers. 
 
 🤖🏡 This project hosts our main website.
-
-**this project is in active development!**
 
 ---
 
